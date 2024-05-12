@@ -1,0 +1,122 @@
+\doxysection{tests/test\+\_\+header.h File Reference}
+\hypertarget{test__header_8h}{}\label{test__header_8h}\index{tests/test\_header.h@{tests/test\_header.h}}
+{\ttfamily \#include "{}logbank/logbank.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__header_8h_a249c7af626da9cf561f10c771db31756}{test\+\_\+std}} (void)
+\item 
+void \mbox{\hyperlink{test__header_8h_afed1fa66458aed3932cf3f3dc28b8641}{test\+\_\+os}} (void)
+\item 
+int \mbox{\hyperlink{test__header_8h_a7b95c675556cf65608c8181aedd2d6b6}{test\+\_\+priority\+\_\+level}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__header_8h_afed1fa66458aed3932cf3f3dc28b8641}\label{test__header_8h_afed1fa66458aed3932cf3f3dc28b8641} 
+\index{test\_header.h@{test\_header.h}!test\_os@{test\_os}}
+\index{test\_os@{test\_os}!test\_header.h@{test\_header.h}}
+\doxysubsubsection{\texorpdfstring{test\_os()}{test\_os()}}
+{\footnotesize\ttfamily void test\+\_\+os (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l00012}{12}} of file \mbox{\hyperlink{test00__compilation__requirement_8c_source}{test00\+\_\+compilation\+\_\+requirement.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ detected[]\ =\ \textcolor{stringliteral}{"{}is\ detected"{}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#if\ defined(WIN32)\ ||\ defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_)\ ||\ defined(\_\_NT\_\_)}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ \_WIN64}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Windows\ 64bit\ \%s"{}},\ detected);}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Windows\ 32bit\ \%s"{}},\ detected);}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Windows\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#if\ TARGET\_IPHONE\_SIMULATOR}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}iPhone\ Sim\ \%s"{}},\ detected);}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#elif\ TARGET\_OS\_MACCATALYST}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Mac\ Catalyst\ \%s"{}},\ detected);}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#elif\ TARGET\_OS\_IPHONE}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}iPhone\ \%s"{}},\ detected);}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#elif\ TARGET\_OS\_MAC}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}OS\ X\ \%s"{}},\ detected);}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Mac\ OS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#elif\ \_\_ANDROID\_\_}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Android\ \%s"{}},\ detected);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#elif\ \_\_linux\_\_}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Linux\ \%s"{}},\ detected);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}NO\ OS\ \%s"{}},\ detected);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Platform\ Check\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+\Hypertarget{test__header_8h_a7b95c675556cf65608c8181aedd2d6b6}\label{test__header_8h_a7b95c675556cf65608c8181aedd2d6b6} 
+\index{test\_header.h@{test\_header.h}!test\_priority\_level@{test\_priority\_level}}
+\index{test\_priority\_level@{test\_priority\_level}!test\_header.h@{test\_header.h}}
+\doxysubsubsection{\texorpdfstring{test\_priority\_level()}{test\_priority\_level()}}
+{\footnotesize\ttfamily int test\+\_\+priority\+\_\+level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{test01__priority__level_8c_source_l00004}{4}} of file \mbox{\hyperlink{test01__priority__level_8c_source}{test01\+\_\+priority\+\_\+level.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ to\ LOG\_WARN\ should\ pass\ */}}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13}{LOG\_WARN}});}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13}{LOG\_WARN}})\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00009\ \ \ \ \ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ to\ LOG\_INFO\ should\ pass\ */}}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}});}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}})\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ above\ LOG\_FATAL\ should\ fail\ */}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\_FATAL}}\ +\ 1);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}})\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ below\ LOG\_DEBUG\ should\ fail\ */}}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ab9f002c6ffbfd511da8090213227454e}{LOG\_DEBUG}}\ -\/\ 1);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}})\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+\Hypertarget{test__header_8h_a249c7af626da9cf561f10c771db31756}\label{test__header_8h_a249c7af626da9cf561f10c771db31756} 
+\index{test\_header.h@{test\_header.h}!test\_std@{test\_std}}
+\index{test\_std@{test\_std}!test\_header.h@{test\_header.h}}
+\doxysubsubsection{\texorpdfstring{test\_std()}{test\_std()}}
+{\footnotesize\ttfamily void test\+\_\+std (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l00005}{5}} of file \mbox{\hyperlink{test00__compilation__requirement_8c_source}{test00\+\_\+compilation\+\_\+requirement.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test\ VAR\_print\ using:\ \%s"{}},\ \textcolor{stringliteral}{"{}macro"{}});}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test\ LOG\ using:\ \%s"{}},\ \textcolor{stringliteral}{"{}function"{}});}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}

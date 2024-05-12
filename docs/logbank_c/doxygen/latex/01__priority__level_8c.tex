@@ -1,0 +1,35 @@
+\doxysection{snippets/src/01\+\_\+priority\+\_\+level.c File Reference}
+\hypertarget{01__priority__level_8c}{}\label{01__priority__level_8c}\index{snippets/src/01\_priority\_level.c@{snippets/src/01\_priority\_level.c}}
+{\ttfamily \#include "{}snippets/snippets\+\_\+header.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{01__priority__level_8c_a9a15db2394304a5de4f66315a90884f0}{priority\+\_\+level}} (int level)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{01__priority__level_8c_a9a15db2394304a5de4f66315a90884f0}\label{01__priority__level_8c_a9a15db2394304a5de4f66315a90884f0} 
+\index{01\_priority\_level.c@{01\_priority\_level.c}!priority\_level@{priority\_level}}
+\index{priority\_level@{priority\_level}!01\_priority\_level.c@{01\_priority\_level.c}}
+\doxysubsubsection{\texorpdfstring{priority\_level()}{priority\_level()}}
+{\footnotesize\ttfamily void priority\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{01__priority__level_8c_source_l00004}{4}} of file \mbox{\hyperlink{01__priority__level_8c_source}{01\+\_\+priority\+\_\+level.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifdef\ LOGBANK\_DEV}}
+\DoxyCodeLine{00007\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Changing\ log\_level\ to\ LOG\_\%s\(\backslash\)n"{}},\ \mbox{\hyperlink{logbank_8h_a1479d11a4b2d1a14dd439feb23c79ece}{log\_get\_level\_name}}(level));}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{/*\ Change\ log\_level\ to\ LOG\_ISSUE\ */}}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(level);}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_a52da862cce90e9ca0d76948874bee959}{sample\_logs}}();}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}

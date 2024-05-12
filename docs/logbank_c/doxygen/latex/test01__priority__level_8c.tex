@@ -1,0 +1,52 @@
+\doxysection{tests/test01\+\_\+priority\+\_\+level.c File Reference}
+\hypertarget{test01__priority__level_8c}{}\label{test01__priority__level_8c}\index{tests/test01\_priority\_level.c@{tests/test01\_priority\_level.c}}
+{\ttfamily \#include "{}logbank/logbank.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test01__priority__level_8c_a7b95c675556cf65608c8181aedd2d6b6}{test\+\_\+priority\+\_\+level}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test01__priority__level_8c_a7b95c675556cf65608c8181aedd2d6b6}\label{test01__priority__level_8c_a7b95c675556cf65608c8181aedd2d6b6} 
+\index{test01\_priority\_level.c@{test01\_priority\_level.c}!test\_priority\_level@{test\_priority\_level}}
+\index{test\_priority\_level@{test\_priority\_level}!test01\_priority\_level.c@{test01\_priority\_level.c}}
+\doxysubsubsection{\texorpdfstring{test\_priority\_level()}{test\_priority\_level()}}
+{\footnotesize\ttfamily int test\+\_\+priority\+\_\+level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{test01__priority__level_8c_source_l00004}{4}} of file \mbox{\hyperlink{test01__priority__level_8c_source}{test01\+\_\+priority\+\_\+level.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ to\ LOG\_WARN\ should\ pass\ */}}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13}{LOG\_WARN}});}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13}{LOG\_WARN}})\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00009\ \ \ \ \ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ to\ LOG\_INFO\ should\ pass\ */}}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}});}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}})\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ above\ LOG\_FATAL\ should\ fail\ */}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\_FATAL}}\ +\ 1);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}})\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*\ Setting\ log\_level\ below\ LOG\_DEBUG\ should\ fail\ */}}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ab9f002c6ffbfd511da8090213227454e}{LOG\_DEBUG}}\ -\/\ 1);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}()\ !=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}})\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}

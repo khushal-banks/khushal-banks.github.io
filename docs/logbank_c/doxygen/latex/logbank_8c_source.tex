@@ -1,0 +1,56 @@
+\doxysection{logbank.\+c}
+\hypertarget{logbank_8c_source}{}\label{logbank_8c_source}\index{logbank/src/logbank.c@{logbank/src/logbank.c}}
+\mbox{\hyperlink{logbank_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{logbank_8h}{logbank/logbank.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00004}00004\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ log\_level\ =\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00006}00006\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00007}\mbox{\hyperlink{logbank_8h_a5e49b5594c4aed69441bc2b4b0e8e0e7}{00007}}\ \mbox{\hyperlink{logbank_8c_a5e49b5594c4aed69441bc2b4b0e8e0e7}{log\_get\_default\_level}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00011}00011\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00012}\mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{00012}}\ \mbox{\hyperlink{logbank_8c_ab53553042bb3122475a03674bd689d5a}{log\_get\_level}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{return}\ log\_level;}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00016}00016\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00017}\mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{00017}}\ \mbox{\hyperlink{logbank_8c_af0d39913e824d4d0aef7513b284ea289}{log\_set\_level}}(\textcolor{keywordtype}{int}\ level)\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ log\_level;}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00023}00023\ \ \ \ \ log\_level\ =\ level;}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00027}00027\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00028}\mbox{\hyperlink{logbank_8h_a1479d11a4b2d1a14dd439feb23c79ece}{00028}}\ \mbox{\hyperlink{logbank_8c_a1479d11a4b2d1a14dd439feb23c79ece}{log\_get\_level\_name}}(\textcolor{keywordtype}{int}\ level)\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ level\_names[]\ =\ \{\textcolor{stringliteral}{"{}DEBUG"{}},\ \textcolor{stringliteral}{"{}INFO\ "{}},\ \textcolor{stringliteral}{"{}WARN\ "{}},}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ERROR"{}},\ \textcolor{stringliteral}{"{}ISSUE"{}},\ \textcolor{stringliteral}{"{}FATAL"{}}\};}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ level\_names[level];}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00038}00038\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00039}\mbox{\hyperlink{logbank_8h_a900f2b33063f0d4f9090ef6d47c0ead0}{00039}}\ \mbox{\hyperlink{logbank_8c_a900f2b33063f0d4f9090ef6d47c0ead0}{log\_this}}(\textcolor{keywordtype}{int}\ level,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...)\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ log\_level)\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00044}00044\ \ \ \ \ va\_list\ args;}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00045}00045\ \ \ \ \ va\_start(args,\ fmt);}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00046}00046\ \ \ \ \ (void)vfprintf(stderr,\ fmt,\ args);}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00047}00047\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00049}00049\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00050}00050\ \}}
+
+\end{DoxyCode}
