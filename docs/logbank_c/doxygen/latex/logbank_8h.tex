@@ -4,7 +4,7 @@
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL}}~\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\+\_\+\+INFO}}
+\#define \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL}}~\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\+\_\+\+INFO}}
 \begin{DoxyCompactList}\small\item\em Default value for log\+\_\+level. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(level, ...)~\mbox{\hyperlink{logbank_8h_a900f2b33063f0d4f9090ef6d47c0ead0}{log\+\_\+this}}(level, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
 \begin{DoxyCompactList}\small\item\em This is a wrapper for log\+\_\+this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -12,28 +12,28 @@
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99}{LOG\+\_\+\+LEVELS}} \{ \newline
-\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ab9f002c6ffbfd511da8090213227454e}{LOG\+\_\+\+DEBUG}} = 0
-, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\+\_\+\+INFO}}
-, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13}{LOG\+\_\+\+WARN}}
-, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a230506cce5c68c3bac5a821c42ed3473}{LOG\+\_\+\+ERROR}}
+\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\+\_\+\+DEBUG}} = 0
+, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\+\_\+\+INFO}}
+, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d}{LOG\+\_\+\+WARN}}
+, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\+\_\+\+ERROR}}
 , \newline
-\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a97cc9d9270e158d4d00f51e44229ed67}{LOG\+\_\+\+ISSUE}}
-, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\+\_\+\+FATAL}}
+\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd}{LOG\+\_\+\+ISSUE}}
+, \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\+\_\+\+FATAL}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Available values for log-\/level in increasing priority order. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{logbank_8h_a5e49b5594c4aed69441bc2b4b0e8e0e7}{log\+\_\+get\+\_\+default\+\_\+level}} (void)
-\item 
-int \mbox{\hyperlink{logbank_8h_ab53553042bb3122475a03674bd689d5a}{log\+\_\+get\+\_\+level}} (void)
-\item 
-int \mbox{\hyperlink{logbank_8h_af0d39913e824d4d0aef7513b284ea289}{log\+\_\+set\+\_\+level}} (int level)
-\item 
-const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logbank_8h_a1479d11a4b2d1a14dd439feb23c79ece}{log\+\_\+get\+\_\+level\+\_\+name}} (int level)
-\item 
+int \mbox{\hyperlink{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af}{log\+\_\+get\+\_\+default\+\_\+level}} (void)
+\begin{DoxyCompactList}\small\item\em This function returns default value for log\+\_\+level See \doxylink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb}{log\+\_\+get\+\_\+level}} (void)
+\begin{DoxyCompactList}\small\item\em This function returns current value for log\+\_\+level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\+\_\+set\+\_\+level}} (int level)
+\begin{DoxyCompactList}\small\item\em This function configures value for log\+\_\+level. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}{log\+\_\+get\+\_\+levelname}} (int level)
+\begin{DoxyCompactList}\small\item\em This function is used to read name of a particular log-\/level. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{logbank_8h_a900f2b33063f0d4f9090ef6d47c0ead0}{log\+\_\+this}} (int level, const char \texorpdfstring{$\ast$}{*}fmt,...)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This is the main logging function of this library. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -61,13 +61,13 @@ void Returns nothing
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8h_source_l00040}{40}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
+Definition at line \mbox{\hyperlink{logbank_8h_source_l00062}{62}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
 
 \Hypertarget{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}\label{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05} 
 \index{logbank.h@{logbank.h}!LOG\_LEVEL@{LOG\_LEVEL}}
 \index{LOG\_LEVEL@{LOG\_LEVEL}!logbank.h@{logbank.h}}
 \doxysubsubsection{\texorpdfstring{LOG\_LEVEL}{LOG\_LEVEL}}
-{\footnotesize\ttfamily \#define LOG\+\_\+\+LEVEL~\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\+\_\+\+INFO}}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+LEVEL~\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\+\_\+\+INFO}}}
 
 
 
@@ -88,7 +88,7 @@ Available values\+:
 \end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{logbank_8h_source_l00028}{28}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
+Definition at line \mbox{\hyperlink{logbank_8h_source_l00048}{48}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
 
 
 
@@ -99,122 +99,168 @@ Definition at line \mbox{\hyperlink{logbank_8h_source_l00028}{28}} of file \mbox
 \doxysubsubsection{\texorpdfstring{LOG\_LEVELS}{LOG\_LEVELS}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99}{LOG\+\_\+\+LEVELS}}}
 
+
+
+Available values for log-\/level in increasing priority order. 
+
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_DEBUG@{LOG\_DEBUG}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_DEBUG@{LOG\_DEBUG}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ab9f002c6ffbfd511da8090213227454e}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ab9f002c6ffbfd511da8090213227454e} 
-LOG\+\_\+\+DEBUG&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_DEBUG@{LOG\_DEBUG}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_DEBUG@{LOG\_DEBUG}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35} 
+LOG\+\_\+\+DEBUG&recommended for sanity checks (intended for developers) \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_INFO@{LOG\_INFO}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_INFO@{LOG\_INFO}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837} 
-LOG\+\_\+\+INFO&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_INFO@{LOG\_INFO}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_INFO@{LOG\_INFO}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c} 
+LOG\+\_\+\+INFO&recommended for general informations (code flow) \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_WARN@{LOG\_WARN}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_WARN@{LOG\_WARN}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13} 
-LOG\+\_\+\+WARN&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_WARN@{LOG\_WARN}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_WARN@{LOG\_WARN}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d} 
+LOG\+\_\+\+WARN&recommended for warnings (abnormal values) \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_ERROR@{LOG\_ERROR}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_ERROR@{LOG\_ERROR}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a230506cce5c68c3bac5a821c42ed3473}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a230506cce5c68c3bac5a821c42ed3473} 
-LOG\+\_\+\+ERROR&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_ERROR@{LOG\_ERROR}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_ERROR@{LOG\_ERROR}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6} 
+LOG\+\_\+\+ERROR&recommended for recoverable errors (can continue) \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_ISSUE@{LOG\_ISSUE}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_ISSUE@{LOG\_ISSUE}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a97cc9d9270e158d4d00f51e44229ed67}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a97cc9d9270e158d4d00f51e44229ed67} 
-LOG\+\_\+\+ISSUE&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_ISSUE@{LOG\_ISSUE}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_ISSUE@{LOG\_ISSUE}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd} 
+LOG\+\_\+\+ISSUE&recommended for non-\/recoverable errors (can continue with limited functionality) \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_FATAL@{LOG\_FATAL}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_FATAL@{LOG\_FATAL}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b} 
-LOG\+\_\+\+FATAL&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_FATAL@{LOG\_FATAL}!logbank.h@{logbank.h}}\index{logbank.h@{logbank.h}!LOG\_FATAL@{LOG\_FATAL}}}\Hypertarget{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}\label{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc} 
+LOG\+\_\+\+FATAL&recommended for blockers (system failure\+: can not continue) \\
 \hline
 
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{logbank_8h_source_l00012}{12}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
+Definition at line \mbox{\hyperlink{logbank_8h_source_l00032}{32}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \{\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ab9f002c6ffbfd511da8090213227454e}{LOG\_DEBUG}}\ =\ 0,\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a6e98ff471e3ce6c4ef2d75c37ee51837}{LOG\_INFO}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac8041ffa22bc823d4726701cdb13fc13}{LOG\_WARN}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a230506cce5c68c3bac5a821c42ed3473}{LOG\_ERROR}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a97cc9d9270e158d4d00f51e44229ed67}{LOG\_ISSUE}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\_FATAL}}\ \};}
+\DoxyCodeLine{00032\ \{\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}}\ =\ 0,\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d}{LOG\_WARN}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\_ERROR}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd}{LOG\_ISSUE}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}}\ \};}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{logbank_8h_a5e49b5594c4aed69441bc2b4b0e8e0e7}\label{logbank_8h_a5e49b5594c4aed69441bc2b4b0e8e0e7} 
+\Hypertarget{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af}\label{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af} 
 \index{logbank.h@{logbank.h}!log\_get\_default\_level@{log\_get\_default\_level}}
 \index{log\_get\_default\_level@{log\_get\_default\_level}!logbank.h@{logbank.h}}
 \doxysubsubsection{\texorpdfstring{log\_get\_default\_level()}{log\_get\_default\_level()}}
-{\footnotesize\ttfamily int log\+\_\+get\+\_\+default\+\_\+level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily log\+\_\+get\+\_\+default\+\_\+level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00007}{7}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+This function returns default value for log\+\_\+level See \doxylink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL}. 
+
+\begin{DoxyReturn}{Returns}
+int Returns default log\+\_\+level 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00014}{14}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
-\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
+\DoxyCodeLine{00016\ \}}
 
 \end{DoxyCode}
-\Hypertarget{logbank_8h_ab53553042bb3122475a03674bd689d5a}\label{logbank_8h_ab53553042bb3122475a03674bd689d5a} 
+\Hypertarget{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb}\label{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb} 
 \index{logbank.h@{logbank.h}!log\_get\_level@{log\_get\_level}}
 \index{log\_get\_level@{log\_get\_level}!logbank.h@{logbank.h}}
 \doxysubsubsection{\texorpdfstring{log\_get\_level()}{log\_get\_level()}}
-{\footnotesize\ttfamily int log\+\_\+get\+\_\+level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily log\+\_\+get\+\_\+level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00012}{12}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+This function returns current value for log\+\_\+level. 
+
+\begin{DoxyReturn}{Returns}
+int Returns log\+\_\+level 
+\end{DoxyReturn}
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ log\_level;}
-\DoxyCodeLine{00014\ \}}
-
-\end{DoxyCode}
-\Hypertarget{logbank_8h_a1479d11a4b2d1a14dd439feb23c79ece}\label{logbank_8h_a1479d11a4b2d1a14dd439feb23c79ece} 
-\index{logbank.h@{logbank.h}!log\_get\_level\_name@{log\_get\_level\_name}}
-\index{log\_get\_level\_name@{log\_get\_level\_name}!logbank.h@{logbank.h}}
-\doxysubsubsection{\texorpdfstring{log\_get\_level\_name()}{log\_get\_level\_name()}}
-{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} log\+\_\+get\+\_\+level\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
-
-
-
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00028}{28}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00019}{19}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ level\_names[]\ =\ \{\textcolor{stringliteral}{"{}DEBUG"{}},\ \textcolor{stringliteral}{"{}INFO\ "{}},\ \textcolor{stringliteral}{"{}WARN\ "{}},}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ERROR"{}},\ \textcolor{stringliteral}{"{}ISSUE"{}},\ \textcolor{stringliteral}{"{}FATAL"{}}\};}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\_FATAL}})\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
-\DoxyCodeLine{00033\ \ \ \ \ \}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ level\_names[level];}
-\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ log\_level;}
+\DoxyCodeLine{00021\ \}}
 
 \end{DoxyCode}
-\Hypertarget{logbank_8h_af0d39913e824d4d0aef7513b284ea289}\label{logbank_8h_af0d39913e824d4d0aef7513b284ea289} 
+\Hypertarget{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}\label{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29} 
+\index{logbank.h@{logbank.h}!log\_get\_levelname@{log\_get\_levelname}}
+\index{log\_get\_levelname@{log\_get\_levelname}!logbank.h@{logbank.h}}
+\doxysubsubsection{\texorpdfstring{log\_get\_levelname()}{log\_get\_levelname()}}
+{\footnotesize\ttfamily log\+\_\+get\+\_\+levelname (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function is used to read name of a particular log-\/level. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em level} & priority value of level whose name is required \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} on Success =\texorpdfstring{$>$}{>} Returns pointer to pre-\/configured level-\/name 
+
+NULL on Failure =\texorpdfstring{$>$}{>} invalid level 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00035}{35}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ level\_names[]\ =\ \{\textcolor{stringliteral}{"{}DEBUG"{}},\ \textcolor{stringliteral}{"{}INFO\ "{}},\ \textcolor{stringliteral}{"{}WARN\ "{}},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ERROR"{}},\ \textcolor{stringliteral}{"{}ISSUE"{}},\ \textcolor{stringliteral}{"{}FATAL"{}}\};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ level\_names[level];}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\Hypertarget{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}\label{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f} 
 \index{logbank.h@{logbank.h}!log\_set\_level@{log\_set\_level}}
 \index{log\_set\_level@{log\_set\_level}!logbank.h@{logbank.h}}
 \doxysubsubsection{\texorpdfstring{log\_set\_level()}{log\_set\_level()}}
-{\footnotesize\ttfamily int log\+\_\+set\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily log\+\_\+set\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00017}{17}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+This function configures value for log\+\_\+level. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em level} & new value of log level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\texorpdfstring{$>$}{>}0 on Success =\texorpdfstring{$>$}{>} Returns previous (last used) value of log\+\_\+level 
+
+-\/1 on Failure =\texorpdfstring{$>$}{>} Supplied new value can not be configured 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00024}{24}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b}{LOG\_FATAL}})\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00020\ \ \ \ \ \}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ log\_level;}
-\DoxyCodeLine{00023\ \ \ \ \ log\_level\ =\ level;}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
-\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ log\_level;}
+\DoxyCodeLine{00030\ \ \ \ \ log\_level\ =\ level;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00032\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8h_a900f2b33063f0d4f9090ef6d47c0ead0}\label{logbank_8h_a900f2b33063f0d4f9090ef6d47c0ead0} 
@@ -225,21 +271,19 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00017}{17}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00039}{39}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+This is the main logging function of this library. 
+
+This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-\/message
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ log\_level)\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00042\ \ \ \ \ \}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ va\_list\ args;}
-\DoxyCodeLine{00045\ \ \ \ \ va\_start(args,\ fmt);}
-\DoxyCodeLine{00046\ \ \ \ \ (void)vfprintf(stderr,\ fmt,\ args);}
-\DoxyCodeLine{00047\ \ \ \ \ va\_end(args);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00050\ \}}
-
-\end{DoxyCode}
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em level} & priority of this log-\/request \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & format for arguments for log-\/message \\
+\hline
+\mbox{\texttt{ in}}  & {\em \mbox{[}...\mbox{]}} & optional arguments for log-\/message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void Returns nothing 
+\end{DoxyReturn}

@@ -86,71 +86,71 @@ $(function() { codefold.init(0); });
 <a href="logbank_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="logbank_8h.html">logbank/logbank.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">static</span> <span class="keywordtype">int</span> log_level = <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">int</span></div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="logbank_8h.html#a5e49b5594c4aed69441bc2b4b0e8e0e7">    7</a></span><a class="code hl_function" href="logbank_8c.html#a5e49b5594c4aed69441bc2b4b0e8e0e7">log_get_default_level</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">static</span> <span class="keywordtype">int</span> log_level = <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">int</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="logbank_8h.html#a0235f5d0111c171178d8cfaeedc8c0af">   14</a></span><a class="code hl_function" href="logbank_8c.html#a5e49b5594c4aed69441bc2b4b0e8e0e7">log_get_default_level</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">int</span></div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="logbank_8h.html#ab53553042bb3122475a03674bd689d5a">   12</a></span><a class="code hl_function" href="logbank_8c.html#ab53553042bb3122475a03674bd689d5a">log_get_level</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> log_level;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">int</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb">   19</a></span><a class="code hl_function" href="logbank_8c.html#ab53553042bb3122475a03674bd689d5a">log_get_level</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> log_level;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">int</span></div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="logbank_8h.html#af0d39913e824d4d0aef7513b284ea289">   17</a></span><a class="code hl_function" href="logbank_8c.html#af0d39913e824d4d0aef7513b284ea289">log_set_level</a>(<span class="keywordtype">int</span> level) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b">LOG_FATAL</a>) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> old = log_level;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    log_level = level;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">int</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">   24</a></span><a class="code hl_function" href="logbank_8c.html#af0d39913e824d4d0aef7513b284ea289">log_set_level</a>(<span class="keywordtype">int</span> level) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> old = log_level;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    log_level = level;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="logbank_8h.html#a1479d11a4b2d1a14dd439feb23c79ece">   28</a></span><a class="code hl_function" href="logbank_8c.html#a1479d11a4b2d1a14dd439feb23c79ece">log_get_level_name</a>(<span class="keywordtype">int</span> level) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* level_names[] = {<span class="stringliteral">&quot;DEBUG&quot;</span>, <span class="stringliteral">&quot;INFO &quot;</span>, <span class="stringliteral">&quot;WARN &quot;</span>,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                                        <span class="stringliteral">&quot;ERROR&quot;</span>, <span class="stringliteral">&quot;ISSUE&quot;</span>, <span class="stringliteral">&quot;FATAL&quot;</span>};</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b">LOG_FATAL</a>) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> level_names[level];</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">const</span> <span class="keywordtype">char</span>*</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">   35</a></span><a class="code hl_function" href="logbank_8c.html#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a>(<span class="keywordtype">int</span> level) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* level_names[] = {<span class="stringliteral">&quot;DEBUG&quot;</span>, <span class="stringliteral">&quot;INFO &quot;</span>, <span class="stringliteral">&quot;WARN &quot;</span>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                        <span class="stringliteral">&quot;ERROR&quot;</span>, <span class="stringliteral">&quot;ISSUE&quot;</span>, <span class="stringliteral">&quot;FATAL&quot;</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> level_names[level];</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span></div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="logbank_8h.html#a900f2b33063f0d4f9090ef6d47c0ead0">   39</a></span><a class="code hl_function" href="logbank_8c.html#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (level &lt; log_level) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    va_list args;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    va_start(args, fmt);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    (void)vfprintf(stderr, fmt, args);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    va_end(args);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="logbank_8c.html#a900f2b33063f0d4f9090ef6d47c0ead0">   46</a></span><a class="code hl_function" href="logbank_8c.html#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (level &lt; log_level) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    va_list args;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    va_start(args, fmt);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    (void)vfprintf(stderr, fmt, args);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    va_end(args);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 </div>
-<div class="ttc" id="alogbank_8c_html_a1479d11a4b2d1a14dd439feb23c79ece"><div class="ttname"><a href="logbank_8c.html#a1479d11a4b2d1a14dd439feb23c79ece">log_get_level_name</a></div><div class="ttdeci">const char * log_get_level_name(int level)</div><div class="ttdef"><b>Definition</b> <a href="#l00028">logbank.c:28</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a5e49b5594c4aed69441bc2b4b0e8e0e7"><div class="ttname"><a href="logbank_8c.html#a5e49b5594c4aed69441bc2b4b0e8e0e7">log_get_default_level</a></div><div class="ttdeci">int log_get_default_level(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00007">logbank.c:7</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a900f2b33063f0d4f9090ef6d47c0ead0"><div class="ttname"><a href="logbank_8c.html#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a></div><div class="ttdeci">void log_this(int level, const char *fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="#l00039">logbank.c:39</a></div></div>
-<div class="ttc" id="alogbank_8c_html_ab53553042bb3122475a03674bd689d5a"><div class="ttname"><a href="logbank_8c.html#ab53553042bb3122475a03674bd689d5a">log_get_level</a></div><div class="ttdeci">int log_get_level(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">logbank.c:12</a></div></div>
-<div class="ttc" id="alogbank_8c_html_af0d39913e824d4d0aef7513b284ea289"><div class="ttname"><a href="logbank_8c.html#af0d39913e824d4d0aef7513b284ea289">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdef"><b>Definition</b> <a href="#l00017">logbank.c:17</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a2f37fc38d4885ae4fd5f499787e5f550"><div class="ttname"><a href="logbank_8c.html#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">logbank.c:35</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a5e49b5594c4aed69441bc2b4b0e8e0e7"><div class="ttname"><a href="logbank_8c.html#a5e49b5594c4aed69441bc2b4b0e8e0e7">log_get_default_level</a></div><div class="ttdeci">int log_get_default_level(void)</div><div class="ttdoc">This function returns default value for log_level See LOG_LEVEL.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">logbank.c:14</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a900f2b33063f0d4f9090ef6d47c0ead0"><div class="ttname"><a href="logbank_8c.html#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a></div><div class="ttdeci">void log_this(int level, const char *fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="#l00046">logbank.c:46</a></div></div>
+<div class="ttc" id="alogbank_8c_html_ab53553042bb3122475a03674bd689d5a"><div class="ttname"><a href="logbank_8c.html#ab53553042bb3122475a03674bd689d5a">log_get_level</a></div><div class="ttdeci">int log_get_level(void)</div><div class="ttdoc">This function returns current value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">logbank.c:19</a></div></div>
+<div class="ttc" id="alogbank_8c_html_af0d39913e824d4d0aef7513b284ea289"><div class="ttname"><a href="logbank_8c.html#af0d39913e824d4d0aef7513b284ea289">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">logbank.c:24</a></div></div>
 <div class="ttc" id="alogbank_8h_html"><div class="ttname"><a href="logbank_8h.html">logbank.h</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00028">logbank.h:28</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99ac630750884d91cb9767ef2200bbb048b">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00012">logbank.h:12</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00048">logbank.h:48</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
