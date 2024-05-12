@@ -87,14 +87,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a52da862cce90e9ca0d76948874bee959" id="r_a52da862cce90e9ca0d76948874bee959"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52da862cce90e9ca0d76948874bee959">sample_logs</a> (void)</td></tr>
-<tr class="separator:a52da862cce90e9ca0d76948874bee959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a15db2394304a5de4f66315a90884f0" id="r_a9a15db2394304a5de4f66315a90884f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a15db2394304a5de4f66315a90884f0">priority_level</a> (int level)</td></tr>
-<tr class="separator:a9a15db2394304a5de4f66315a90884f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7fafe7294357eb39dd5de9cbf216ab" id="r_a8c7fafe7294357eb39dd5de9cbf216ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c7fafe7294357eb39dd5de9cbf216ab">snippet_sample_logs</a> (void)</td></tr>
+<tr class="memdesc:a8c7fafe7294357eb39dd5de9cbf216ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to print sample logs with current log_level.  <br /></td></tr>
+<tr class="separator:a8c7fafe7294357eb39dd5de9cbf216ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e02812408dc4afb5b4e52663f59d5f" id="r_a18e02812408dc4afb5b4e52663f59d5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18e02812408dc4afb5b4e52663f59d5f">snippet_priority_level</a> (int level)</td></tr>
+<tr class="memdesc:a18e02812408dc4afb5b4e52663f59d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to print sample logs with a new log_level.  <br /></td></tr>
+<tr class="separator:a18e02812408dc4afb5b4e52663f59d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9a15db2394304a5de4f66315a90884f0" name="a9a15db2394304a5de4f66315a90884f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a15db2394304a5de4f66315a90884f0">&#9670;&#160;</a></span>priority_level()</h2>
+<a id="a18e02812408dc4afb5b4e52663f59d5f" name="a18e02812408dc4afb5b4e52663f59d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e02812408dc4afb5b4e52663f59d5f">&#9670;&#160;</a></span>snippet_priority_level()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -103,7 +105,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void priority_level </td>
+          <td class="memname">snippet_priority_level </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
           <td></td>
@@ -116,25 +118,21 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="01__priority__level_8c_source.html#l00004">4</a> of file <a class="el" href="01__priority__level_8c_source.html">01_priority_level.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                          {</div>
-<div class="line"><span class="lineno">    5</span> </div>
-<div class="line"><span class="lineno">    6</span><span class="preprocessor">#ifdef LOGBANK_DEV</span></div>
-<div class="line"><span class="lineno">    7</span>    printf(<span class="stringliteral">&quot;Changing log_level to LOG_%s\n&quot;</span>, <a class="code hl_function" href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a>(level));</div>
-<div class="line"><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">    9</span> </div>
-<div class="line"><span class="lineno">   10</span>    <span class="comment">/* Change log_level to LOG_ISSUE */</span></div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_function" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a>(level);</div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_function" href="#a52da862cce90e9ca0d76948874bee959">sample_logs</a>();</div>
-<div class="line"><span class="lineno">   13</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a2d07ede7701c6fd6731213b5f85f6d29"><div class="ttname"><a href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00035">logbank.c:35</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00024">logbank.c:24</a></div></div>
-<div class="ttc" id="asnippets__header_8h_html_a52da862cce90e9ca0d76948874bee959"><div class="ttname"><a href="#a52da862cce90e9ca0d76948874bee959">sample_logs</a></div><div class="ttdeci">void sample_logs(void)</div><div class="ttdef"><b>Definition</b> <a href="00__sample__logs_8c_source.html#l00004">00_sample_logs.c:4</a></div></div>
-</div><!-- fragment -->
+<p>This function is used to print sample logs with a new log_level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>new value of log level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&gt;0 on Success =&gt; Returns previous (last used) value of log_level </dd>
+<dd>
+-1 on Failure =&gt; Supplied new value can not be configured </dd></dl>
+
 </div>
 </div>
-<a id="a52da862cce90e9ca0d76948874bee959" name="a52da862cce90e9ca0d76948874bee959"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52da862cce90e9ca0d76948874bee959">&#9670;&#160;</a></span>sample_logs()</h2>
+<a id="a8c7fafe7294357eb39dd5de9cbf216ab" name="a8c7fafe7294357eb39dd5de9cbf216ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c7fafe7294357eb39dd5de9cbf216ab">&#9670;&#160;</a></span>snippet_sample_logs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,7 +141,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void sample_logs </td>
+          <td class="memname">snippet_sample_logs </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -156,29 +154,8 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="00__sample__logs_8c_source.html#l00004">4</a> of file <a class="el" href="00__sample__logs_8c_source.html">00_sample_logs.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                  {</div>
-<div class="line"><span class="lineno">    5</span> </div>
-<div class="line"><span class="lineno">    6</span>    <span class="comment">/* Sample Logs */</span></div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a>, <span class="stringliteral">&quot;Printing some sample messages&quot;</span>);</div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Sample info-messages&quot;</span>);</div>
-<div class="line"><span class="lineno">    9</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a>, <span class="stringliteral">&quot;log_level is below LOG_ERROR log_level: LOG_%s&quot;</span>,</div>
-<div class="line"><span class="lineno">   10</span>        <a class="code hl_function" href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a>(<a class="code hl_function" href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb">log_get_level</a>()));</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a>, <span class="stringliteral">&quot;Error Occurred: %s&quot;</span>, <span class="stringliteral">&quot;Additional error message&quot;</span>);</div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a>, <span class="stringliteral">&quot;Irrecoverable Error Occurred: %s&quot;</span>, <span class="stringliteral">&quot;Failure of a dependency&quot;</span>);</div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>, <span class="stringliteral">&quot;System Failure: %s %s&quot;</span>,</div>
-<div class="line"><span class="lineno">   14</span>        <span class="stringliteral">&quot;No idea what is failing, can not even start the system.&quot;</span>,</div>
-<div class="line"><span class="lineno">   15</span>        <span class="stringliteral">&quot;Manual intervention required&quot;</span>);</div>
-<div class="line"><span class="lineno">   16</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a></div><div class="ttdeci">@ LOG_ISSUE</div><div class="ttdoc">recommended for non-recoverable errors (can continue with limited functionality)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a></div><div class="ttdeci">@ LOG_ERROR</div><div class="ttdoc">recommended for recoverable errors (can continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a96925309953d5ca93fc4e5b20a557ffb"><div class="ttname"><a href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb">log_get_level</a></div><div class="ttdeci">int log_get_level(void)</div><div class="ttdoc">This function returns current value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00019">logbank.c:19</a></div></div>
-<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00062">logbank.h:62</a></div></div>
-</div><!-- fragment -->
+<p>This function is used to print sample logs with current log_level. </p>
+
 </div>
 </div>
 </div><!-- contents -->

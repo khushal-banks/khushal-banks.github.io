@@ -4,26 +4,34 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{test00__compilation__requirement_8c_a249c7af626da9cf561f10c771db31756}{test\+\_\+std}} (void)
-\item 
-void \mbox{\hyperlink{test00__compilation__requirement_8c_afed1fa66458aed3932cf3f3dc28b8641}{test\+\_\+os}} (void)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{test00__compilation__requirement_8c_aeea17ed63da755f889345dfbb2e25006}{test\+\_\+std}} (void)
+\begin{DoxyCompactList}\small\item\em Sample auto-\/test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test00__compilation__requirement_8c_a5a40bf0abcf48efba0975a0396a57b4d}{test\+\_\+os}} (void)
+\begin{DoxyCompactList}\small\item\em Sample manual-\/test. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{test00__compilation__requirement_8c_afed1fa66458aed3932cf3f3dc28b8641}\label{test00__compilation__requirement_8c_afed1fa66458aed3932cf3f3dc28b8641} 
+\Hypertarget{test00__compilation__requirement_8c_a5a40bf0abcf48efba0975a0396a57b4d}\label{test00__compilation__requirement_8c_a5a40bf0abcf48efba0975a0396a57b4d} 
 \index{test00\_compilation\_requirement.c@{test00\_compilation\_requirement.c}!test\_os@{test\_os}}
 \index{test\_os@{test\_os}!test00\_compilation\_requirement.c@{test00\_compilation\_requirement.c}}
 \doxysubsubsection{\texorpdfstring{test\_os()}{test\_os()}}
-{\footnotesize\ttfamily void test\+\_\+os (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily test\+\_\+os (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l00012}{12}} of file \mbox{\hyperlink{test00__compilation__requirement_8c_source}{test00\+\_\+compilation\+\_\+requirement.\+c}}.
+Sample manual-\/test. 
+
+This is a sample test; used to identify target system. This test might be useful to know target system of user. \begin{DoxyNote}{Note}
+Correct identification doesn\textquotesingle{}t mean the target system is supported. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l00011}{11}} of file \mbox{\hyperlink{test00__compilation__requirement_8c_source}{test00\+\_\+compilation\+\_\+requirement.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{/*\ This\ test\ ensures\ that\ we\ are\ able\ to\ identify\ target\ OS\ correctly\ */}}
 \DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ detected[]\ =\ \textcolor{stringliteral}{"{}is\ detected"{}};}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#if\ defined(WIN32)\ ||\ defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_)\ ||\ defined(\_\_NT\_\_)}}
@@ -59,21 +67,29 @@ Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l
 \DoxyCodeLine{00045\ \}}
 
 \end{DoxyCode}
-\Hypertarget{test00__compilation__requirement_8c_a249c7af626da9cf561f10c771db31756}\label{test00__compilation__requirement_8c_a249c7af626da9cf561f10c771db31756} 
+\Hypertarget{test00__compilation__requirement_8c_aeea17ed63da755f889345dfbb2e25006}\label{test00__compilation__requirement_8c_aeea17ed63da755f889345dfbb2e25006} 
 \index{test00\_compilation\_requirement.c@{test00\_compilation\_requirement.c}!test\_std@{test\_std}}
 \index{test\_std@{test\_std}!test00\_compilation\_requirement.c@{test00\_compilation\_requirement.c}}
 \doxysubsubsection{\texorpdfstring{test\_std()}{test\_std()}}
-{\footnotesize\ttfamily void test\+\_\+std (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily test\+\_\+std (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l00005}{5}} of file \mbox{\hyperlink{test00__compilation__requirement_8c_source}{test00\+\_\+compilation\+\_\+requirement.\+c}}.
+Sample auto-\/test. 
+
+This is a sample test; successful compilation ensures variadic macro are available in configured C std. It is not necessary to include this test. \begin{DoxyNote}{Note}
+Variadic macros are supported in C99 and above. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l00004}{4}} of file \mbox{\hyperlink{test00__compilation__requirement_8c_source}{test00\+\_\+compilation\+\_\+requirement.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test\ VAR\_print\ using:\ \%s"{}},\ \textcolor{stringliteral}{"{}macro"{}});}
-\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test\ LOG\ using:\ \%s"{}},\ \textcolor{stringliteral}{"{}function"{}});}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{comment}{/*\ This\ test\ ensures\ compiler\ supports\ required\ C99\ features\ */}}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test1\ variadic\ args\ using:\ \%s"{}},\ \textcolor{stringliteral}{"{}macro"{}});}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test2\ variadic\ args\ using:\ \%s\%s"{}},\ \textcolor{stringliteral}{"{}macro"{}},\ \textcolor{stringliteral}{"{}\ !!"{}});}
 \DoxyCodeLine{00008\ \}}
 
 \end{DoxyCode}

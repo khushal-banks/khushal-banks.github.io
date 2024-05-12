@@ -88,10 +88,13 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a249c7af626da9cf561f10c771db31756" id="r_a249c7af626da9cf561f10c771db31756"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a249c7af626da9cf561f10c771db31756">test_std</a> (void)</td></tr>
+<tr class="memdesc:a249c7af626da9cf561f10c771db31756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample auto-test.  <br /></td></tr>
 <tr class="separator:a249c7af626da9cf561f10c771db31756"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afed1fa66458aed3932cf3f3dc28b8641" id="r_afed1fa66458aed3932cf3f3dc28b8641"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed1fa66458aed3932cf3f3dc28b8641">test_os</a> (void)</td></tr>
+<tr class="memdesc:afed1fa66458aed3932cf3f3dc28b8641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample manual-test.  <br /></td></tr>
 <tr class="separator:afed1fa66458aed3932cf3f3dc28b8641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b95c675556cf65608c8181aedd2d6b6" id="r_a7b95c675556cf65608c8181aedd2d6b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b95c675556cf65608c8181aedd2d6b6">test_priority_level</a> (void)</td></tr>
+<tr class="memdesc:a7b95c675556cf65608c8181aedd2d6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function ensures working of:  <br /></td></tr>
 <tr class="separator:a7b95c675556cf65608c8181aedd2d6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -118,8 +121,12 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test00__compilation__requirement_8c_source.html#l00012">12</a> of file <a class="el" href="test00__compilation__requirement_8c_source.html">test00_compilation_requirement.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>              {</div>
+<p>Sample manual-test. </p>
+<p>This is a sample test; used to identify target system. This test might be useful to know target system of user. </p><dl class="section note"><dt>Note</dt><dd>Correct identification doesn't mean the target system is supported. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="test00__compilation__requirement_8c_source.html#l00011">11</a> of file <a class="el" href="test00__compilation__requirement_8c_source.html">test00_compilation_requirement.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>              {</div>
+<div class="line"><span class="lineno">   12</span>    <span class="comment">/* This test ensures that we are able to identify target OS correctly */</span></div>
 <div class="line"><span class="lineno">   13</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> detected[] = <span class="stringliteral">&quot;is detected&quot;</span>;</div>
 <div class="line"><span class="lineno">   14</span> </div>
 <div class="line"><span class="lineno">   15</span><span class="preprocessor">#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)</span></div>
@@ -154,7 +161,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">/* Platform Check */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="lineno">   45</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00062">logbank.h:62</a></div></div>
+<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00061">logbank.h:61</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -180,6 +187,17 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This function ensures working of: </p>
+<ul>
+<li><a class="el" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f" title="This function configures value for log_level.">log_set_level()</a> function</li>
+<li><p class="startli"><a class="el" href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb" title="This function returns current value for log_level.">log_get_level()</a> function</p>
+<p class="startli">This test tries to configure log_level using <a class="el" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f" title="This function configures value for log_level.">log_set_level()</a> and checks the result using <a class="el" href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb" title="This function returns current value for log_level.">log_get_level()</a></p>
+</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>0 Test Passed </dd>
+<dd>
+-1 Test Failed </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="test01__priority__level_8c_source.html#l00004">4</a> of file <a class="el" href="test01__priority__level_8c_source.html">test01_priority_level.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>                          {</div>
@@ -240,10 +258,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test00__compilation__requirement_8c_source.html#l00005">5</a> of file <a class="el" href="test00__compilation__requirement_8c_source.html">test00_compilation_requirement.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    5</span>               {</div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Test VAR_print using: %s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>);</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Test LOG using: %s&quot;</span>, <span class="stringliteral">&quot;function&quot;</span>);</div>
+<p>Sample auto-test. </p>
+<p>This is a sample test; successful compilation ensures variadic macro are available in configured C std. It is not necessary to include this test. </p><dl class="section note"><dt>Note</dt><dd>Variadic macros are supported in C99 and above. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="test00__compilation__requirement_8c_source.html#l00004">4</a> of file <a class="el" href="test00__compilation__requirement_8c_source.html">test00_compilation_requirement.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>               {</div>
+<div class="line"><span class="lineno">    5</span>    <span class="comment">/* This test ensures compiler supports required C99 features */</span></div>
+<div class="line"><span class="lineno">    6</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Test1 variadic args using: %s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>);</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Test2 variadic args using: %s%s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>, <span class="stringliteral">&quot; !!&quot;</span>);</div>
 <div class="line"><span class="lineno">    8</span>}</div>
 </div><!-- fragment -->
 </div>

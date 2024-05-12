@@ -4,61 +4,40 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{snippets__header_8h_a52da862cce90e9ca0d76948874bee959}{sample\+\_\+logs}} (void)
-\item 
-void \mbox{\hyperlink{snippets__header_8h_a9a15db2394304a5de4f66315a90884f0}{priority\+\_\+level}} (int level)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}{snippet\+\_\+sample\+\_\+logs}} (void)
+\begin{DoxyCompactList}\small\item\em This function is used to print sample logs with current log\+\_\+level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}{snippet\+\_\+priority\+\_\+level}} (int level)
+\begin{DoxyCompactList}\small\item\em This function is used to print sample logs with a new log\+\_\+level. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{snippets__header_8h_a9a15db2394304a5de4f66315a90884f0}\label{snippets__header_8h_a9a15db2394304a5de4f66315a90884f0} 
-\index{snippets\_header.h@{snippets\_header.h}!priority\_level@{priority\_level}}
-\index{priority\_level@{priority\_level}!snippets\_header.h@{snippets\_header.h}}
-\doxysubsubsection{\texorpdfstring{priority\_level()}{priority\_level()}}
-{\footnotesize\ttfamily void priority\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+\Hypertarget{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}\label{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f} 
+\index{snippets\_header.h@{snippets\_header.h}!snippet\_priority\_level@{snippet\_priority\_level}}
+\index{snippet\_priority\_level@{snippet\_priority\_level}!snippets\_header.h@{snippets\_header.h}}
+\doxysubsubsection{\texorpdfstring{snippet\_priority\_level()}{snippet\_priority\_level()}}
+{\footnotesize\ttfamily snippet\+\_\+priority\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
-Definition at line \mbox{\hyperlink{01__priority__level_8c_source_l00004}{4}} of file \mbox{\hyperlink{01__priority__level_8c_source}{01\+\_\+priority\+\_\+level.\+c}}.
+This function is used to print sample logs with a new log\+\_\+level. 
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifdef\ LOGBANK\_DEV}}
-\DoxyCodeLine{00007\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Changing\ log\_level\ to\ LOG\_\%s\(\backslash\)n"{}},\ \mbox{\hyperlink{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}{log\_get\_levelname}}(level));}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{/*\ Change\ log\_level\ to\ LOG\_ISSUE\ */}}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(level);}
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_a52da862cce90e9ca0d76948874bee959}{sample\_logs}}();}
-\DoxyCodeLine{00013\ \}}
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em level} & new value of log level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\texorpdfstring{$>$}{>}0 on Success =\texorpdfstring{$>$}{>} Returns previous (last used) value of log\+\_\+level 
 
-\end{DoxyCode}
-\Hypertarget{snippets__header_8h_a52da862cce90e9ca0d76948874bee959}\label{snippets__header_8h_a52da862cce90e9ca0d76948874bee959} 
-\index{snippets\_header.h@{snippets\_header.h}!sample\_logs@{sample\_logs}}
-\index{sample\_logs@{sample\_logs}!snippets\_header.h@{snippets\_header.h}}
-\doxysubsubsection{\texorpdfstring{sample\_logs()}{sample\_logs()}}
-{\footnotesize\ttfamily void sample\+\_\+logs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+-\/1 on Failure =\texorpdfstring{$>$}{>} Supplied new value can not be configured 
+\end{DoxyReturn}
+\Hypertarget{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}\label{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab} 
+\index{snippets\_header.h@{snippets\_header.h}!snippet\_sample\_logs@{snippet\_sample\_logs}}
+\index{snippet\_sample\_logs@{snippet\_sample\_logs}!snippets\_header.h@{snippets\_header.h}}
+\doxysubsubsection{\texorpdfstring{snippet\_sample\_logs()}{snippet\_sample\_logs()}}
+{\footnotesize\ttfamily snippet\+\_\+sample\+\_\+logs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
-Definition at line \mbox{\hyperlink{00__sample__logs_8c_source_l00004}{4}} of file \mbox{\hyperlink{00__sample__logs_8c_source}{00\+\_\+sample\+\_\+logs.\+c}}.
+This function is used to print sample logs with current log\+\_\+level. 
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{/*\ Sample\ Logs\ */}}
-\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}},\ \textcolor{stringliteral}{"{}Printing\ some\ sample\ messages"{}});}
-\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Sample\ info-\/messages"{}});}
-\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d}{LOG\_WARN}},\ \textcolor{stringliteral}{"{}log\_level\ is\ below\ LOG\_ERROR\ log\_level:\ LOG\_\%s"{}},}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}{log\_get\_levelname}}(\mbox{\hyperlink{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb}{log\_get\_level}}()));}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\_ERROR}},\ \textcolor{stringliteral}{"{}Error\ Occurred:\ \%s"{}},\ \textcolor{stringliteral}{"{}Additional\ error\ message"{}});}
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd}{LOG\_ISSUE}},\ \textcolor{stringliteral}{"{}Irrecoverable\ Error\ Occurred:\ \%s"{}},\ \textcolor{stringliteral}{"{}Failure\ of\ a\ dependency"{}});}
-\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}},\ \textcolor{stringliteral}{"{}System\ Failure:\ \%s\ \%s"{}},}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}No\ idea\ what\ is\ failing,\ can\ not\ even\ start\ the\ system."{}},}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Manual\ intervention\ required"{}});}
-\DoxyCodeLine{00016\ \}}
-
-\end{DoxyCode}

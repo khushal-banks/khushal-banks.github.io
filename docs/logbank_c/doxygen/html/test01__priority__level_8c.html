@@ -87,24 +87,36 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7b95c675556cf65608c8181aedd2d6b6" id="r_a7b95c675556cf65608c8181aedd2d6b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b95c675556cf65608c8181aedd2d6b6">test_priority_level</a> (void)</td></tr>
-<tr class="separator:a7b95c675556cf65608c8181aedd2d6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8a06d4b64e9a9f487af57d3ed7dde30" id="r_ae8a06d4b64e9a9f487af57d3ed7dde30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8a06d4b64e9a9f487af57d3ed7dde30">test_priority_level</a> (void)</td></tr>
+<tr class="memdesc:ae8a06d4b64e9a9f487af57d3ed7dde30"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function ensures working of:  <br /></td></tr>
+<tr class="separator:ae8a06d4b64e9a9f487af57d3ed7dde30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a7b95c675556cf65608c8181aedd2d6b6" name="a7b95c675556cf65608c8181aedd2d6b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b95c675556cf65608c8181aedd2d6b6">&#9670;&#160;</a></span>test_priority_level()</h2>
+<a id="ae8a06d4b64e9a9f487af57d3ed7dde30" name="ae8a06d4b64e9a9f487af57d3ed7dde30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a06d4b64e9a9f487af57d3ed7dde30">&#9670;&#160;</a></span>test_priority_level()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int test_priority_level </td>
+          <td class="memname">test_priority_level </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This function ensures working of: </p>
+<ul>
+<li><a class="el" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f" title="This function configures value for log_level.">log_set_level()</a> function</li>
+<li><p class="startli"><a class="el" href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb" title="This function returns current value for log_level.">log_get_level()</a> function</p>
+<p class="startli">This test tries to configure log_level using <a class="el" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f" title="This function configures value for log_level.">log_set_level()</a> and checks the result using <a class="el" href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb" title="This function returns current value for log_level.">log_get_level()</a></p>
+</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>0 Test Passed </dd>
+<dd>
+-1 Test Failed </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="test01__priority__level_8c_source.html#l00004">4</a> of file <a class="el" href="test01__priority__level_8c_source.html">test01_priority_level.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>                          {</div>
