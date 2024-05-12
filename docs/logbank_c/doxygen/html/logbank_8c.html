@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: logbank/src/logbank.c File Reference</title>
+<title>logbank_c: logbank/src/logbank.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">logbank_c
    </div>
+   <div id="projectbrief">Software logging in C - Documentation</div>
   </td>
  </tr>
  </tbody>
@@ -76,7 +77,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">logbank.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -100,7 +102,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:a2f37fc38d4885ae4fd5f499787e5f550"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to read name of a particular log-level.  <br /></td></tr>
 <tr class="separator:a2f37fc38d4885ae4fd5f499787e5f550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a900f2b33063f0d4f9090ef6d47c0ead0" id="r_a900f2b33063f0d4f9090ef6d47c0ead0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a> (int level, const char *fmt,...)</td></tr>
+<tr class="memdesc:a900f2b33063f0d4f9090ef6d47c0ead0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
 <tr class="separator:a900f2b33063f0d4f9090ef6d47c0ead0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac91d55174d383848b976a34de843748e" id="r_ac91d55174d383848b976a34de843748e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac91d55174d383848b976a34de843748e">log_level</a> = <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></td></tr>
+<tr class="memdesc:ac91d55174d383848b976a34de843748e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to store current configured value of log_level.  <br /></td></tr>
+<tr class="separator:ac91d55174d383848b976a34de843748e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a5e49b5594c4aed69441bc2b4b0e8e0e7" name="a5e49b5594c4aed69441bc2b4b0e8e0e7"></a>
@@ -149,8 +158,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00019">19</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   19</span>                    {</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> log_level;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
 <div class="line"><span class="lineno">   21</span>}</div>
+<div class="ttc" id="alogbank_8c_html_ac91d55174d383848b976a34de843748e"><div class="ttname"><a href="#ac91d55174d383848b976a34de843748e">log_level</a></div><div class="ttdeci">static int log_level</div><div class="ttdoc">Used to store current configured value of log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00011">logbank.c:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -226,8 +236,8 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><span class="lineno">   27</span>    }</div>
 <div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">int</span> old = log_level;</div>
-<div class="line"><span class="lineno">   30</span>    log_level = level;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a> = level;</div>
 <div class="line"><span class="lineno">   31</span>    <span class="keywordflow">return</span> old;</div>
 <div class="line"><span class="lineno">   32</span>}</div>
 </div><!-- fragment -->
@@ -257,9 +267,21 @@ NULL on Failure =&gt; invalid level </dd></dl>
       </table>
 </div><div class="memdoc">
 
+<p>This is the main logging function of this library. </p>
+<p>This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-message</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>format for arguments for log-message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>optional arguments for log-message </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void Returns nothing </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00046">46</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   46</span>                                          {</div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (level &lt; log_level) {</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (level &lt; <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>) {</div>
 <div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   49</span>    }</div>
 <div class="line"><span class="lineno">   50</span> </div>
@@ -271,6 +293,34 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <div class="line"><span class="lineno">   56</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">   57</span>}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ac91d55174d383848b976a34de843748e" name="ac91d55174d383848b976a34de843748e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac91d55174d383848b976a34de843748e">&#9670;&#160;</a></span>log_level</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">log_level = <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to store current configured value of log_level. </p>
+<p>This variable is private to this file. Default value of log_level is copied directly from <a class="el" href="logbank_8h.html">logbank.h</a> See <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00011">11</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

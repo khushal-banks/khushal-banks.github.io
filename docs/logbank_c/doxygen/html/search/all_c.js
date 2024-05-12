@@ -10,12 +10,14 @@ var searchData=
   ['log_5finfo_7',['LOG_INFO',['../logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c',1,'logbank.h']]],
   ['log_5fissue_8',['LOG_ISSUE',['../logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd',1,'logbank.h']]],
   ['log_5flevel_9',['LOG_LEVEL',['../logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05',1,'logbank.h']]],
-  ['log_5flevels_10',['LOG_LEVELS',['../logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99',1,'logbank.h']]],
-  ['log_5fset_5flevel_11',['log_set_level',['../logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f',1,'log_set_level(int level):&#160;logbank.c'],['../logbank_8c.html#af0d39913e824d4d0aef7513b284ea289',1,'log_set_level(int level):&#160;logbank.c']]],
-  ['log_5fthis_12',['log_this',['../logbank_8h.html#a900f2b33063f0d4f9090ef6d47c0ead0',1,'log_this(int level, const char *fmt,...):&#160;logbank.h'],['../logbank_8c.html#a900f2b33063f0d4f9090ef6d47c0ead0',1,'log_this(int level, const char *fmt,...):&#160;logbank.c']]],
-  ['log_5fwarn_13',['LOG_WARN',['../logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d',1,'logbank.h']]],
-  ['logbank_2ec_14',['logbank.c',['../logbank_8c.html',1,'']]],
-  ['logbank_2eh_15',['logbank.h',['../logbank_8h.html',1,'']]],
-  ['logbank_5fc_16',['logbank_c',['../index.html#autotoc_md18',1,'']]],
-  ['logbank_5fc_20updates_17',['Major logbank_c updates',['../md_CHANGE__LIST.html',1,'']]]
+  ['log_5flevel_10',['log_level',['../logbank_8c.html#ac91d55174d383848b976a34de843748e',1,'logbank.c']]],
+  ['log_5flevels_11',['LOG_LEVELS',['../logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99',1,'logbank.h']]],
+  ['log_5fset_5flevel_12',['log_set_level',['../logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f',1,'log_set_level(int level):&#160;logbank.c'],['../logbank_8c.html#af0d39913e824d4d0aef7513b284ea289',1,'log_set_level(int level):&#160;logbank.c']]],
+  ['log_5fthis_13',['log_this',['../logbank_8h.html#a54b2c3cd41945ff7bc5861bc4a08718b',1,'log_this(int level, const char *fmt,...):&#160;logbank.c'],['../logbank_8c.html#a900f2b33063f0d4f9090ef6d47c0ead0',1,'log_this(int level, const char *fmt,...):&#160;logbank.c']]],
+  ['log_5fwarn_14',['LOG_WARN',['../logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d',1,'logbank.h']]],
+  ['logbank_2ec_15',['logbank.c',['../logbank_8c.html',1,'']]],
+  ['logbank_2eh_16',['logbank.h',['../logbank_8h.html',1,'']]],
+  ['logbank_5fc_17',['logbank_c',['../index.html',1,'']]],
+  ['logbank_5fc_18',['logbank_c',['../index.html#autotoc_md18',1,'']]],
+  ['logbank_5fc_20updates_19',['Major logbank_c updates',['../md_CHANGE__LIST.html',1,'']]]
 ];

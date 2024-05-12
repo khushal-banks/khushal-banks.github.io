@@ -14,7 +14,12 @@ int \mbox{\hyperlink{logbank_8c_af0d39913e824d4d0aef7513b284ea289}{log\+\_\+set\
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logbank_8c_a2f37fc38d4885ae4fd5f499787e5f550}{log\+\_\+get\+\_\+levelname}} (int level)
 \begin{DoxyCompactList}\small\item\em This function is used to read name of a particular log-\/level. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{logbank_8c_a900f2b33063f0d4f9090ef6d47c0ead0}{log\+\_\+this}} (int level, const char \texorpdfstring{$\ast$}{*}fmt,...)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This is the main logging function of this library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\+\_\+level}} = \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL}}
+\begin{DoxyCompactList}\small\item\em Used to store current configured value of log\+\_\+level. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -62,7 +67,7 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00019}{19}} of file \mbox
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ log\_level;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
 \DoxyCodeLine{00021\ \}}
 
 \end{DoxyCode}
@@ -134,8 +139,8 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00024}{24}} of file \mbox
 \DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
 \DoxyCodeLine{00027\ \ \ \ \ \}}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ log\_level;}
-\DoxyCodeLine{00030\ \ \ \ \ log\_level\ =\ level;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}}\ =\ level;}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
 \DoxyCodeLine{00032\ \}}
 
@@ -148,12 +153,30 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00024}{24}} of file \mbox
 
 
 
+This is the main logging function of this library. 
+
+This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-\/message
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em level} & priority of this log-\/request \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & format for arguments for log-\/message \\
+\hline
+\mbox{\texttt{ in}}  & {\em ...} & optional arguments for log-\/message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void Returns nothing 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{logbank_8c_source_l00046}{46}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ log\_level)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}})\ \{}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00049\ \ \ \ \ \}}
 \DoxyCodeLine{00050\ }
@@ -166,3 +189,20 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00046}{46}} of file \mbox
 \DoxyCodeLine{00057\ \}}
 
 \end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{logbank_8c_ac91d55174d383848b976a34de843748e}\label{logbank_8c_ac91d55174d383848b976a34de843748e} 
+\index{logbank.c@{logbank.c}!log\_level@{log\_level}}
+\index{log\_level@{log\_level}!logbank.c@{logbank.c}}
+\doxysubsubsection{\texorpdfstring{log\_level}{log\_level}}
+{\footnotesize\ttfamily log\+\_\+level = \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Used to store current configured value of log\+\_\+level. 
+
+This variable is private to this file. Default value of log\+\_\+level is copied directly from \doxylink{logbank_8h}{logbank.\+h} See \doxylink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL} 
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00011}{11}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: logbank/include/logbank/logbank.h Source File</title>
+<title>logbank_c: logbank/include/logbank/logbank.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">logbank_c
    </div>
+   <div id="projectbrief">Software logging in C - Documentation</div>
   </td>
  </tr>
  </tbody>
@@ -110,19 +111,21 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a>(<span class="keywordtype">int</span> level);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="logbank_8h.html#a900f2b33063f0d4f9090ef6d47c0ead0">  112</a></span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="logbank_8h.html#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="logbank_8h.html#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">/* Configuring which argument contains the format used for log_this() */</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="logbank_8h.html#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#ifdef DOXYGEN_SHOULD_SKIP_THIS</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="logbank_8h.html#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a>(<span class="keywordtype">int</span> level, <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    __attribute__((format(printf, 2, 0)));</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif </span><span class="comment">/* LOGBANK_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#endif </span><span class="comment">/* DOXYGEN_SHOULD_SKIP_THIS */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">/* LOGBANK_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="alogbank_8h_html_a0235f5d0111c171178d8cfaeedc8c0af"><div class="ttname"><a href="logbank_8h.html#a0235f5d0111c171178d8cfaeedc8c0af">log_get_default_level</a></div><div class="ttdeci">int log_get_default_level(void)</div><div class="ttdoc">This function returns default value for log_level See LOG_LEVEL.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00014">logbank.c:14</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a2d07ede7701c6fd6731213b5f85f6d29"><div class="ttname"><a href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00035">logbank.c:35</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a54b2c3cd41945ff7bc5861bc4a08718b"><div class="ttname"><a href="logbank_8h.html#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a></div><div class="ttdeci">void log_this(int level, const char *fmt,...)</div><div class="ttdoc">This is the main logging function of this library.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00046">logbank.c:46</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00024">logbank.c:24</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99">LOG_LEVELS</a></div><div class="ttdeci">LOG_LEVELS</div><div class="ttdoc">Available values for log-level in increasing priority order.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">logbank.h:32</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="#l00032">logbank.h:32</a></div></div>
@@ -131,7 +134,6 @@ $(function() { codefold.init(0); });
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="#l00032">logbank.h:32</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="#l00032">logbank.h:32</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a900f2b33063f0d4f9090ef6d47c0ead0"><div class="ttname"><a href="logbank_8h.html#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a></div><div class="ttdeci">void log_this(int level, const char *fmt,...)</div><div class="ttdoc">This is the main logging function of this library.</div></div>
 <div class="ttc" id="alogbank_8h_html_a96925309953d5ca93fc4e5b20a557ffb"><div class="ttname"><a href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb">log_get_level</a></div><div class="ttdeci">int log_get_level(void)</div><div class="ttdoc">This function returns current value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00019">logbank.c:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

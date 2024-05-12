@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: logbank/include/logbank/logbank.h File Reference</title>
+<title>logbank_c: logbank/include/logbank/logbank.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,8 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">logbank_c
    </div>
+   <div id="projectbrief">Software logging in C - Documentation</div>
   </td>
  </tr>
  </tbody>
@@ -91,7 +92,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a0b87e0d3bf5853bcbb0b66a7c48fdc05" id="r_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>&#160;&#160;&#160;<a class="el" href="#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></td></tr>
 <tr class="memdesc:a0b87e0d3bf5853bcbb0b66a7c48fdc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default value for log_level.  <br /></td></tr>
 <tr class="separator:a0b87e0d3bf5853bcbb0b66a7c48fdc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaa1c3fa56061380a29889d703236251" id="r_acaa1c3fa56061380a29889d703236251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa1c3fa56061380a29889d703236251">LOG</a>(level, ...)&#160;&#160;&#160;<a class="el" href="#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a>(level, __VA_ARGS__)</td></tr>
+<tr class="memitem:acaa1c3fa56061380a29889d703236251" id="r_acaa1c3fa56061380a29889d703236251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa1c3fa56061380a29889d703236251">LOG</a>(level, ...)&#160;&#160;&#160;<a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a>(level, __VA_ARGS__)</td></tr>
 <tr class="memdesc:acaa1c3fa56061380a29889d703236251"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a wrapper for log_this function.  <br /></td></tr>
 <tr class="separator:acaa1c3fa56061380a29889d703236251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -124,9 +125,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a2d07ede7701c6fd6731213b5f85f6d29" id="r_a2d07ede7701c6fd6731213b5f85f6d29"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a> (int level)</td></tr>
 <tr class="memdesc:a2d07ede7701c6fd6731213b5f85f6d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to read name of a particular log-level.  <br /></td></tr>
 <tr class="separator:a2d07ede7701c6fd6731213b5f85f6d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a900f2b33063f0d4f9090ef6d47c0ead0" id="r_a900f2b33063f0d4f9090ef6d47c0ead0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a> (int level, const char *fmt,...)</td></tr>
-<tr class="memdesc:a900f2b33063f0d4f9090ef6d47c0ead0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
-<tr class="separator:a900f2b33063f0d4f9090ef6d47c0ead0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b2c3cd41945ff7bc5861bc4a08718b" id="r_a54b2c3cd41945ff7bc5861bc4a08718b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a> (int level, const char *fmt,...)</td></tr>
+<tr class="memdesc:a54b2c3cd41945ff7bc5861bc4a08718b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
+<tr class="separator:a54b2c3cd41945ff7bc5861bc4a08718b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="acaa1c3fa56061380a29889d703236251" name="acaa1c3fa56061380a29889d703236251"></a>
@@ -143,13 +144,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)&#160;&#160;&#160;<a class="el" href="#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a>(level, __VA_ARGS__)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)&#160;&#160;&#160;<a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a>(level, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>This is a wrapper for log_this function. </p>
-<p>This macro will be used to collect required data for <a class="el" href="#a900f2b33063f0d4f9090ef6d47c0ead0" title="This is the main logging function of this library.">log_this()</a></p>
+<p>This macro will be used to collect required data for <a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b" title="This is the main logging function of this library.">log_this()</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
@@ -294,8 +295,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00019">19</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   19</span>                    {</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> log_level;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="logbank_8c.html#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
 <div class="line"><span class="lineno">   21</span>}</div>
+<div class="ttc" id="alogbank_8c_html_ac91d55174d383848b976a34de843748e"><div class="ttname"><a href="logbank_8c.html#ac91d55174d383848b976a34de843748e">log_level</a></div><div class="ttdeci">static int log_level</div><div class="ttdoc">Used to store current configured value of log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00011">logbank.c:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,15 +388,15 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><span class="lineno">   27</span>    }</div>
 <div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">int</span> old = log_level;</div>
-<div class="line"><span class="lineno">   30</span>    log_level = level;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="logbank_8c.html#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="logbank_8c.html#ac91d55174d383848b976a34de843748e">log_level</a> = level;</div>
 <div class="line"><span class="lineno">   31</span>    <span class="keywordflow">return</span> old;</div>
 <div class="line"><span class="lineno">   32</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a900f2b33063f0d4f9090ef6d47c0ead0" name="a900f2b33063f0d4f9090ef6d47c0ead0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a900f2b33063f0d4f9090ef6d47c0ead0">&#9670;&#160;</a></span>log_this()</h2>
+<a id="a54b2c3cd41945ff7bc5861bc4a08718b" name="a54b2c3cd41945ff7bc5861bc4a08718b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b2c3cd41945ff7bc5861bc4a08718b">&#9670;&#160;</a></span>log_this()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -403,7 +405,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void log_this </td>
+          <td class="memname">log_this </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
         </tr>
@@ -431,12 +433,26 @@ NULL on Failure =&gt; invalid level </dd></dl>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>format for arguments for log-message </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">[...]</td><td>optional arguments for log-message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>optional arguments for log-message </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void Returns nothing </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00046">46</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                          {</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (level &lt; <a class="code hl_variable" href="logbank_8c.html#ac91d55174d383848b976a34de843748e">log_level</a>) {</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    va_list args;</div>
+<div class="line"><span class="lineno">   52</span>    va_start(args, fmt);</div>
+<div class="line"><span class="lineno">   53</span>    (void)vfprintf(stderr, fmt, args);</div>
+<div class="line"><span class="lineno">   54</span>    va_end(args);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
