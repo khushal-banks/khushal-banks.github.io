@@ -1,0 +1,30 @@
+\doxysection{00\+\_\+basic\+\_\+snippets.\+c}
+\hypertarget{00__basic__snippets_8c_source}{}\label{00__basic__snippets_8c_source}\index{snippets/00\_basic\_snippets.c@{snippets/00\_basic\_snippets.c}}
+\mbox{\hyperlink{00__basic__snippets_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{snippets__header_8h}{snippets/snippets\_header.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00003}00003\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00004}\mbox{\hyperlink{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}{00004}}\ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00007}00007\ \ \ \ \ \textcolor{comment}{/*\ Sample\ Logs\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}},\ \textcolor{stringliteral}{"{}Printing\ some\ logs\ for\ demo"{}});}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}\%s\ started"{}},\ \_\_func\_\_);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d}{LOG\_WARN}},\ \textcolor{stringliteral}{"{}This\ function\ has\ been\ called\ \%d\ times"{}},\ ++count);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\_ERROR}},\ \textcolor{stringliteral}{"{}Error\ Occurred:\ \%s\ \%s"{}},\ \textcolor{stringliteral}{"{}File\ doesn't\ exist,"{}},\ \textcolor{stringliteral}{"{}Creating\ a\ new\ file"{}});}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd}{LOG\_ISSUE}},\ \textcolor{stringliteral}{"{}Error\ Occurred:\ \%s"{}},\ \textcolor{stringliteral}{"{}malloc\ failed\ -\/\ can\ not\ add\ new\ items\ to\ link\ list"{}});}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}},\ \textcolor{stringliteral}{"{}System\ Failure:\ \%d"{}},\ \textcolor{stringliteral}{"{}Disk\ Space\ Full"{}});}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00018}00018\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00019}\mbox{\hyperlink{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}{00019}}\ \mbox{\hyperlink{00__basic__snippets_8c_ac3b362fab46e8f1a6bda137330dc8109}{snippet\_priority\_level}}(\textcolor{keywordtype}{int}\ level)\ \{}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(level);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00024}00024\ \}}
+
+\end{DoxyCode}
