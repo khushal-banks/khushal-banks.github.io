@@ -96,8 +96,60 @@ Functions</h2></td></tr>
 <tr class="memitem:a7b95c675556cf65608c8181aedd2d6b6" id="r_a7b95c675556cf65608c8181aedd2d6b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b95c675556cf65608c8181aedd2d6b6">test_priority_level</a> (void)</td></tr>
 <tr class="memdesc:a7b95c675556cf65608c8181aedd2d6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function ensures working of:  <br /></td></tr>
 <tr class="separator:a7b95c675556cf65608c8181aedd2d6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3411f85818ff2b14fac1077732a601cd" id="r_a3411f85818ff2b14fac1077732a601cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3411f85818ff2b14fac1077732a601cd">test_location</a> (void)</td></tr>
+<tr class="memdesc:a3411f85818ff2b14fac1077732a601cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function ensures working of <a class="el" href="logbank_8h.html#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a> macro.  <br /></td></tr>
+<tr class="separator:a3411f85818ff2b14fac1077732a601cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a3411f85818ff2b14fac1077732a601cd" name="a3411f85818ff2b14fac1077732a601cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3411f85818ff2b14fac1077732a601cd">&#9670;&#160;</a></span>test_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int test_location </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function ensures working of <a class="el" href="logbank_8h.html#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a> macro. </p>
+<p>This test checks if the LOG_LOCATION parameters are logged for expected log-requests</p>
+<dl class="section return"><dt>Returns</dt><dd>0 Test Passed </dd>
+<dd>
+-1 Test Failed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="test02__location_8c_source.html#l00004">4</a> of file <a class="el" href="test02__location_8c_source.html">test02_location.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>                    {</div>
+<div class="line"><span class="lineno">    5</span>    <span class="comment">/* Making sure LOG_DEBUG is always logged with location parameters */</span></div>
+<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="logbank_8h.html#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a>) == 0) {</div>
+<div class="line"><span class="lineno">    7</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">    8</span>    }</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>    <span class="comment">/* Making sure LOG_FATAL is never logged with location parameters */</span></div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="logbank_8h.html#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) == 1) {</div>
+<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   13</span>    }</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   16</span>}</div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_af871188d88e45fc10c15cbe2c90545b1"><div class="ttname"><a href="logbank_8h.html#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a></div><div class="ttdeci">#define LOG_LOCATION(level)</div><div class="ttdoc">This macro controls when to log location parameters for any log-request.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00088">logbank.h:88</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="afed1fa66458aed3932cf3f3dc28b8641" name="afed1fa66458aed3932cf3f3dc28b8641"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afed1fa66458aed3932cf3f3dc28b8641">&#9670;&#160;</a></span>test_os()</h2>
 
@@ -132,36 +184,34 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   15</span><span class="preprocessor">#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)</span></div>
 <div class="line"><span class="lineno">   16</span> </div>
 <div class="line"><span class="lineno">   17</span><span class="preprocessor">#ifdef _WIN64</span></div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Windows 64bit %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   18</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;Windows 64bit %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   19</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Windows 32bit %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   20</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;Windows 32bit %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   21</span><span class="preprocessor">#endif </span><span class="comment">/* Windows */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span><span class="preprocessor">#elif __APPLE__</span></div>
 <div class="line"><span class="lineno">   24</span> </div>
 <div class="line"><span class="lineno">   25</span><span class="preprocessor">#if TARGET_IPHONE_SIMULATOR</span></div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;iPhone Sim %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   26</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;iPhone Sim %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   27</span><span class="preprocessor">#elif TARGET_OS_MACCATALYST</span></div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Mac Catalyst %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   28</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;Mac Catalyst %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   29</span><span class="preprocessor">#elif TARGET_OS_IPHONE</span></div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;iPhone %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   30</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;iPhone %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   31</span><span class="preprocessor">#elif TARGET_OS_MAC</span></div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;OS X %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   32</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;OS X %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">/* Mac OS */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="lineno">   34</span> </div>
 <div class="line"><span class="lineno">   35</span><span class="preprocessor">#elif __ANDROID__</span></div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Android %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   36</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;Android %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   37</span> </div>
 <div class="line"><span class="lineno">   38</span><span class="preprocessor">#elif __linux__</span></div>
-<div class="line"><span class="lineno">   39</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Linux %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   39</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;Linux %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   40</span> </div>
 <div class="line"><span class="lineno">   41</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;NO OS %s&quot;</span>, detected);</div>
+<div class="line"><span class="lineno">   42</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;NO OS %s\n&quot;</span>, detected);</div>
 <div class="line"><span class="lineno">   43</span> </div>
 <div class="line"><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">/* Platform Check */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="lineno">   45</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00061">logbank.h:61</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -228,9 +278,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">   30</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00024">logbank.c:24</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a96925309953d5ca93fc4e5b20a557ffb"><div class="ttname"><a href="logbank_8h.html#a96925309953d5ca93fc4e5b20a557ffb">log_get_level</a></div><div class="ttdeci">int log_get_level(void)</div><div class="ttdoc">This function returns current value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00019">logbank.c:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -264,9 +313,10 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="test00__compilation__requirement_8c_source.html#l00004">4</a> of file <a class="el" href="test00__compilation__requirement_8c_source.html">test00_compilation_requirement.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>               {</div>
 <div class="line"><span class="lineno">    5</span>    <span class="comment">/* This test ensures compiler supports required C99 features */</span></div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Test1 variadic args using: %s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>);</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <span class="stringliteral">&quot;Test2 variadic args using: %s%s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>, <span class="stringliteral">&quot; !!&quot;</span>);</div>
+<div class="line"><span class="lineno">    6</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>, <span class="stringliteral">&quot;Test1 variadic args using: %s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>);</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>, <span class="stringliteral">&quot;Test2 variadic args using: %s%s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>, <span class="stringliteral">&quot; !!&quot;</span>);</div>
 <div class="line"><span class="lineno">    8</span>}</div>
+<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00098">logbank.h:98</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

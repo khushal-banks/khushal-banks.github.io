@@ -7,8 +7,8 @@
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00003}00003\ \textcolor{keywordtype}{void}}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00004}\mbox{\hyperlink{test00__compilation__requirement_8c_aeea17ed63da755f889345dfbb2e25006}{00004}}\ \mbox{\hyperlink{test00__compilation__requirement_8c_aeea17ed63da755f889345dfbb2e25006}{test\_std}}(\textcolor{keywordtype}{void})\ \{}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00005}00005\ \ \ \ \ \textcolor{comment}{/*\ This\ test\ ensures\ compiler\ supports\ required\ C99\ features\ */}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test1\ variadic\ args\ using:\ \%s"{}},\ \textcolor{stringliteral}{"{}macro"{}});}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Test2\ variadic\ args\ using:\ \%s\%s"{}},\ \textcolor{stringliteral}{"{}macro"{}},\ \textcolor{stringliteral}{"{}\ !!"{}});}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}},\ \textcolor{stringliteral}{"{}Test1\ variadic\ args\ using:\ \%s"{}},\ \textcolor{stringliteral}{"{}macro"{}});}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}},\ \textcolor{stringliteral}{"{}Test2\ variadic\ args\ using:\ \%s\%s"{}},\ \textcolor{stringliteral}{"{}macro"{}},\ \textcolor{stringliteral}{"{}\ !!"{}});}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00008}00008\ \}}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00009}00009\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00010}00010\ \textcolor{keywordtype}{void}}
@@ -19,31 +19,31 @@
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00015}00015\ \textcolor{preprocessor}{\#if\ defined(WIN32)\ ||\ defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_)\ ||\ defined(\_\_NT\_\_)}}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00017}00017\ \textcolor{preprocessor}{\#ifdef\ \_WIN64}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Windows\ 64bit\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00018}00018\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}Windows\ 64bit\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00019}00019\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Windows\ 32bit\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00020}00020\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}Windows\ 32bit\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00021}00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Windows\ */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00023}00023\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00024}00024\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00025}00025\ \textcolor{preprocessor}{\#if\ TARGET\_IPHONE\_SIMULATOR}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}iPhone\ Sim\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00026}00026\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}iPhone\ Sim\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00027}00027\ \textcolor{preprocessor}{\#elif\ TARGET\_OS\_MACCATALYST}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Mac\ Catalyst\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00028}00028\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}Mac\ Catalyst\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00029}00029\ \textcolor{preprocessor}{\#elif\ TARGET\_OS\_IPHONE}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}iPhone\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00030}00030\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}iPhone\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00031}00031\ \textcolor{preprocessor}{\#elif\ TARGET\_OS\_MAC}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}OS\ X\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00032}00032\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}OS\ X\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00033}00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Mac\ OS\ */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00034}00034\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00035}00035\ \textcolor{preprocessor}{\#elif\ \_\_ANDROID\_\_}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Android\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00036}00036\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}Android\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00037}00037\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00038}00038\ \textcolor{preprocessor}{\#elif\ \_\_linux\_\_}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}Linux\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00039}00039\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}Linux\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00040}00040\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00041}00041\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \textcolor{stringliteral}{"{}NO\ OS\ \%s"{}},\ detected);}
+\DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00042}00042\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}NO\ OS\ \%s\(\backslash\)n"{}},\ detected);}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00043}00043\ }
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00044}00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Platform\ Check\ */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{\Hypertarget{test00__compilation__requirement_8c_source_l00045}00045\ \}}

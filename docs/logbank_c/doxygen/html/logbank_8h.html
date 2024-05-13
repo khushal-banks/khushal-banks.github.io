@@ -77,24 +77,44 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">logbank.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div>
 <p><a href="logbank_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLOG__LOCATE.html">LOG_LOCATE</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type for location parameters of log-request  <a href="structLOG__LOCATE.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a0b87e0d3bf5853bcbb0b66a7c48fdc05" id="r_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>&#160;&#160;&#160;<a class="el" href="#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></td></tr>
 <tr class="memdesc:a0b87e0d3bf5853bcbb0b66a7c48fdc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default value for log_level.  <br /></td></tr>
 <tr class="separator:a0b87e0d3bf5853bcbb0b66a7c48fdc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaa1c3fa56061380a29889d703236251" id="r_acaa1c3fa56061380a29889d703236251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa1c3fa56061380a29889d703236251">LOG</a>(level, ...)&#160;&#160;&#160;<a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a>(level, __VA_ARGS__)</td></tr>
+<tr class="memitem:a8de29f7c8bbf1a81cc6e71ac602032d3" id="r_a8de29f7c8bbf1a81cc6e71ac602032d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>&#160;&#160;&#160;(strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)</td></tr>
+<tr class="memdesc:a8de29f7c8bbf1a81cc6e71ac602032d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is to extract basename from <b>FILE</b>  <br /></td></tr>
+<tr class="separator:a8de29f7c8bbf1a81cc6e71ac602032d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af871188d88e45fc10c15cbe2c90545b1" id="r_af871188d88e45fc10c15cbe2c90545b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a>(level)&#160;&#160;&#160;(level == <a class="el" href="#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a> || level &lt; <a class="el" href="#a0235f5d0111c171178d8cfaeedc8c0af">log_get_default_level</a>())</td></tr>
+<tr class="memdesc:af871188d88e45fc10c15cbe2c90545b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro controls when to log location parameters for any log-request.  <br /></td></tr>
+<tr class="separator:af871188d88e45fc10c15cbe2c90545b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa1c3fa56061380a29889d703236251" id="r_acaa1c3fa56061380a29889d703236251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa1c3fa56061380a29889d703236251">LOG</a>(level, ...)</td></tr>
 <tr class="memdesc:acaa1c3fa56061380a29889d703236251"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a wrapper for log_this function.  <br /></td></tr>
 <tr class="separator:acaa1c3fa56061380a29889d703236251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a390e284dca17e1c1eb5106e82645c11d" id="r_a390e284dca17e1c1eb5106e82645c11d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structLOG__LOCATE.html">LOG_LOCATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a></td></tr>
+<tr class="separator:a390e284dca17e1c1eb5106e82645c11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -125,11 +145,29 @@ Functions</h2></td></tr>
 <tr class="memitem:a2d07ede7701c6fd6731213b5f85f6d29" id="r_a2d07ede7701c6fd6731213b5f85f6d29"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a> (int level)</td></tr>
 <tr class="memdesc:a2d07ede7701c6fd6731213b5f85f6d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to read name of a particular log-level.  <br /></td></tr>
 <tr class="separator:a2d07ede7701c6fd6731213b5f85f6d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b2c3cd41945ff7bc5861bc4a08718b" id="r_a54b2c3cd41945ff7bc5861bc4a08718b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a> (int level, const char *fmt,...)</td></tr>
-<tr class="memdesc:a54b2c3cd41945ff7bc5861bc4a08718b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
-<tr class="separator:a54b2c3cd41945ff7bc5861bc4a08718b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ead88ac759015175f6824b3a4bb882" id="r_af3ead88ac759015175f6824b3a4bb882"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3ead88ac759015175f6824b3a4bb882">log_this</a> (int level, <a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a> locate, const char *fmt,...)</td></tr>
+<tr class="separator:af3ead88ac759015175f6824b3a4bb882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a8de29f7c8bbf1a81cc6e71ac602032d3" name="a8de29f7c8bbf1a81cc6e71ac602032d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de29f7c8bbf1a81cc6e71ac602032d3">&#9670;&#160;</a></span>FILENAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FILENAME&#160;&#160;&#160;(strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is to extract basename from <b>FILE</b> </p>
+<p>This macro is to make sure only basename of a file is logged </p>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00078">78</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
+
+</div>
+</div>
 <a id="acaa1c3fa56061380a29889d703236251" name="acaa1c3fa56061380a29889d703236251"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acaa1c3fa56061380a29889d703236251">&#9670;&#160;</a></span>LOG</h2>
 
@@ -144,13 +182,32 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)&#160;&#160;&#160;<a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b">log_this</a>(level, __VA_ARGS__)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                                                 \</div>
+<div class="line">        <a class="code hl_struct" href="structLOG__LOCATE.html">log_locate_t</a> locate;                                                             \</div>
+<div class="line">        locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a> = NULL;                                                              \</div>
+<div class="line">        locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a> = NULL;                                                              \</div>
+<div class="line">        locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">line</a> = 0;                                                                 \</div>
+<div class="line">                                                                                         \</div>
+<div class="line">        if (<a class="code hl_define" href="#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a>(level)) {                                                       \</div>
+<div class="line">            locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a> = __func__;                                                      \</div>
+<div class="line">            locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a> = <a class="code hl_define" href="#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>;                                                      \</div>
+<div class="line">            locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">line</a> = __LINE__;                                                      \</div>
+<div class="line">        }                                                                                \</div>
+<div class="line">        log_this(level, locate, __VA_ARGS__);                                            \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="alogbank_8h_html_a8de29f7c8bbf1a81cc6e71ac602032d3"><div class="ttname"><a href="#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></div><div class="ttdeci">#define FILENAME</div><div class="ttdoc">This is to extract basename from FILE</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00078">logbank.h:78</a></div></div>
+<div class="ttc" id="alogbank_8h_html_af871188d88e45fc10c15cbe2c90545b1"><div class="ttname"><a href="#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a></div><div class="ttdeci">#define LOG_LOCATION(level)</div><div class="ttdoc">This macro controls when to log location parameters for any log-request.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00088">logbank.h:88</a></div></div>
+<div class="ttc" id="astructLOG__LOCATE_html"><div class="ttname"><a href="structLOG__LOCATE.html">LOG_LOCATE</a></div><div class="ttdoc">type for location parameters of log-request</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00067">logbank.h:67</a></div></div>
+<div class="ttc" id="astructLOG__LOCATE_html_a0fbfa81e786eb5dd01a6b48d7495a674"><div class="ttname"><a href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">LOG_LOCATE::file</a></div><div class="ttdeci">const char * file</div><div class="ttdoc">file name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00069">logbank.h:69</a></div></div>
+<div class="ttc" id="astructLOG__LOCATE_html_a1630afacaa2ba2e0b776ed6a8c99d2f7"><div class="ttname"><a href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">LOG_LOCATE::func</a></div><div class="ttdeci">const char * func</div><div class="ttdoc">function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00068">logbank.h:68</a></div></div>
+<div class="ttc" id="astructLOG__LOCATE_html_a986a73ab6451c2154a5d926adc3efa18"><div class="ttname"><a href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">LOG_LOCATE::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00070">logbank.h:70</a></div></div>
+</div><!-- fragment -->
 <p>This is a wrapper for log_this function. </p>
-<p>This macro will be used to collect required data for <a class="el" href="#a54b2c3cd41945ff7bc5861bc4a08718b" title="This is the main logging function of this library.">log_this()</a></p>
+<p>This macro will be used to collect required data for <a class="el" href="#af3ead88ac759015175f6824b3a4bb882">log_this()</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
@@ -159,8 +216,22 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00061">61</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00098">98</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span><span class="preprocessor">#define LOG(level, ...)                                                                  \</span></div>
+<div class="line"><span class="lineno">   99</span><span class="preprocessor">    do {                                                                                 \</span></div>
+<div class="line"><span class="lineno">  100</span><span class="preprocessor">        log_locate_t locate;                                                             \</span></div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">        locate.func = NULL;                                                              \</span></div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">        locate.file = NULL;                                                              \</span></div>
+<div class="line"><span class="lineno">  103</span><span class="preprocessor">        locate.line = 0;                                                                 \</span></div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">                                                                                         \</span></div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">        if (LOG_LOCATION(level)) {                                                       \</span></div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">            locate.func = __func__;                                                      \</span></div>
+<div class="line"><span class="lineno">  107</span><span class="preprocessor">            locate.file = FILENAME;                                                      \</span></div>
+<div class="line"><span class="lineno">  108</span><span class="preprocessor">            locate.line = __LINE__;                                                      \</span></div>
+<div class="line"><span class="lineno">  109</span><span class="preprocessor">        }                                                                                \</span></div>
+<div class="line"><span class="lineno">  110</span><span class="preprocessor">        log_this(level, locate, __VA_ARGS__);                                            \</span></div>
+<div class="line"><span class="lineno">  111</span><span class="preprocessor">    } while (0)</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0b87e0d3bf5853bcbb0b66a7c48fdc05" name="a0b87e0d3bf5853bcbb0b66a7c48fdc05"></a>
@@ -187,7 +258,44 @@ Functions</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00048">48</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00049">49</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
+
+</div>
+</div>
+<a id="af871188d88e45fc10c15cbe2c90545b1" name="af871188d88e45fc10c15cbe2c90545b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af871188d88e45fc10c15cbe2c90545b1">&#9670;&#160;</a></span>LOG_LOCATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_LOCATION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">level</span></td><td>)</td>
+          <td>&#160;&#160;&#160;(level == <a class="el" href="#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a> || level &lt; <a class="el" href="#a0235f5d0111c171178d8cfaeedc8c0af">log_get_default_level</a>())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macro controls when to log location parameters for any log-request. </p>
+<p>Location parameters are printed when requested log-level is below <a class="el" href="#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a> (default value of log-level) Also, Location parameters are always logged for LOG_DEBUG priority (which is the minimum value for log_level) </p><dl class="section note"><dt>Note</dt><dd>Location parameters will only be logged if, someone explicity set log_level to be below default value other wise log-request will be ignored because of lower-priority. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00088">88</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a390e284dca17e1c1eb5106e82645c11d" name="a390e284dca17e1c1eb5106e82645c11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390e284dca17e1c1eb5106e82645c11d">&#9670;&#160;</a></span>log_locate_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structLOG__LOCATE.html">LOG_LOCATE</a> <a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -220,14 +328,14 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00032">32</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>{ <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a> = 0, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a> };</div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a></div><div class="ttdeci">@ LOG_ISSUE</div><div class="ttdoc">recommended for non-recoverable errors (can continue with limited functionality)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a></div><div class="ttdeci">@ LOG_ERROR</div><div class="ttdoc">recommended for recoverable errors (can continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00033">33</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a> = 0, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a>, <a class="code hl_enumvalue" href="#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a> };</div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a></div><div class="ttdeci">@ LOG_ISSUE</div><div class="ttdoc">recommended for non-recoverable errors (can continue with limited functionality)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a></div><div class="ttdeci">@ LOG_ERROR</div><div class="ttdoc">recommended for recoverable errors (can continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,7 +370,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   14</span>                            {</div>
 <div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
 <div class="line"><span class="lineno">   16</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00048">logbank.h:48</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00049">logbank.h:49</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -377,7 +485,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>&gt;0 on Success =&gt; Returns previous (last used) value of log_level </dd>
+<dl class="section return"><dt>Returns</dt><dd>&gt;=0 on Success =&gt; Returns previous (last used) value of log_level </dd>
 <dd>
 -1 on Failure =&gt; Supplied new value can not be configured </dd></dl>
 
@@ -394,8 +502,8 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a54b2c3cd41945ff7bc5861bc4a08718b" name="a54b2c3cd41945ff7bc5861bc4a08718b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54b2c3cd41945ff7bc5861bc4a08718b">&#9670;&#160;</a></span>log_this()</h2>
+<a id="af3ead88ac759015175f6824b3a4bb882" name="af3ead88ac759015175f6824b3a4bb882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ead88ac759015175f6824b3a4bb882">&#9670;&#160;</a></span>log_this()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,9 +512,14 @@ NULL on Failure =&gt; invalid level </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">log_this </td>
+          <td class="memname">void log_this </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a></td>          <td class="paramname"><span class="paramname"><em>locate</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -426,30 +539,24 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>This is the main logging function of this library. </p>
-<p>This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-message</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>format for arguments for log-message </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>optional arguments for log-message </td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00046">46</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                          {</div>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                               {</div>
 <div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (level &lt; <a class="code hl_variable" href="logbank_8c.html#ac91d55174d383848b976a34de843748e">log_level</a>) {</div>
 <div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   49</span>    }</div>
 <div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>    va_list args;</div>
-<div class="line"><span class="lineno">   52</span>    va_start(args, fmt);</div>
-<div class="line"><span class="lineno">   53</span>    (void)vfprintf(stderr, fmt, args);</div>
-<div class="line"><span class="lineno">   54</span>    va_end(args);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a> != NULL &amp;&amp; locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a> != NULL) {</div>
+<div class="line"><span class="lineno">   52</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;@ %s() \&quot;%s +%d\&quot; &quot;</span>, locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a>, locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a>,</div>
+<div class="line"><span class="lineno">   53</span>                      locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">line</a>);</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
 <div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<div class="line"><span class="lineno">   56</span>    va_list args;</div>
+<div class="line"><span class="lineno">   57</span>    va_start(args, fmt);</div>
+<div class="line"><span class="lineno">   58</span>    (void)vfprintf(stderr, fmt, args);</div>
+<div class="line"><span class="lineno">   59</span>    va_end(args);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

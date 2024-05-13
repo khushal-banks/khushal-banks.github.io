@@ -29,7 +29,15 @@ Definition at line \mbox{\hyperlink{test__runner_8c_source_l00004}{4}} of file \
 \DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
 \DoxyCodeLine{00010\ \ \ \ \ \}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00012\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}test\_priority\_level\ passed\(\backslash\)n"{}});}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{test02__location_8c_a507c9d2842a214754db4c2703afbd63c}{test\_location}}()\ <\ 0)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}test\_location\ passed\(\backslash\)n"{}});}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00021\ \}}
 
 \end{DoxyCode}

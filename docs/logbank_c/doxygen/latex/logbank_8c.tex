@@ -13,8 +13,8 @@ int \mbox{\hyperlink{logbank_8c_af0d39913e824d4d0aef7513b284ea289}{log\+\_\+set\
 \begin{DoxyCompactList}\small\item\em This function configures value for log\+\_\+level. \end{DoxyCompactList}\item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logbank_8c_a2f37fc38d4885ae4fd5f499787e5f550}{log\+\_\+get\+\_\+levelname}} (int level)
 \begin{DoxyCompactList}\small\item\em This function is used to read name of a particular log-\/level. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{logbank_8c_a900f2b33063f0d4f9090ef6d47c0ead0}{log\+\_\+this}} (int level, const char \texorpdfstring{$\ast$}{*}fmt,...)
-\begin{DoxyCompactList}\small\item\em This is the main logging function of this library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{logbank_8c_af3ead88ac759015175f6824b3a4bb882}{log\+\_\+this}} (int level, \mbox{\hyperlink{logbank_8h_a390e284dca17e1c1eb5106e82645c11d}{log\+\_\+locate\+\_\+t}} locate, const char \texorpdfstring{$\ast$}{*}fmt,...)
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -124,7 +124,7 @@ This function configures value for log\+\_\+level.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\texorpdfstring{$>$}{>}0 on Success =\texorpdfstring{$>$}{>} Returns previous (last used) value of log\+\_\+level 
+\texorpdfstring{$>$}{>}=0 on Success =\texorpdfstring{$>$}{>} Returns previous (last used) value of log\+\_\+level 
 
 -\/1 on Failure =\texorpdfstring{$>$}{>} Supplied new value can not be configured 
 \end{DoxyReturn}
@@ -145,45 +145,35 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00024}{24}} of file \mbox
 \DoxyCodeLine{00032\ \}}
 
 \end{DoxyCode}
-\Hypertarget{logbank_8c_a900f2b33063f0d4f9090ef6d47c0ead0}\label{logbank_8c_a900f2b33063f0d4f9090ef6d47c0ead0} 
+\Hypertarget{logbank_8c_af3ead88ac759015175f6824b3a4bb882}\label{logbank_8c_af3ead88ac759015175f6824b3a4bb882} 
 \index{logbank.c@{logbank.c}!log\_this@{log\_this}}
 \index{log\_this@{log\_this}!logbank.c@{logbank.c}}
 \doxysubsubsection{\texorpdfstring{log\_this()}{log\_this()}}
-{\footnotesize\ttfamily void log\+\_\+this (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void log\+\_\+this (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{\mbox{\hyperlink{logbank_8h_a390e284dca17e1c1eb5106e82645c11d}{log\+\_\+locate\+\_\+t}}}]{locate,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
 
-
-
-This is the main logging function of this library. 
-
-This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-\/message
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em level} & priority of this log-\/request \\
-\hline
-\mbox{\texttt{ in}}  & {\em format} & format for arguments for log-\/message \\
-\hline
-\mbox{\texttt{ in}}  & {\em ...} & optional arguments for log-\/message \\
-\hline
-\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{logbank_8c_source_l00046}{46}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}})\ \{}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00049\ \ \ \ \ \}}
 \DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ va\_list\ args;}
-\DoxyCodeLine{00052\ \ \ \ \ va\_start(args,\ fmt);}
-\DoxyCodeLine{00053\ \ \ \ \ (void)vfprintf(stderr,\ fmt,\ args);}
-\DoxyCodeLine{00054\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}}\ !=\ NULL\ \&\&\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}}\ !=\ NULL)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}@\ \%s()\ \(\backslash\)"{}\%s\ +\%d\(\backslash\)"{}\ "{}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}},}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{line}});}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ va\_list\ args;}
+\DoxyCodeLine{00057\ \ \ \ \ va\_start(args,\ fmt);}
+\DoxyCodeLine{00058\ \ \ \ \ (void)vfprintf(stderr,\ fmt,\ args);}
+\DoxyCodeLine{00059\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00062\ \}}
 
 \end{DoxyCode}
 

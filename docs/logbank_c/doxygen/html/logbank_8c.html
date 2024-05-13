@@ -101,9 +101,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a2f37fc38d4885ae4fd5f499787e5f550" id="r_a2f37fc38d4885ae4fd5f499787e5f550"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a> (int level)</td></tr>
 <tr class="memdesc:a2f37fc38d4885ae4fd5f499787e5f550"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to read name of a particular log-level.  <br /></td></tr>
 <tr class="separator:a2f37fc38d4885ae4fd5f499787e5f550"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a900f2b33063f0d4f9090ef6d47c0ead0" id="r_a900f2b33063f0d4f9090ef6d47c0ead0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a900f2b33063f0d4f9090ef6d47c0ead0">log_this</a> (int level, const char *fmt,...)</td></tr>
-<tr class="memdesc:a900f2b33063f0d4f9090ef6d47c0ead0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
-<tr class="separator:a900f2b33063f0d4f9090ef6d47c0ead0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ead88ac759015175f6824b3a4bb882" id="r_af3ead88ac759015175f6824b3a4bb882"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3ead88ac759015175f6824b3a4bb882">log_this</a> (int level, <a class="el" href="logbank_8h.html#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a> locate, const char *fmt,...)</td></tr>
+<tr class="separator:af3ead88ac759015175f6824b3a4bb882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -134,7 +133,7 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   14</span>                            {</div>
 <div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
 <div class="line"><span class="lineno">   16</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00048">logbank.h:48</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00049">logbank.h:49</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -200,7 +199,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <div class="line"><span class="lineno">   41</span> </div>
 <div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> level_names[level];</div>
 <div class="line"><span class="lineno">   43</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00032">logbank.h:32</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -226,7 +225,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>&gt;0 on Success =&gt; Returns previous (last used) value of log_level </dd>
+<dl class="section return"><dt>Returns</dt><dd>&gt;=0 on Success =&gt; Returns previous (last used) value of log_level </dd>
 <dd>
 -1 on Failure =&gt; Supplied new value can not be configured </dd></dl>
 
@@ -243,8 +242,8 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a900f2b33063f0d4f9090ef6d47c0ead0" name="a900f2b33063f0d4f9090ef6d47c0ead0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a900f2b33063f0d4f9090ef6d47c0ead0">&#9670;&#160;</a></span>log_this()</h2>
+<a id="af3ead88ac759015175f6824b3a4bb882" name="af3ead88ac759015175f6824b3a4bb882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ead88ac759015175f6824b3a4bb882">&#9670;&#160;</a></span>log_this()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,6 +252,11 @@ NULL on Failure =&gt; invalid level </dd></dl>
           <td class="memname">void log_this </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="logbank_8h.html#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a></td>          <td class="paramname"><span class="paramname"><em>locate</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -267,30 +271,27 @@ NULL on Failure =&gt; invalid level </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>This is the main logging function of this library. </p>
-<p>This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-message</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>format for arguments for log-message </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>optional arguments for log-message </td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00046">46</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                          {</div>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                               {</div>
 <div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (level &lt; <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>) {</div>
 <div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   49</span>    }</div>
 <div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>    va_list args;</div>
-<div class="line"><span class="lineno">   52</span>    va_start(args, fmt);</div>
-<div class="line"><span class="lineno">   53</span>    (void)vfprintf(stderr, fmt, args);</div>
-<div class="line"><span class="lineno">   54</span>    va_end(args);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a> != NULL &amp;&amp; locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a> != NULL) {</div>
+<div class="line"><span class="lineno">   52</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;@ %s() \&quot;%s +%d\&quot; &quot;</span>, locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a>, locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a>,</div>
+<div class="line"><span class="lineno">   53</span>                      locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">line</a>);</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
 <div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<div class="line"><span class="lineno">   56</span>    va_list args;</div>
+<div class="line"><span class="lineno">   57</span>    va_start(args, fmt);</div>
+<div class="line"><span class="lineno">   58</span>    (void)vfprintf(stderr, fmt, args);</div>
+<div class="line"><span class="lineno">   59</span>    va_end(args);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>}</div>
+<div class="ttc" id="astructLOG__LOCATE_html_a0fbfa81e786eb5dd01a6b48d7495a674"><div class="ttname"><a href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">LOG_LOCATE::file</a></div><div class="ttdeci">const char * file</div><div class="ttdoc">file name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00069">logbank.h:69</a></div></div>
+<div class="ttc" id="astructLOG__LOCATE_html_a1630afacaa2ba2e0b776ed6a8c99d2f7"><div class="ttname"><a href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">LOG_LOCATE::func</a></div><div class="ttdeci">const char * func</div><div class="ttdoc">function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00068">logbank.h:68</a></div></div>
+<div class="ttc" id="astructLOG__LOCATE_html_a986a73ab6451c2154a5d926adc3efa18"><div class="ttname"><a href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">LOG_LOCATE::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00070">logbank.h:70</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
