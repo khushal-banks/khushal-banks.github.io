@@ -16,6 +16,10 @@ struct \mbox{\hyperlink{structLOG__LOCATE}{LOG\+\_\+\+LOCATE}}
 \begin{DoxyCompactList}\small\item\em This is to extract basename from {\bfseries{FILE}} \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{logbank_8h_af871188d88e45fc10c15cbe2c90545b1}{LOG\+\_\+\+LOCATION}}(level)~(level == \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\+\_\+\+DEBUG}} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} level $<$ \mbox{\hyperlink{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af}{log\+\_\+get\+\_\+default\+\_\+level}}())
 \begin{DoxyCompactList}\small\item\em This macro controls when to log location parameters for any log-\/request. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank_8h_a5f56d981e5b55df4bee5c7a5b6b44007}{LOG\+\_\+\+DATESTAMP}}~0
+\begin{DoxyCompactList}\small\item\em Default value of log\+\_\+datestamp. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank_8h_abc368d21141fd7f00227bbe05c8a476c}{LOG\+\_\+\+TIMESTAMP}}~1
+\begin{DoxyCompactList}\small\item\em Default value of log\+\_\+timestamp. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(level, ...)
 \begin{DoxyCompactList}\small\item\em This is a wrapper for log\+\_\+this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
@@ -47,6 +51,12 @@ int \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\+\_\+set\
 \begin{DoxyCompactList}\small\item\em This function configures value for log\+\_\+level. \end{DoxyCompactList}\item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}{log\+\_\+get\+\_\+levelname}} (int level)
 \begin{DoxyCompactList}\small\item\em This function is used to read name of a particular log-\/level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logbank_8h_ad40fb8308e3b7fe972247896b049bbdb}{log\+\_\+change\+\_\+tzone}} (int gmt)
+\begin{DoxyCompactList}\small\item\em This function is used to switch between gmt time \& local time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\+\_\+use\+\_\+datestamp}} (int enable)
+\begin{DoxyCompactList}\small\item\em This function is used to enable date stamps for every log-\/request at run-\/time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\+\_\+use\+\_\+timestamp}} (int enable)
+\begin{DoxyCompactList}\small\item\em This function is used to enable time stamps for every log-\/request at run-\/time. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{logbank_8h_af3ead88ac759015175f6824b3a4bb882}{log\+\_\+this}} (int level, \mbox{\hyperlink{logbank_8h_a390e284dca17e1c1eb5106e82645c11d}{log\+\_\+locate\+\_\+t}} locate, const char \texorpdfstring{$\ast$}{*}fmt,...)
 \end{DoxyCompactItemize}
 
@@ -85,6 +95,7 @@ Definition at line \mbox{\hyperlink{logbank_8h_source_l00078}{78}} of file \mbox
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}}\ =\ \mbox{\hyperlink{logbank_8h_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{line}}\ =\ \_\_LINE\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ log\_this(level,\ locate,\ \_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
 
@@ -104,26 +115,44 @@ This macro will be used to collect required data for \doxylink{logbank_8h_af3ead
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8h_source_l00098}{98}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
+Definition at line \mbox{\hyperlink{logbank_8h_source_l00114}{114}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ LOG(level,\ ...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ log\_locate\_t\ locate;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.func\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.file\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.line\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (LOG\_LOCATION(level))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.func\ =\ \_\_func\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.file\ =\ FILENAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.line\ =\ \_\_LINE\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ log\_this(level,\ locate,\ \_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ \}\ while\ (0)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ LOG(level,\ ...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ log\_locate\_t\ locate;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.func\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.file\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.line\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (LOG\_LOCATION(level))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.func\ =\ \_\_func\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.file\ =\ FILENAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.line\ =\ \_\_LINE\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ log\_this(level,\ locate,\ \_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \}\ while\ (0)}}
 
 \end{DoxyCode}
+\Hypertarget{logbank_8h_a5f56d981e5b55df4bee5c7a5b6b44007}\label{logbank_8h_a5f56d981e5b55df4bee5c7a5b6b44007} 
+\index{logbank.h@{logbank.h}!LOG\_DATESTAMP@{LOG\_DATESTAMP}}
+\index{LOG\_DATESTAMP@{LOG\_DATESTAMP}!logbank.h@{logbank.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_DATESTAMP}{LOG\_DATESTAMP}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+DATESTAMP~0}
+
+
+
+Default value of log\+\_\+datestamp. 
+
+Set this to 1 to log date stamp by default \begin{DoxyNote}{Note}
+date stamps can be controlled using \doxylink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\+\_\+use\+\_\+datestamp()} function at run-\/time 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank_8h_source_l00096}{96}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
+
 \Hypertarget{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}\label{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05} 
 \index{logbank.h@{logbank.h}!LOG\_LEVEL@{LOG\_LEVEL}}
 \index{LOG\_LEVEL@{LOG\_LEVEL}!logbank.h@{logbank.h}}
@@ -167,6 +196,23 @@ Location parameters will only be logged if, someone explicity set log\+\_\+level
 
 
 Definition at line \mbox{\hyperlink{logbank_8h_source_l00088}{88}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
+
+\Hypertarget{logbank_8h_abc368d21141fd7f00227bbe05c8a476c}\label{logbank_8h_abc368d21141fd7f00227bbe05c8a476c} 
+\index{logbank.h@{logbank.h}!LOG\_TIMESTAMP@{LOG\_TIMESTAMP}}
+\index{LOG\_TIMESTAMP@{LOG\_TIMESTAMP}!logbank.h@{logbank.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TIMESTAMP}{LOG\_TIMESTAMP}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TIMESTAMP~1}
+
+
+
+Default value of log\+\_\+timestamp. 
+
+Set this to 1 to log time stamp by default \begin{DoxyNote}{Note}
+time stamps can be controlled using \doxylink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\+\_\+use\+\_\+timestamp()} function at run-\/time 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank_8h_source_l00104}{104}} of file \mbox{\hyperlink{logbank_8h_source}{logbank.\+h}}.
 
 
 
@@ -228,6 +274,40 @@ Definition at line \mbox{\hyperlink{logbank_8h_source_l00033}{33}} of file \mbox
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{logbank_8h_ad40fb8308e3b7fe972247896b049bbdb}\label{logbank_8h_ad40fb8308e3b7fe972247896b049bbdb} 
+\index{logbank.h@{logbank.h}!log\_change\_tzone@{log\_change\_tzone}}
+\index{log\_change\_tzone@{log\_change\_tzone}!logbank.h@{logbank.h}}
+\doxysubsubsection{\texorpdfstring{log\_change\_tzone()}{log\_change\_tzone()}}
+{\footnotesize\ttfamily log\+\_\+change\+\_\+tzone (\begin{DoxyParamCaption}\item[{int}]{gmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function is used to switch between gmt time \& local time. 
+
+\begin{DoxyNote}{Note}
+For invalid values of gmt argument; local time is used
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gmt} & set gmt to 1 or 0 in order to use gmt time or local time respectively \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00150}{150}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (gmt\ ==\ 1)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_aecd1c33eda8dadb496cecee02527b6a3}{log\_time\_fn}}\ =\ gmtime;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{logbank_8c_aecd1c33eda8dadb496cecee02527b6a3}{log\_time\_fn}}\ =\ localtime;}
+\DoxyCodeLine{00157\ \}}
+
+\end{DoxyCode}
 \Hypertarget{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af}\label{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af} 
 \index{logbank.h@{logbank.h}!log\_get\_default\_level@{log\_get\_default\_level}}
 \index{log\_get\_default\_level@{log\_get\_default\_level}!logbank.h@{logbank.h}}
@@ -243,13 +323,13 @@ int Returns default log\+\_\+level
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00014}{14}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00118}{118}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
-\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
+\DoxyCodeLine{00120\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb}\label{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb} 
@@ -267,13 +347,13 @@ int Returns log\+\_\+level
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00019}{19}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00123}{123}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
-\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
+\DoxyCodeLine{00125\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}\label{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29} 
@@ -298,19 +378,19 @@ NULL on Failure =\texorpdfstring{$>$}{>} invalid level
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00035}{35}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00139}{139}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ level\_names[]\ =\ \{\textcolor{stringliteral}{"{}DEBUG"{}},\ \textcolor{stringliteral}{"{}INFO\ "{}},\ \textcolor{stringliteral}{"{}WARN\ "{}},}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ERROR"{}},\ \textcolor{stringliteral}{"{}ISSUE"{}},\ \textcolor{stringliteral}{"{}FATAL"{}}\};}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
-\DoxyCodeLine{00040\ \ \ \ \ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ level\_names[level];}
-\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ level\_names[]\ =\ \{\textcolor{stringliteral}{"{}DEBUG"{}},\ \textcolor{stringliteral}{"{}INFO\ "{}},\ \textcolor{stringliteral}{"{}WARN\ "{}},}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ERROR"{}},\ \textcolor{stringliteral}{"{}ISSUE"{}},\ \textcolor{stringliteral}{"{}FATAL"{}}\};}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{return}\ level\_names[level];}
+\DoxyCodeLine{00147\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}\label{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f} 
@@ -335,19 +415,19 @@ This function configures value for log\+\_\+level.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00024}{24}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00128}{128}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00027\ \ \ \ \ \}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}}\ =\ level;}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
-\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}}\ =\ level;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00136\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8h_af3ead88ac759015175f6824b3a4bb882}\label{logbank_8h_af3ead88ac759015175f6824b3a4bb882} 
@@ -358,26 +438,118 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00024}{24}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00046}{46}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00182}{182}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}})\ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00049\ \ \ \ \ \}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}}\ !=\ NULL\ \&\&\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}}\ !=\ NULL)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}@\ \%s()\ \(\backslash\)"{}\%s\ +\%d\(\backslash\)"{}\ "{}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}},}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{line}});}
-\DoxyCodeLine{00054\ \ \ \ \ \}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ va\_list\ args;}
-\DoxyCodeLine{00057\ \ \ \ \ va\_start(args,\ fmt);}
-\DoxyCodeLine{00058\ \ \ \ \ (void)vfprintf(stderr,\ fmt,\ args);}
-\DoxyCodeLine{00059\ \ \ \ \ va\_end(args);}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}})\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8c_a6e1cbcfba04606a1ea81d837e75cf182}{log\_datestamp}})\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ date\_stamp[\mbox{\hyperlink{logbank_8c_a9c3be125d60c2afbb469cfe890546132}{LOG\_DATE\_LEN}}];}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_a7428ec2d45d3df3bbb27094a8f8d585a}{log\_stamp\_collector}}(date\_stamp,\ \mbox{\hyperlink{logbank_8c_a1ea36cc09a0aa530b338c94960baf512}{LOG\_DATE\_FORMAT}},\ \textcolor{keyword}{sizeof}(date\_stamp));}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\%s\ "{}},\ date\_stamp);}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8c_a78f29241d03102718e247b5869f41e58}{log\_timestamp}})\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ time\_stamp[\mbox{\hyperlink{logbank_8c_af908196e407bb67394664c7b0d5999b8}{LOG\_TIME\_LEN}}];}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_a7428ec2d45d3df3bbb27094a8f8d585a}{log\_stamp\_collector}}(time\_stamp,\ \mbox{\hyperlink{logbank_8c_a1273f9f835f4a7ad5304c7e633e20b68}{LOG\_TIME\_FORMAT}},\ \textcolor{keyword}{sizeof}(time\_stamp));}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\%s\ "{}},\ time\_stamp);}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}}\ !=\ NULL\ \&\&\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}}\ !=\ NULL)\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}@\ \%s()\ \(\backslash\)"{}\%s\ +\%d\(\backslash\)"{}\ "{}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}},}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{line}});}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ va\_list\ args;}
+\DoxyCodeLine{00207\ \ \ \ \ va\_start(args,\ fmt);}
+\DoxyCodeLine{00208\ \ \ \ \ (void)vfprintf(stderr,\ fmt,\ args);}
+\DoxyCodeLine{00209\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00212\ \}}
+
+\end{DoxyCode}
+\Hypertarget{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}\label{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4} 
+\index{logbank.h@{logbank.h}!log\_use\_datestamp@{log\_use\_datestamp}}
+\index{log\_use\_datestamp@{log\_use\_datestamp}!logbank.h@{logbank.h}}
+\doxysubsubsection{\texorpdfstring{log\_use\_datestamp()}{log\_use\_datestamp()}}
+{\footnotesize\ttfamily log\+\_\+use\+\_\+datestamp (\begin{DoxyParamCaption}\item[{int}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function is used to enable date stamps for every log-\/request at run-\/time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enable} & set enable to 1 or 0 in order to enable or disable date stamps respectively \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 date stamps were previously enabled 
+
+0 date stamps were previously disabled 
+
+-\/1 invalid value received for enable parameter 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00160}{160}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a6e1cbcfba04606a1ea81d837e75cf182}{log\_datestamp}};}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a6e1cbcfba04606a1ea81d837e75cf182}{log\_datestamp}}\ =\ enable;}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}
+\Hypertarget{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}\label{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01} 
+\index{logbank.h@{logbank.h}!log\_use\_timestamp@{log\_use\_timestamp}}
+\index{log\_use\_timestamp@{log\_use\_timestamp}!logbank.h@{logbank.h}}
+\doxysubsubsection{\texorpdfstring{log\_use\_timestamp()}{log\_use\_timestamp()}}
+{\footnotesize\ttfamily log\+\_\+use\+\_\+timestamp (\begin{DoxyParamCaption}\item[{int}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function is used to enable time stamps for every log-\/request at run-\/time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enable} & set enable to 1 or 0 in order to enable or disable time stamps respectively \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 time stamps were previously enabled 
+
+0 time stamps were previously disabled 
+
+-\/1 invalid value received for enable parameter 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00171}{171}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a78f29241d03102718e247b5869f41e58}{log\_timestamp}};}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a78f29241d03102718e247b5869f41e58}{log\_timestamp}}\ =\ enable;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00179\ \}}
 
 \end{DoxyCode}

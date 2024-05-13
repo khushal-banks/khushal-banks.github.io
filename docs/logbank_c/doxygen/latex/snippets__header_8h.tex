@@ -6,10 +6,12 @@
 \item 
 void \mbox{\hyperlink{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}{snippet\+\_\+sample\+\_\+logs}} (void)
 \begin{DoxyCompactList}\small\item\em This function is used to print sample logs with current log\+\_\+level. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}{snippet\+\_\+priority\+\_\+level}} (int level)
-\begin{DoxyCompactList}\small\item\em This function is used to print sample logs with a new log\+\_\+level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}{snippet\+\_\+priority\+\_\+level}} (int level)
+\begin{DoxyCompactList}\small\item\em This function is used to print sample logs with a new log\+\_\+level And revert back to old priority level. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{snippets__header_8h_aa666538ec330550637743b7ce054fa51}{snippet\+\_\+location}} (void)
-\begin{DoxyCompactList}\small\item\em This function is used to print a log with LOG\+\_\+\+DEBUG level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function is used to print a log with LOG\+\_\+\+DEBUG level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{snippets__header_8h_a778bef23770ae6204d46ce12101b3a41}{snippet\+\_\+stamps}} (int gmt)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -25,17 +27,19 @@ This function is used to print a log with LOG\+\_\+\+DEBUG level.
 
 log\+\_\+level is temporarily set to LOG\+\_\+\+DEBUG and then reverted back to old value 
 
-Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00028}{28}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
+Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00031}{31}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}});}
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}},\ \textcolor{stringliteral}{"{}Sample\ Log\ with\ priority\ LOG\_DEBUG"{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(old);}
-\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{/*\ Change\ priority\ level\ to\ LOG\_DEBUG\ */}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}});}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}},\ \textcolor{stringliteral}{"{}Sample\ Log\ with\ priority\ LOG\_DEBUG"{}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*\ Revert\ priority\ to\ previous\ value\ */}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(old);}
+\DoxyCodeLine{00039\ \}}
 
 \end{DoxyCode}
 \Hypertarget{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}\label{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f} 
@@ -46,18 +50,13 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00028}{28}} o
 
 
 
-This function is used to print sample logs with a new log\+\_\+level. 
+This function is used to print sample logs with a new log\+\_\+level And revert back to old priority level. 
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em level} & new value of log level \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\texorpdfstring{$>$}{>}=0 on Success =\texorpdfstring{$>$}{>} Returns previous (last used) value of log\+\_\+level 
-
--\/1 on Failure =\texorpdfstring{$>$}{>} Supplied new value can not be configured 
-\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00020}{20}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
@@ -66,10 +65,13 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00020}{20}} o
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(level);}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}();}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
-\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{/*\ Change\ priority\ level\ */}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(level);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{/*\ Revert\ priority\ to\ previous\ value\ */}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(old);}
+\DoxyCodeLine{00028\ \}}
 
 \end{DoxyCode}
 \Hypertarget{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}\label{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab} 
@@ -102,5 +104,56 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00004}{4}} of
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}},\ \textcolor{stringliteral}{"{}System\ Failure:\ \%s"{}},\ \textcolor{stringliteral}{"{}Disk\ Space\ Full"{}});}
 \DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}
+\Hypertarget{snippets__header_8h_a778bef23770ae6204d46ce12101b3a41}\label{snippets__header_8h_a778bef23770ae6204d46ce12101b3a41} 
+\index{snippets\_header.h@{snippets\_header.h}!snippet\_stamps@{snippet\_stamps}}
+\index{snippet\_stamps@{snippet\_stamps}!snippets\_header.h@{snippets\_header.h}}
+\doxysubsubsection{\texorpdfstring{snippet\_stamps()}{snippet\_stamps()}}
+{\footnotesize\ttfamily void snippet\+\_\+stamps (\begin{DoxyParamCaption}\item[{int}]{gmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00042}{42}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{/*\ Configure\ time-\/zone\ */}}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{logbank_8h_ad40fb8308e3b7fe972247896b049bbdb}{log\_change\_tzone}}(gmt);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{/*\ Disable\ all\ stamps\ */}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ old\_datestamp\ =\ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(0);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ old\_timestamp\ =\ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(0);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*\ print\ one\ sample\ log\ */}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_ac8417a6c450c6d8730cbd00e3c7823ed}{snippet\_location}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{/*\ Disable\ date\ stamps,\ enable\ time\ stamps\ */}}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(0);}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(1);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{/*\ print\ one\ sample\ log\ */}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_ac8417a6c450c6d8730cbd00e3c7823ed}{snippet\_location}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*\ Enable\ date\ stamps,\ disable\ time\ stamps\ */}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(1);}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(0);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{/*\ print\ one\ sample\ log\ */}}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_ac8417a6c450c6d8730cbd00e3c7823ed}{snippet\_location}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*\ Enable\ all\ stamps\ */}}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(1);}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(1);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{/*\ print\ one\ sample\ log\ */}}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_ac8417a6c450c6d8730cbd00e3c7823ed}{snippet\_location}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{/*\ Revert\ to\ previous\ config\ of\ date\ stamps\ and\ time\ stamps\ */}}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(old\_datestamp);}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(old\_timestamp);}
+\DoxyCodeLine{00078\ \}}
 
 \end{DoxyCode}
