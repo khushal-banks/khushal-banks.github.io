@@ -111,7 +111,7 @@
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00179}00179\ \}}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00180}00180\ }
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00181}00181\ \textcolor{keywordtype}{void}}
-\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00182}\mbox{\hyperlink{logbank_8h_af3ead88ac759015175f6824b3a4bb882}{00182}}\ \mbox{\hyperlink{logbank_8c_af3ead88ac759015175f6824b3a4bb882}{log\_this}}(\textcolor{keywordtype}{int}\ level,\ \mbox{\hyperlink{structLOG__LOCATE}{log\_locate\_t}}\ locate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...)\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00182}\mbox{\hyperlink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{00182}}\ \mbox{\hyperlink{logbank_8c_af3ead88ac759015175f6824b3a4bb882}{log\_this}}(\textcolor{keywordtype}{int}\ level,\ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}}\ locate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...)\ \{}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00183}00183\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}})\ \{}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00185}00185\ \ \ \ \ \}}
@@ -130,9 +130,9 @@
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00198}00198\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\%s\ "{}},\ time\_stamp);}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00199}00199\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00200}00200\ }
-\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}}\ !=\ NULL\ \&\&\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}}\ !=\ NULL)\ \{}
-\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}@\ \%s()\ \(\backslash\)"{}\%s\ +\%d\(\backslash\)"{}\ "{}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}},}
-\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{line}});}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (locate.\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}}\ !=\ NULL\ \&\&\ locate.\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}}\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00202}00202\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}@\ \%s()\ \(\backslash\)"{}\%s\ +\%d\(\backslash\)"{}\ "{}},\ locate.\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}},\ locate.\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}},}
+\DoxyCodeLine{\Hypertarget{logbank_8c_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{line}});}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00204}00204\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00205}00205\ }
 \DoxyCodeLine{\Hypertarget{logbank_8c_source_l00206}00206\ \ \ \ \ va\_list\ args;}

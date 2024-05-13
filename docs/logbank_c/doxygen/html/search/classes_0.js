@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log_5flocate_0',['LOG_LOCATE',['../structLOG__LOCATE.html',1,'']]]
+  ['log_5flocate_5ft_0',['log_locate_t',['../structlog__locate__t.html',1,'']]]
 ];

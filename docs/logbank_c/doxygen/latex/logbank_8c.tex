@@ -37,8 +37,8 @@ int \mbox{\hyperlink{logbank_8c_abfe2b67a3b61f6ca5ac29458f1a6fa20}{log\+\_\+use\
 \begin{DoxyCompactList}\small\item\em This function is used to enable date stamps for every log-\/request at run-\/time. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{logbank_8c_a1c3d0c234139eef0ecdd76c379bd2622}{log\+\_\+use\+\_\+timestamp}} (int enable)
 \begin{DoxyCompactList}\small\item\em This function is used to enable time stamps for every log-\/request at run-\/time. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{logbank_8c_af3ead88ac759015175f6824b3a4bb882}{log\+\_\+this}} (int level, \mbox{\hyperlink{logbank_8h_a390e284dca17e1c1eb5106e82645c11d}{log\+\_\+locate\+\_\+t}} locate, const char \texorpdfstring{$\ast$}{*}fmt,...)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{logbank_8c_af3ead88ac759015175f6824b3a4bb882}{log\+\_\+this}} (int level, \mbox{\hyperlink{structlog__locate__t}{log\+\_\+locate\+\_\+t}} locate, const char \texorpdfstring{$\ast$}{*}fmt,...)
+\begin{DoxyCompactList}\small\item\em This is the main logging function of this library. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -123,7 +123,7 @@ This macro chooses between LOG\+\_\+\+TIME\+\_\+12\+HR \& LOG\+\_\+\+TIME\+\_\+2
 Choice of time format is not very flexible. Both options are nearly the same. There length is also forcefully made same (by adding spaces at end) in order to provide better indentation
 
 \begin{DoxyNote}{Note}
-This macro is recommended to be used for time stamp collection in \doxylink{logbank_8h_af3ead88ac759015175f6824b3a4bb882}{log\+\_\+this()} function 
+This macro is recommended to be used for time stamp collection in \doxylink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\+\_\+this()} function 
 \end{DoxyNote}
 
 
@@ -354,8 +354,25 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00098}{98}} of file \mbox
 \index{logbank.c@{logbank.c}!log\_this@{log\_this}}
 \index{log\_this@{log\_this}!logbank.c@{logbank.c}}
 \doxysubsubsection{\texorpdfstring{log\_this()}{log\_this()}}
-{\footnotesize\ttfamily void log\+\_\+this (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{\mbox{\hyperlink{logbank_8h_a390e284dca17e1c1eb5106e82645c11d}{log\+\_\+locate\+\_\+t}}}]{locate,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void log\+\_\+this (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{\mbox{\hyperlink{structlog__locate__t}{log\+\_\+locate\+\_\+t}}}]{locate,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
 
+
+
+This is the main logging function of this library. 
+
+This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-\/message
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em level} & priority of this log-\/request \\
+\hline
+\mbox{\texttt{ in}}  & {\em locate} & location parameters for this log-\/request \\
+\hline
+\mbox{\texttt{ in}}  & {\em format} & format for arguments for log-\/message \\
+\hline
+\mbox{\texttt{ in}}  & {\em ...} & optional arguments for log-\/message \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{logbank_8c_source_l00182}{182}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
@@ -381,9 +398,9 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00182}{182}} of file \mbo
 \DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\%s\ "{}},\ time\_stamp);}
 \DoxyCodeLine{00199\ \ \ \ \ \}}
 \DoxyCodeLine{00200\ }
-\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}}\ !=\ NULL\ \&\&\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}}\ !=\ NULL)\ \{}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}@\ \%s()\ \(\backslash\)"{}\%s\ +\%d\(\backslash\)"{}\ "{}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}},\ locate.\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}},}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{line}});}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (locate.\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}}\ !=\ NULL\ \&\&\ locate.\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}}\ !=\ NULL)\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}@\ \%s()\ \(\backslash\)"{}\%s\ +\%d\(\backslash\)"{}\ "{}},\ locate.\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}},\ locate.\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}},}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{line}});}
 \DoxyCodeLine{00204\ \ \ \ \ \}}
 \DoxyCodeLine{00205\ }
 \DoxyCodeLine{00206\ \ \ \ \ va\_list\ args;}

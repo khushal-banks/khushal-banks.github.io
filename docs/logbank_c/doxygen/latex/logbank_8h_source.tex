@@ -20,11 +20,11 @@
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00051}00051\ \textcolor{preprocessor}{\#error\ "{}Invalid\ LOG\_LEVEL\ supplied\ from\ build\ system.\ Only\ values\ 0-\/5\ are\ supported."{}}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00052}00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LOG\_LEVEL\ */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00067}\mbox{\hyperlink{structLOG__LOCATE}{00067}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLOG__LOCATE}{LOG\_LOCATE}}\ \{}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00068}\mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{00068}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structLOG__LOCATE_a1630afacaa2ba2e0b776ed6a8c99d2f7}{func}};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00069}\mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{00069}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structLOG__LOCATE_a0fbfa81e786eb5dd01a6b48d7495a674}{file}};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00070}\mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{00070}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLOG__LOCATE_a986a73ab6451c2154a5d926adc3efa18}{line}};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00071}\mbox{\hyperlink{logbank_8h_a390e284dca17e1c1eb5106e82645c11d}{00071}}\ \}\ \mbox{\hyperlink{logbank_8h_a390e284dca17e1c1eb5106e82645c11d}{log\_locate\_t}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00067}\mbox{\hyperlink{structlog__locate__t}{00067}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00068}\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{00068}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00069}\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{00069}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00070}\mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{00070}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{line}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00071}00071\ \}\ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}};}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00072}00072\ }
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00078}\mbox{\hyperlink{logbank_8h_a8de29f7c8bbf1a81cc6e71ac602032d3}{00078}}\ \textcolor{preprocessor}{\#define\ FILENAME\ \ \ \ \ \ \ \ \ \ \ \ (strrchr(\_\_FILE\_\_,\ '/')\ ?\ strrchr(\_\_FILE\_\_,\ '/')\ +\ 1\ :\ \_\_FILE\_\_)}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00079}00079\ }
@@ -64,7 +64,7 @@
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00186}00186\ }
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00196}00196\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(\textcolor{keywordtype}{int}\ enable);}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00197}00197\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00209}00209\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logbank_8h_af3ead88ac759015175f6824b3a4bb882}{log\_this}}(\textcolor{keywordtype}{int}\ level,\ \mbox{\hyperlink{structLOG__LOCATE}{log\_locate\_t}}\ locate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00209}00209\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\_this}}(\textcolor{keywordtype}{int}\ level,\ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}}\ locate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...);}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00210}00210\ }
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00211}00211\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00212}00212\ \}}

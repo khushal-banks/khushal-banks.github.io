@@ -10,8 +10,8 @@ void \mbox{\hyperlink{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}{sni
 \begin{DoxyCompactList}\small\item\em This function is used to print sample logs with a new log\+\_\+level And revert back to old priority level. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{snippets__header_8h_aa666538ec330550637743b7ce054fa51}{snippet\+\_\+location}} (void)
 \begin{DoxyCompactList}\small\item\em This function is used to print a log with LOG\+\_\+\+DEBUG level. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{snippets__header_8h_a778bef23770ae6204d46ce12101b3a41}{snippet\+\_\+stamps}} (int gmt)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{snippets__header_8h_a6620b9789be2d996cf2f066ac5645dd4}{snippet\+\_\+stamps}} (int gmt)
+\begin{DoxyCompactList}\small\item\em This function prints all different combination of stamps for current time zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -106,12 +106,23 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00004}{4}} of
 \DoxyCodeLine{00017\ \}}
 
 \end{DoxyCode}
-\Hypertarget{snippets__header_8h_a778bef23770ae6204d46ce12101b3a41}\label{snippets__header_8h_a778bef23770ae6204d46ce12101b3a41} 
+\Hypertarget{snippets__header_8h_a6620b9789be2d996cf2f066ac5645dd4}\label{snippets__header_8h_a6620b9789be2d996cf2f066ac5645dd4} 
 \index{snippets\_header.h@{snippets\_header.h}!snippet\_stamps@{snippet\_stamps}}
 \index{snippet\_stamps@{snippet\_stamps}!snippets\_header.h@{snippets\_header.h}}
 \doxysubsubsection{\texorpdfstring{snippet\_stamps()}{snippet\_stamps()}}
-{\footnotesize\ttfamily void snippet\+\_\+stamps (\begin{DoxyParamCaption}\item[{int}]{gmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily snippet\+\_\+stamps (\begin{DoxyParamCaption}\item[{int}]{gmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
+
+
+This function prints all different combination of stamps for current time zone. 
+
+This enables/disables date/time stamps and prints sample logs Finally, stamps config is reverted to previous settings
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gmt} & set gmt to 1 or 0 in order to use gmt time or local time respectively \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00042}{42}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.

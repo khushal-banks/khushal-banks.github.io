@@ -79,7 +79,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">logbank.h File Reference</div></div>
@@ -92,8 +91,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLOG__LOCATE.html">LOG_LOCATE</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type for location parameters of log-request  <a href="structLOG__LOCATE.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlog__locate__t.html">log_locate_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type for location parameters of log-request  <a href="structlog__locate__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -116,11 +115,6 @@ Macros</h2></td></tr>
 <tr class="memitem:acaa1c3fa56061380a29889d703236251" id="r_acaa1c3fa56061380a29889d703236251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa1c3fa56061380a29889d703236251">LOG</a>(level, ...)</td></tr>
 <tr class="memdesc:acaa1c3fa56061380a29889d703236251"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a wrapper for log_this function.  <br /></td></tr>
 <tr class="separator:acaa1c3fa56061380a29889d703236251"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a390e284dca17e1c1eb5106e82645c11d" id="r_a390e284dca17e1c1eb5106e82645c11d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structLOG__LOCATE.html">LOG_LOCATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a></td></tr>
-<tr class="separator:a390e284dca17e1c1eb5106e82645c11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -160,8 +154,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a2cbc919241ff3ace24da6e8a3907ba01" id="r_a2cbc919241ff3ace24da6e8a3907ba01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp</a> (int enable)</td></tr>
 <tr class="memdesc:a2cbc919241ff3ace24da6e8a3907ba01"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to enable time stamps for every log-request at run-time.  <br /></td></tr>
 <tr class="separator:a2cbc919241ff3ace24da6e8a3907ba01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3ead88ac759015175f6824b3a4bb882" id="r_af3ead88ac759015175f6824b3a4bb882"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3ead88ac759015175f6824b3a4bb882">log_this</a> (int level, <a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a> locate, const char *fmt,...)</td></tr>
-<tr class="separator:af3ead88ac759015175f6824b3a4bb882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9618e8e44960252c699aea9fc3fc49bc" id="r_a9618e8e44960252c699aea9fc3fc49bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9618e8e44960252c699aea9fc3fc49bc">log_this</a> (int level, <a class="el" href="structlog__locate__t.html">log_locate_t</a> locate, const char *fmt,...)</td></tr>
+<tr class="memdesc:a9618e8e44960252c699aea9fc3fc49bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
+<tr class="separator:a9618e8e44960252c699aea9fc3fc49bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a8de29f7c8bbf1a81cc6e71ac602032d3" name="a8de29f7c8bbf1a81cc6e71ac602032d3"></a>
@@ -202,28 +197,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                                                 \</div>
-<div class="line">        <a class="code hl_struct" href="structLOG__LOCATE.html">log_locate_t</a> locate;                                                             \</div>
-<div class="line">        locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a> = NULL;                                                              \</div>
-<div class="line">        locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a> = NULL;                                                              \</div>
-<div class="line">        locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">line</a> = 0;                                                                 \</div>
+<div class="line">        <a class="code hl_struct" href="structlog__locate__t.html">log_locate_t</a> locate;                                                             \</div>
+<div class="line">        locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a> = NULL;                                                              \</div>
+<div class="line">        locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a> = NULL;                                                              \</div>
+<div class="line">        locate.<a class="code hl_variable" href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">line</a> = 0;                                                                 \</div>
 <div class="line">                                                                                         \</div>
 <div class="line">        if (<a class="code hl_define" href="#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a>(level)) {                                                       \</div>
-<div class="line">            locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a> = __func__;                                                      \</div>
-<div class="line">            locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a> = <a class="code hl_define" href="#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>;                                                      \</div>
-<div class="line">            locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">line</a> = __LINE__;                                                      \</div>
+<div class="line">            locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a> = __func__;                                                      \</div>
+<div class="line">            locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a> = <a class="code hl_define" href="#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a>;                                                      \</div>
+<div class="line">            locate.<a class="code hl_variable" href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">line</a> = __LINE__;                                                      \</div>
 <div class="line">        }                                                                                \</div>
 <div class="line">                                                                                         \</div>
 <div class="line">        log_this(level, locate, __VA_ARGS__);                                            \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 <div class="ttc" id="alogbank_8h_html_a8de29f7c8bbf1a81cc6e71ac602032d3"><div class="ttname"><a href="#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></div><div class="ttdeci">#define FILENAME</div><div class="ttdoc">This is to extract basename from FILE</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00078">logbank.h:78</a></div></div>
 <div class="ttc" id="alogbank_8h_html_af871188d88e45fc10c15cbe2c90545b1"><div class="ttname"><a href="#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a></div><div class="ttdeci">#define LOG_LOCATION(level)</div><div class="ttdoc">This macro controls when to log location parameters for any log-request.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00088">logbank.h:88</a></div></div>
-<div class="ttc" id="astructLOG__LOCATE_html"><div class="ttname"><a href="structLOG__LOCATE.html">LOG_LOCATE</a></div><div class="ttdoc">type for location parameters of log-request</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00067">logbank.h:67</a></div></div>
-<div class="ttc" id="astructLOG__LOCATE_html_a0fbfa81e786eb5dd01a6b48d7495a674"><div class="ttname"><a href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">LOG_LOCATE::file</a></div><div class="ttdeci">const char * file</div><div class="ttdoc">file name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00069">logbank.h:69</a></div></div>
-<div class="ttc" id="astructLOG__LOCATE_html_a1630afacaa2ba2e0b776ed6a8c99d2f7"><div class="ttname"><a href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">LOG_LOCATE::func</a></div><div class="ttdeci">const char * func</div><div class="ttdoc">function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00068">logbank.h:68</a></div></div>
-<div class="ttc" id="astructLOG__LOCATE_html_a986a73ab6451c2154a5d926adc3efa18"><div class="ttname"><a href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">LOG_LOCATE::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00070">logbank.h:70</a></div></div>
+<div class="ttc" id="astructlog__locate__t_html"><div class="ttname"><a href="structlog__locate__t.html">log_locate_t</a></div><div class="ttdoc">type for location parameters of log-request</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00067">logbank.h:67</a></div></div>
+<div class="ttc" id="astructlog__locate__t_html_a0b90d39ff2c7402e79dc2d495734b2a2"><div class="ttname"><a href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">log_locate_t::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00070">logbank.h:70</a></div></div>
+<div class="ttc" id="astructlog__locate__t_html_a0c90ea314fda6ca6929a7a3d9bfc221e"><div class="ttname"><a href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">log_locate_t::func</a></div><div class="ttdeci">const char * func</div><div class="ttdoc">function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00068">logbank.h:68</a></div></div>
+<div class="ttc" id="astructlog__locate__t_html_ad00d25abaa1a72cd0735c44774978978"><div class="ttname"><a href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">log_locate_t::file</a></div><div class="ttdeci">const char * file</div><div class="ttdoc">file name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00069">logbank.h:69</a></div></div>
 </div><!-- fragment -->
 <p>This is a wrapper for log_this function. </p>
-<p>This macro will be used to collect required data for <a class="el" href="#af3ead88ac759015175f6824b3a4bb882">log_this()</a></p>
+<p>This macro will be used to collect required data for <a class="el" href="#a9618e8e44960252c699aea9fc3fc49bc" title="This is the main logging function of this library.">log_this()</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
@@ -336,21 +331,6 @@ Functions</h2></td></tr>
 <p>Set this to 1 to log time stamp by default </p><dl class="section note"><dt>Note</dt><dd>time stamps can be controlled using <a class="el" href="#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp()</a> function at run-time </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="logbank_8h_source.html#l00104">104</a> of file <a class="el" href="logbank_8h_source.html">logbank.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a390e284dca17e1c1eb5106e82645c11d" name="a390e284dca17e1c1eb5106e82645c11d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a390e284dca17e1c1eb5106e82645c11d">&#9670;&#160;</a></span>log_locate_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structLOG__LOCATE.html">LOG_LOCATE</a> <a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -602,8 +582,8 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="af3ead88ac759015175f6824b3a4bb882" name="af3ead88ac759015175f6824b3a4bb882"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3ead88ac759015175f6824b3a4bb882">&#9670;&#160;</a></span>log_this()</h2>
+<a id="a9618e8e44960252c699aea9fc3fc49bc" name="a9618e8e44960252c699aea9fc3fc49bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9618e8e44960252c699aea9fc3fc49bc">&#9670;&#160;</a></span>log_this()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -612,14 +592,14 @@ NULL on Failure =&gt; invalid level </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void log_this </td>
+          <td class="memname">log_this </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a390e284dca17e1c1eb5106e82645c11d">log_locate_t</a></td>          <td class="paramname"><span class="paramname"><em>locate</em>, </span></td>
+          <td class="paramtype"><a class="el" href="structlog__locate__t.html">log_locate_t</a></td>          <td class="paramname"><span class="paramname"><em>locate</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -638,6 +618,18 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is the main logging function of this library. </p>
+<p>This function parses arguments similar to that of printf So, format argument of this function can be replaced by only argument used for log-message</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">locate</td><td>location parameters for this log-request </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>format for arguments for log-message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>optional arguments for log-message </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00182">182</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  182</span>                                                               {</div>
@@ -659,9 +651,9 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <div class="line"><span class="lineno">  198</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;%s &quot;</span>, time_stamp);</div>
 <div class="line"><span class="lineno">  199</span>    }</div>
 <div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span> (locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a> != NULL &amp;&amp; locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a> != NULL) {</div>
-<div class="line"><span class="lineno">  202</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;@ %s() \&quot;%s +%d\&quot; &quot;</span>, locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7">func</a>, locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674">file</a>,</div>
-<div class="line"><span class="lineno">  203</span>                      locate.<a class="code hl_variable" href="structLOG__LOCATE.html#a986a73ab6451c2154a5d926adc3efa18">line</a>);</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span> (locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a> != NULL &amp;&amp; locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a> != NULL) {</div>
+<div class="line"><span class="lineno">  202</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;@ %s() \&quot;%s +%d\&quot; &quot;</span>, locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a>, locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a>,</div>
+<div class="line"><span class="lineno">  203</span>                      locate.<a class="code hl_variable" href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">line</a>);</div>
 <div class="line"><span class="lineno">  204</span>    }</div>
 <div class="line"><span class="lineno">  205</span> </div>
 <div class="line"><span class="lineno">  206</span>    va_list args;</div>

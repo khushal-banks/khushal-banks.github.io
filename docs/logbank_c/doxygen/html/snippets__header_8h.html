@@ -96,8 +96,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa666538ec330550637743b7ce054fa51" id="r_aa666538ec330550637743b7ce054fa51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa666538ec330550637743b7ce054fa51">snippet_location</a> (void)</td></tr>
 <tr class="memdesc:aa666538ec330550637743b7ce054fa51"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to print a log with LOG_DEBUG level.  <br /></td></tr>
 <tr class="separator:aa666538ec330550637743b7ce054fa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778bef23770ae6204d46ce12101b3a41" id="r_a778bef23770ae6204d46ce12101b3a41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a778bef23770ae6204d46ce12101b3a41">snippet_stamps</a> (int gmt)</td></tr>
-<tr class="separator:a778bef23770ae6204d46ce12101b3a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6620b9789be2d996cf2f066ac5645dd4" id="r_a6620b9789be2d996cf2f066ac5645dd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6620b9789be2d996cf2f066ac5645dd4">snippet_stamps</a> (int gmt)</td></tr>
+<tr class="memdesc:a6620b9789be2d996cf2f066ac5645dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function prints all different combination of stamps for current time zone.  <br /></td></tr>
+<tr class="separator:a6620b9789be2d996cf2f066ac5645dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa666538ec330550637743b7ce054fa51" name="aa666538ec330550637743b7ce054fa51"></a>
@@ -235,8 +236,8 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a778bef23770ae6204d46ce12101b3a41" name="a778bef23770ae6204d46ce12101b3a41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a778bef23770ae6204d46ce12101b3a41">&#9670;&#160;</a></span>snippet_stamps()</h2>
+<a id="a6620b9789be2d996cf2f066ac5645dd4" name="a6620b9789be2d996cf2f066ac5645dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6620b9789be2d996cf2f066ac5645dd4">&#9670;&#160;</a></span>snippet_stamps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +246,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void snippet_stamps </td>
+          <td class="memname">snippet_stamps </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>gmt</em></span></td><td>)</td>
           <td></td>
@@ -257,6 +258,15 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This function prints all different combination of stamps for current time zone. </p>
+<p>This enables/disables date/time stamps and prints sample logs Finally, stamps config is reverted to previous settings</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gmt</td><td>set gmt to 1 or 0 in order to use gmt time or local time respectively </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="00__basic__snippets_8c_source.html#l00042">42</a> of file <a class="el" href="00__basic__snippets_8c_source.html">00_basic_snippets.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>                        {</div>

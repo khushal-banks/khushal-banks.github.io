@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['file_0',['file',['../structLOG__LOCATE.html#a0fbfa81e786eb5dd01a6b48d7495a674',1,'LOG_LOCATE']]],
-  ['func_1',['func',['../structLOG__LOCATE.html#a1630afacaa2ba2e0b776ed6a8c99d2f7',1,'LOG_LOCATE']]]
+  ['file_0',['file',['../structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978',1,'log_locate_t']]],
+  ['func_1',['func',['../structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e',1,'log_locate_t']]]
 ];
