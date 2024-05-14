@@ -16,8 +16,8 @@ void \mbox{\hyperlink{00__basic__snippets_8c_a64d087aff142d0d7fb77df9974d29a79}{
 \begin{DoxyCompactList}\small\item\em This functions prints sample logs without colors and then with colors. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{00__basic__snippets_8c_ad2263889e97a2d460b66234ff504fe39}{snippet\+\_\+overflow}} (void)
 \begin{DoxyCompactList}\small\item\em This function prints a very long message hoping for overflow. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{00__basic__snippets_8c_a8a15b960cbdb8da8409363ccf60e8610}{snippet\+\_\+retrieval}} (void)
-\begin{DoxyCompactList}\small\item\em This funtion retrieves all available logs from \doxylink{structlog__queue}{log\+\_\+queue}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \mbox{\hyperlink{00__basic__snippets_8c_a8933223950458147f4e62b01f619c73a}{snippet\+\_\+retrieval}} (int color)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -152,31 +152,19 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00020}{20}} o
 \DoxyCodeLine{00028\ \}}
 
 \end{DoxyCode}
-\Hypertarget{00__basic__snippets_8c_a8a15b960cbdb8da8409363ccf60e8610}\label{00__basic__snippets_8c_a8a15b960cbdb8da8409363ccf60e8610} 
+\Hypertarget{00__basic__snippets_8c_a8933223950458147f4e62b01f619c73a}\label{00__basic__snippets_8c_a8933223950458147f4e62b01f619c73a} 
 \index{00\_basic\_snippets.c@{00\_basic\_snippets.c}!snippet\_retrieval@{snippet\_retrieval}}
 \index{snippet\_retrieval@{snippet\_retrieval}!00\_basic\_snippets.c@{00\_basic\_snippets.c}}
 \doxysubsubsection{\texorpdfstring{snippet\_retrieval()}{snippet\_retrieval()}}
-{\footnotesize\ttfamily int snippet\+\_\+retrieval (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int snippet\+\_\+retrieval (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})}
 
-
-
-This funtion retrieves all available logs from \doxylink{structlog__queue}{log\+\_\+queue}. 
-
-This function retrieves each message from \doxylink{structlog__queue}{log\+\_\+queue} one by one in a loop and prints them. Order of log messages is First-\/\+In-\/\+First-\/\+Out (FIFO)
-
-\begin{DoxyNote}{Note}
-logs are printed for proof of concept (demo)
-\end{DoxyNote}
-\begin{DoxyReturn}{Returns}
-int Number of retrieved messages 
-\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00108}{108}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00109\ }
 \DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{char}\ message[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}];}
 \DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(message);}
@@ -185,13 +173,18 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00108}{108}} 
 \DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ read\_count\ =\ 0;}
 \DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{logbank_8h_af3d39672a440770c16db7efe588ff1b8}{log\_retrieve}}(message,\ size)\ !=\ 0)\ \{}
 \DoxyCodeLine{00116\ }
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ logs\ are\ printed\ here;\ for\ Proof\ of\ Concept\ */}}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ read\_count++;}
-\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color\ ==\ 0)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Remove\ colors\ */}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8h_ad09a0b05896754a1b7607c3fccb4839a}{log\_remove\_colors}}(message);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return}\ read\_count;}
-\DoxyCodeLine{00123\ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ logs\ are\ printed\ here;\ for\ Proof\ of\ Concept\ */}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ read\_count++;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ read\_count;}
+\DoxyCodeLine{00128\ \}}
 
 \end{DoxyCode}
 \Hypertarget{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}\label{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29} 
