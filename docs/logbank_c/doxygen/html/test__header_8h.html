@@ -197,7 +197,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   16</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00045">logbank.h:45</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00045">logbank.h:45</a></div></div>
-<div class="ttc" id="alogbank_8h_html_af871188d88e45fc10c15cbe2c90545b1"><div class="ttname"><a href="logbank_8h.html#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a></div><div class="ttdeci">#define LOG_LOCATION(level)</div><div class="ttdoc">This macro controls when to log location parameters for any log-request.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00100">logbank.h:100</a></div></div>
+<div class="ttc" id="alogbank_8h_html_af871188d88e45fc10c15cbe2c90545b1"><div class="ttname"><a href="logbank_8h.html#af871188d88e45fc10c15cbe2c90545b1">LOG_LOCATION</a></div><div class="ttdeci">#define LOG_LOCATION(level)</div><div class="ttdoc">This macro controls when to log location parameters for any log-request.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00104">logbank.h:104</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,7 +317,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a8de29f7c8bbf1a81cc6e71ac602032d3"><div class="ttname"><a href="logbank_8h.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></div><div class="ttdeci">#define FILENAME</div><div class="ttdoc">This is to extract basename from FILE</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00090">logbank.h:90</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a8de29f7c8bbf1a81cc6e71ac602032d3"><div class="ttname"><a href="logbank_8h.html#a8de29f7c8bbf1a81cc6e71ac602032d3">FILENAME</a></div><div class="ttdeci">#define FILENAME</div><div class="ttdoc">This is to extract basename from FILE</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00093">logbank.h:93</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a9618e8e44960252c699aea9fc3fc49bc"><div class="ttname"><a href="logbank_8h.html#a9618e8e44960252c699aea9fc3fc49bc">log_this</a></div><div class="ttdeci">int log_this(int level, log_locate_t locate, const char *fmt,...)</div><div class="ttdoc">This is the main logging function of this library.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00460">logbank.c:460</a></div></div>
 <div class="ttc" id="astructlog__locate__t_html"><div class="ttname"><a href="structlog__locate__t.html">log_locate_t</a></div><div class="ttdoc">type for location parameters of log-request</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00079">logbank.h:79</a></div></div>
 <div class="ttc" id="astructlog__locate__t_html_a0b90d39ff2c7402e79dc2d495734b2a2"><div class="ttname"><a href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">log_locate_t::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00082">logbank.h:82</a></div></div>
@@ -424,38 +424,38 @@ Functions</h2></td></tr>
 <dd>
 -1 Test Failed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="test05__retrieve_8c_source.html#l00016">16</a> of file <a class="el" href="test05__retrieve_8c_source.html">test05_retrieve.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>                     {</div>
-<div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">char</span> message[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>];</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(message);</div>
-<div class="line"><span class="lineno">   20</span> </div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">   22</span>        <span class="comment">/* No action - Clear queue */</span></div>
-<div class="line"><span class="lineno">   23</span>    } <span class="keywordflow">while</span> (<a class="code hl_function" href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a>(message, size) != 0);</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <span class="comment">/* Read queue_len */</span></div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">int</span> queue_len = <a class="code hl_function" href="logbank_8h.html#a8a8889b257192ef17d81b7398e536f30">log_get_queue_len</a>();</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="test05__retrieve_8c.html#a930023e7c22fad36ee2a2c7d97980057">make_queue_full</a>(queue_len);</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="comment">/* Read all available logs */</span></div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">int</span> read_count = 0;</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a>(message, size) != 0) {</div>
-<div class="line"><span class="lineno">   33</span>        read_count++;</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test05__retrieve_8c_source.html#l00024">24</a> of file <a class="el" href="test05__retrieve_8c_source.html">test05_retrieve.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                     {</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span> message[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>];</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(message);</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">   30</span>        <span class="comment">/* No action - Clear queue */</span></div>
+<div class="line"><span class="lineno">   31</span>    } <span class="keywordflow">while</span> (<a class="code hl_function" href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a>(message, size) != 0);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment">/* Read queue_len */</span></div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">int</span> queue_len = <a class="code hl_function" href="logbank_8h.html#a8a8889b257192ef17d81b7398e536f30">log_get_queue_len</a>();</div>
 <div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>    <span class="comment">/* Check if read_count is same as queue_len */</span></div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (read_count != queue_len) {</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   42</span>}</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="test05__retrieve_8c.html#a0e70e2d995d3da3c10487c5ae0dbe076">make_queue_full</a>(queue_len);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">/* Read all available logs */</span></div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">int</span> read_count = 0;</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">while</span> (<a class="code hl_function" href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a>(message, size) != 0) {</div>
+<div class="line"><span class="lineno">   41</span>        read_count++;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">/* Check if read_count is same as queue_len */</span></div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (read_count != queue_len) {</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   50</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a729d70bad9089a4fa7af7191b278d434"><div class="ttname"><a href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a></div><div class="ttdeci">#define LOG_MAX_DATA_LEN</div><div class="ttdoc">Maximum allowed length for log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00015">logbank.h:15</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a8a8889b257192ef17d81b7398e536f30"><div class="ttname"><a href="logbank_8h.html#a8a8889b257192ef17d81b7398e536f30">log_get_queue_len</a></div><div class="ttdeci">int log_get_queue_len(void)</div><div class="ttdoc">Returns the value of LOG_RETRIEVE_QUEUE_LEN.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00516">logbank.c:516</a></div></div>
 <div class="ttc" id="alogbank_8h_html_af3d39672a440770c16db7efe588ff1b8"><div class="ttname"><a href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a></div><div class="ttdeci">int log_retrieve(char *message, size_t size)</div><div class="ttdoc">This function is used to retrieve oldest available log-message from log_queue.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00511">logbank.c:511</a></div></div>
-<div class="ttc" id="atest05__retrieve_8c_html_a930023e7c22fad36ee2a2c7d97980057"><div class="ttname"><a href="test05__retrieve_8c.html#a930023e7c22fad36ee2a2c7d97980057">make_queue_full</a></div><div class="ttdeci">static void make_queue_full(int queue_len)</div><div class="ttdef"><b>Definition</b> <a href="test05__retrieve_8c_source.html#l00004">test05_retrieve.c:4</a></div></div>
+<div class="ttc" id="atest05__retrieve_8c_html_a0e70e2d995d3da3c10487c5ae0dbe076"><div class="ttname"><a href="test05__retrieve_8c.html#a0e70e2d995d3da3c10487c5ae0dbe076">make_queue_full</a></div><div class="ttdeci">static void make_queue_full(int queue_len)</div><div class="ttdoc">This function make sures that the queue becomes full.</div><div class="ttdef"><b>Definition</b> <a href="test05__retrieve_8c_source.html#l00012">test05_retrieve.c:12</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -491,7 +491,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">    6</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>, <span class="stringliteral">&quot;Test1 variadic args using: %s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>);</div>
 <div class="line"><span class="lineno">    7</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>, <span class="stringliteral">&quot;Test2 variadic args using: %s%s&quot;</span>, <span class="stringliteral">&quot;macro&quot;</span>, <span class="stringliteral">&quot; !!&quot;</span>);</div>
 <div class="line"><span class="lineno">    8</span>}</div>
-<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00135">logbank.h:135</a></div></div>
+<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00139">logbank.h:139</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

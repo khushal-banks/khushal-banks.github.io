@@ -180,7 +180,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   39</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00395">logbank.c:395</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00045">logbank.h:45</a></div></div>
-<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00135">logbank.h:135</a></div></div>
+<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00139">logbank.h:139</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -286,7 +286,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  120</span>        }</div>
 <div class="line"><span class="lineno">  121</span> </div>
 <div class="line"><span class="lineno">  122</span>        <span class="comment">/* logs are printed here; for Proof of Concept */</span></div>
-<div class="line"><span class="lineno">  123</span>        printf(<span class="stringliteral">&quot;%s&quot;</span>, message);</div>
+<div class="line"><span class="lineno">  123</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;%s&quot;</span>, message);</div>
 <div class="line"><span class="lineno">  124</span>        read_count++;</div>
 <div class="line"><span class="lineno">  125</span>    }</div>
 <div class="line"><span class="lineno">  126</span> </div>
