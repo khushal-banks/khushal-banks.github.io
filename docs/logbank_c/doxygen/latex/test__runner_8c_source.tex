@@ -21,7 +21,19 @@
 \DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00018}00018\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}test\_location\ passed\(\backslash\)n"{}});}
 \DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ if\ (test\_color()\ <\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ return\ -\/1;}}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ (void)fprintf(stderr,\ "{}test\_color\ passed\(\backslash\)n"{});}}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{test04__overflow_8c_a6eddb96ce76e15005e279334570c168d}{test\_overflow}}()\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00030}00030\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}test\_overflow\ passed\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{test__runner_8c_source_l00033}00033\ \}}
 
 \end{DoxyCode}

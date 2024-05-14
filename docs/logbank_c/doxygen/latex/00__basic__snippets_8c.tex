@@ -11,10 +11,52 @@ void \mbox{\hyperlink{00__basic__snippets_8c_a8025a766e95a5e7a457090e9608095e7}{
 void \mbox{\hyperlink{00__basic__snippets_8c_ac8417a6c450c6d8730cbd00e3c7823ed}{snippet\+\_\+location}} (void)
 \begin{DoxyCompactList}\small\item\em This function is used to print a log with LOG\+\_\+\+DEBUG level. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{00__basic__snippets_8c_a778bef23770ae6204d46ce12101b3a41}{snippet\+\_\+stamps}} (int gmt)
-\begin{DoxyCompactList}\small\item\em This function prints all different combination of stamps for current time zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function prints all different combination of stamps for current time zone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{00__basic__snippets_8c_a64d087aff142d0d7fb77df9974d29a79}{snippet\+\_\+colors}} (void)
+\begin{DoxyCompactList}\small\item\em This functions prints sample logs without colors and then with colors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{00__basic__snippets_8c_ad2263889e97a2d460b66234ff504fe39}{snippet\+\_\+overflow}} (void)
+\begin{DoxyCompactList}\small\item\em This function prints a very long message hoping for overflow. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{00__basic__snippets_8c_a64d087aff142d0d7fb77df9974d29a79}\label{00__basic__snippets_8c_a64d087aff142d0d7fb77df9974d29a79} 
+\index{00\_basic\_snippets.c@{00\_basic\_snippets.c}!snippet\_colors@{snippet\_colors}}
+\index{snippet\_colors@{snippet\_colors}!00\_basic\_snippets.c@{00\_basic\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{snippet\_colors()}{snippet\_colors()}}
+{\footnotesize\ttfamily void snippet\+\_\+colors (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This functions prints sample logs without colors and then with colors. 
+
+This prints sample logs by,
+\begin{DoxyItemize}
+\item first disabling colors
+\item then enabling colors
+\item then color config is reverted to previous setting \begin{DoxyNote}{Note}
+While streaming to a log-\/file colors wouldn\textquotesingle{}t be printed 
+\end{DoxyNote}
+
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00081}{81}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{/*\ Disable\ colors\ and\ print\ sample\ logs\ */}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ old\_colors\ =\ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(0);}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{/*\ Enable\ colors\ and\ print\ sample\ logs\ */}}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(1);}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{/*\ Revert\ to\ previous\ config\ of\ colors\ */}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(old\_colors);}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}
 \Hypertarget{00__basic__snippets_8c_ac8417a6c450c6d8730cbd00e3c7823ed}\label{00__basic__snippets_8c_ac8417a6c450c6d8730cbd00e3c7823ed} 
 \index{00\_basic\_snippets.c@{00\_basic\_snippets.c}!snippet\_location@{snippet\_location}}
 \index{snippet\_location@{snippet\_location}!00\_basic\_snippets.c@{00\_basic\_snippets.c}}
@@ -40,6 +82,40 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00031}{31}} o
 \DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*\ Revert\ priority\ to\ previous\ value\ */}}
 \DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(old);}
 \DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+\Hypertarget{00__basic__snippets_8c_ad2263889e97a2d460b66234ff504fe39}\label{00__basic__snippets_8c_ad2263889e97a2d460b66234ff504fe39} 
+\index{00\_basic\_snippets.c@{00\_basic\_snippets.c}!snippet\_overflow@{snippet\_overflow}}
+\index{snippet\_overflow@{snippet\_overflow}!00\_basic\_snippets.c@{00\_basic\_snippets.c}}
+\doxysubsubsection{\texorpdfstring{snippet\_overflow()}{snippet\_overflow()}}
+{\footnotesize\ttfamily void snippet\+\_\+overflow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function prints a very long message hoping for overflow. 
+
+This function is currently attempting to print a log-\/message of length 200 which should overflow if LOG\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN is below 200
+
+\begin{DoxyNote}{Note}
+Additional data would be written for header (i.\+e., prefix of log-\/message) 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00095}{95}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{/*\ snippet\ for\ length\ 100\ */}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ LOG(LOG\_ERROR,\ "{}\%s\%s\%s\%s\%s"{},\ "{}1234567890ABCDEFGHIJ"{},\ "{}1234567890ABCDEFGHIJ"{},}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ "{}1234567890ABCDEFGHIJ"{},\ "{}1234567890ABCDEFGHIJ"{},\ "{}1234567890ABCDEFGHIJ"{});}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{/*\ snippet\ for\ length\ 200\ */}}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\_ERROR}},\ \textcolor{stringliteral}{"{}\%s\%s\%s\%s\%s\%s\%s\%s\%s\%s"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}});}
+\DoxyCodeLine{00105\ \}}
 
 \end{DoxyCode}
 \Hypertarget{00__basic__snippets_8c_a8025a766e95a5e7a457090e9608095e7}\label{00__basic__snippets_8c_a8025a766e95a5e7a457090e9608095e7} 

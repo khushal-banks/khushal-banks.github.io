@@ -78,6 +78,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">logbank.c File Reference</div></div>
@@ -100,21 +101,49 @@ Macros</h2></td></tr>
 <tr class="memitem:a1273f9f835f4a7ad5304c7e633e20b68" id="r_a1273f9f835f4a7ad5304c7e633e20b68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1273f9f835f4a7ad5304c7e633e20b68">LOG_TIME_FORMAT</a>&#160;&#160;&#160;<a class="el" href="#a973d1a977f445cb8c1d0aeb30f0f119d">LOG_TIME_12HR</a></td></tr>
 <tr class="memdesc:a1273f9f835f4a7ad5304c7e633e20b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro chooses between LOG_TIME_12HR &amp; LOG_TIME_24HR.  <br /></td></tr>
 <tr class="separator:a1273f9f835f4a7ad5304c7e633e20b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af908196e407bb67394664c7b0d5999b8" id="r_af908196e407bb67394664c7b0d5999b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a>&#160;&#160;&#160;10 + 1</td></tr>
+<tr class="memitem:af908196e407bb67394664c7b0d5999b8" id="r_af908196e407bb67394664c7b0d5999b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a>&#160;&#160;&#160;(10 + 1)</td></tr>
 <tr class="memdesc:af908196e407bb67394664c7b0d5999b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculated length for specified time format + 1 for string termination.  <br /></td></tr>
 <tr class="separator:af908196e407bb67394664c7b0d5999b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ea36cc09a0aa530b338c94960baf512" id="r_a1ea36cc09a0aa530b338c94960baf512"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea36cc09a0aa530b338c94960baf512">LOG_DATE_FORMAT</a>&#160;&#160;&#160;&quot;%d/%m/%Y&quot;</td></tr>
 <tr class="memdesc:a1ea36cc09a0aa530b338c94960baf512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed specified format for Date stamps.  <br /></td></tr>
 <tr class="separator:a1ea36cc09a0aa530b338c94960baf512"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c3be125d60c2afbb469cfe890546132" id="r_a9c3be125d60c2afbb469cfe890546132"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a>&#160;&#160;&#160;10 + 1</td></tr>
+<tr class="memitem:a9c3be125d60c2afbb469cfe890546132" id="r_a9c3be125d60c2afbb469cfe890546132"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a>&#160;&#160;&#160;(10 + 1)</td></tr>
 <tr class="memdesc:a9c3be125d60c2afbb469cfe890546132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculated length for specified time format + 1 for string termination.  <br /></td></tr>
 <tr class="separator:a9c3be125d60c2afbb469cfe890546132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454f3ad6bafae1ecc3ff96410f7f1ea3" id="r_a454f3ad6bafae1ecc3ff96410f7f1ea3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a454f3ad6bafae1ecc3ff96410f7f1ea3">LOG_USE_COLOR</a>&#160;&#160;&#160;(<a class="el" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a>)</td></tr>
+<tr class="memdesc:a454f3ad6bafae1ecc3ff96410f7f1ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls when to use colors.  <br /></td></tr>
+<tr class="separator:a454f3ad6bafae1ecc3ff96410f7f1ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a875a1f15b875e248631c03fc1ecaa2bf" id="r_a875a1f15b875e248631c03fc1ecaa2bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a875a1f15b875e248631c03fc1ecaa2bf">LOG_ADD_COLOR</a>(buffer,  size,  color_index)&#160;&#160;&#160;    <a class="el" href="#a454f3ad6bafae1ecc3ff96410f7f1ea3">LOG_USE_COLOR</a> ? snprintf(buffer, size, &quot;%s&quot;, <a class="el" href="#a190f05562784d975771cf3c914c5fe45">color_list</a>[color_index]) : 0</td></tr>
+<tr class="memdesc:a875a1f15b875e248631c03fc1ecaa2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a color to buffer.  <br /></td></tr>
+<tr class="separator:a875a1f15b875e248631c03fc1ecaa2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a64c85acabf7cb23619533dcb80b17433" id="r_a64c85acabf7cb23619533dcb80b17433"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64c85acabf7cb23619533dcb80b17433">LOG_COLORS</a> { <br />
+&#160;&#160;<a class="el" href="#a64c85acabf7cb23619533dcb80b17433a43dcb6335fa79855e4ca4d20889fcbd4">LOG_COLOR_BRIGHT_CYAN</a> = 0
+, <a class="el" href="#a64c85acabf7cb23619533dcb80b17433aad3e8ec42274064ce7e2caef9344066f">LOG_COLOR_GREEN</a>
+, <a class="el" href="#a64c85acabf7cb23619533dcb80b17433ab6d076256ae0dbd828cf72784057782f">LOG_COLOR_BRIGHT_YELLOW</a>
+, <a class="el" href="#a64c85acabf7cb23619533dcb80b17433a108ef2e690e2f6db917f0a20732ae905">LOG_COLOR_RED</a>
+, <br />
+&#160;&#160;<a class="el" href="#a64c85acabf7cb23619533dcb80b17433ac692915f210ef04b946a5a1bee783581">LOG_COLOR_BRIGHT_MAGENTA</a>
+, <a class="el" href="#a64c85acabf7cb23619533dcb80b17433a6655c2d0acacf0054e9bf3e2f01e4e2c">LOG_COLOR_BLUE</a>
+, <a class="el" href="#a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c">LOG_COLOR_GRAY</a>
+, <a class="el" href="#a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70">LOG_COLOR_END</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a64c85acabf7cb23619533dcb80b17433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names of available ANSI color codes for foregound text.  <a href="#a64c85acabf7cb23619533dcb80b17433">More...</a><br /></td></tr>
+<tr class="separator:a64c85acabf7cb23619533dcb80b17433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7428ec2d45d3df3bbb27094a8f8d585a" id="r_a7428ec2d45d3df3bbb27094a8f8d585a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7428ec2d45d3df3bbb27094a8f8d585a">log_stamp_collector</a> (char *stamp, const char *format, size_t size)</td></tr>
 <tr class="memdesc:a7428ec2d45d3df3bbb27094a8f8d585a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to collect system date/time in requested format.  <br /></td></tr>
 <tr class="separator:a7428ec2d45d3df3bbb27094a8f8d585a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61610956cd7b586c8745be62d0b04bb4" id="r_a61610956cd7b586c8745be62d0b04bb4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61610956cd7b586c8745be62d0b04bb4">update_header</a> (char *header, size_t size, int level, <a class="el" href="structlog__locate__t.html">log_locate_t</a> locate)</td></tr>
+<tr class="memdesc:a61610956cd7b586c8745be62d0b04bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function populate the header i.e., prefix of log-message.  <br /></td></tr>
+<tr class="separator:a61610956cd7b586c8745be62d0b04bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55d582cd8fce0964d97a5f33afe759c8" id="r_a55d582cd8fce0964d97a5f33afe759c8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55d582cd8fce0964d97a5f33afe759c8">log_stream_write</a> (const char *message)</td></tr>
+<tr class="separator:a55d582cd8fce0964d97a5f33afe759c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e49b5594c4aed69441bc2b4b0e8e0e7" id="r_a5e49b5594c4aed69441bc2b4b0e8e0e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e49b5594c4aed69441bc2b4b0e8e0e7">log_get_default_level</a> (void)</td></tr>
 <tr class="memdesc:a5e49b5594c4aed69441bc2b4b0e8e0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns default value for log_level See <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>.  <br /></td></tr>
 <tr class="separator:a5e49b5594c4aed69441bc2b4b0e8e0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,12 +165,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a1c3d0c234139eef0ecdd76c379bd2622" id="r_a1c3d0c234139eef0ecdd76c379bd2622"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c3d0c234139eef0ecdd76c379bd2622">log_use_timestamp</a> (int enable)</td></tr>
 <tr class="memdesc:a1c3d0c234139eef0ecdd76c379bd2622"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to enable time stamps for every log-request at run-time.  <br /></td></tr>
 <tr class="separator:a1c3d0c234139eef0ecdd76c379bd2622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3ead88ac759015175f6824b3a4bb882" id="r_af3ead88ac759015175f6824b3a4bb882"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3ead88ac759015175f6824b3a4bb882">log_this</a> (int level, <a class="el" href="structlog__locate__t.html">log_locate_t</a> locate, const char *fmt,...)</td></tr>
-<tr class="memdesc:af3ead88ac759015175f6824b3a4bb882"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
-<tr class="separator:af3ead88ac759015175f6824b3a4bb882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87097c0104243be5ea4a28ade9abc579" id="r_a87097c0104243be5ea4a28ade9abc579"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87097c0104243be5ea4a28ade9abc579">log_use_color</a> (int enable)</td></tr>
+<tr class="memdesc:a87097c0104243be5ea4a28ade9abc579"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to enable colors for log-requests being logged on stderr.  <br /></td></tr>
+<tr class="separator:a87097c0104243be5ea4a28ade9abc579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c62a16c3bbb595d0ada4b00a8b4092" id="r_af4c62a16c3bbb595d0ada4b00a8b4092"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c62a16c3bbb595d0ada4b00a8b4092">log_this</a> (int level, <a class="el" href="structlog__locate__t.html">log_locate_t</a> locate, const char *fmt,...)</td></tr>
+<tr class="memdesc:af4c62a16c3bbb595d0ada4b00a8b4092"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main logging function of this library.  <br /></td></tr>
+<tr class="separator:af4c62a16c3bbb595d0ada4b00a8b4092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a189d4d789654e3342bdde4f60875aa1e" id="r_a189d4d789654e3342bdde4f60875aa1e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a> = <a class="el" href="logbank_8h.html#a2671a6aa5ca95c2a6c3fd0032e7880d5">LOG_COLOR</a></td></tr>
+<tr class="memdesc:a189d4d789654e3342bdde4f60875aa1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">current preferrence on use of color  <br /></td></tr>
+<tr class="separator:a189d4d789654e3342bdde4f60875aa1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a190f05562784d975771cf3c914c5fe45" id="r_a190f05562784d975771cf3c914c5fe45"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a190f05562784d975771cf3c914c5fe45">color_list</a> []</td></tr>
+<tr class="memdesc:a190f05562784d975771cf3c914c5fe45"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of available ANSI color codes for foregound text  <br /></td></tr>
+<tr class="separator:a190f05562784d975771cf3c914c5fe45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac91d55174d383848b976a34de843748e" id="r_ac91d55174d383848b976a34de843748e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac91d55174d383848b976a34de843748e">log_level</a> = <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></td></tr>
 <tr class="memdesc:ac91d55174d383848b976a34de843748e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This value acts as a filter to discard lower-priority log-requests.  <br /></td></tr>
 <tr class="separator:ac91d55174d383848b976a34de843748e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +194,50 @@ Variables</h2></td></tr>
 <tr class="separator:aecd1c33eda8dadb496cecee02527b6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a875a1f15b875e248631c03fc1ecaa2bf" name="a875a1f15b875e248631c03fc1ecaa2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a875a1f15b875e248631c03fc1ecaa2bf">&#9670;&#160;</a></span>LOG_ADD_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ADD_COLOR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">buffer, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">size, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">color_index</span>&#160;)&#160;&#160;&#160;    <a class="el" href="#a454f3ad6bafae1ecc3ff96410f7f1ea3">LOG_USE_COLOR</a> ? snprintf(buffer, size, &quot;%s&quot;, <a class="el" href="#a190f05562784d975771cf3c914c5fe45">color_list</a>[color_index]) : 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a color to buffer. </p>
+<p>This macro is use to add color to a buffer; which has remaining bytes size</p>
+<dl class="section note"><dt>Note</dt><dd>This macro assumes buffer and size parameters are passed after necessary calculations. So, it would start writing at index 0 of buffer if size allows it. Check parameters documentation below.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buffer</td><td>buffer pointer (after adding len as index) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>available remaining size (after subtracting len from origional size) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&gt;0 Color is added </dd>
+<dd>
+=0 No color is added </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00077">77</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span><span class="preprocessor">#define LOG_ADD_COLOR(buffer, size, color_index)                                         \</span></div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">    LOG_USE_COLOR ? snprintf(buffer, size, &quot;%s&quot;, color_list[color_index]) : 0</span></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a1ea36cc09a0aa530b338c94960baf512" name="a1ea36cc09a0aa530b338c94960baf512"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ea36cc09a0aa530b338c94960baf512">&#9670;&#160;</a></span>LOG_DATE_FORMAT</h2>
 
@@ -182,7 +264,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LOG_DATE_LEN&#160;&#160;&#160;10 + 1</td>
+          <td class="memname">#define LOG_DATE_LEN&#160;&#160;&#160;(10 + 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -260,7 +342,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LOG_TIME_LEN&#160;&#160;&#160;10 + 1</td>
+          <td class="memname">#define LOG_TIME_LEN&#160;&#160;&#160;(10 + 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -270,6 +352,80 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00037">37</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 
+</div>
+</div>
+<a id="a454f3ad6bafae1ecc3ff96410f7f1ea3" name="a454f3ad6bafae1ecc3ff96410f7f1ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454f3ad6bafae1ecc3ff96410f7f1ea3">&#9670;&#160;</a></span>LOG_USE_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_USE_COLOR&#160;&#160;&#160;(<a class="el" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Controls when to use colors. </p>
+<p>This macro is used to control when to use colors for log-requests </p><dl class="section note"><dt>Note</dt><dd>Use this macro to limit the use of color to stderr only (other file streams shouldn't use colors) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00061">61</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a64c85acabf7cb23619533dcb80b17433" name="a64c85acabf7cb23619533dcb80b17433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c85acabf7cb23619533dcb80b17433">&#9670;&#160;</a></span>LOG_COLORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a64c85acabf7cb23619533dcb80b17433">LOG_COLORS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Names of available ANSI color codes for foregound text. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433a43dcb6335fa79855e4ca4d20889fcbd4" name="a64c85acabf7cb23619533dcb80b17433a43dcb6335fa79855e4ca4d20889fcbd4"></a>LOG_COLOR_BRIGHT_CYAN&#160;</td><td class="fielddoc"><p>used for LOG_DEBUG </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433aad3e8ec42274064ce7e2caef9344066f" name="a64c85acabf7cb23619533dcb80b17433aad3e8ec42274064ce7e2caef9344066f"></a>LOG_COLOR_GREEN&#160;</td><td class="fielddoc"><p>used for LOG_INFO </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433ab6d076256ae0dbd828cf72784057782f" name="a64c85acabf7cb23619533dcb80b17433ab6d076256ae0dbd828cf72784057782f"></a>LOG_COLOR_BRIGHT_YELLOW&#160;</td><td class="fielddoc"><p>used for LOG_WARN </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433a108ef2e690e2f6db917f0a20732ae905" name="a64c85acabf7cb23619533dcb80b17433a108ef2e690e2f6db917f0a20732ae905"></a>LOG_COLOR_RED&#160;</td><td class="fielddoc"><p>used for LOG_ERROR </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433ac692915f210ef04b946a5a1bee783581" name="a64c85acabf7cb23619533dcb80b17433ac692915f210ef04b946a5a1bee783581"></a>LOG_COLOR_BRIGHT_MAGENTA&#160;</td><td class="fielddoc"><p>used for LOG_ISSUE </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433a6655c2d0acacf0054e9bf3e2f01e4e2c" name="a64c85acabf7cb23619533dcb80b17433a6655c2d0acacf0054e9bf3e2f01e4e2c"></a>LOG_COLOR_BLUE&#160;</td><td class="fielddoc"><p>used for LOG_FATAL </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c" name="a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c"></a>LOG_COLOR_GRAY&#160;</td><td class="fielddoc"><p>used to dim certain text </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70" name="a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70"></a>LOG_COLOR_END&#160;</td><td class="fielddoc"><p>used to terminate use of current color </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00108">108</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>                {</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433a43dcb6335fa79855e4ca4d20889fcbd4">LOG_COLOR_BRIGHT_CYAN</a> = 0,</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433aad3e8ec42274064ce7e2caef9344066f">LOG_COLOR_GREEN</a>,</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433ab6d076256ae0dbd828cf72784057782f">LOG_COLOR_BRIGHT_YELLOW</a>,</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433a108ef2e690e2f6db917f0a20732ae905">LOG_COLOR_RED</a>,</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433ac692915f210ef04b946a5a1bee783581">LOG_COLOR_BRIGHT_MAGENTA</a>,</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433a6655c2d0acacf0054e9bf3e2f01e4e2c">LOG_COLOR_BLUE</a>,</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c">LOG_COLOR_GRAY</a>,</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70">LOG_COLOR_END</a>,</div>
+<div class="line"><span class="lineno">  117</span>};</div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433a108ef2e690e2f6db917f0a20732ae905"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433a108ef2e690e2f6db917f0a20732ae905">LOG_COLOR_RED</a></div><div class="ttdeci">@ LOG_COLOR_RED</div><div class="ttdoc">used for LOG_ERROR</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00112">logbank.c:112</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433a43dcb6335fa79855e4ca4d20889fcbd4"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433a43dcb6335fa79855e4ca4d20889fcbd4">LOG_COLOR_BRIGHT_CYAN</a></div><div class="ttdeci">@ LOG_COLOR_BRIGHT_CYAN</div><div class="ttdoc">used for LOG_DEBUG</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00109">logbank.c:109</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70">LOG_COLOR_END</a></div><div class="ttdeci">@ LOG_COLOR_END</div><div class="ttdoc">used to terminate use of current color</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00116">logbank.c:116</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433a6655c2d0acacf0054e9bf3e2f01e4e2c"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433a6655c2d0acacf0054e9bf3e2f01e4e2c">LOG_COLOR_BLUE</a></div><div class="ttdeci">@ LOG_COLOR_BLUE</div><div class="ttdoc">used for LOG_FATAL</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00114">logbank.c:114</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433aad3e8ec42274064ce7e2caef9344066f"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433aad3e8ec42274064ce7e2caef9344066f">LOG_COLOR_GREEN</a></div><div class="ttdeci">@ LOG_COLOR_GREEN</div><div class="ttdoc">used for LOG_INFO</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00110">logbank.c:110</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c">LOG_COLOR_GRAY</a></div><div class="ttdeci">@ LOG_COLOR_GRAY</div><div class="ttdoc">used to dim certain text</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00115">logbank.c:115</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433ab6d076256ae0dbd828cf72784057782f"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433ab6d076256ae0dbd828cf72784057782f">LOG_COLOR_BRIGHT_YELLOW</a></div><div class="ttdeci">@ LOG_COLOR_BRIGHT_YELLOW</div><div class="ttdoc">used for LOG_WARN</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00111">logbank.c:111</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a64c85acabf7cb23619533dcb80b17433ac692915f210ef04b946a5a1bee783581"><div class="ttname"><a href="#a64c85acabf7cb23619533dcb80b17433ac692915f210ef04b946a5a1bee783581">LOG_COLOR_BRIGHT_MAGENTA</a></div><div class="ttdeci">@ LOG_COLOR_BRIGHT_MAGENTA</div><div class="ttdoc">used for LOG_ISSUE</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00113">logbank.c:113</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -297,16 +453,16 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00150">150</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>                          {</div>
-<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span> (gmt == 1) {</div>
-<div class="line"><span class="lineno">  152</span>        <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = gmtime;</div>
-<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  154</span>    }</div>
-<div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>    <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = localtime;</div>
-<div class="line"><span class="lineno">  157</span>}</div>
-<div class="ttc" id="alogbank_8c_html_aecd1c33eda8dadb496cecee02527b6a3"><div class="ttname"><a href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a></div><div class="ttdeci">static struct tm *(* log_time_fn)(const time_t *)</div><div class="ttdoc">This function pointer points to a correct time-function based on time-zone.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00074">logbank.c:85</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00319">319</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  319</span>                          {</div>
+<div class="line"><span class="lineno">  320</span>    <span class="keywordflow">if</span> (gmt == 1) {</div>
+<div class="line"><span class="lineno">  321</span>        <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = gmtime;</div>
+<div class="line"><span class="lineno">  322</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  323</span>    }</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>    <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = localtime;</div>
+<div class="line"><span class="lineno">  326</span>}</div>
+<div class="ttc" id="alogbank_8c_html_aecd1c33eda8dadb496cecee02527b6a3"><div class="ttname"><a href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a></div><div class="ttdeci">static struct tm *(* log_time_fn)(const time_t *)</div><div class="ttdoc">This function pointer points to a correct time-function based on time-zone.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00153">logbank.c:164</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,11 +484,11 @@ Variables</h2></td></tr>
 <p>This function returns default value for log_level See <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>int Returns default log_level </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00118">118</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>                            {</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
-<div class="line"><span class="lineno">  120</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00049">logbank.h:49</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00287">287</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>                            {</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
+<div class="line"><span class="lineno">  289</span>}</div>
+<div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00055">logbank.h:55</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -354,11 +510,11 @@ Variables</h2></td></tr>
 <p>This function returns current value for log_level. </p>
 <dl class="section return"><dt>Returns</dt><dd>int Returns log_level </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00123">123</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>                    {</div>
-<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
-<div class="line"><span class="lineno">  125</span>}</div>
-<div class="ttc" id="alogbank_8c_html_ac91d55174d383848b976a34de843748e"><div class="ttname"><a href="#ac91d55174d383848b976a34de843748e">log_level</a></div><div class="ttdeci">static int log_level</div><div class="ttdoc">This value acts as a filter to discard lower-priority log-requests.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00060">logbank.c:60</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00292">292</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  292</span>                    {</div>
+<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
+<div class="line"><span class="lineno">  294</span>}</div>
+<div class="ttc" id="alogbank_8c_html_ac91d55174d383848b976a34de843748e"><div class="ttname"><a href="#ac91d55174d383848b976a34de843748e">log_level</a></div><div class="ttdeci">static int log_level</div><div class="ttdoc">This value acts as a filter to discard lower-priority log-requests.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00139">logbank.c:139</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -388,17 +544,17 @@ Variables</h2></td></tr>
 <dd>
 NULL on Failure =&gt; invalid level </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00139">139</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>                             {</div>
-<div class="line"><span class="lineno">  140</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* level_names[] = {<span class="stringliteral">&quot;DEBUG&quot;</span>, <span class="stringliteral">&quot;INFO &quot;</span>, <span class="stringliteral">&quot;WARN &quot;</span>,</div>
-<div class="line"><span class="lineno">  141</span>                                        <span class="stringliteral">&quot;ERROR&quot;</span>, <span class="stringliteral">&quot;ISSUE&quot;</span>, <span class="stringliteral">&quot;FATAL&quot;</span>};</div>
-<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
-<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  144</span>    }</div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> level_names[level];</div>
-<div class="line"><span class="lineno">  147</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00308">308</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  308</span>                             {</div>
+<div class="line"><span class="lineno">  309</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* level_names[] = {<span class="stringliteral">&quot;DEBUG&quot;</span>, <span class="stringliteral">&quot;INFO&quot;</span>,  <span class="stringliteral">&quot;WARN&quot;</span>,</div>
+<div class="line"><span class="lineno">  310</span>                                        <span class="stringliteral">&quot;ERROR&quot;</span>, <span class="stringliteral">&quot;ISSUE&quot;</span>, <span class="stringliteral">&quot;FATAL&quot;</span>};</div>
+<div class="line"><span class="lineno">  311</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><span class="lineno">  312</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  313</span>    }</div>
+<div class="line"><span class="lineno">  314</span> </div>
+<div class="line"><span class="lineno">  315</span>    <span class="keywordflow">return</span> level_names[level];</div>
+<div class="line"><span class="lineno">  316</span>}</div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -428,16 +584,16 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 on Failure =&gt; Supplied new value can not be configured </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00128">128</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>                         {</div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
-<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
-<div class="line"><span class="lineno">  134</span>    <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a> = level;</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><span class="lineno">  136</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00297">297</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  297</span>                         {</div>
+<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><span class="lineno">  299</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  300</span>    }</div>
+<div class="line"><span class="lineno">  301</span> </div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
+<div class="line"><span class="lineno">  303</span>    <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a> = level;</div>
+<div class="line"><span class="lineno">  304</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  305</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,36 +640,66 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00098">98</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>                                                                  {</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (stamp == NULL) {</div>
-<div class="line"><span class="lineno">  100</span>        <span class="comment">/* stamp doesn&#39;t have a designated memory */</span></div>
-<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>    <span class="comment">/* Get raw-time */</span></div>
-<div class="line"><span class="lineno">  105</span>    time_t time_raw = time(NULL);</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>    <span class="comment">/* Receive time from assigned log_time_fn (this ensures correct time-zone) */</span></div>
-<div class="line"><span class="lineno">  108</span>    <span class="keyword">const</span> <span class="keyword">struct </span>tm* time_tm = <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> != NULL ? <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a>(&amp;time_raw)</div>
-<div class="line"><span class="lineno">  109</span>                                                   : localtime(&amp;time_raw);</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>    <span class="comment">/* Reformat time to requested format */</span></div>
-<div class="line"><span class="lineno">  112</span>    (void)strftime(stamp, size, format, (<span class="keyword">const</span> <span class="keyword">struct</span> tm*)time_tm);</div>
-<div class="line"><span class="lineno">  113</span>    stamp[size - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  115</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00177">177</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>                                                                  {</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">if</span> (stamp == NULL) {</div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">/* stamp doesn&#39;t have a designated memory */</span></div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  181</span>    }</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <span class="comment">/* Get raw-time */</span></div>
+<div class="line"><span class="lineno">  184</span>    time_t time_raw = time(NULL);</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>    <span class="comment">/* Receive time from assigned log_time_fn (this ensures correct time-zone) */</span></div>
+<div class="line"><span class="lineno">  187</span>    <span class="keyword">const</span> <span class="keyword">struct </span>tm* time_tm = <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> != NULL ? <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a>(&amp;time_raw)</div>
+<div class="line"><span class="lineno">  188</span>                                                   : localtime(&amp;time_raw);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    <span class="comment">/* Reformat time to requested format */</span></div>
+<div class="line"><span class="lineno">  191</span>    (void)strftime(stamp, size, format, (<span class="keyword">const</span> <span class="keyword">struct</span> tm*)time_tm);</div>
+<div class="line"><span class="lineno">  192</span>    stamp[size - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  194</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="af3ead88ac759015175f6824b3a4bb882" name="af3ead88ac759015175f6824b3a4bb882"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3ead88ac759015175f6824b3a4bb882">&#9670;&#160;</a></span>log_this()</h2>
+<a id="a55d582cd8fce0964d97a5f33afe759c8" name="a55d582cd8fce0964d97a5f33afe759c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d582cd8fce0964d97a5f33afe759c8">&#9670;&#160;</a></span>log_stream_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void log_stream_write </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00282">282</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  282</span>                                      {</div>
+<div class="line"><span class="lineno">  283</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;%s&quot;</span>, message);</div>
+<div class="line"><span class="lineno">  284</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af4c62a16c3bbb595d0ada4b00a8b4092" name="af4c62a16c3bbb595d0ada4b00a8b4092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c62a16c3bbb595d0ada4b00a8b4092">&#9670;&#160;</a></span>log_this()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void log_this </td>
+          <td class="memname">int log_this </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
         </tr>
@@ -541,54 +727,98 @@ NULL on Failure =&gt; invalid level </dd></dl>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority of this log-request </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">locate</td><td>location parameters for this log-request </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>format for arguments for log-message </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>optional arguments for log-message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>format for arguments for log-message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>optional arguments for log-message</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>&gt;0 Success: Message logged and Positive returned value is the length of logged message </dd>
+<dd>
+=0 Failure: Message ignored because of lower-priority </dd>
+<dd>
+&lt;0 Failure: Overflow occured. Negative returned value is the required length to log input log-request </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00182">182</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  182</span>                                                               {</div>
-<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">if</span> (level &lt; <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>) {</div>
-<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  185</span>    }</div>
-<div class="line"><span class="lineno">  186</span> </div>
-<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a>) {</div>
-<div class="line"><span class="lineno">  188</span>        <span class="keywordtype">char</span> date_stamp[<a class="code hl_define" href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a>];</div>
-<div class="line"><span class="lineno">  189</span>        <a class="code hl_function" href="#a7428ec2d45d3df3bbb27094a8f8d585a">log_stamp_collector</a>(date_stamp, <a class="code hl_define" href="#a1ea36cc09a0aa530b338c94960baf512">LOG_DATE_FORMAT</a>, <span class="keyword">sizeof</span>(date_stamp));</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;%s &quot;</span>, date_stamp);</div>
-<div class="line"><span class="lineno">  192</span>    }</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a>) {</div>
-<div class="line"><span class="lineno">  195</span>        <span class="keywordtype">char</span> time_stamp[<a class="code hl_define" href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a>];</div>
-<div class="line"><span class="lineno">  196</span>        <a class="code hl_function" href="#a7428ec2d45d3df3bbb27094a8f8d585a">log_stamp_collector</a>(time_stamp, <a class="code hl_define" href="#a1273f9f835f4a7ad5304c7e633e20b68">LOG_TIME_FORMAT</a>, <span class="keyword">sizeof</span>(time_stamp));</div>
-<div class="line"><span class="lineno">  197</span> </div>
-<div class="line"><span class="lineno">  198</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;%s &quot;</span>, time_stamp);</div>
-<div class="line"><span class="lineno">  199</span>    }</div>
-<div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span> (locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a> != NULL &amp;&amp; locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a> != NULL) {</div>
-<div class="line"><span class="lineno">  202</span>        (void)fprintf(stderr, <span class="stringliteral">&quot;@ %s() \&quot;%s +%d\&quot; &quot;</span>, locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a>, locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a>,</div>
-<div class="line"><span class="lineno">  203</span>                      locate.<a class="code hl_variable" href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">line</a>);</div>
-<div class="line"><span class="lineno">  204</span>    }</div>
-<div class="line"><span class="lineno">  205</span> </div>
-<div class="line"><span class="lineno">  206</span>    va_list args;</div>
-<div class="line"><span class="lineno">  207</span>    va_start(args, fmt);</div>
-<div class="line"><span class="lineno">  208</span>    (void)vfprintf(stderr, fmt, args);</div>
-<div class="line"><span class="lineno">  209</span>    va_end(args);</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  212</span>}</div>
-<div class="ttc" id="alogbank_8c_html_a1273f9f835f4a7ad5304c7e633e20b68"><div class="ttname"><a href="#a1273f9f835f4a7ad5304c7e633e20b68">LOG_TIME_FORMAT</a></div><div class="ttdeci">#define LOG_TIME_FORMAT</div><div class="ttdoc">This macro chooses between LOG_TIME_12HR &amp; LOG_TIME_24HR.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00029">logbank.c:29</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a1ea36cc09a0aa530b338c94960baf512"><div class="ttname"><a href="#a1ea36cc09a0aa530b338c94960baf512">LOG_DATE_FORMAT</a></div><div class="ttdeci">#define LOG_DATE_FORMAT</div><div class="ttdoc">Fixed specified format for Date stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00045">logbank.c:45</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a6e1cbcfba04606a1ea81d837e75cf182"><div class="ttname"><a href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a></div><div class="ttdeci">static int log_datestamp</div><div class="ttdoc">This value controls the use of date stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00067">logbank.c:67</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a7428ec2d45d3df3bbb27094a8f8d585a"><div class="ttname"><a href="#a7428ec2d45d3df3bbb27094a8f8d585a">log_stamp_collector</a></div><div class="ttdeci">static int log_stamp_collector(char *stamp, const char *format, size_t size)</div><div class="ttdoc">Used to collect system date/time in requested format.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00098">logbank.c:98</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a78f29241d03102718e247b5869f41e58"><div class="ttname"><a href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a></div><div class="ttdeci">static int log_timestamp</div><div class="ttdoc">This value controls the use of time stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00074">logbank.c:74</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a9c3be125d60c2afbb469cfe890546132"><div class="ttname"><a href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a></div><div class="ttdeci">#define LOG_DATE_LEN</div><div class="ttdoc">Calculated length for specified time format + 1 for string termination.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00053">logbank.c:53</a></div></div>
-<div class="ttc" id="alogbank_8c_html_af908196e407bb67394664c7b0d5999b8"><div class="ttname"><a href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a></div><div class="ttdeci">#define LOG_TIME_LEN</div><div class="ttdoc">Calculated length for specified time format + 1 for string termination.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00037">logbank.c:37</a></div></div>
-<div class="ttc" id="astructlog__locate__t_html_a0b90d39ff2c7402e79dc2d495734b2a2"><div class="ttname"><a href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">log_locate_t::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00070">logbank.h:70</a></div></div>
-<div class="ttc" id="astructlog__locate__t_html_a0c90ea314fda6ca6929a7a3d9bfc221e"><div class="ttname"><a href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">log_locate_t::func</a></div><div class="ttdeci">const char * func</div><div class="ttdoc">function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00068">logbank.h:68</a></div></div>
-<div class="ttc" id="astructlog__locate__t_html_ad00d25abaa1a72cd0735c44774978978"><div class="ttname"><a href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">log_locate_t::file</a></div><div class="ttdeci">const char * file</div><div class="ttdoc">file name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00069">logbank.h:69</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00362">362</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  362</span>                                                               {</div>
+<div class="line"><span class="lineno">  363</span>    <span class="keywordtype">int</span> len = 0;</div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  365</span>    <span class="comment">/* Filtering logic for lower priority log-requests and invalid priority requests */</span></div>
+<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">if</span> (level &lt; log_level || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><span class="lineno">  367</span>        <span class="keywordflow">return</span> len;</div>
+<div class="line"><span class="lineno">  368</span>    }</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>    <span class="comment">/* prepare log-message */</span></div>
+<div class="line"><span class="lineno">  371</span>    <span class="keywordtype">char</span> message[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>];</div>
+<div class="line"><span class="lineno">  372</span>    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(message);</div>
+<div class="line"><span class="lineno">  373</span> </div>
+<div class="line"><span class="lineno">  374</span>    <span class="comment">/* Add header to log-message */</span></div>
+<div class="line"><span class="lineno">  375</span>    len += <a class="code hl_function" href="#a61610956cd7b586c8745be62d0b04bb4">update_header</a>(message, size - len, level, locate);</div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>    <span class="comment">/* Add optional arguments to log-message */</span></div>
+<div class="line"><span class="lineno">  378</span>    va_list args;</div>
+<div class="line"><span class="lineno">  379</span>    va_start(args, fmt);</div>
+<div class="line"><span class="lineno">  380</span>    len += vsnprintf(message + len, size - len, fmt, args);</div>
+<div class="line"><span class="lineno">  381</span>    va_end(args);</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span>    <span class="comment">/* Handle string termination properly */</span></div>
+<div class="line"><span class="lineno">  384</span>    len += snprintf(message + len, size - len, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  385</span>    message[size - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  386</span> </div>
+<div class="line"><span class="lineno">  387</span>    <span class="keywordflow">if</span> (len &gt; <a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>) {</div>
+<div class="line"><span class="lineno">  388</span>        <span class="comment">/* Data Overflow */</span></div>
+<div class="line"><span class="lineno">  389</span>        <span class="keywordflow">return</span> (0 - len);</div>
+<div class="line"><span class="lineno">  390</span>    }</div>
+<div class="line"><span class="lineno">  391</span> </div>
+<div class="line"><span class="lineno">  392</span>    <span class="comment">/* write operation */</span></div>
+<div class="line"><span class="lineno">  393</span>    <a class="code hl_function" href="#a55d582cd8fce0964d97a5f33afe759c8">log_stream_write</a>(message);</div>
+<div class="line"><span class="lineno">  394</span>    <span class="keywordflow">return</span> len;</div>
+<div class="line"><span class="lineno">  395</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a55d582cd8fce0964d97a5f33afe759c8"><div class="ttname"><a href="#a55d582cd8fce0964d97a5f33afe759c8">log_stream_write</a></div><div class="ttdeci">static void log_stream_write(const char *message)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00282">logbank.c:282</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a61610956cd7b586c8745be62d0b04bb4"><div class="ttname"><a href="#a61610956cd7b586c8745be62d0b04bb4">update_header</a></div><div class="ttdeci">static int update_header(char *header, size_t size, int level, log_locate_t locate)</div><div class="ttdoc">This function populate the header i.e., prefix of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00215">logbank.c:215</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a729d70bad9089a4fa7af7191b278d434"><div class="ttname"><a href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a></div><div class="ttdeci">#define LOG_MAX_DATA_LEN</div><div class="ttdoc">Maximum allowed length for log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00015">logbank.h:15</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a87097c0104243be5ea4a28ade9abc579" name="a87097c0104243be5ea4a28ade9abc579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87097c0104243be5ea4a28ade9abc579">&#9670;&#160;</a></span>log_use_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int log_use_color </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>enable</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is used to enable colors for log-requests being logged on stderr. </p>
+<dl class="section note"><dt>Note</dt><dd>Other log-requests (say, logs which are being stored in a file) are not logged with colors Use of colors is further controlled by <a class="el" href="#a454f3ad6bafae1ecc3ff96410f7f1ea3">LOG_USE_COLOR</a> macro</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>set enable to 1 or 0 in order to enable or disable colors respectively </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 colors were previously enabled </dd>
+<dd>
+0 colors were previously disabled </dd>
+<dd>
+-1 invalid value received for enable parameter </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00351">351</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  351</span>                          {</div>
+<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
+<div class="line"><span class="lineno">  353</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  354</span>    }</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a>;</div>
+<div class="line"><span class="lineno">  357</span>    <a class="code hl_variable" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a> = enable;</div>
+<div class="line"><span class="lineno">  358</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  359</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a189d4d789654e3342bdde4f60875aa1e"><div class="ttname"><a href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a></div><div class="ttdeci">static int log_color</div><div class="ttdoc">current preferrence on use of color</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00125">logbank.c:125</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -620,16 +850,17 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 invalid value received for enable parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00160">160</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>                              {</div>
-<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
-<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a>;</div>
-<div class="line"><span class="lineno">  166</span>    <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a> = enable;</div>
-<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><span class="lineno">  168</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00329">329</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  329</span>                              {</div>
+<div class="line"><span class="lineno">  330</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
+<div class="line"><span class="lineno">  331</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  332</span>    }</div>
+<div class="line"><span class="lineno">  333</span> </div>
+<div class="line"><span class="lineno">  334</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a>;</div>
+<div class="line"><span class="lineno">  335</span>    <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a> = enable;</div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  337</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a6e1cbcfba04606a1ea81d837e75cf182"><div class="ttname"><a href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a></div><div class="ttdeci">static int log_datestamp</div><div class="ttdoc">This value controls the use of date stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00146">logbank.c:146</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -661,20 +892,209 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 invalid value received for enable parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00171">171</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  171</span>                              {</div>
-<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
-<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  174</span>    }</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a>;</div>
-<div class="line"><span class="lineno">  177</span>    <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a> = enable;</div>
-<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><span class="lineno">  179</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00340">340</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  340</span>                              {</div>
+<div class="line"><span class="lineno">  341</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
+<div class="line"><span class="lineno">  342</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  343</span>    }</div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a>;</div>
+<div class="line"><span class="lineno">  346</span>    <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a> = enable;</div>
+<div class="line"><span class="lineno">  347</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  348</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a78f29241d03102718e247b5869f41e58"><div class="ttname"><a href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a></div><div class="ttdeci">static int log_timestamp</div><div class="ttdoc">This value controls the use of time stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00153">logbank.c:153</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a61610956cd7b586c8745be62d0b04bb4" name="a61610956cd7b586c8745be62d0b04bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61610956cd7b586c8745be62d0b04bb4">&#9670;&#160;</a></span>update_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">update_header </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>header</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlog__locate__t.html">log_locate_t</a></td>          <td class="paramname"><span class="paramname"><em>locate</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function populate the header i.e., prefix of log-message. </p>
+<p>This function adds following to an empty header buffer of sufficient size:</p><ul>
+<li>stamps</li>
+<li>colors</li>
+<li>level name</li>
+<li>location parameters</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>It uses thread-unsafe function log_stamp_collector</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">header</td><td>pointer to header buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>size of header buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>priority-level of this log-request </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">locate</td><td>location parameters for this log-request</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int number of bytes attempted to be written in header buffer </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00215">215</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>                                                                         {</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (header == NULL) {</div>
+<div class="line"><span class="lineno">  217</span>        <span class="comment">/* header doesn&#39;t have a dedicated memory */</span></div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordtype">int</span> len = 0;</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    <span class="comment">/* dim colors of stamps */</span></div>
+<div class="line"><span class="lineno">  224</span>    len += <a class="code hl_define" href="#a875a1f15b875e248631c03fc1ecaa2bf">LOG_ADD_COLOR</a>(header + len, size - len, <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c">LOG_COLOR_GRAY</a>);</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>    <span class="comment">/* log datestamps */</span></div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a>) {</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordtype">char</span> date_stamp[<a class="code hl_define" href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a>];</div>
+<div class="line"><span class="lineno">  229</span>        <a class="code hl_function" href="#a7428ec2d45d3df3bbb27094a8f8d585a">log_stamp_collector</a>(date_stamp, <a class="code hl_define" href="#a1ea36cc09a0aa530b338c94960baf512">LOG_DATE_FORMAT</a>, <span class="keyword">sizeof</span>(date_stamp));</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>        len += snprintf(header + len, size - len, <span class="stringliteral">&quot;%s &quot;</span>, date_stamp);</div>
+<div class="line"><span class="lineno">  232</span>    }</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>    <span class="comment">/* log timestamps */</span></div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a>) {</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordtype">char</span> time_stamp[<a class="code hl_define" href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a>];</div>
+<div class="line"><span class="lineno">  237</span>        <a class="code hl_function" href="#a7428ec2d45d3df3bbb27094a8f8d585a">log_stamp_collector</a>(time_stamp, <a class="code hl_define" href="#a1273f9f835f4a7ad5304c7e633e20b68">LOG_TIME_FORMAT</a>, <span class="keyword">sizeof</span>(time_stamp));</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>        len += snprintf(header + len, size - len, <span class="stringliteral">&quot;%s &quot;</span>, time_stamp);</div>
+<div class="line"><span class="lineno">  240</span>    }</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>    <span class="comment">/* use pre-defined color for level names */</span></div>
+<div class="line"><span class="lineno">  243</span>    len += <a class="code hl_define" href="#a875a1f15b875e248631c03fc1ecaa2bf">LOG_ADD_COLOR</a>(header + len, size - len, level);</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <span class="comment">/* Reading name of requested priority-level */</span></div>
+<div class="line"><span class="lineno">  246</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* name = <a class="code hl_function" href="#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a>(level);</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <span class="comment">/* log priority-level name */</span></div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordflow">if</span> (level == <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a> || level == <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a>) {</div>
+<div class="line"><span class="lineno">  250</span>        len += snprintf(header + len, size - len, <span class="stringliteral">&quot;[%s]  &quot;</span>, name);</div>
+<div class="line"><span class="lineno">  251</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  252</span>        len += snprintf(header + len, size - len, <span class="stringliteral">&quot;[%s] &quot;</span>, name);</div>
+<div class="line"><span class="lineno">  253</span>    }</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>    <span class="comment">/* log location parameters */</span></div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">if</span> (locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a> != NULL &amp;&amp; locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a> != NULL) {</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>        <span class="comment">/* dim color of location parameters and revert to color of log priority-level */</span></div>
+<div class="line"><span class="lineno">  259</span>        len += <a class="code hl_define" href="#a875a1f15b875e248631c03fc1ecaa2bf">LOG_ADD_COLOR</a>(header + len, size - len, <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433aad42a62a0408f4fc9d39ec33f740666c">LOG_COLOR_GRAY</a>);</div>
+<div class="line"><span class="lineno">  260</span>        len += snprintf(header + len, size - len, <span class="stringliteral">&quot;@ %s() \&quot;%s +%d\&quot; &quot;</span>, locate.<a class="code hl_variable" href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">func</a>,</div>
+<div class="line"><span class="lineno">  261</span>                        locate.<a class="code hl_variable" href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">file</a>, locate.<a class="code hl_variable" href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">line</a>);</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>        len += <a class="code hl_define" href="#a875a1f15b875e248631c03fc1ecaa2bf">LOG_ADD_COLOR</a>(header + len, size - len, level);</div>
+<div class="line"><span class="lineno">  264</span>    }</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>    <span class="comment">/* log separator between header (message-prefix) and message */</span></div>
+<div class="line"><span class="lineno">  267</span>    len += snprintf(header + len, size - len, <span class="stringliteral">&quot;: &quot;</span>);</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>    <span class="comment">/* terminate the use of colors */</span></div>
+<div class="line"><span class="lineno">  270</span>    len += <a class="code hl_define" href="#a875a1f15b875e248631c03fc1ecaa2bf">LOG_ADD_COLOR</a>(header + len, size - len, <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70">LOG_COLOR_END</a>);</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>    <span class="keywordflow">return</span> len;</div>
+<div class="line"><span class="lineno">  273</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a1273f9f835f4a7ad5304c7e633e20b68"><div class="ttname"><a href="#a1273f9f835f4a7ad5304c7e633e20b68">LOG_TIME_FORMAT</a></div><div class="ttdeci">#define LOG_TIME_FORMAT</div><div class="ttdoc">This macro chooses between LOG_TIME_12HR &amp; LOG_TIME_24HR.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00029">logbank.c:29</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a1ea36cc09a0aa530b338c94960baf512"><div class="ttname"><a href="#a1ea36cc09a0aa530b338c94960baf512">LOG_DATE_FORMAT</a></div><div class="ttdeci">#define LOG_DATE_FORMAT</div><div class="ttdoc">Fixed specified format for Date stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00045">logbank.c:45</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a2f37fc38d4885ae4fd5f499787e5f550"><div class="ttname"><a href="#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00308">logbank.c:308</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a7428ec2d45d3df3bbb27094a8f8d585a"><div class="ttname"><a href="#a7428ec2d45d3df3bbb27094a8f8d585a">log_stamp_collector</a></div><div class="ttdeci">static int log_stamp_collector(char *stamp, const char *format, size_t size)</div><div class="ttdoc">Used to collect system date/time in requested format.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00177">logbank.c:177</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a875a1f15b875e248631c03fc1ecaa2bf"><div class="ttname"><a href="#a875a1f15b875e248631c03fc1ecaa2bf">LOG_ADD_COLOR</a></div><div class="ttdeci">#define LOG_ADD_COLOR(buffer, size, color_index)</div><div class="ttdoc">Add a color to buffer.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00077">logbank.c:77</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a9c3be125d60c2afbb469cfe890546132"><div class="ttname"><a href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a></div><div class="ttdeci">#define LOG_DATE_LEN</div><div class="ttdoc">Calculated length for specified time format + 1 for string termination.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00053">logbank.c:53</a></div></div>
+<div class="ttc" id="alogbank_8c_html_af908196e407bb67394664c7b0d5999b8"><div class="ttname"><a href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a></div><div class="ttdeci">#define LOG_TIME_LEN</div><div class="ttdoc">Calculated length for specified time format + 1 for string termination.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00037">logbank.c:37</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
+<div class="ttc" id="astructlog__locate__t_html_a0b90d39ff2c7402e79dc2d495734b2a2"><div class="ttname"><a href="structlog__locate__t.html#a0b90d39ff2c7402e79dc2d495734b2a2">log_locate_t::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00076">logbank.h:76</a></div></div>
+<div class="ttc" id="astructlog__locate__t_html_a0c90ea314fda6ca6929a7a3d9bfc221e"><div class="ttname"><a href="structlog__locate__t.html#a0c90ea314fda6ca6929a7a3d9bfc221e">log_locate_t::func</a></div><div class="ttdeci">const char * func</div><div class="ttdoc">function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00074">logbank.h:74</a></div></div>
+<div class="ttc" id="astructlog__locate__t_html_ad00d25abaa1a72cd0735c44774978978"><div class="ttname"><a href="structlog__locate__t.html#ad00d25abaa1a72cd0735c44774978978">log_locate_t::file</a></div><div class="ttdeci">const char * file</div><div class="ttdoc">file name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00075">logbank.h:75</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a190f05562784d975771cf3c914c5fe45" name="a190f05562784d975771cf3c914c5fe45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a190f05562784d975771cf3c914c5fe45">&#9670;&#160;</a></span>color_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">color_list</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {<span class="stringliteral">&quot;\x1b[96m&quot;</span>, <span class="stringliteral">&quot;\x1b[32m&quot;</span>, <span class="stringliteral">&quot;\x1b[93m&quot;</span>, <span class="stringliteral">&quot;\x1b[31m&quot;</span>,</div>
+<div class="line">                                   <span class="stringliteral">&quot;\x1b[95m&quot;</span>, <span class="stringliteral">&quot;\x1b[34m&quot;</span>, <span class="stringliteral">&quot;\x1b[90m&quot;</span>, <span class="stringliteral">&quot;\x1b[0m&quot;</span>}</div>
+</div><!-- fragment -->
+<p>list of available ANSI color codes for foregound text </p>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00131">131</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                                  {<span class="stringliteral">&quot;\x1b[96m&quot;</span>, <span class="stringliteral">&quot;\x1b[32m&quot;</span>, <span class="stringliteral">&quot;\x1b[93m&quot;</span>, <span class="stringliteral">&quot;\x1b[31m&quot;</span>,</div>
+<div class="line"><span class="lineno">  132</span>                                   <span class="stringliteral">&quot;\x1b[95m&quot;</span>, <span class="stringliteral">&quot;\x1b[34m&quot;</span>, <span class="stringliteral">&quot;\x1b[90m&quot;</span>, <span class="stringliteral">&quot;\x1b[0m&quot;</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a189d4d789654e3342bdde4f60875aa1e" name="a189d4d789654e3342bdde4f60875aa1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189d4d789654e3342bdde4f60875aa1e">&#9670;&#160;</a></span>log_color</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">log_color = <a class="el" href="logbank_8h.html#a2671a6aa5ca95c2a6c3fd0032e7880d5">LOG_COLOR</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>current preferrence on use of color </p>
+<p>Default value of log_color is copied directly from <a class="el" href="logbank_8h.html#a2671a6aa5ca95c2a6c3fd0032e7880d5">LOG_COLOR</a> </p><dl class="section note"><dt>Note</dt><dd>color can still be disabled using <a class="el" href="#a454f3ad6bafae1ecc3ff96410f7f1ea3">LOG_USE_COLOR</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00125">125</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+
+</div>
+</div>
 <a id="a6e1cbcfba04606a1ea81d837e75cf182" name="a6e1cbcfba04606a1ea81d837e75cf182"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e1cbcfba04606a1ea81d837e75cf182">&#9670;&#160;</a></span>log_datestamp</h2>
 
@@ -698,7 +1118,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <p>This value controls the use of date stamps. </p>
 <p>Default value of log_datestamp is copied directly from <a class="el" href="logbank_8h.html#a5f56d981e5b55df4bee5c7a5b6b44007">LOG_DATESTAMP</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00067">67</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00146">146</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 
 </div>
 </div>
@@ -725,7 +1145,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <p>This value acts as a filter to discard lower-priority log-requests. </p>
 <p>Default value of log_level is copied directly from <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00060">60</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00139">139</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 
 </div>
 </div>
@@ -760,7 +1180,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00074">74</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00153">153</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 
 </div>
 </div>
@@ -787,7 +1207,7 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <p>This value controls the use of time stamps. </p>
 <p>Default value of log_timestamp is copied directly from <a class="el" href="logbank_8h.html#abc368d21141fd7f00227bbe05c8a476c">LOG_TIMESTAMP</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00074">74</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00153">153</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
 
 </div>
 </div>

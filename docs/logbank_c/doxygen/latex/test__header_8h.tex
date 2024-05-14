@@ -11,10 +11,48 @@ void \mbox{\hyperlink{test__header_8h_afed1fa66458aed3932cf3f3dc28b8641}{test\+\
 int \mbox{\hyperlink{test__header_8h_a7b95c675556cf65608c8181aedd2d6b6}{test\+\_\+priority\+\_\+level}} (void)
 \begin{DoxyCompactList}\small\item\em This function ensures working of\+: \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{test__header_8h_a3411f85818ff2b14fac1077732a601cd}{test\+\_\+location}} (void)
-\begin{DoxyCompactList}\small\item\em This function ensures working of \doxylink{logbank_8h_af871188d88e45fc10c15cbe2c90545b1}{LOG\+\_\+\+LOCATION} macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function ensures working of \doxylink{logbank_8h_af871188d88e45fc10c15cbe2c90545b1}{LOG\+\_\+\+LOCATION} macro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test__header_8h_af7d71f4400154de2ed072562c6d63429}{test\+\_\+color}} (void)
+\begin{DoxyCompactList}\small\item\em This function ensures working of \doxylink{logbank_8c_a454f3ad6bafae1ecc3ff96410f7f1ea3}{LOG\+\_\+\+USE\+\_\+\+COLOR} macro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{test__header_8h_a35f5a4168aeca5b6c3b4220a6a1d8c73}{test\+\_\+overflow}} (void)
+\begin{DoxyCompactList}\small\item\em This function tests return value of \doxylink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\+\_\+this} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{test__header_8h_af7d71f4400154de2ed072562c6d63429}\label{test__header_8h_af7d71f4400154de2ed072562c6d63429} 
+\index{test\_header.h@{test\_header.h}!test\_color@{test\_color}}
+\index{test\_color@{test\_color}!test\_header.h@{test\_header.h}}
+\doxysubsubsection{\texorpdfstring{test\_color()}{test\_color()}}
+{\footnotesize\ttfamily int test\+\_\+color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function ensures working of \doxylink{logbank_8c_a454f3ad6bafae1ecc3ff96410f7f1ea3}{LOG\+\_\+\+USE\+\_\+\+COLOR} macro. 
+
+This test tries to enable/disable colors using \doxylink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\+\_\+use\+\_\+color()} function and check the result by reading LOG\+\_\+\+USE\+\_\+\+COLOR macro
+
+\begin{DoxyReturn}{Returns}
+0 Test Passed 
+
+-\/1 Test Failed 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{test03__colors_8c_source_l00004}{4}} of file \mbox{\hyperlink{test03__colors_8c_source}{test03\+\_\+colors.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{comment}{/*\ TODO:\ Add\ this\ test\ after\ integration\ of\ log-\/files}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ \ *\ This\ test\ should\ try\ to\ enable/disable\ colors\ using\ log\_use\_color()\ function}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ \ *\ And\ check\ the\ result\ by\ reading\ LOG\_USE\_COLOR\ macro}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ \ \ \ *\ If\ result\ is\ unexpected\ then\ return\ -\/1\ else\ return\ 0}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ \ *\ */}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
 \Hypertarget{test__header_8h_a3411f85818ff2b14fac1077732a601cd}\label{test__header_8h_a3411f85818ff2b14fac1077732a601cd} 
 \index{test\_header.h@{test\_header.h}!test\_location@{test\_location}}
 \index{test\_location@{test\_location}!test\_header.h@{test\_header.h}}
@@ -107,6 +145,52 @@ Definition at line \mbox{\hyperlink{test00__compilation__requirement_8c_source_l
 \DoxyCodeLine{00043\ }
 \DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Platform\ Check\ */}\textcolor{preprocessor}{}}
 \DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+\Hypertarget{test__header_8h_a35f5a4168aeca5b6c3b4220a6a1d8c73}\label{test__header_8h_a35f5a4168aeca5b6c3b4220a6a1d8c73} 
+\index{test\_header.h@{test\_header.h}!test\_overflow@{test\_overflow}}
+\index{test\_overflow@{test\_overflow}!test\_header.h@{test\_header.h}}
+\doxysubsubsection{\texorpdfstring{test\_overflow()}{test\_overflow()}}
+{\footnotesize\ttfamily int test\+\_\+overflow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function tests return value of \doxylink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\+\_\+this} function. 
+
+This function tries to log a lengthy request using log\+\_\+this function and checks if the return value is as expected
+
+\begin{DoxyReturn}{Returns}
+0 Test Passed 
+
+-\/1 Test Failed 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{test04__overflow_8c_source_l00004}{4}} of file \mbox{\hyperlink{test04__overflow_8c_source}{test04\+\_\+overflow.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}}\ locate;}
+\DoxyCodeLine{00006\ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}}\ =\ \mbox{\hyperlink{logbank_8h_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}};}
+\DoxyCodeLine{00007\ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}}\ =\ \_\_func\_\_;}
+\DoxyCodeLine{00008\ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{line}}\ =\ 0;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{/*\ Independent\ of\ locate\ parameter;\ following\ line\ should\ not\ be\ logged}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ \ *\ Because,\ it\ tries\ to\ log\ beyond\ specified\ limit\ LOG\_MAX\_DATA\_LEN\ */}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ status\ =\ \mbox{\hyperlink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\_this}}(}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}},\ locate,\ \textcolor{stringliteral}{"{}\%s\%s\%s\%s\%s\%s\%s\%s\%s\%s"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}});}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*\ Making\ sure\ log\_this()\ returned\ a\ negative\ status\ */}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ >=\ 0)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00024\ \}}
 
 \end{DoxyCode}
 \Hypertarget{test__header_8h_a7b95c675556cf65608c8181aedd2d6b6}\label{test__header_8h_a7b95c675556cf65608c8181aedd2d6b6} 

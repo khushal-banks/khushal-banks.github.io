@@ -99,8 +99,63 @@ Functions</h2></td></tr>
 <tr class="memitem:a6620b9789be2d996cf2f066ac5645dd4" id="r_a6620b9789be2d996cf2f066ac5645dd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6620b9789be2d996cf2f066ac5645dd4">snippet_stamps</a> (int gmt)</td></tr>
 <tr class="memdesc:a6620b9789be2d996cf2f066ac5645dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function prints all different combination of stamps for current time zone.  <br /></td></tr>
 <tr class="separator:a6620b9789be2d996cf2f066ac5645dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a538381f001eb6ed777200e86faf74fe7" id="r_a538381f001eb6ed777200e86faf74fe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a538381f001eb6ed777200e86faf74fe7">snippet_colors</a> (void)</td></tr>
+<tr class="memdesc:a538381f001eb6ed777200e86faf74fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions prints sample logs without colors and then with colors.  <br /></td></tr>
+<tr class="separator:a538381f001eb6ed777200e86faf74fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0856e4f7b5c314df751da9887b076da6" id="r_a0856e4f7b5c314df751da9887b076da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0856e4f7b5c314df751da9887b076da6">snippet_overflow</a> (void)</td></tr>
+<tr class="memdesc:a0856e4f7b5c314df751da9887b076da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function prints a very long message hoping for overflow.  <br /></td></tr>
+<tr class="separator:a0856e4f7b5c314df751da9887b076da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a538381f001eb6ed777200e86faf74fe7" name="a538381f001eb6ed777200e86faf74fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a538381f001eb6ed777200e86faf74fe7">&#9670;&#160;</a></span>snippet_colors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">snippet_colors </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This functions prints sample logs without colors and then with colors. </p>
+<p>This prints sample logs by,</p><ul>
+<li>first disabling colors</li>
+<li>then enabling colors</li>
+<li>then color config is reverted to previous setting <dl class="section note"><dt>Note</dt><dd>While streaming to a log-file colors wouldn't be printed </dd></dl>
+</li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="00__basic__snippets_8c_source.html#l00081">81</a> of file <a class="el" href="00__basic__snippets_8c_source.html">00_basic_snippets.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                     {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="comment">/* Disable colors and print sample logs */</span></div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordtype">int</span> old_colors = <a class="code hl_function" href="logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e">log_use_color</a>(0);</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_function" href="00__basic__snippets_8c.html#a402ebc414f8fe9566959ffd190bd9d29">snippet_sample_logs</a>();</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">/* Enable colors and print sample logs */</span></div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e">log_use_color</a>(1);</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="00__basic__snippets_8c.html#a402ebc414f8fe9566959ffd190bd9d29">snippet_sample_logs</a>();</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    <span class="comment">/* Revert to previous config of colors */</span></div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e">log_use_color</a>(old_colors);</div>
+<div class="line"><span class="lineno">   92</span>}</div>
+<div class="ttc" id="a00__basic__snippets_8c_html_a402ebc414f8fe9566959ffd190bd9d29"><div class="ttname"><a href="00__basic__snippets_8c.html#a402ebc414f8fe9566959ffd190bd9d29">snippet_sample_logs</a></div><div class="ttdeci">void snippet_sample_logs(void)</div><div class="ttdoc">This function is used to print sample logs with current log_level.</div><div class="ttdef"><b>Definition</b> <a href="00__basic__snippets_8c_source.html#l00004">00_basic_snippets.c:4</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a8555559f197dd69f6596aaa3bc97a45e"><div class="ttname"><a href="logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e">log_use_color</a></div><div class="ttdeci">int log_use_color(int enable)</div><div class="ttdoc">This function is used to enable colors for log-requests being logged on stderr.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00351">logbank.c:351</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="aa666538ec330550637743b7ce054fa51" name="aa666538ec330550637743b7ce054fa51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa666538ec330550637743b7ce054fa51">&#9670;&#160;</a></span>snippet_location()</h2>
 
@@ -137,9 +192,52 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   37</span>    <span class="comment">/* Revert priority to previous value */</span></div>
 <div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a>(old);</div>
 <div class="line"><span class="lineno">   39</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00128">logbank.c:128</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
-<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00114">logbank.h:114</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00297">logbank.c:297</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
+<div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00129">logbank.h:129</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0856e4f7b5c314df751da9887b076da6" name="a0856e4f7b5c314df751da9887b076da6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0856e4f7b5c314df751da9887b076da6">&#9670;&#160;</a></span>snippet_overflow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">snippet_overflow </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function prints a very long message hoping for overflow. </p>
+<p>This function is currently attempting to print a log-message of length 200 which should overflow if LOG_MAX_DATA_LEN is below 200</p>
+<dl class="section note"><dt>Note</dt><dd>Additional data would be written for header (i.e., prefix of log-message) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="00__basic__snippets_8c_source.html#l00095">95</a> of file <a class="el" href="00__basic__snippets_8c_source.html">00_basic_snippets.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>                       {</div>
+<div class="line"><span class="lineno">   96</span>    <span class="comment">/* snippet for length 100 */</span></div>
+<div class="line"><span class="lineno">   97</span>    <span class="comment">// LOG(LOG_ERROR, &quot;%s%s%s%s%s&quot;, &quot;1234567890ABCDEFGHIJ&quot;, &quot;1234567890ABCDEFGHIJ&quot;,</span></div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">//     &quot;1234567890ABCDEFGHIJ&quot;, &quot;1234567890ABCDEFGHIJ&quot;, &quot;1234567890ABCDEFGHIJ&quot;);</span></div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">/* snippet for length 200 */</span></div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a>, <span class="stringliteral">&quot;%s%s%s%s%s%s%s%s%s%s&quot;</span>, <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>, <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>,</div>
+<div class="line"><span class="lineno">  102</span>        <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>, <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>, <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>,</div>
+<div class="line"><span class="lineno">  103</span>        <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>, <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>, <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>,</div>
+<div class="line"><span class="lineno">  104</span>        <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>, <span class="stringliteral">&quot;1234567890ABCDEFGHIJ&quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a></div><div class="ttdeci">@ LOG_ERROR</div><div class="ttdoc">recommended for recoverable errors (can continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,7 +282,6 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   26</span>    <span class="comment">/* Revert priority to previous value */</span></div>
 <div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a>(old);</div>
 <div class="line"><span class="lineno">   28</span>}</div>
-<div class="ttc" id="a00__basic__snippets_8c_html_a402ebc414f8fe9566959ffd190bd9d29"><div class="ttname"><a href="00__basic__snippets_8c.html#a402ebc414f8fe9566959ffd190bd9d29">snippet_sample_logs</a></div><div class="ttdeci">void snippet_sample_logs(void)</div><div class="ttdoc">This function is used to print sample logs with current log_level.</div><div class="ttdef"><b>Definition</b> <a href="00__basic__snippets_8c_source.html#l00004">00_basic_snippets.c:4</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -228,11 +325,10 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   15</span> </div>
 <div class="line"><span class="lineno">   16</span>    <a class="code hl_define" href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a>(<a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>, <span class="stringliteral">&quot;System Failure: %s&quot;</span>, <span class="stringliteral">&quot;Disk Space Full&quot;</span>);</div>
 <div class="line"><span class="lineno">   17</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a></div><div class="ttdeci">@ LOG_ISSUE</div><div class="ttdoc">recommended for non-recoverable errors (can continue with limited functionality)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6">LOG_ERROR</a></div><div class="ttdeci">@ LOG_ERROR</div><div class="ttdoc">recommended for recoverable errors (can continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00033">logbank.h:33</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c">LOG_INFO</a></div><div class="ttdeci">@ LOG_INFO</div><div class="ttdoc">recommended for general informations (code flow)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd">LOG_ISSUE</a></div><div class="ttdeci">@ LOG_ISSUE</div><div class="ttdoc">recommended for non-recoverable errors (can continue with limited functionality)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d">LOG_WARN</a></div><div class="ttdeci">@ LOG_WARN</div><div class="ttdoc">recommended for warnings (abnormal values)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00039">logbank.h:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,9 +403,9 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp</a>(old_timestamp);</div>
 <div class="line"><span class="lineno">   78</span>}</div>
 <div class="ttc" id="a00__basic__snippets_8c_html_ac8417a6c450c6d8730cbd00e3c7823ed"><div class="ttname"><a href="00__basic__snippets_8c.html#ac8417a6c450c6d8730cbd00e3c7823ed">snippet_location</a></div><div class="ttdeci">void snippet_location(void)</div><div class="ttdoc">This function is used to print a log with LOG_DEBUG level.</div><div class="ttdef"><b>Definition</b> <a href="00__basic__snippets_8c_source.html#l00031">00_basic_snippets.c:31</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a12a859a61c62ad187ebfb0ea187519b4"><div class="ttname"><a href="logbank_8h.html#a12a859a61c62ad187ebfb0ea187519b4">log_use_datestamp</a></div><div class="ttdeci">int log_use_datestamp(int enable)</div><div class="ttdoc">This function is used to enable date stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00160">logbank.c:160</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a2cbc919241ff3ace24da6e8a3907ba01"><div class="ttname"><a href="logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp</a></div><div class="ttdeci">int log_use_timestamp(int enable)</div><div class="ttdoc">This function is used to enable time stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00171">logbank.c:171</a></div></div>
-<div class="ttc" id="alogbank_8h_html_ad40fb8308e3b7fe972247896b049bbdb"><div class="ttname"><a href="logbank_8h.html#ad40fb8308e3b7fe972247896b049bbdb">log_change_tzone</a></div><div class="ttdeci">void log_change_tzone(int gmt)</div><div class="ttdoc">This function is used to switch between gmt time &amp; local time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00150">logbank.c:150</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a12a859a61c62ad187ebfb0ea187519b4"><div class="ttname"><a href="logbank_8h.html#a12a859a61c62ad187ebfb0ea187519b4">log_use_datestamp</a></div><div class="ttdeci">int log_use_datestamp(int enable)</div><div class="ttdoc">This function is used to enable date stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00329">logbank.c:329</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a2cbc919241ff3ace24da6e8a3907ba01"><div class="ttname"><a href="logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp</a></div><div class="ttdeci">int log_use_timestamp(int enable)</div><div class="ttdoc">This function is used to enable time stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00340">logbank.c:340</a></div></div>
+<div class="ttc" id="alogbank_8h_html_ad40fb8308e3b7fe972247896b049bbdb"><div class="ttname"><a href="logbank_8h.html#ad40fb8308e3b7fe972247896b049bbdb">log_change_tzone</a></div><div class="ttdeci">void log_change_tzone(int gmt)</div><div class="ttdoc">This function is used to switch between gmt time &amp; local time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00319">logbank.c:319</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

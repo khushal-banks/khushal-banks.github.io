@@ -80,5 +80,32 @@
 \DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(old\_datestamp);}
 \DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00077}00077\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(old\_timestamp);}
 \DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00080}00080\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00081}\mbox{\hyperlink{snippets__header_8h_a538381f001eb6ed777200e86faf74fe7}{00081}}\ \mbox{\hyperlink{00__basic__snippets_8c_a64d087aff142d0d7fb77df9974d29a79}{snippet\_colors}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00082}00082\ \ \ \ \ \textcolor{comment}{/*\ Disable\ colors\ and\ print\ sample\ logs\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{int}\ old\_colors\ =\ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(0);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00086}00086\ \ \ \ \ \textcolor{comment}{/*\ Enable\ colors\ and\ print\ sample\ logs\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(1);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{00__basic__snippets_8c_a402ebc414f8fe9566959ffd190bd9d29}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00090}00090\ \ \ \ \ \textcolor{comment}{/*\ Revert\ to\ previous\ config\ of\ colors\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(old\_colors);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00094}00094\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00095}\mbox{\hyperlink{snippets__header_8h_a0856e4f7b5c314df751da9887b076da6}{00095}}\ \mbox{\hyperlink{00__basic__snippets_8c_ad2263889e97a2d460b66234ff504fe39}{snippet\_overflow}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00096}00096\ \ \ \ \ \textcolor{comment}{/*\ snippet\ for\ length\ 100\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ LOG(LOG\_ERROR,\ "{}\%s\%s\%s\%s\%s"{},\ "{}1234567890ABCDEFGHIJ"{},\ "{}1234567890ABCDEFGHIJ"{},}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ "{}1234567890ABCDEFGHIJ"{},\ "{}1234567890ABCDEFGHIJ"{},\ "{}1234567890ABCDEFGHIJ"{});}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00100}00100\ \ \ \ \ \textcolor{comment}{/*\ snippet\ for\ length\ 200\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{LOG}}(\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\_ERROR}},\ \textcolor{stringliteral}{"{}\%s\%s\%s\%s\%s\%s\%s\%s\%s\%s"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}});}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00105}00105\ \}}
 
 \end{DoxyCode}
