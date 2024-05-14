@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['permanent_20ban_0',['4. Permanent Ban',['../md_CODE__OF__CONDUCT.html#autotoc_md12',1,'']]],
-  ['pledge_1',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md3',1,'']]],
-  ['pull_20requests_2',['Pull Requests',['../md_CONTRIBUTING.html#autotoc_md17',1,'']]]
+  ['of_20conduct_0',['Contributor Covenant Code of Conduct',['../md_CODE__OF__CONDUCT.html',1,'']]],
+  ['our_20pledge_1',['Our Pledge',['../md_CODE__OF__CONDUCT.html#autotoc_md3',1,'']]],
+  ['our_20standards_2',['Our Standards',['../md_CODE__OF__CONDUCT.html#autotoc_md4',1,'']]]
 ];

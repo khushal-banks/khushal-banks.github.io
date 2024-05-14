@@ -135,13 +135,20 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   29</span> </div>
 <div class="line"><span class="lineno">   30</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;test_overflow passed\n&quot;</span>);</div>
 <div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   33</span>}</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="test05__retrieve_8c.html#a1562ba1705b0e370f061e82c93f60c3a">test_retrieval</a>() &lt; 0) {</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    (void)fprintf(stderr, <span class="stringliteral">&quot;test_retrieval passed\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   39</span>}</div>
 <div class="ttc" id="atest00__compilation__requirement_8c_html_a5a40bf0abcf48efba0975a0396a57b4d"><div class="ttname"><a href="test00__compilation__requirement_8c.html#a5a40bf0abcf48efba0975a0396a57b4d">test_os</a></div><div class="ttdeci">void test_os(void)</div><div class="ttdoc">Sample manual-test.</div><div class="ttdef"><b>Definition</b> <a href="test00__compilation__requirement_8c_source.html#l00011">test00_compilation_requirement.c:11</a></div></div>
 <div class="ttc" id="atest00__compilation__requirement_8c_html_aeea17ed63da755f889345dfbb2e25006"><div class="ttname"><a href="test00__compilation__requirement_8c.html#aeea17ed63da755f889345dfbb2e25006">test_std</a></div><div class="ttdeci">void test_std(void)</div><div class="ttdoc">Sample auto-test.</div><div class="ttdef"><b>Definition</b> <a href="test00__compilation__requirement_8c_source.html#l00004">test00_compilation_requirement.c:4</a></div></div>
 <div class="ttc" id="atest01__priority__level_8c_html_ae8a06d4b64e9a9f487af57d3ed7dde30"><div class="ttname"><a href="test01__priority__level_8c.html#ae8a06d4b64e9a9f487af57d3ed7dde30">test_priority_level</a></div><div class="ttdeci">int test_priority_level(void)</div><div class="ttdoc">This function ensures working of:</div><div class="ttdef"><b>Definition</b> <a href="test01__priority__level_8c_source.html#l00004">test01_priority_level.c:4</a></div></div>
 <div class="ttc" id="atest02__location_8c_html_a507c9d2842a214754db4c2703afbd63c"><div class="ttname"><a href="test02__location_8c.html#a507c9d2842a214754db4c2703afbd63c">test_location</a></div><div class="ttdeci">int test_location(void)</div><div class="ttdoc">This function ensures working of LOG_LOCATION macro.</div><div class="ttdef"><b>Definition</b> <a href="test02__location_8c_source.html#l00004">test02_location.c:4</a></div></div>
 <div class="ttc" id="atest04__overflow_8c_html_a6eddb96ce76e15005e279334570c168d"><div class="ttname"><a href="test04__overflow_8c.html#a6eddb96ce76e15005e279334570c168d">test_overflow</a></div><div class="ttdeci">int test_overflow(void)</div><div class="ttdoc">This function tests return value of log_this function.</div><div class="ttdef"><b>Definition</b> <a href="test04__overflow_8c_source.html#l00004">test04_overflow.c:4</a></div></div>
+<div class="ttc" id="atest05__retrieve_8c_html_a1562ba1705b0e370f061e82c93f60c3a"><div class="ttname"><a href="test05__retrieve_8c.html#a1562ba1705b0e370f061e82c93f60c3a">test_retrieval</a></div><div class="ttdeci">int test_retrieval(void)</div><div class="ttdoc">This functtion tests retrieval feature.</div><div class="ttdef"><b>Definition</b> <a href="test05__retrieve_8c_source.html#l00016">test05_retrieve.c:16</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

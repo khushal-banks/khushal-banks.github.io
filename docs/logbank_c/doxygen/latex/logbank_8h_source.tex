@@ -12,78 +12,86 @@
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string.h>}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00015}\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{00015}}\ \textcolor{preprocessor}{\#define\ LOG\_MAX\_DATA\_LEN\ 150}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00015}\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{00015}}\ \textcolor{preprocessor}{\#define\ LOG\_MAX\_DATA\_LEN\ \ \ \ \ \ \ 150}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00039}\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{00039}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99}{LOG\_LEVELS}}\ \{\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}}\ =\ 0,\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d}{LOG\_WARN}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\_ERROR}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd}{LOG\_ISSUE}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}}\ \};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00054}00054\ \textcolor{preprocessor}{\#ifndef\ LOG\_LEVEL}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00055}\mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{00055}}\ \textcolor{preprocessor}{\#define\ LOG\_LEVEL\ LOG\_INFO}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00056}00056\ \textcolor{preprocessor}{\#elif\ (LOG\_LEVEL\ <\ 0\ ||\ LOG\_LEVEL\ >\ 5)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00057}00057\ \textcolor{preprocessor}{\#error\ "{}Invalid\ LOG\_LEVEL\ supplied\ from\ build\ system.\ Only\ values\ 0-\/5\ are\ supported."{}}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00058}00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LOG\_LEVEL\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00073}\mbox{\hyperlink{structlog__locate__t}{00073}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00074}\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{00074}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00075}\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{00075}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00076}\mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{00076}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{line}};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00077}00077\ \}\ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}};}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00084}\mbox{\hyperlink{logbank_8h_a8de29f7c8bbf1a81cc6e71ac602032d3}{00084}}\ \textcolor{preprocessor}{\#define\ FILENAME\ \ \ \ \ \ \ \ \ \ \ \ (strrchr(\_\_FILE\_\_,\ '/')\ ?\ strrchr(\_\_FILE\_\_,\ '/')\ +\ 1\ :\ \_\_FILE\_\_)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00094}\mbox{\hyperlink{logbank_8h_af871188d88e45fc10c15cbe2c90545b1}{00094}}\ \textcolor{preprocessor}{\#define\ LOG\_LOCATION(level)\ (level\ ==\ LOG\_DEBUG\ ||\ level\ <\ log\_get\_default\_level())}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00102}\mbox{\hyperlink{logbank_8h_a5f56d981e5b55df4bee5c7a5b6b44007}{00102}}\ \textcolor{preprocessor}{\#define\ LOG\_DATESTAMP\ \ \ \ \ \ \ 0}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00110}\mbox{\hyperlink{logbank_8h_abc368d21141fd7f00227bbe05c8a476c}{00110}}\ \textcolor{preprocessor}{\#define\ LOG\_TIMESTAMP\ \ \ \ \ \ \ 1}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00111}00111\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00119}\mbox{\hyperlink{logbank_8h_a2671a6aa5ca95c2a6c3fd0032e7880d5}{00119}}\ \textcolor{preprocessor}{\#define\ LOG\_COLOR\ \ \ \ \ \ \ \ \ \ \ 1}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00120}00120\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00129}\mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{00129}}\ \textcolor{preprocessor}{\#define\ LOG(level,\ ...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00130}00130\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00131}00131\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ log\_locate\_t\ locate;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00132}00132\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.func\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00133}00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.file\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00134}00134\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.line\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00135}00135\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00136}00136\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (LOG\_LOCATION(level))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00137}00137\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.func\ =\ \_\_func\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00138}00138\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.file\ =\ FILENAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00139}00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.line\ =\ \_\_LINE\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00140}00140\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00021}\mbox{\hyperlink{logbank_8h_a4caacfae62d7eef49d49b5498679f136}{00021}}\ \textcolor{preprocessor}{\#define\ LOG\_RETRIEVE\_QUEUE\_LEN\ 25}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00045}\mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{00045}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99}{LOG\_LEVELS}}\ \{\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}}\ =\ 0,\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a1d2ddc2d110200d6c342359bd0e19a3c}{LOG\_INFO}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99aaf5ddc798d2875139456400b5c18897d}{LOG\_WARN}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a3a32823436abb3c3442b6bf3f70ec9b6}{LOG\_ERROR}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a31029d55440c470cf8cdbb42787e34fd}{LOG\_ISSUE}},\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}}\ \};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00060}00060\ \textcolor{preprocessor}{\#ifndef\ LOG\_LEVEL}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00061}\mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{00061}}\ \textcolor{preprocessor}{\#define\ LOG\_LEVEL\ LOG\_INFO}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00062}00062\ \textcolor{preprocessor}{\#elif\ (LOG\_LEVEL\ <\ 0\ ||\ LOG\_LEVEL\ >\ 5)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00063}00063\ \textcolor{preprocessor}{\#error\ "{}Invalid\ LOG\_LEVEL\ supplied\ from\ build\ system.\ Only\ values\ 0-\/5\ are\ supported."{}}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00064}00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LOG\_LEVEL\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00079}\mbox{\hyperlink{structlog__locate__t}{00079}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00080}\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{00080}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00081}\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{00081}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00082}\mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{00082}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{line}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00083}00083\ \}\ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}};}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00090}\mbox{\hyperlink{logbank_8h_a8de29f7c8bbf1a81cc6e71ac602032d3}{00090}}\ \textcolor{preprocessor}{\#define\ FILENAME\ \ \ \ \ \ \ \ \ \ \ \ (strrchr(\_\_FILE\_\_,\ '/')\ ?\ strrchr(\_\_FILE\_\_,\ '/')\ +\ 1\ :\ \_\_FILE\_\_)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00100}\mbox{\hyperlink{logbank_8h_af871188d88e45fc10c15cbe2c90545b1}{00100}}\ \textcolor{preprocessor}{\#define\ LOG\_LOCATION(level)\ (level\ ==\ LOG\_DEBUG\ ||\ level\ <\ log\_get\_default\_level())}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00108}\mbox{\hyperlink{logbank_8h_a5f56d981e5b55df4bee5c7a5b6b44007}{00108}}\ \textcolor{preprocessor}{\#define\ LOG\_DATESTAMP\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00116}\mbox{\hyperlink{logbank_8h_abc368d21141fd7f00227bbe05c8a476c}{00116}}\ \textcolor{preprocessor}{\#define\ LOG\_TIMESTAMP\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00125}\mbox{\hyperlink{logbank_8h_a2671a6aa5ca95c2a6c3fd0032e7880d5}{00125}}\ \textcolor{preprocessor}{\#define\ LOG\_COLOR\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00135}\mbox{\hyperlink{logbank_8h_acaa1c3fa56061380a29889d703236251}{00135}}\ \textcolor{preprocessor}{\#define\ LOG(level,\ ...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00136}00136\ \textcolor{preprocessor}{\ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00137}00137\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ log\_locate\_t\ locate;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00138}00138\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.func\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00139}00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.file\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00140}00140\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ locate.line\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{\Hypertarget{logbank_8h_source_l00141}00141\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00142}00142\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ int\ status\ =\ log\_this(level,\ locate,\ \_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00143}00143\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (status\ <\ 0)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00144}00144\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Always\ log\ overflow\ with\ location\ parameters\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00145}00145\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.func\ =\ \_\_func\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00146}00146\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.file\ =\ FILENAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00147}00147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.line\ =\ \_\_LINE\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00148}00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00149}00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ log\_this(LOG\_ISSUE,\ locate,\ "{}Overflow:\ Required\ length\ is\ \%d"{},\ -\/(status));\ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00150}00150\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00151}00151\ \textcolor{preprocessor}{\ \ \ \ \}\ while\ (0)}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00152}00152\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00160}00160\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af}{log\_get\_default\_level}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00168}00168\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb}{log\_get\_level}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00169}00169\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00178}00178\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(\textcolor{keywordtype}{int}\ level);}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00179}00179\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00188}00188\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}{log\_get\_levelname}}(\textcolor{keywordtype}{int}\ level);}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00189}00189\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00197}00197\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logbank_8h_ad40fb8308e3b7fe972247896b049bbdb}{log\_change\_tzone}}(\textcolor{keywordtype}{int}\ gmt);}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00198}00198\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00208}00208\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(\textcolor{keywordtype}{int}\ enable);}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00209}00209\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00219}00219\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(\textcolor{keywordtype}{int}\ enable);}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00220}00220\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00232}00232\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(\textcolor{keywordtype}{int}\ enable);}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00233}00233\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00249}00249\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\_this}}(\textcolor{keywordtype}{int}\ level,\ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}}\ locate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...);}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00250}00250\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00251}00251\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00252}00252\ \}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00253}00253\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00254}00254\ }
-\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00255}00255\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LOGBANK\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00142}00142\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (LOG\_LOCATION(level))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00143}00143\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.func\ =\ \_\_func\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00144}00144\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.file\ =\ FILENAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00145}00145\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.line\ =\ \_\_LINE\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00146}00146\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00147}00147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00148}00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ int\ status\ =\ log\_this(level,\ locate,\ \_\_VA\_ARGS\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00149}00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ (status\ <\ 0)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00150}00150\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Always\ log\ overflow\ with\ location\ parameters\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00151}00151\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.func\ =\ \_\_func\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00152}00152\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.file\ =\ FILENAME;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00153}00153\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ locate.line\ =\ \_\_LINE\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00154}00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00155}00155\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ log\_this(LOG\_ISSUE,\ locate,\ "{}Overflow:\ Required\ length\ is\ \%d"{},\ -\/(status));\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00156}00156\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00157}00157\ \textcolor{preprocessor}{\ \ \ \ \}\ while\ (0)}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00166}00166\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a0235f5d0111c171178d8cfaeedc8c0af}{log\_get\_default\_level}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00174}00174\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a96925309953d5ca93fc4e5b20a557ffb}{log\_get\_level}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00184}00184\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00194}00194\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}{log\_get\_levelname}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00203}00203\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logbank_8h_ad40fb8308e3b7fe972247896b049bbdb}{log\_change\_tzone}}(\textcolor{keywordtype}{int}\ gmt);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00214}00214\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\_use\_datestamp}}(\textcolor{keywordtype}{int}\ enable);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00225}00225\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\_use\_timestamp}}(\textcolor{keywordtype}{int}\ enable);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00238}00238\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\_use\_color}}(\textcolor{keywordtype}{int}\ enable);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00255}00255\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\_this}}(\textcolor{keywordtype}{int}\ level,\ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}}\ locate,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fmt,\ ...);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00261}00261\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_a8a8889b257192ef17d81b7398e536f30}{log\_get\_queue\_len}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00273}00273\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logbank_8h_ad09a0b05896754a1b7607c3fccb4839a}{log\_remove\_colors}}(\textcolor{keywordtype}{char}*\ message);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00285}00285\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{logbank_8h_af3d39672a440770c16db7efe588ff1b8}{log\_retrieve}}(\textcolor{keywordtype}{char}*\ message,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00287}00287\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00288}00288\ \}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00289}00289\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{logbank_8h_source_l00291}00291\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LOGBANK\_H\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

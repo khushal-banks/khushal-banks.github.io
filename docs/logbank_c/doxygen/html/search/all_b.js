@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['how_20to_20contribute_0',['How to contribute',['../md_CONTRIBUTING.html',1,'']]]
+  ['guidelines_0',['Enforcement Guidelines',['../md_CODE__OF__CONDUCT.html#autotoc_md8',1,'']]]
 ];

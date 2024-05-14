@@ -1,18 +1,14 @@
 var searchData=
 [
-  ['temporary_20ban_0',['3. Temporary Ban',['../md_CODE__OF__CONDUCT.html#autotoc_md11',1,'']]],
-  ['test00_5fcompilation_5frequirement_2ec_1',['test00_compilation_requirement.c',['../test00__compilation__requirement_8c.html',1,'']]],
-  ['test01_5fpriority_5flevel_2ec_2',['test01_priority_level.c',['../test01__priority__level_8c.html',1,'']]],
-  ['test02_5flocation_2ec_3',['test02_location.c',['../test02__location_8c.html',1,'']]],
-  ['test03_5fcolors_2ec_4',['test03_colors.c',['../test03__colors_8c.html',1,'']]],
-  ['test04_5foverflow_2ec_5',['test04_overflow.c',['../test04__overflow_8c.html',1,'']]],
-  ['test_5fcolor_6',['test_color',['../test03__colors_8c.html#a1f539bc3b73b3f2fb7e91d460febf205',1,'test_color(void):&#160;test03_colors.c'],['../test__header_8h.html#af7d71f4400154de2ed072562c6d63429',1,'test_color(void):&#160;test03_colors.c']]],
-  ['test_5fheader_2eh_7',['test_header.h',['../test__header_8h.html',1,'']]],
-  ['test_5flocation_8',['test_location',['../test02__location_8c.html#a507c9d2842a214754db4c2703afbd63c',1,'test_location(void):&#160;test02_location.c'],['../test__header_8h.html#a3411f85818ff2b14fac1077732a601cd',1,'test_location(void):&#160;test02_location.c']]],
-  ['test_5fos_9',['test_os',['../test00__compilation__requirement_8c.html#a5a40bf0abcf48efba0975a0396a57b4d',1,'test_os(void):&#160;test00_compilation_requirement.c'],['../test__header_8h.html#afed1fa66458aed3932cf3f3dc28b8641',1,'test_os(void):&#160;test00_compilation_requirement.c']]],
-  ['test_5foverflow_10',['test_overflow',['../test04__overflow_8c.html#a6eddb96ce76e15005e279334570c168d',1,'test_overflow(void):&#160;test04_overflow.c'],['../test__header_8h.html#a35f5a4168aeca5b6c3b4220a6a1d8c73',1,'test_overflow(void):&#160;test04_overflow.c']]],
-  ['test_5fpriority_5flevel_11',['test_priority_level',['../test01__priority__level_8c.html#ae8a06d4b64e9a9f487af57d3ed7dde30',1,'test_priority_level(void):&#160;test01_priority_level.c'],['../test__header_8h.html#a7b95c675556cf65608c8181aedd2d6b6',1,'test_priority_level(void):&#160;test01_priority_level.c']]],
-  ['test_5frunner_2ec_12',['test_runner.c',['../test__runner_8c.html',1,'']]],
-  ['test_5fstd_13',['test_std',['../test00__compilation__requirement_8c.html#aeea17ed63da755f889345dfbb2e25006',1,'test_std(void):&#160;test00_compilation_requirement.c'],['../test__header_8h.html#a249c7af626da9cf561f10c771db31756',1,'test_std(void):&#160;test00_compilation_requirement.c']]],
-  ['to_20contribute_14',['How to contribute',['../md_CONTRIBUTING.html',1,'']]]
+  ['scope_0',['Scope',['../md_CODE__OF__CONDUCT.html#autotoc_md6',1,'']]],
+  ['snippet_5fcolors_1',['snippet_colors',['../snippets__header_8h.html#a538381f001eb6ed777200e86faf74fe7',1,'snippet_colors(void):&#160;00_basic_snippets.c'],['../00__basic__snippets_8c.html#a64d087aff142d0d7fb77df9974d29a79',1,'snippet_colors(void):&#160;00_basic_snippets.c']]],
+  ['snippet_5flocation_2',['snippet_location',['../snippets__header_8h.html#aa666538ec330550637743b7ce054fa51',1,'snippet_location(void):&#160;00_basic_snippets.c'],['../00__basic__snippets_8c.html#ac8417a6c450c6d8730cbd00e3c7823ed',1,'snippet_location(void):&#160;00_basic_snippets.c']]],
+  ['snippet_5foverflow_3',['snippet_overflow',['../snippets__header_8h.html#a0856e4f7b5c314df751da9887b076da6',1,'snippet_overflow(void):&#160;00_basic_snippets.c'],['../00__basic__snippets_8c.html#ad2263889e97a2d460b66234ff504fe39',1,'snippet_overflow(void):&#160;00_basic_snippets.c']]],
+  ['snippet_5fpriority_5flevel_4',['snippet_priority_level',['../snippets__header_8h.html#a18e02812408dc4afb5b4e52663f59d5f',1,'snippet_priority_level(int level):&#160;00_basic_snippets.c'],['../00__basic__snippets_8c.html#a8025a766e95a5e7a457090e9608095e7',1,'snippet_priority_level(int level):&#160;00_basic_snippets.c']]],
+  ['snippet_5fretrieval_5',['snippet_retrieval',['../snippets__header_8h.html#a87ddd289b183a98e73b3491f51828f96',1,'snippet_retrieval(void):&#160;00_basic_snippets.c'],['../00__basic__snippets_8c.html#a8a15b960cbdb8da8409363ccf60e8610',1,'snippet_retrieval(void):&#160;00_basic_snippets.c']]],
+  ['snippet_5fsample_5flogs_6',['snippet_sample_logs',['../snippets__header_8h.html#a8c7fafe7294357eb39dd5de9cbf216ab',1,'snippet_sample_logs(void):&#160;00_basic_snippets.c'],['../00__basic__snippets_8c.html#a402ebc414f8fe9566959ffd190bd9d29',1,'snippet_sample_logs(void):&#160;00_basic_snippets.c']]],
+  ['snippet_5fstamps_7',['snippet_stamps',['../snippets__header_8h.html#a6620b9789be2d996cf2f066ac5645dd4',1,'snippet_stamps(int gmt):&#160;00_basic_snippets.c'],['../00__basic__snippets_8c.html#a778bef23770ae6204d46ce12101b3a41',1,'snippet_stamps(int gmt):&#160;00_basic_snippets.c']]],
+  ['snippets_5fheader_2eh_8',['snippets_header.h',['../snippets__header_8h.html',1,'']]],
+  ['standards_9',['Our Standards',['../md_CODE__OF__CONDUCT.html#autotoc_md4',1,'']]],
+  ['suggesting_20enhancements_10',['Suggesting enhancements',['../md_CONTRIBUTING.html#autotoc_md16',1,'']]]
 ];

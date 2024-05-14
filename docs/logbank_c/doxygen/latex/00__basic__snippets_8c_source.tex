@@ -107,5 +107,23 @@
 \DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
 \DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}});}
 \DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00107}00107\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00108}\mbox{\hyperlink{snippets__header_8h_a87ddd289b183a98e73b3491f51828f96}{00108}}\ \mbox{\hyperlink{00__basic__snippets_8c_a8a15b960cbdb8da8409363ccf60e8610}{snippet\_retrieval}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{char}\ message[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}];}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(message);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00113}00113\ \ \ \ \ \textcolor{comment}{/*\ Read\ all\ available\ logs\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{int}\ read\_count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{logbank_8h_af3d39672a440770c16db7efe588ff1b8}{log\_retrieve}}(message,\ size)\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ logs\ are\ printed\ here;\ for\ Proof\ of\ Concept\ */}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00118}00118\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00119}00119\ \ \ \ \ \ \ \ \ read\_count++;}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{return}\ read\_count;}
+\DoxyCodeLine{\Hypertarget{00__basic__snippets_8c_source_l00123}00123\ \}}
 
 \end{DoxyCode}
