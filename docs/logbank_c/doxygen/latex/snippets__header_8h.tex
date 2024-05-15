@@ -17,7 +17,9 @@ void \mbox{\hyperlink{snippets__header_8h_a538381f001eb6ed777200e86faf74fe7}{sni
 void \mbox{\hyperlink{snippets__header_8h_a0856e4f7b5c314df751da9887b076da6}{snippet\+\_\+overflow}} (void)
 \begin{DoxyCompactList}\small\item\em This function prints a very long message hoping for overflow. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{snippets__header_8h_a8933223950458147f4e62b01f619c73a}{snippet\+\_\+retrieval}} (int color)
-\end{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{snippets__header_8h_a8b76fe61e7c8fbf51ac2daf16cfb54a6}{snippet\+\_\+parser}} (void)
+\begin{DoxyCompactList}\small\item\em This function retrieves a log-\/message and uses parser on retrieved message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -118,6 +120,57 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00095}{95}} o
 \DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
 \DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}});}
 \DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+\Hypertarget{snippets__header_8h_a8b76fe61e7c8fbf51ac2daf16cfb54a6}\label{snippets__header_8h_a8b76fe61e7c8fbf51ac2daf16cfb54a6} 
+\index{snippets\_header.h@{snippets\_header.h}!snippet\_parser@{snippet\_parser}}
+\index{snippet\_parser@{snippet\_parser}!snippets\_header.h@{snippets\_header.h}}
+\doxysubsubsection{\texorpdfstring{snippet\_parser()}{snippet\_parser()}}
+{\footnotesize\ttfamily snippet\+\_\+parser (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function retrieves a log-\/message and uses parser on retrieved message. 
+
+\begin{DoxyNote}{Note}
+parsed info is printed for proof of concept (demo)
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 Success; parsed retrieved message 
+
+-\/1 Failure; couldn\textquotesingle{}t retrieve message or couldn\textquotesingle{}t parse retrieved message 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00131}{131}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{char}\ message[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}];}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(message);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{/*\ Retrieve\ one\ log-\/message\ */}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{logbank_8h_af3d39672a440770c16db7efe588ff1b8}{log\_retrieve}}(message,\ size)\ ==\ 0)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{/*\ Parse\ retrieved\ log-\/message\ */}}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{structlog__parser__info__t}{log\_parser\_info\_t}}\ info;}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{int}\ status\ =\ \mbox{\hyperlink{logbank_8h_a1cdcdd67bcc690aa83e15ed7de3f913a}{log\_parser}}(message,\ size,\ \&info);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{/*\ print\ parsed\ info\ for\ proof\ of\ concept\ */}}
+\DoxyCodeLine{00145\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}date\ \ \ \ \ =\ \%d/\%d/\%d\(\backslash\)n"{}},\ info.\mbox{\hyperlink{structlog__parser__info__t_af4f3e70feabbadc91bff87d53ca052f8}{day}},\ info.\mbox{\hyperlink{structlog__parser__info__t_ac3d2a0ec1d776ffb5941ce3e5c839ef7}{month}},\ info.\mbox{\hyperlink{structlog__parser__info__t_adb934ab7d65f387e97d91329073cf509}{year}});}
+\DoxyCodeLine{00146\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}time\ \ \ \ \ =\ \%d:\%d:\%d\%s\(\backslash\)n"{}},\ info.\mbox{\hyperlink{structlog__parser__info__t_ab609ac1d3a159056c1246f9d9c1b263f}{hour}},\ info.\mbox{\hyperlink{structlog__parser__info__t_a82979f1e074ff9886bf9184b12d7343a}{min}},\ info.\mbox{\hyperlink{structlog__parser__info__t_a01e088edbd16b0664a67a1d656104656}{sec}},}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ info.\mbox{\hyperlink{structlog__parser__info__t_ab54cfbeb06c9873809bbd71da0d7ec5c}{am\_pm}});}
+\DoxyCodeLine{00148\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}level\ \ \ \ =\ \%d)\ \%s\(\backslash\)n"{}},\ info.\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}},}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8h_a2d07ede7701c6fd6731213b5f85f6d29}{log\_get\_levelname}}(info.\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}}));}
+\DoxyCodeLine{00150\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}location\ =\ \%s():\ \(\backslash\)"{}\%s\ +\ \%d\(\backslash\)"{}\(\backslash\)n"{}},\ info.\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}},\ info.\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}},}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ info.\mbox{\hyperlink{structlog__parser__info__t_acaedf39ac455489c4d02586063e9a49d}{line}});}
+\DoxyCodeLine{00152\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}data\ \ \ \ \ =\ \%s\(\backslash\)n"{}},\ message);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00155\ \}}
 
 \end{DoxyCode}
 \Hypertarget{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f}\label{snippets__header_8h_a18e02812408dc4afb5b4e52663f59d5f} 
