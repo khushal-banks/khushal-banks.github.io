@@ -106,6 +106,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ad2263889e97a2d460b66234ff504fe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function prints a very long message hoping for overflow.  <br /></td></tr>
 <tr class="separator:ad2263889e97a2d460b66234ff504fe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8933223950458147f4e62b01f619c73a" id="r_a8933223950458147f4e62b01f619c73a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8933223950458147f4e62b01f619c73a">snippet_retrieval</a> (int color)</td></tr>
+<tr class="memdesc:a8933223950458147f4e62b01f619c73a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This funtion retrieves all available logs from log_queue.  <br /></td></tr>
 <tr class="separator:a8933223950458147f4e62b01f619c73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f259cf2395789cef12273792ef53fce" id="r_a8f259cf2395789cef12273792ef53fce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f259cf2395789cef12273792ef53fce">snippet_parser</a> (void)</td></tr>
 <tr class="memdesc:a8f259cf2395789cef12273792ef53fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function retrieves a log-message and uses parser on retrieved message.  <br /></td></tr>
@@ -149,7 +150,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e">log_use_color</a>(old_colors);</div>
 <div class="line"><span class="lineno">   92</span>}</div>
 <div class="ttc" id="a00__basic__snippets_8c_html_a402ebc414f8fe9566959ffd190bd9d29"><div class="ttname"><a href="#a402ebc414f8fe9566959ffd190bd9d29">snippet_sample_logs</a></div><div class="ttdeci">void snippet_sample_logs(void)</div><div class="ttdoc">This function is used to print sample logs with current log_level.</div><div class="ttdef"><b>Definition</b> <a href="00__basic__snippets_8c_source.html#l00004">00_basic_snippets.c:4</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a8555559f197dd69f6596aaa3bc97a45e"><div class="ttname"><a href="logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e">log_use_color</a></div><div class="ttdeci">int log_use_color(int enable)</div><div class="ttdoc">This function is used to enable colors for log-requests being logged on stderr.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00859">logbank.c:859</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a8555559f197dd69f6596aaa3bc97a45e"><div class="ttname"><a href="logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e">log_use_color</a></div><div class="ttdeci">int log_use_color(int enable)</div><div class="ttdoc">This function is used to enable colors for log-requests being logged on stderr.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00865">logbank.c:865</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -181,7 +182,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   37</span>    <span class="comment">/* Revert priority to previous value */</span></div>
 <div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a>(old);</div>
 <div class="line"><span class="lineno">   39</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00804">logbank.c:804</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a610cc9f0715471a7599e7f5f7e40a87f"><div class="ttname"><a href="logbank_8h.html#a610cc9f0715471a7599e7f5f7e40a87f">log_set_level</a></div><div class="ttdeci">int log_set_level(int level)</div><div class="ttdoc">This function configures value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00810">logbank.c:810</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00045">logbank.h:45</a></div></div>
 <div class="ttc" id="alogbank_8h_html_acaa1c3fa56061380a29889d703236251"><div class="ttname"><a href="logbank_8h.html#acaa1c3fa56061380a29889d703236251">LOG</a></div><div class="ttdeci">#define LOG(level,...)</div><div class="ttdoc">This is a wrapper for log_this function.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00139">logbank.h:139</a></div></div>
 </div><!-- fragment -->
@@ -269,11 +270,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  153</span> </div>
 <div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> status;</div>
 <div class="line"><span class="lineno">  155</span>}</div>
-<div class="ttc" id="alogbank_8h_html_a1cdcdd67bcc690aa83e15ed7de3f913a"><div class="ttname"><a href="logbank_8h.html#a1cdcdd67bcc690aa83e15ed7de3f913a">log_parser</a></div><div class="ttdeci">int log_parser(char *message, size_t size, log_parser_info_t *info)</div><div class="ttdoc">This function parses &amp; separates all the details with in the message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00931">logbank.c:931</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a2d07ede7701c6fd6731213b5f85f6d29"><div class="ttname"><a href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00815">logbank.c:815</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a1cdcdd67bcc690aa83e15ed7de3f913a"><div class="ttname"><a href="logbank_8h.html#a1cdcdd67bcc690aa83e15ed7de3f913a">log_parser</a></div><div class="ttdeci">int log_parser(char *message, size_t size, log_parser_info_t *info)</div><div class="ttdoc">This function parses &amp; separates all the details with in the message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00937">logbank.c:937</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a2d07ede7701c6fd6731213b5f85f6d29"><div class="ttname"><a href="logbank_8h.html#a2d07ede7701c6fd6731213b5f85f6d29">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00821">logbank.c:821</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a729d70bad9089a4fa7af7191b278d434"><div class="ttname"><a href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a></div><div class="ttdeci">#define LOG_MAX_DATA_LEN</div><div class="ttdoc">Maximum allowed length for log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00015">logbank.h:15</a></div></div>
-<div class="ttc" id="alogbank_8h_html_af3d39672a440770c16db7efe588ff1b8"><div class="ttname"><a href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a></div><div class="ttdeci">int log_retrieve(char *message, size_t size)</div><div class="ttdoc">This function is used to retrieve oldest available log-message from log_queue.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00912">logbank.c:912</a></div></div>
-<div class="ttc" id="astructlog__parser__info__t_html"><div class="ttname"><a href="structlog__parser__info__t.html">log_parser_info_t</a></div><div class="ttdoc">Used to store parsed information from logged-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00219">logbank.h:219</a></div></div>
+<div class="ttc" id="alogbank_8h_html_af3d39672a440770c16db7efe588ff1b8"><div class="ttname"><a href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a></div><div class="ttdeci">int log_retrieve(char *message, size_t size)</div><div class="ttdoc">This function is used to retrieve oldest available log-message from log_queue.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00918">logbank.c:918</a></div></div>
+<div class="ttc" id="astructlog__parser__info__t_html"><div class="ttname"><a href="structlog__parser__info__t.html">log_parser_info_t</a></div><div class="ttdoc">type used to store parsed information from logged-message</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00219">logbank.h:219</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_a01e088edbd16b0664a67a1d656104656"><div class="ttname"><a href="structlog__parser__info__t.html#a01e088edbd16b0664a67a1d656104656">log_parser_info_t::sec</a></div><div class="ttdeci">int sec</div><div class="ttdoc">parsed second value</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00225">logbank.h:225</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_a82979f1e074ff9886bf9184b12d7343a"><div class="ttname"><a href="structlog__parser__info__t.html#a82979f1e074ff9886bf9184b12d7343a">log_parser_info_t::min</a></div><div class="ttdeci">int min</div><div class="ttdoc">parsed minute value</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00224">logbank.h:224</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_a8bd9cea25f6075b9174f60ecf0c7c699"><div class="ttname"><a href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">log_parser_info_t::func</a></div><div class="ttdeci">char func[LOG_MAX_FUNC_NAME_LEN]</div><div class="ttdoc">parsed function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00228">logbank.h:228</a></div></div>
@@ -339,6 +340,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This funtion retrieves all available logs from log_queue. </p>
+<p>This function retrieves each message from log_queue one by one in a loop and prints them. Order of log messages is First-In-First-Out (FIFO)</p>
+<dl class="section note"><dt>Note</dt><dd>logs are printed for proof of concept (demo)</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>set color to 1/0 to retrieve logs with colors and without colors correspondingly. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Number of retrieved messages </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="00__basic__snippets_8c_source.html#l00108">108</a> of file <a class="el" href="00__basic__snippets_8c_source.html">00_basic_snippets.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  108</span>                             {</div>
 <div class="line"><span class="lineno">  109</span> </div>
@@ -361,7 +373,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  126</span> </div>
 <div class="line"><span class="lineno">  127</span>    <span class="keywordflow">return</span> read_count;</div>
 <div class="line"><span class="lineno">  128</span>}</div>
-<div class="ttc" id="alogbank_8h_html_ad09a0b05896754a1b7607c3fccb4839a"><div class="ttname"><a href="logbank_8h.html#ad09a0b05896754a1b7607c3fccb4839a">log_remove_colors</a></div><div class="ttdeci">void log_remove_colors(char *message)</div><div class="ttdoc">This function removes ANSI color codes from message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00917">logbank.c:917</a></div></div>
+<div class="ttc" id="alogbank_8h_html_ad09a0b05896754a1b7607c3fccb4839a"><div class="ttname"><a href="logbank_8h.html#ad09a0b05896754a1b7607c3fccb4839a">log_remove_colors</a></div><div class="ttdeci">void log_remove_colors(char *message)</div><div class="ttdoc">This function removes ANSI color codes from message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00923">logbank.c:923</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -467,9 +479,9 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp</a>(old_timestamp);</div>
 <div class="line"><span class="lineno">   78</span>}</div>
 <div class="ttc" id="a00__basic__snippets_8c_html_ac8417a6c450c6d8730cbd00e3c7823ed"><div class="ttname"><a href="#ac8417a6c450c6d8730cbd00e3c7823ed">snippet_location</a></div><div class="ttdeci">void snippet_location(void)</div><div class="ttdoc">This function is used to print a log with LOG_DEBUG level.</div><div class="ttdef"><b>Definition</b> <a href="00__basic__snippets_8c_source.html#l00031">00_basic_snippets.c:31</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a12a859a61c62ad187ebfb0ea187519b4"><div class="ttname"><a href="logbank_8h.html#a12a859a61c62ad187ebfb0ea187519b4">log_use_datestamp</a></div><div class="ttdeci">int log_use_datestamp(int enable)</div><div class="ttdoc">This function is used to enable date stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00837">logbank.c:837</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a2cbc919241ff3ace24da6e8a3907ba01"><div class="ttname"><a href="logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp</a></div><div class="ttdeci">int log_use_timestamp(int enable)</div><div class="ttdoc">This function is used to enable time stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00848">logbank.c:848</a></div></div>
-<div class="ttc" id="alogbank_8h_html_ad40fb8308e3b7fe972247896b049bbdb"><div class="ttname"><a href="logbank_8h.html#ad40fb8308e3b7fe972247896b049bbdb">log_change_tzone</a></div><div class="ttdeci">void log_change_tzone(int gmt)</div><div class="ttdoc">This function is used to switch between gmt time &amp; local time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00827">logbank.c:827</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a12a859a61c62ad187ebfb0ea187519b4"><div class="ttname"><a href="logbank_8h.html#a12a859a61c62ad187ebfb0ea187519b4">log_use_datestamp</a></div><div class="ttdeci">int log_use_datestamp(int enable)</div><div class="ttdoc">This function is used to enable date stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00843">logbank.c:843</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a2cbc919241ff3ace24da6e8a3907ba01"><div class="ttname"><a href="logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01">log_use_timestamp</a></div><div class="ttdeci">int log_use_timestamp(int enable)</div><div class="ttdoc">This function is used to enable time stamps for every log-request at run-time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00854">logbank.c:854</a></div></div>
+<div class="ttc" id="alogbank_8h_html_ad40fb8308e3b7fe972247896b049bbdb"><div class="ttname"><a href="logbank_8h.html#ad40fb8308e3b7fe972247896b049bbdb">log_change_tzone</a></div><div class="ttdeci">void log_change_tzone(int gmt)</div><div class="ttdoc">This function is used to switch between gmt time &amp; local time.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00833">logbank.c:833</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

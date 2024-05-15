@@ -1,0 +1,73 @@
+\doxysection{log\+\_\+queue\+\_\+t Struct Reference}
+\hypertarget{structlog__queue__t}{}\label{structlog__queue__t}\index{log\_queue\_t@{log\_queue\_t}}
+
+
+type for circular queue (FIFO) used for retrieval of recent logs  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{structlog__queue__t_a6ab2d14d72a422104b98a0d6f0c5047a}{data}} \mbox{[}\mbox{\hyperlink{logbank_8h_a4caacfae62d7eef49d49b5498679f136}{LOG\+\_\+\+RETRIEVE\+\_\+\+QUEUE\+\_\+\+LEN}}+1\mbox{]}\mbox{[}\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em array of log-\/messages \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structlog__queue__t_a464879c4c51845558ffbc1b2bcc9f00c}{write\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em logs are written on write\+\_\+index of queue \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structlog__queue__t_a29c813da5ff4239d00b640232d58378c}{read\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em logs are read from read\+\_\+index of queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+type for circular queue (FIFO) used for retrieval of recent logs 
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00180}{180}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structlog__queue__t_a6ab2d14d72a422104b98a0d6f0c5047a}\label{structlog__queue__t_a6ab2d14d72a422104b98a0d6f0c5047a} 
+\index{log\_queue\_t@{log\_queue\_t}!data@{data}}
+\index{data@{data}!log\_queue\_t@{log\_queue\_t}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily log\+\_\+queue\+\_\+t\+::data}
+
+
+
+array of log-\/messages 
+
+There are a total of LOG\+\_\+\+RETRIEVE\+\_\+\+QUEUE\+\_\+\+LEN messages that can be stored in queue Then queue will start overwriting old messages 
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00181}{181}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+\Hypertarget{structlog__queue__t_a29c813da5ff4239d00b640232d58378c}\label{structlog__queue__t_a29c813da5ff4239d00b640232d58378c} 
+\index{log\_queue\_t@{log\_queue\_t}!read\_index@{read\_index}}
+\index{read\_index@{read\_index}!log\_queue\_t@{log\_queue\_t}}
+\doxysubsubsection{\texorpdfstring{read\_index}{read\_index}}
+{\footnotesize\ttfamily log\+\_\+queue\+\_\+t\+::read\+\_\+index}
+
+
+
+logs are read from read\+\_\+index of queue 
+
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00183}{183}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+\Hypertarget{structlog__queue__t_a464879c4c51845558ffbc1b2bcc9f00c}\label{structlog__queue__t_a464879c4c51845558ffbc1b2bcc9f00c} 
+\index{log\_queue\_t@{log\_queue\_t}!write\_index@{write\_index}}
+\index{write\_index@{write\_index}!log\_queue\_t@{log\_queue\_t}}
+\doxysubsubsection{\texorpdfstring{write\_index}{write\_index}}
+{\footnotesize\ttfamily log\+\_\+queue\+\_\+t\+::write\+\_\+index}
+
+
+
+logs are written on write\+\_\+index of queue 
+
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00182}{182}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+logbank/src/\mbox{\hyperlink{logbank_8c}{logbank.\+c}}\end{DoxyCompactItemize}

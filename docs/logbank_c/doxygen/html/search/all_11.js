@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['read_5findex_0',['read_index',['../logbank_8c.html#ae442d869912b3fd9629b9b829cbccae8',1,'logbank.c']]],
+  ['read_5findex_0',['read_index',['../structlog__queue__t.html#a29c813da5ff4239d00b640232d58378c',1,'log_queue_t']]],
   ['readme_2emd_1',['README.md',['../README_8md.html',1,'']]],
   ['reporting_20bug_2',['Reporting bug',['../md_CONTRIBUTING.html#autotoc_md15',1,'']]],
   ['requests_3',['Pull Requests',['../md_CONTRIBUTING.html#autotoc_md17',1,'']]],

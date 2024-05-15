@@ -5,7 +5,7 @@ var searchData=
   ['log_5fcolor_2',['log_color',['../logbank_8c.html#a189d4d789654e3342bdde4f60875aa1e',1,'logbank.c']]],
   ['log_5fdatestamp_3',['log_datestamp',['../logbank_8c.html#a6e1cbcfba04606a1ea81d837e75cf182',1,'logbank.c']]],
   ['log_5flevel_4',['log_level',['../logbank_8c.html#ac91d55174d383848b976a34de843748e',1,'logbank.c']]],
-  ['log_5fqueue_5',['log_queue',['../logbank_8c.html#aa74ba0098562dbbb833fed24fcf3fcfe',1,'logbank.c']]],
+  ['log_5fqueue_5',['log_queue',['../logbank_8c.html#ae6b4fb7774b5bf67f249a6ff0327f0e2',1,'logbank.c']]],
   ['log_5ftime_5ffn_6',['log_time_fn',['../logbank_8c.html#aecd1c33eda8dadb496cecee02527b6a3',1,'logbank.c']]],
   ['log_5ftimestamp_7',['log_timestamp',['../logbank_8c.html#a78f29241d03102718e247b5869f41e58',1,'logbank.c']]]
 ];

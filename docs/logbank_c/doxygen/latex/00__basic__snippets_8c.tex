@@ -17,7 +17,7 @@ void \mbox{\hyperlink{00__basic__snippets_8c_a64d087aff142d0d7fb77df9974d29a79}{
 void \mbox{\hyperlink{00__basic__snippets_8c_ad2263889e97a2d460b66234ff504fe39}{snippet\+\_\+overflow}} (void)
 \begin{DoxyCompactList}\small\item\em This function prints a very long message hoping for overflow. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{00__basic__snippets_8c_a8933223950458147f4e62b01f619c73a}{snippet\+\_\+retrieval}} (int color)
-\item 
+\begin{DoxyCompactList}\small\item\em This funtion retrieves all available logs from log\+\_\+queue. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{00__basic__snippets_8c_a8f259cf2395789cef12273792ef53fce}{snippet\+\_\+parser}} (void)
 \begin{DoxyCompactList}\small\item\em This function retrieves a log-\/message and uses parser on retrieved message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -211,6 +211,23 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00020}{20}} o
 \doxysubsubsection{\texorpdfstring{snippet\_retrieval()}{snippet\_retrieval()}}
 {\footnotesize\ttfamily int snippet\+\_\+retrieval (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})}
 
+
+
+This funtion retrieves all available logs from log\+\_\+queue. 
+
+This function retrieves each message from log\+\_\+queue one by one in a loop and prints them. Order of log messages is First-\/\+In-\/\+First-\/\+Out (FIFO)
+
+\begin{DoxyNote}{Note}
+logs are printed for proof of concept (demo)
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em color} & set color to 1/0 to retrieve logs with colors and without colors correspondingly. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of retrieved messages 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00108}{108}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.

@@ -122,7 +122,7 @@ Functions</h2></td></tr>
 <p>This function is added only to quickly comment it if making queue full is not required for origional test <a class="el" href="#a1562ba1705b0e370f061e82c93f60c3a">test_retrieval()</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">queue_len</td><td>length of <a class="el" href="structlog__queue.html" title="circular queue (FIFO) used for retrieval of recent logs">log_queue</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">queue_len</td><td>length of log_queue </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,8 +193,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">   50</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a729d70bad9089a4fa7af7191b278d434"><div class="ttname"><a href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a></div><div class="ttdeci">#define LOG_MAX_DATA_LEN</div><div class="ttdoc">Maximum allowed length for log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00015">logbank.h:15</a></div></div>
-<div class="ttc" id="alogbank_8h_html_a8a8889b257192ef17d81b7398e536f30"><div class="ttname"><a href="logbank_8h.html#a8a8889b257192ef17d81b7398e536f30">log_get_queue_len</a></div><div class="ttdeci">int log_get_queue_len(void)</div><div class="ttdoc">Returns the value of LOG_RETRIEVE_QUEUE_LEN.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00907">logbank.c:907</a></div></div>
-<div class="ttc" id="alogbank_8h_html_af3d39672a440770c16db7efe588ff1b8"><div class="ttname"><a href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a></div><div class="ttdeci">int log_retrieve(char *message, size_t size)</div><div class="ttdoc">This function is used to retrieve oldest available log-message from log_queue.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00912">logbank.c:912</a></div></div>
+<div class="ttc" id="alogbank_8h_html_a8a8889b257192ef17d81b7398e536f30"><div class="ttname"><a href="logbank_8h.html#a8a8889b257192ef17d81b7398e536f30">log_get_queue_len</a></div><div class="ttdeci">int log_get_queue_len(void)</div><div class="ttdoc">Returns the value of LOG_RETRIEVE_QUEUE_LEN.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00913">logbank.c:913</a></div></div>
+<div class="ttc" id="alogbank_8h_html_af3d39672a440770c16db7efe588ff1b8"><div class="ttname"><a href="logbank_8h.html#af3d39672a440770c16db7efe588ff1b8">log_retrieve</a></div><div class="ttdeci">int log_retrieve(char *message, size_t size)</div><div class="ttdoc">This function is used to retrieve oldest available log-message from log_queue.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00918">logbank.c:918</a></div></div>
 <div class="ttc" id="atest05__retrieve_8c_html_a0e70e2d995d3da3c10487c5ae0dbe076"><div class="ttname"><a href="#a0e70e2d995d3da3c10487c5ae0dbe076">make_queue_full</a></div><div class="ttdeci">static void make_queue_full(int queue_len)</div><div class="ttdoc">This function make sures that the queue becomes full.</div><div class="ttdef"><b>Definition</b> <a href="test05__retrieve_8c_source.html#l00012">test05_retrieve.c:12</a></div></div>
 </div><!-- fragment -->
 </div>
