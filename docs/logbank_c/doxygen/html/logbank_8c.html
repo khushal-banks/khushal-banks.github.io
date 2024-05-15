@@ -168,6 +168,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a78fd5f1ba0381c34903f66bc6eff0a61" id="r_a78fd5f1ba0381c34903f66bc6eff0a61"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a> (const char *nptr)</td></tr>
 <tr class="memdesc:a78fd5f1ba0381c34903f66bc6eff0a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert ASCII to integer.  <br /></td></tr>
 <tr class="separator:a78fd5f1ba0381c34903f66bc6eff0a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad078e8b28af95662960b20b873f2c616" id="r_ad078e8b28af95662960b20b873f2c616"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a> (char *str, const char *delim, char **saveptr)</td></tr>
+<tr class="memdesc:ad078e8b28af95662960b20b873f2c616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in place of strtok_r.  <br /></td></tr>
+<tr class="separator:ad078e8b28af95662960b20b873f2c616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa15850fe2e5f2dbcad19c95e9a92591c" id="r_aa15850fe2e5f2dbcad19c95e9a92591c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa15850fe2e5f2dbcad19c95e9a92591c">parse_date</a> (const char *copy, <a class="el" href="structlog__parser__info__t.html">log_parser_info_t</a> *info)</td></tr>
 <tr class="memdesc:aa15850fe2e5f2dbcad19c95e9a92591c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to parse date parameter from copy of log-message.  <br /></td></tr>
 <tr class="separator:aa15850fe2e5f2dbcad19c95e9a92591c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -615,15 +618,15 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00795">795</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  795</span>                          {</div>
-<div class="line"><span class="lineno">  796</span>    <span class="keywordflow">if</span> (gmt == 1) {</div>
-<div class="line"><span class="lineno">  797</span>        <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = gmtime;</div>
-<div class="line"><span class="lineno">  798</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  799</span>    }</div>
-<div class="line"><span class="lineno">  800</span> </div>
-<div class="line"><span class="lineno">  801</span>    <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = localtime;</div>
-<div class="line"><span class="lineno">  802</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00827">827</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  827</span>                          {</div>
+<div class="line"><span class="lineno">  828</span>    <span class="keywordflow">if</span> (gmt == 1) {</div>
+<div class="line"><span class="lineno">  829</span>        <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = gmtime;</div>
+<div class="line"><span class="lineno">  830</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  831</span>    }</div>
+<div class="line"><span class="lineno">  832</span> </div>
+<div class="line"><span class="lineno">  833</span>    <a class="code hl_variable" href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a> = localtime;</div>
+<div class="line"><span class="lineno">  834</span>}</div>
 <div class="ttc" id="alogbank_8c_html_aecd1c33eda8dadb496cecee02527b6a3"><div class="ttname"><a href="#aecd1c33eda8dadb496cecee02527b6a3">log_time_fn</a></div><div class="ttdeci">static struct tm *(* log_time_fn)(const time_t *)</div><div class="ttdoc">This function pointer points to a correct time-function based on time-zone.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00205">logbank.c:216</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -765,10 +768,10 @@ Variables</h2></td></tr>
 <p>This function returns default value for log_level See <a class="el" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>int Returns default log_level </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00762">762</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  762</span>                            {</div>
-<div class="line"><span class="lineno">  763</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
-<div class="line"><span class="lineno">  764</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00794">794</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  794</span>                            {</div>
+<div class="line"><span class="lineno">  795</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a>;</div>
+<div class="line"><span class="lineno">  796</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a0b87e0d3bf5853bcbb0b66a7c48fdc05"><div class="ttname"><a href="logbank_8h.html#a0b87e0d3bf5853bcbb0b66a7c48fdc05">LOG_LEVEL</a></div><div class="ttdeci">#define LOG_LEVEL</div><div class="ttdoc">Default value for log_level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00061">logbank.h:61</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -791,10 +794,10 @@ Variables</h2></td></tr>
 <p>This function returns current value for log_level. </p>
 <dl class="section return"><dt>Returns</dt><dd>int Returns log_level </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00767">767</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  767</span>                    {</div>
-<div class="line"><span class="lineno">  768</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
-<div class="line"><span class="lineno">  769</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00799">799</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  799</span>                    {</div>
+<div class="line"><span class="lineno">  800</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
+<div class="line"><span class="lineno">  801</span>}</div>
 <div class="ttc" id="alogbank_8c_html_ac91d55174d383848b976a34de843748e"><div class="ttname"><a href="#ac91d55174d383848b976a34de843748e">log_level</a></div><div class="ttdeci">static int log_level</div><div class="ttdoc">This value acts as a filter to discard lower-priority log-requests.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00191">logbank.c:191</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -825,17 +828,17 @@ Variables</h2></td></tr>
 <dd>
 NULL on Failure =&gt; invalid level </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00783">783</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  783</span>                             {</div>
-<div class="line"><span class="lineno">  784</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* level_names[] = {<span class="stringliteral">&quot;DEBUG&quot;</span>, <span class="stringliteral">&quot;INFO&quot;</span>,  <span class="stringliteral">&quot;WARN&quot;</span>,</div>
-<div class="line"><span class="lineno">  785</span>                                        <span class="stringliteral">&quot;ERROR&quot;</span>, <span class="stringliteral">&quot;ISSUE&quot;</span>, <span class="stringliteral">&quot;FATAL&quot;</span>};</div>
-<div class="line"><span class="lineno">  786</span> </div>
-<div class="line"><span class="lineno">  787</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
-<div class="line"><span class="lineno">  788</span>        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  789</span>    }</div>
-<div class="line"><span class="lineno">  790</span> </div>
-<div class="line"><span class="lineno">  791</span>    <span class="keywordflow">return</span> level_names[level];</div>
-<div class="line"><span class="lineno">  792</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00815">815</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  815</span>                             {</div>
+<div class="line"><span class="lineno">  816</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* level_names[] = {<span class="stringliteral">&quot;DEBUG&quot;</span>, <span class="stringliteral">&quot;INFO&quot;</span>,  <span class="stringliteral">&quot;WARN&quot;</span>,</div>
+<div class="line"><span class="lineno">  817</span>                                        <span class="stringliteral">&quot;ERROR&quot;</span>, <span class="stringliteral">&quot;ISSUE&quot;</span>, <span class="stringliteral">&quot;FATAL&quot;</span>};</div>
+<div class="line"><span class="lineno">  818</span> </div>
+<div class="line"><span class="lineno">  819</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><span class="lineno">  820</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  821</span>    }</div>
+<div class="line"><span class="lineno">  822</span> </div>
+<div class="line"><span class="lineno">  823</span>    <span class="keywordflow">return</span> level_names[level];</div>
+<div class="line"><span class="lineno">  824</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a></div><div class="ttdeci">@ LOG_FATAL</div><div class="ttdoc">recommended for blockers (system failure: can not continue)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00045">logbank.h:45</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -857,10 +860,10 @@ NULL on Failure =&gt; invalid level </dd></dl>
 
 <p>Returns the value of <a class="el" href="logbank_8h.html#a4caacfae62d7eef49d49b5498679f136">LOG_RETRIEVE_QUEUE_LEN</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00875">875</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  875</span>                        {</div>
-<div class="line"><span class="lineno">  876</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a4caacfae62d7eef49d49b5498679f136">LOG_RETRIEVE_QUEUE_LEN</a>;</div>
-<div class="line"><span class="lineno">  877</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00907">907</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  907</span>                        {</div>
+<div class="line"><span class="lineno">  908</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="logbank_8h.html#a4caacfae62d7eef49d49b5498679f136">LOG_RETRIEVE_QUEUE_LEN</a>;</div>
+<div class="line"><span class="lineno">  909</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -907,49 +910,54 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 Failure; couldn't parse input message </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00899">899</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  899</span>                                                                {</div>
-<div class="line"><span class="lineno">  900</span>    <span class="keywordflow">if</span> (message == NULL || size &lt; <a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a> || info == NULL) {</div>
-<div class="line"><span class="lineno">  901</span>        <span class="comment">/* Invalid parameters */</span></div>
-<div class="line"><span class="lineno">  902</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  903</span>    }</div>
-<div class="line"><span class="lineno">  904</span> </div>
-<div class="line"><span class="lineno">  905</span>    <span class="keywordtype">char</span> copy[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>];</div>
-<div class="line"><span class="lineno">  906</span>    strcpy(copy, message);</div>
-<div class="line"><span class="lineno">  907</span> </div>
-<div class="line"><span class="lineno">  908</span>    <a class="code hl_function" href="#ada483370fa70cd182fa9f81e8d1c8b0c">log_remove_colors</a>(copy);</div>
-<div class="line"><span class="lineno">  909</span> </div>
-<div class="line"><span class="lineno">  910</span>    <span class="keywordtype">int</span> state = <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739">LOG_PARSER_INIT</a>;</div>
-<div class="line"><span class="lineno">  911</span>    <span class="keywordflow">while</span> (state &lt; <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8">LOG_PARSER_DONE</a>) {</div>
-<div class="line"><span class="lineno">  912</span> </div>
-<div class="line"><span class="lineno">  913</span>        <span class="keywordflow">switch</span> (state) {</div>
-<div class="line"><span class="lineno">  914</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739">LOG_PARSER_INIT</a>: {</div>
-<div class="line"><span class="lineno">  915</span>                state = <a class="code hl_function" href="#a71249e077c2ba82ba172b73263a446c9">parse_datetime</a>(copy, info);</div>
-<div class="line"><span class="lineno">  916</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  917</span>            }</div>
-<div class="line"><span class="lineno">  918</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73">LOG_PARSER_LEVEL</a>: {</div>
-<div class="line"><span class="lineno">  919</span>                state = <a class="code hl_function" href="#a66b27f4f9997b08f6b1babdee8406102">parse_level</a>(copy, info);</div>
-<div class="line"><span class="lineno">  920</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  921</span>            }</div>
-<div class="line"><span class="lineno">  922</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc">LOG_PARSER_LOCATION</a>: {</div>
-<div class="line"><span class="lineno">  923</span>                state = <a class="code hl_function" href="#aaf13a0db1967c342e204aa844df01fda">parse_location</a>(copy, info);</div>
-<div class="line"><span class="lineno">  924</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  925</span>            }</div>
-<div class="line"><span class="lineno">  926</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9">LOG_PARSER_DATA</a>: {</div>
-<div class="line"><span class="lineno">  927</span>                state = <a class="code hl_function" href="#ad93e16f63aa5d848b4ee0eda72f092ac">parse_data_string</a>(message, size, copy);</div>
-<div class="line"><span class="lineno">  928</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  929</span>            }</div>
-<div class="line"><span class="lineno">  930</span>            <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  931</span>        }</div>
-<div class="line"><span class="lineno">  932</span>    }</div>
-<div class="line"><span class="lineno">  933</span> </div>
-<div class="line"><span class="lineno">  934</span>    <span class="keywordflow">return</span> state == <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8">LOG_PARSER_DONE</a> ? 0 : -1;</div>
-<div class="line"><span class="lineno">  935</span>}</div>
-<div class="ttc" id="alogbank_8c_html_a66b27f4f9997b08f6b1babdee8406102"><div class="ttname"><a href="#a66b27f4f9997b08f6b1babdee8406102">parse_level</a></div><div class="ttdeci">static int parse_level(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse level parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00554">logbank.c:554</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a71249e077c2ba82ba172b73263a446c9"><div class="ttname"><a href="#a71249e077c2ba82ba172b73263a446c9">parse_datetime</a></div><div class="ttdeci">static int parse_datetime(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse date &amp; time parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00535">logbank.c:535</a></div></div>
-<div class="ttc" id="alogbank_8c_html_aaf13a0db1967c342e204aa844df01fda"><div class="ttname"><a href="#aaf13a0db1967c342e204aa844df01fda">parse_location</a></div><div class="ttdeci">static int parse_location(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse function name, file name &amp; line number parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00694">logbank.c:694</a></div></div>
-<div class="ttc" id="alogbank_8c_html_ad93e16f63aa5d848b4ee0eda72f092ac"><div class="ttname"><a href="#ad93e16f63aa5d848b4ee0eda72f092ac">parse_data_string</a></div><div class="ttdeci">static int parse_data_string(char *message, size_t size, const char *copy)</div><div class="ttdoc">Used to separate data string from message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00732">logbank.c:732</a></div></div>
-<div class="ttc" id="alogbank_8c_html_ada483370fa70cd182fa9f81e8d1c8b0c"><div class="ttname"><a href="#ada483370fa70cd182fa9f81e8d1c8b0c">log_remove_colors</a></div><div class="ttdeci">void log_remove_colors(char *message)</div><div class="ttdoc">This function removes ANSI color codes from message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00885">logbank.c:885</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00931">931</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  931</span>                                                                {</div>
+<div class="line"><span class="lineno">  932</span>    <span class="keywordflow">if</span> (message == NULL || size &lt; <a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a> || info == NULL) {</div>
+<div class="line"><span class="lineno">  933</span>        <span class="comment">/* Invalid parameters */</span></div>
+<div class="line"><span class="lineno">  934</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  935</span>    }</div>
+<div class="line"><span class="lineno">  936</span> </div>
+<div class="line"><span class="lineno">  937</span>    <span class="comment">/* Create a reference copy */</span></div>
+<div class="line"><span class="lineno">  938</span>    <span class="keywordtype">char</span> copy[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>];</div>
+<div class="line"><span class="lineno">  939</span>    strncpy(copy, message, <a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>);</div>
+<div class="line"><span class="lineno">  940</span>    copy[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  941</span> </div>
+<div class="line"><span class="lineno">  942</span>    <span class="comment">/* Remove colors */</span></div>
+<div class="line"><span class="lineno">  943</span>    <a class="code hl_function" href="#ada483370fa70cd182fa9f81e8d1c8b0c">log_remove_colors</a>(copy);</div>
+<div class="line"><span class="lineno">  944</span> </div>
+<div class="line"><span class="lineno">  945</span>    <span class="comment">/* Start Parsing */</span></div>
+<div class="line"><span class="lineno">  946</span>    <span class="keywordtype">int</span> state = <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739">LOG_PARSER_INIT</a>;</div>
+<div class="line"><span class="lineno">  947</span>    <span class="keywordflow">while</span> (state &lt; <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8">LOG_PARSER_DONE</a>) {</div>
+<div class="line"><span class="lineno">  948</span> </div>
+<div class="line"><span class="lineno">  949</span>        <span class="keywordflow">switch</span> (state) {</div>
+<div class="line"><span class="lineno">  950</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739">LOG_PARSER_INIT</a>: {</div>
+<div class="line"><span class="lineno">  951</span>                state = <a class="code hl_function" href="#a71249e077c2ba82ba172b73263a446c9">parse_datetime</a>(copy, info);</div>
+<div class="line"><span class="lineno">  952</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  953</span>            }</div>
+<div class="line"><span class="lineno">  954</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73">LOG_PARSER_LEVEL</a>: {</div>
+<div class="line"><span class="lineno">  955</span>                state = <a class="code hl_function" href="#a66b27f4f9997b08f6b1babdee8406102">parse_level</a>(copy, info);</div>
+<div class="line"><span class="lineno">  956</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  957</span>            }</div>
+<div class="line"><span class="lineno">  958</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc">LOG_PARSER_LOCATION</a>: {</div>
+<div class="line"><span class="lineno">  959</span>                state = <a class="code hl_function" href="#aaf13a0db1967c342e204aa844df01fda">parse_location</a>(copy, info);</div>
+<div class="line"><span class="lineno">  960</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  961</span>            }</div>
+<div class="line"><span class="lineno">  962</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9">LOG_PARSER_DATA</a>: {</div>
+<div class="line"><span class="lineno">  963</span>                state = <a class="code hl_function" href="#ad93e16f63aa5d848b4ee0eda72f092ac">parse_data_string</a>(message, size, copy);</div>
+<div class="line"><span class="lineno">  964</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  965</span>            }</div>
+<div class="line"><span class="lineno">  966</span>            <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  967</span>        }</div>
+<div class="line"><span class="lineno">  968</span>    }</div>
+<div class="line"><span class="lineno">  969</span> </div>
+<div class="line"><span class="lineno">  970</span>    <span class="comment">/* Check parsing state */</span></div>
+<div class="line"><span class="lineno">  971</span>    <span class="keywordflow">return</span> state == <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8">LOG_PARSER_DONE</a> ? 0 : -1;</div>
+<div class="line"><span class="lineno">  972</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a66b27f4f9997b08f6b1babdee8406102"><div class="ttname"><a href="#a66b27f4f9997b08f6b1babdee8406102">parse_level</a></div><div class="ttdeci">static int parse_level(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse level parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00586">logbank.c:586</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a71249e077c2ba82ba172b73263a446c9"><div class="ttname"><a href="#a71249e077c2ba82ba172b73263a446c9">parse_datetime</a></div><div class="ttdeci">static int parse_datetime(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse date &amp; time parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00567">logbank.c:567</a></div></div>
+<div class="ttc" id="alogbank_8c_html_aaf13a0db1967c342e204aa844df01fda"><div class="ttname"><a href="#aaf13a0db1967c342e204aa844df01fda">parse_location</a></div><div class="ttdeci">static int parse_location(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse function name, file name &amp; line number parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00726">logbank.c:726</a></div></div>
+<div class="ttc" id="alogbank_8c_html_ad93e16f63aa5d848b4ee0eda72f092ac"><div class="ttname"><a href="#ad93e16f63aa5d848b4ee0eda72f092ac">parse_data_string</a></div><div class="ttdeci">static int parse_data_string(char *message, size_t size, const char *copy)</div><div class="ttdoc">Used to separate data string from message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00764">logbank.c:764</a></div></div>
+<div class="ttc" id="alogbank_8c_html_ada483370fa70cd182fa9f81e8d1c8b0c"><div class="ttname"><a href="#ada483370fa70cd182fa9f81e8d1c8b0c">log_remove_colors</a></div><div class="ttdeci">void log_remove_colors(char *message)</div><div class="ttdoc">This function removes ANSI color codes from message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00917">logbank.c:917</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -977,19 +985,19 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00885">885</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  885</span>                                 {</div>
-<div class="line"><span class="lineno">  886</span> </div>
-<div class="line"><span class="lineno">  887</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt;= <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70">LOG_COLOR_END</a>; index++) {</div>
-<div class="line"><span class="lineno">  888</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* color = <a class="code hl_variable" href="#a190f05562784d975771cf3c914c5fe45">color_list</a>[index];</div>
-<div class="line"><span class="lineno">  889</span> </div>
-<div class="line"><span class="lineno">  890</span>        <span class="keywordflow">if</span> (strstr(message, color)) {</div>
-<div class="line"><span class="lineno">  891</span>            <span class="comment">/* One color is used a maximum of 2 times in update_header() */</span></div>
-<div class="line"><span class="lineno">  892</span>            <a class="code hl_function" href="#a4768c87e08765d06d4a033b4345e8b25">log_str_replace</a>(message, color);</div>
-<div class="line"><span class="lineno">  893</span>            <a class="code hl_function" href="#a4768c87e08765d06d4a033b4345e8b25">log_str_replace</a>(message, color);</div>
-<div class="line"><span class="lineno">  894</span>        }</div>
-<div class="line"><span class="lineno">  895</span>    }</div>
-<div class="line"><span class="lineno">  896</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00917">917</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  917</span>                                 {</div>
+<div class="line"><span class="lineno">  918</span> </div>
+<div class="line"><span class="lineno">  919</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt;= <a class="code hl_enumvalue" href="#a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70">LOG_COLOR_END</a>; index++) {</div>
+<div class="line"><span class="lineno">  920</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* color = <a class="code hl_variable" href="#a190f05562784d975771cf3c914c5fe45">color_list</a>[index];</div>
+<div class="line"><span class="lineno">  921</span> </div>
+<div class="line"><span class="lineno">  922</span>        <span class="keywordflow">if</span> (strstr(message, color)) {</div>
+<div class="line"><span class="lineno">  923</span>            <span class="comment">/* One color is used a maximum of 2 times in update_header() */</span></div>
+<div class="line"><span class="lineno">  924</span>            <a class="code hl_function" href="#a4768c87e08765d06d4a033b4345e8b25">log_str_replace</a>(message, color);</div>
+<div class="line"><span class="lineno">  925</span>            <a class="code hl_function" href="#a4768c87e08765d06d4a033b4345e8b25">log_str_replace</a>(message, color);</div>
+<div class="line"><span class="lineno">  926</span>        }</div>
+<div class="line"><span class="lineno">  927</span>    }</div>
+<div class="line"><span class="lineno">  928</span>}</div>
 <div class="ttc" id="alogbank_8c_html_a190f05562784d975771cf3c914c5fe45"><div class="ttname"><a href="#a190f05562784d975771cf3c914c5fe45">color_list</a></div><div class="ttdeci">static const char * color_list[]</div><div class="ttdoc">list of available ANSI color codes for foregound text</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00131">logbank.c:131</a></div></div>
 <div class="ttc" id="alogbank_8c_html_a4768c87e08765d06d4a033b4345e8b25"><div class="ttname"><a href="#a4768c87e08765d06d4a033b4345e8b25">log_str_replace</a></div><div class="ttdeci">static char * log_str_replace(char *source, const char *remove)</div><div class="ttdoc">Used to strip away first occurrence of &quot;remove&quot; from &quot;source&quot;.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00403">logbank.c:403</a></div></div>
 </div><!-- fragment -->
@@ -1027,10 +1035,10 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 0 Queue is Empty; Retrieval is not possible </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00880">880</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  880</span>                                         {</div>
-<div class="line"><span class="lineno">  881</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a699faa87910f82ed384ddd18cec06629">log_de_queue</a>(message, size);</div>
-<div class="line"><span class="lineno">  882</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00912">912</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  912</span>                                         {</div>
+<div class="line"><span class="lineno">  913</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a699faa87910f82ed384ddd18cec06629">log_de_queue</a>(message, size);</div>
+<div class="line"><span class="lineno">  914</span>}</div>
 <div class="ttc" id="alogbank_8c_html_a699faa87910f82ed384ddd18cec06629"><div class="ttname"><a href="#a699faa87910f82ed384ddd18cec06629">log_de_queue</a></div><div class="ttdeci">static int log_de_queue(char *message, size_t size)</div><div class="ttdoc">This function is used to retrieve oldest available log-message from log_queue.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00374">logbank.c:374</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1061,16 +1069,16 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 on Failure =&gt; Supplied new value can not be configured </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00772">772</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  772</span>                         {</div>
-<div class="line"><span class="lineno">  773</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
-<div class="line"><span class="lineno">  774</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  775</span>    }</div>
-<div class="line"><span class="lineno">  776</span> </div>
-<div class="line"><span class="lineno">  777</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
-<div class="line"><span class="lineno">  778</span>    <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a> = level;</div>
-<div class="line"><span class="lineno">  779</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><span class="lineno">  780</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00804">804</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  804</span>                         {</div>
+<div class="line"><span class="lineno">  805</span>    <span class="keywordflow">if</span> (level &lt; LOG_DEBUG || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><span class="lineno">  806</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  807</span>    }</div>
+<div class="line"><span class="lineno">  808</span> </div>
+<div class="line"><span class="lineno">  809</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a>;</div>
+<div class="line"><span class="lineno">  810</span>    <a class="code hl_variable" href="#ac91d55174d383848b976a34de843748e">log_level</a> = level;</div>
+<div class="line"><span class="lineno">  811</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  812</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1223,6 +1231,74 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ad078e8b28af95662960b20b873f2c616" name="ad078e8b28af95662960b20b873f2c616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad078e8b28af95662960b20b873f2c616">&#9670;&#160;</a></span>log_strtok_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">log_strtok_r </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>str</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>delim</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>saveptr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used in place of strtok_r. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>pointer to input string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delim</td><td>pointer to delimiter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">saveptr</td><td>pointer to saveptr required to pass next item when str is NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* Success: pointer to modified input string </dd>
+<dd>
+NULL Failure: str and *saveptr are both NULL or str doesn't contain delim </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00446">446</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  446</span>                                                           {</div>
+<div class="line"><span class="lineno">  447</span>    <span class="keywordflow">if</span> (!str &amp;&amp; !(str = *saveptr)) {</div>
+<div class="line"><span class="lineno">  448</span>        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  449</span>    }</div>
+<div class="line"><span class="lineno">  450</span> </div>
+<div class="line"><span class="lineno">  451</span>    str += strspn(str, delim);</div>
+<div class="line"><span class="lineno">  452</span>    <span class="keywordflow">if</span> (!*str) {</div>
+<div class="line"><span class="lineno">  453</span>        <span class="keywordflow">return</span> *saveptr = 0;</div>
+<div class="line"><span class="lineno">  454</span>    }</div>
+<div class="line"><span class="lineno">  455</span>    *saveptr = str + strcspn(str, delim);</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>    <span class="keywordflow">if</span> (**saveptr) {</div>
+<div class="line"><span class="lineno">  458</span>        *(*saveptr)++ = 0;</div>
+<div class="line"><span class="lineno">  459</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  460</span>        *saveptr = 0;</div>
+<div class="line"><span class="lineno">  461</span>    }</div>
+<div class="line"><span class="lineno">  462</span> </div>
+<div class="line"><span class="lineno">  463</span>    <span class="keywordflow">return</span> str;</div>
+<div class="line"><span class="lineno">  464</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af4c62a16c3bbb595d0ada4b00a8b4092" name="af4c62a16c3bbb595d0ada4b00a8b4092"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4c62a16c3bbb595d0ada4b00a8b4092">&#9670;&#160;</a></span>log_this()</h2>
 
@@ -1269,42 +1345,42 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 &lt;0 Failure: Overflow occurred. Negative returned value is the required length to log input log-request </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00838">838</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  838</span>                                                               {</div>
-<div class="line"><span class="lineno">  839</span>    <span class="keywordtype">int</span> len = 0;</div>
-<div class="line"><span class="lineno">  840</span> </div>
-<div class="line"><span class="lineno">  841</span>    <span class="comment">/* Filtering logic for lower priority log-requests and invalid priority requests */</span></div>
-<div class="line"><span class="lineno">  842</span>    <span class="keywordflow">if</span> (level &lt; log_level || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
-<div class="line"><span class="lineno">  843</span>        <span class="keywordflow">return</span> len;</div>
-<div class="line"><span class="lineno">  844</span>    }</div>
-<div class="line"><span class="lineno">  845</span> </div>
-<div class="line"><span class="lineno">  846</span>    <span class="comment">/* prepare log-message */</span></div>
-<div class="line"><span class="lineno">  847</span>    <span class="keywordtype">char</span> message[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>];</div>
-<div class="line"><span class="lineno">  848</span>    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(message);</div>
-<div class="line"><span class="lineno">  849</span> </div>
-<div class="line"><span class="lineno">  850</span>    <span class="comment">/* Add header to log-message */</span></div>
-<div class="line"><span class="lineno">  851</span>    len += <a class="code hl_function" href="#a61610956cd7b586c8745be62d0b04bb4">update_header</a>(message, size - len, level, locate);</div>
-<div class="line"><span class="lineno">  852</span> </div>
-<div class="line"><span class="lineno">  853</span>    <span class="comment">/* Add optional arguments to log-message */</span></div>
-<div class="line"><span class="lineno">  854</span>    va_list args;</div>
-<div class="line"><span class="lineno">  855</span>    va_start(args, fmt);</div>
-<div class="line"><span class="lineno">  856</span>    len += vsnprintf(message + len, size - len, fmt, args);</div>
-<div class="line"><span class="lineno">  857</span>    va_end(args);</div>
-<div class="line"><span class="lineno">  858</span> </div>
-<div class="line"><span class="lineno">  859</span>    <span class="comment">/* Handle string termination properly */</span></div>
-<div class="line"><span class="lineno">  860</span>    len += snprintf(message + len, size - len, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  861</span>    message[size - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  862</span> </div>
-<div class="line"><span class="lineno">  863</span>    <span class="keywordflow">if</span> (len &gt; <a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>) {</div>
-<div class="line"><span class="lineno">  864</span>        <span class="comment">/* Data Overflow */</span></div>
-<div class="line"><span class="lineno">  865</span>        <span class="keywordflow">return</span> (0 - len);</div>
-<div class="line"><span class="lineno">  866</span>    }</div>
-<div class="line"><span class="lineno">  867</span> </div>
-<div class="line"><span class="lineno">  868</span>    <span class="comment">/* write operation */</span></div>
-<div class="line"><span class="lineno">  869</span>    <a class="code hl_function" href="#a55d582cd8fce0964d97a5f33afe759c8">log_stream_write</a>(message);</div>
-<div class="line"><span class="lineno">  870</span>    <a class="code hl_function" href="#a9483b564e7d34ef47edf9f7b56d6f6c5">log_en_queue</a>(message);</div>
-<div class="line"><span class="lineno">  871</span>    <span class="keywordflow">return</span> len;</div>
-<div class="line"><span class="lineno">  872</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00870">870</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  870</span>                                                               {</div>
+<div class="line"><span class="lineno">  871</span>    <span class="keywordtype">int</span> len = 0;</div>
+<div class="line"><span class="lineno">  872</span> </div>
+<div class="line"><span class="lineno">  873</span>    <span class="comment">/* Filtering logic for lower priority log-requests and invalid priority requests */</span></div>
+<div class="line"><span class="lineno">  874</span>    <span class="keywordflow">if</span> (level &lt; log_level || level &gt; <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>) {</div>
+<div class="line"><span class="lineno">  875</span>        <span class="keywordflow">return</span> len;</div>
+<div class="line"><span class="lineno">  876</span>    }</div>
+<div class="line"><span class="lineno">  877</span> </div>
+<div class="line"><span class="lineno">  878</span>    <span class="comment">/* prepare log-message */</span></div>
+<div class="line"><span class="lineno">  879</span>    <span class="keywordtype">char</span> message[<a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>];</div>
+<div class="line"><span class="lineno">  880</span>    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(message);</div>
+<div class="line"><span class="lineno">  881</span> </div>
+<div class="line"><span class="lineno">  882</span>    <span class="comment">/* Add header to log-message */</span></div>
+<div class="line"><span class="lineno">  883</span>    len += <a class="code hl_function" href="#a61610956cd7b586c8745be62d0b04bb4">update_header</a>(message, size - len, level, locate);</div>
+<div class="line"><span class="lineno">  884</span> </div>
+<div class="line"><span class="lineno">  885</span>    <span class="comment">/* Add optional arguments to log-message */</span></div>
+<div class="line"><span class="lineno">  886</span>    va_list args;</div>
+<div class="line"><span class="lineno">  887</span>    va_start(args, fmt);</div>
+<div class="line"><span class="lineno">  888</span>    len += vsnprintf(message + len, size - len, fmt, args);</div>
+<div class="line"><span class="lineno">  889</span>    va_end(args);</div>
+<div class="line"><span class="lineno">  890</span> </div>
+<div class="line"><span class="lineno">  891</span>    <span class="comment">/* Handle string termination properly */</span></div>
+<div class="line"><span class="lineno">  892</span>    len += snprintf(message + len, size - len, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  893</span>    message[size - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  894</span> </div>
+<div class="line"><span class="lineno">  895</span>    <span class="keywordflow">if</span> (len &gt; <a class="code hl_define" href="logbank_8h.html#a729d70bad9089a4fa7af7191b278d434">LOG_MAX_DATA_LEN</a>) {</div>
+<div class="line"><span class="lineno">  896</span>        <span class="comment">/* Data Overflow */</span></div>
+<div class="line"><span class="lineno">  897</span>        <span class="keywordflow">return</span> (0 - len);</div>
+<div class="line"><span class="lineno">  898</span>    }</div>
+<div class="line"><span class="lineno">  899</span> </div>
+<div class="line"><span class="lineno">  900</span>    <span class="comment">/* write operation */</span></div>
+<div class="line"><span class="lineno">  901</span>    <a class="code hl_function" href="#a55d582cd8fce0964d97a5f33afe759c8">log_stream_write</a>(message);</div>
+<div class="line"><span class="lineno">  902</span>    <a class="code hl_function" href="#a9483b564e7d34ef47edf9f7b56d6f6c5">log_en_queue</a>(message);</div>
+<div class="line"><span class="lineno">  903</span>    <span class="keywordflow">return</span> len;</div>
+<div class="line"><span class="lineno">  904</span>}</div>
 <div class="ttc" id="alogbank_8c_html_a55d582cd8fce0964d97a5f33afe759c8"><div class="ttname"><a href="#a55d582cd8fce0964d97a5f33afe759c8">log_stream_write</a></div><div class="ttdeci">static void log_stream_write(const char *message)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00334">logbank.c:334</a></div></div>
 <div class="ttc" id="alogbank_8c_html_a61610956cd7b586c8745be62d0b04bb4"><div class="ttname"><a href="#a61610956cd7b586c8745be62d0b04bb4">update_header</a></div><div class="ttdeci">static int update_header(char *header, size_t size, int level, log_locate_t locate)</div><div class="ttdoc">This function populate the header i.e., prefix of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00267">logbank.c:267</a></div></div>
 <div class="ttc" id="alogbank_8c_html_a9483b564e7d34ef47edf9f7b56d6f6c5"><div class="ttname"><a href="#a9483b564e7d34ef47edf9f7b56d6f6c5">log_en_queue</a></div><div class="ttdeci">static void log_en_queue(const char *message)</div><div class="ttdoc">This function is used to add a new log-message to log_queue.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00346">logbank.c:346</a></div></div>
@@ -1340,16 +1416,16 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 invalid value received for enable parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00827">827</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  827</span>                          {</div>
-<div class="line"><span class="lineno">  828</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
-<div class="line"><span class="lineno">  829</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  830</span>    }</div>
-<div class="line"><span class="lineno">  831</span> </div>
-<div class="line"><span class="lineno">  832</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a>;</div>
-<div class="line"><span class="lineno">  833</span>    <a class="code hl_variable" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a> = enable;</div>
-<div class="line"><span class="lineno">  834</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><span class="lineno">  835</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00859">859</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  859</span>                          {</div>
+<div class="line"><span class="lineno">  860</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
+<div class="line"><span class="lineno">  861</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  862</span>    }</div>
+<div class="line"><span class="lineno">  863</span> </div>
+<div class="line"><span class="lineno">  864</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a>;</div>
+<div class="line"><span class="lineno">  865</span>    <a class="code hl_variable" href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a> = enable;</div>
+<div class="line"><span class="lineno">  866</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  867</span>}</div>
 <div class="ttc" id="alogbank_8c_html_a189d4d789654e3342bdde4f60875aa1e"><div class="ttname"><a href="#a189d4d789654e3342bdde4f60875aa1e">log_color</a></div><div class="ttdeci">static int log_color</div><div class="ttdoc">current preferrence on use of color</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00125">logbank.c:125</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1382,16 +1458,16 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 invalid value received for enable parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00805">805</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  805</span>                              {</div>
-<div class="line"><span class="lineno">  806</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
-<div class="line"><span class="lineno">  807</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  808</span>    }</div>
-<div class="line"><span class="lineno">  809</span> </div>
-<div class="line"><span class="lineno">  810</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a>;</div>
-<div class="line"><span class="lineno">  811</span>    <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a> = enable;</div>
-<div class="line"><span class="lineno">  812</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><span class="lineno">  813</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00837">837</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  837</span>                              {</div>
+<div class="line"><span class="lineno">  838</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
+<div class="line"><span class="lineno">  839</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  840</span>    }</div>
+<div class="line"><span class="lineno">  841</span> </div>
+<div class="line"><span class="lineno">  842</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a>;</div>
+<div class="line"><span class="lineno">  843</span>    <a class="code hl_variable" href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a> = enable;</div>
+<div class="line"><span class="lineno">  844</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  845</span>}</div>
 <div class="ttc" id="alogbank_8c_html_a6e1cbcfba04606a1ea81d837e75cf182"><div class="ttname"><a href="#a6e1cbcfba04606a1ea81d837e75cf182">log_datestamp</a></div><div class="ttdeci">static int log_datestamp</div><div class="ttdoc">This value controls the use of date stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00198">logbank.c:198</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1424,16 +1500,16 @@ NULL on Failure =&gt; invalid level </dd></dl>
 <dd>
 -1 invalid value received for enable parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00816">816</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  816</span>                              {</div>
-<div class="line"><span class="lineno">  817</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
-<div class="line"><span class="lineno">  818</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  819</span>    }</div>
-<div class="line"><span class="lineno">  820</span> </div>
-<div class="line"><span class="lineno">  821</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a>;</div>
-<div class="line"><span class="lineno">  822</span>    <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a> = enable;</div>
-<div class="line"><span class="lineno">  823</span>    <span class="keywordflow">return</span> old;</div>
-<div class="line"><span class="lineno">  824</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00848">848</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  848</span>                              {</div>
+<div class="line"><span class="lineno">  849</span>    <span class="keywordflow">if</span> (enable &lt; 0 || enable &gt; 1) {</div>
+<div class="line"><span class="lineno">  850</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  851</span>    }</div>
+<div class="line"><span class="lineno">  852</span> </div>
+<div class="line"><span class="lineno">  853</span>    <span class="keywordtype">int</span> old = <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a>;</div>
+<div class="line"><span class="lineno">  854</span>    <a class="code hl_variable" href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a> = enable;</div>
+<div class="line"><span class="lineno">  855</span>    <span class="keywordflow">return</span> old;</div>
+<div class="line"><span class="lineno">  856</span>}</div>
 <div class="ttc" id="alogbank_8c_html_a78f29241d03102718e247b5869f41e58"><div class="ttname"><a href="#a78f29241d03102718e247b5869f41e58">log_timestamp</a></div><div class="ttdeci">static int log_timestamp</div><div class="ttdoc">This value controls the use of time stamps.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00205">logbank.c:205</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1486,35 +1562,35 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00732">732</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  732</span>                                                                {</div>
-<div class="line"><span class="lineno">  733</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
-<div class="line"><span class="lineno">  734</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  735</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a>;</div>
-<div class="line"><span class="lineno">  736</span>    }</div>
-<div class="line"><span class="lineno">  737</span> </div>
-<div class="line"><span class="lineno">  738</span>    <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  739</span><span class="comment">     * Calculating Data Index</span></div>
-<div class="line"><span class="lineno">  740</span><span class="comment">     * HH:MM:SS [level] @ location : data</span></div>
-<div class="line"><span class="lineno">  741</span><span class="comment">     *   0  1                      2</span></div>
-<div class="line"><span class="lineno">  742</span><span class="comment">     * */</span></div>
-<div class="line"><span class="lineno">  743</span>    <span class="keywordtype">int</span> data_index = 2;</div>
-<div class="line"><span class="lineno">  744</span> </div>
-<div class="line"><span class="lineno">  745</span>    <span class="comment">/* Separating header from copied data */</span></div>
-<div class="line"><span class="lineno">  746</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = strchr(copy, <span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">  747</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> count = 0; count &lt; data_index &amp;&amp; dptr != NULL; count++) {</div>
-<div class="line"><span class="lineno">  748</span>        dptr = strchr(dptr + 1, <span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">  749</span>    }</div>
-<div class="line"><span class="lineno">  750</span> </div>
-<div class="line"><span class="lineno">  751</span>    <span class="keywordflow">if</span> (dptr == NULL) {</div>
-<div class="line"><span class="lineno">  752</span>        <span class="comment">/* Time stamp is absent; Set data pointer to first &#39;:&#39; */</span></div>
-<div class="line"><span class="lineno">  753</span>        dptr = strchr(copy, <span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">  754</span>    }</div>
-<div class="line"><span class="lineno">  755</span> </div>
-<div class="line"><span class="lineno">  756</span>    strcpy(message, dptr + 2);</div>
-<div class="line"><span class="lineno">  757</span>    message[size - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  758</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8">LOG_PARSER_DONE</a>;</div>
-<div class="line"><span class="lineno">  759</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00764">764</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  764</span>                                                                {</div>
+<div class="line"><span class="lineno">  765</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
+<div class="line"><span class="lineno">  766</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  767</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a>;</div>
+<div class="line"><span class="lineno">  768</span>    }</div>
+<div class="line"><span class="lineno">  769</span> </div>
+<div class="line"><span class="lineno">  770</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  771</span><span class="comment">     * Calculating Data Index</span></div>
+<div class="line"><span class="lineno">  772</span><span class="comment">     * HH:MM:SS [level] @ location : data</span></div>
+<div class="line"><span class="lineno">  773</span><span class="comment">     *   0  1                      2</span></div>
+<div class="line"><span class="lineno">  774</span><span class="comment">     * */</span></div>
+<div class="line"><span class="lineno">  775</span>    <span class="keywordtype">int</span> data_index = 2;</div>
+<div class="line"><span class="lineno">  776</span> </div>
+<div class="line"><span class="lineno">  777</span>    <span class="comment">/* Separating header from copied data */</span></div>
+<div class="line"><span class="lineno">  778</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = strchr(copy, <span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  779</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> count = 0; count &lt; data_index &amp;&amp; dptr != NULL; count++) {</div>
+<div class="line"><span class="lineno">  780</span>        dptr = strchr(dptr + 1, <span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  781</span>    }</div>
+<div class="line"><span class="lineno">  782</span> </div>
+<div class="line"><span class="lineno">  783</span>    <span class="keywordflow">if</span> (dptr == NULL) {</div>
+<div class="line"><span class="lineno">  784</span>        <span class="comment">/* Time stamp is absent; Set data pointer to first &#39;:&#39; */</span></div>
+<div class="line"><span class="lineno">  785</span>        dptr = strchr(copy, <span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  786</span>    }</div>
+<div class="line"><span class="lineno">  787</span> </div>
+<div class="line"><span class="lineno">  788</span>    strncpy(message, dptr + 2, size);</div>
+<div class="line"><span class="lineno">  789</span>    message[size - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  790</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8">LOG_PARSER_DONE</a>;</div>
+<div class="line"><span class="lineno">  791</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1555,39 +1631,40 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00445">445</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  445</span>                                                      {</div>
-<div class="line"><span class="lineno">  446</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af4f3e70feabbadc91bff87d53ca052f8">day</a> = 0;</div>
-<div class="line"><span class="lineno">  447</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ac3d2a0ec1d776ffb5941ce3e5c839ef7">month</a> = 0;</div>
-<div class="line"><span class="lineno">  448</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#adb934ab7d65f387e97d91329073cf509">year</a> = 0;</div>
-<div class="line"><span class="lineno">  449</span> </div>
-<div class="line"><span class="lineno">  450</span>    <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><span class="lineno">  451</span>    <span class="keywordtype">char</span> date[] = <span class="stringliteral">&quot;01/01/2001&quot;</span>;</div>
-<div class="line"><span class="lineno">  452</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> date_del[] = <span class="stringliteral">&quot;/&quot;</span>;</div>
-<div class="line"><span class="lineno">  453</span> </div>
-<div class="line"><span class="lineno">  454</span>    <span class="keywordflow">if</span> (sscanf(copy + index, <span class="stringliteral">&quot;%10[0-9/]&quot;</span>, date) == 1) {</div>
-<div class="line"><span class="lineno">  455</span>        <span class="keywordtype">char</span>* rest = NULL;</div>
-<div class="line"><span class="lineno">  456</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = strtok_r(date, date_del, &amp;rest);</div>
-<div class="line"><span class="lineno">  457</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af4f3e70feabbadc91bff87d53ca052f8">day</a> = dptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(dptr) : 0;</div>
-<div class="line"><span class="lineno">  458</span> </div>
-<div class="line"><span class="lineno">  459</span>        dptr = strtok_r(NULL, date_del, &amp;rest);</div>
-<div class="line"><span class="lineno">  460</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ac3d2a0ec1d776ffb5941ce3e5c839ef7">month</a> = dptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(dptr) : 0;</div>
-<div class="line"><span class="lineno">  461</span> </div>
-<div class="line"><span class="lineno">  462</span>        dptr = strtok_r(NULL, date_del, &amp;rest);</div>
-<div class="line"><span class="lineno">  463</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#adb934ab7d65f387e97d91329073cf509">year</a> = dptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(dptr) : 0;</div>
-<div class="line"><span class="lineno">  464</span>    }</div>
-<div class="line"><span class="lineno">  465</span> </div>
-<div class="line"><span class="lineno">  466</span>    <span class="keywordflow">if</span> (info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#adb934ab7d65f387e97d91329073cf509">year</a> == 0) {</div>
-<div class="line"><span class="lineno">  467</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af4f3e70feabbadc91bff87d53ca052f8">day</a> = 0;</div>
-<div class="line"><span class="lineno">  468</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  469</span>        <span class="comment">/* 1 extra for space between date stamp and time stamp */</span></div>
-<div class="line"><span class="lineno">  470</span>        index += <a class="code hl_define" href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a>;</div>
-<div class="line"><span class="lineno">  471</span>    }</div>
-<div class="line"><span class="lineno">  472</span> </div>
-<div class="line"><span class="lineno">  473</span>    <span class="keywordflow">return</span> index;</div>
-<div class="line"><span class="lineno">  474</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00477">477</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  477</span>                                                      {</div>
+<div class="line"><span class="lineno">  478</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af4f3e70feabbadc91bff87d53ca052f8">day</a> = 0;</div>
+<div class="line"><span class="lineno">  479</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ac3d2a0ec1d776ffb5941ce3e5c839ef7">month</a> = 0;</div>
+<div class="line"><span class="lineno">  480</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#adb934ab7d65f387e97d91329073cf509">year</a> = 0;</div>
+<div class="line"><span class="lineno">  481</span> </div>
+<div class="line"><span class="lineno">  482</span>    <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><span class="lineno">  483</span>    <span class="keywordtype">char</span> date[] = <span class="stringliteral">&quot;01/01/2001&quot;</span>;</div>
+<div class="line"><span class="lineno">  484</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> date_del[] = <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><span class="lineno">  485</span> </div>
+<div class="line"><span class="lineno">  486</span>    <span class="keywordflow">if</span> (sscanf(copy + index, <span class="stringliteral">&quot;%10[0-9/]&quot;</span>, date) == 1) {</div>
+<div class="line"><span class="lineno">  487</span>        <span class="keywordtype">char</span>* saveptr = NULL;</div>
+<div class="line"><span class="lineno">  488</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* dptr = <a class="code hl_function" href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a>(date, date_del, &amp;saveptr);</div>
+<div class="line"><span class="lineno">  489</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af4f3e70feabbadc91bff87d53ca052f8">day</a> = dptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(dptr) : 0;</div>
+<div class="line"><span class="lineno">  490</span> </div>
+<div class="line"><span class="lineno">  491</span>        dptr = <a class="code hl_function" href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a>(NULL, date_del, &amp;saveptr);</div>
+<div class="line"><span class="lineno">  492</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ac3d2a0ec1d776ffb5941ce3e5c839ef7">month</a> = dptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(dptr) : 0;</div>
+<div class="line"><span class="lineno">  493</span> </div>
+<div class="line"><span class="lineno">  494</span>        dptr = <a class="code hl_function" href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a>(NULL, date_del, &amp;saveptr);</div>
+<div class="line"><span class="lineno">  495</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#adb934ab7d65f387e97d91329073cf509">year</a> = dptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(dptr) : 0;</div>
+<div class="line"><span class="lineno">  496</span>    }</div>
+<div class="line"><span class="lineno">  497</span> </div>
+<div class="line"><span class="lineno">  498</span>    <span class="keywordflow">if</span> (info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#adb934ab7d65f387e97d91329073cf509">year</a> == 0) {</div>
+<div class="line"><span class="lineno">  499</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af4f3e70feabbadc91bff87d53ca052f8">day</a> = 0;</div>
+<div class="line"><span class="lineno">  500</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  501</span>        <span class="comment">/* 1 extra for space between date stamp and time stamp */</span></div>
+<div class="line"><span class="lineno">  502</span>        index += <a class="code hl_define" href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a>;</div>
+<div class="line"><span class="lineno">  503</span>    }</div>
+<div class="line"><span class="lineno">  504</span> </div>
+<div class="line"><span class="lineno">  505</span>    <span class="keywordflow">return</span> index;</div>
+<div class="line"><span class="lineno">  506</span>}</div>
 <div class="ttc" id="alogbank_8c_html_a78fd5f1ba0381c34903f66bc6eff0a61"><div class="ttname"><a href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a></div><div class="ttdeci">static int log_atoi(const char *nptr)</div><div class="ttdoc">Used to convert ASCII to integer.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00423">logbank.c:423</a></div></div>
 <div class="ttc" id="alogbank_8c_html_a9c3be125d60c2afbb469cfe890546132"><div class="ttname"><a href="#a9c3be125d60c2afbb469cfe890546132">LOG_DATE_LEN</a></div><div class="ttdeci">#define LOG_DATE_LEN</div><div class="ttdoc">Calculated length for specified time format + 1 for string termination.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00053">logbank.c:53</a></div></div>
+<div class="ttc" id="alogbank_8c_html_ad078e8b28af95662960b20b873f2c616"><div class="ttname"><a href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a></div><div class="ttdeci">static char * log_strtok_r(char *str, const char *delim, char **saveptr)</div><div class="ttdoc">Used in place of strtok_r.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00446">logbank.c:446</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_ac3d2a0ec1d776ffb5941ce3e5c839ef7"><div class="ttname"><a href="structlog__parser__info__t.html#ac3d2a0ec1d776ffb5941ce3e5c839ef7">log_parser_info_t::month</a></div><div class="ttdeci">int month</div><div class="ttdoc">parsed month value</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00221">logbank.h:221</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_adb934ab7d65f387e97d91329073cf509"><div class="ttname"><a href="structlog__parser__info__t.html#adb934ab7d65f387e97d91329073cf509">log_parser_info_t::year</a></div><div class="ttdeci">int year</div><div class="ttdoc">parsed year value</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00222">logbank.h:222</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_af4f3e70feabbadc91bff87d53ca052f8"><div class="ttname"><a href="structlog__parser__info__t.html#af4f3e70feabbadc91bff87d53ca052f8">log_parser_info_t::day</a></div><div class="ttdeci">int day</div><div class="ttdoc">parsed day value</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00220">logbank.h:220</a></div></div>
@@ -1635,16 +1712,16 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00535">535</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  535</span>                                                          {</div>
-<div class="line"><span class="lineno">  536</span>    <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><span class="lineno">  537</span>    index = <a class="code hl_function" href="#aa15850fe2e5f2dbcad19c95e9a92591c">parse_date</a>(copy + index, info);</div>
-<div class="line"><span class="lineno">  538</span>    <a class="code hl_function" href="#a6822fbc1932f14536d8492add244655c">parse_time</a>(copy + index, info);</div>
-<div class="line"><span class="lineno">  539</span> </div>
-<div class="line"><span class="lineno">  540</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73">LOG_PARSER_LEVEL</a>;</div>
-<div class="line"><span class="lineno">  541</span>}</div>
-<div class="ttc" id="alogbank_8c_html_a6822fbc1932f14536d8492add244655c"><div class="ttname"><a href="#a6822fbc1932f14536d8492add244655c">parse_time</a></div><div class="ttdeci">static void parse_time(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse time parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00487">logbank.c:487</a></div></div>
-<div class="ttc" id="alogbank_8c_html_aa15850fe2e5f2dbcad19c95e9a92591c"><div class="ttname"><a href="#aa15850fe2e5f2dbcad19c95e9a92591c">parse_date</a></div><div class="ttdeci">static int parse_date(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse date parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00445">logbank.c:445</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00567">567</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  567</span>                                                          {</div>
+<div class="line"><span class="lineno">  568</span>    <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><span class="lineno">  569</span>    index = <a class="code hl_function" href="#aa15850fe2e5f2dbcad19c95e9a92591c">parse_date</a>(copy + index, info);</div>
+<div class="line"><span class="lineno">  570</span>    <a class="code hl_function" href="#a6822fbc1932f14536d8492add244655c">parse_time</a>(copy + index, info);</div>
+<div class="line"><span class="lineno">  571</span> </div>
+<div class="line"><span class="lineno">  572</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73">LOG_PARSER_LEVEL</a>;</div>
+<div class="line"><span class="lineno">  573</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a6822fbc1932f14536d8492add244655c"><div class="ttname"><a href="#a6822fbc1932f14536d8492add244655c">parse_time</a></div><div class="ttdeci">static void parse_time(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse time parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00519">logbank.c:519</a></div></div>
+<div class="ttc" id="alogbank_8c_html_aa15850fe2e5f2dbcad19c95e9a92591c"><div class="ttname"><a href="#aa15850fe2e5f2dbcad19c95e9a92591c">parse_date</a></div><div class="ttdeci">static int parse_date(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse date parameter from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00477">logbank.c:477</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1685,48 +1762,48 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00640">640</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  640</span>                                                               {</div>
-<div class="line"><span class="lineno">  641</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
-<div class="line"><span class="lineno">  642</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  643</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  644</span>    }</div>
-<div class="line"><span class="lineno">  645</span> </div>
-<div class="line"><span class="lineno">  646</span>    <span class="keywordtype">char</span>* lptr = strchr(copy, <span class="charliteral">&#39;+&#39;</span>);</div>
-<div class="line"><span class="lineno">  647</span>    <span class="keywordflow">if</span> (lptr == NULL) {</div>
-<div class="line"><span class="lineno">  648</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  649</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  650</span>    }</div>
-<div class="line"><span class="lineno">  651</span> </div>
-<div class="line"><span class="lineno">  652</span>    lptr = lptr - 1;</div>
-<div class="line"><span class="lineno">  653</span>    lptr[0] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">/* Remove extra bytes other than file name */</span></div>
-<div class="line"><span class="lineno">  654</span> </div>
-<div class="line"><span class="lineno">  655</span>    <span class="keywordtype">char</span>* fptr = strchr(copy, <span class="charliteral">&#39;&quot;&#39;</span>);</div>
-<div class="line"><span class="lineno">  656</span>    <span class="keywordflow">if</span> (fptr == NULL) {</div>
-<div class="line"><span class="lineno">  657</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  658</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  659</span>    }</div>
-<div class="line"><span class="lineno">  660</span> </div>
-<div class="line"><span class="lineno">  661</span>    fptr = fptr + 1; <span class="comment">/* Remove &#39;&quot;&#39; and space */</span></div>
-<div class="line"><span class="lineno">  662</span> </div>
-<div class="line"><span class="lineno">  663</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>, fptr, <a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a>);</div>
-<div class="line"><span class="lineno">  664</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>[<a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  665</span> </div>
-<div class="line"><span class="lineno">  666</span>    <span class="comment">/* Revert previous changes to copy */</span></div>
-<div class="line"><span class="lineno">  667</span>    lptr[0] = <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><span class="lineno">  668</span>    lptr = lptr + 2; <span class="comment">/* Also, Removed &#39;+&#39; and space for parsing line number */</span></div>
-<div class="line"><span class="lineno">  669</span> </div>
-<div class="line"><span class="lineno">  670</span>    <span class="keywordtype">char</span>* end = strchr(fptr, <span class="charliteral">&#39;&quot;&#39;</span>); <span class="comment">/* end points to end of location parameters */</span></div>
-<div class="line"><span class="lineno">  671</span>    <span class="keywordflow">if</span> (end == NULL) {</div>
-<div class="line"><span class="lineno">  672</span>        <span class="comment">/* Unexpected format can not find how many digits are available in line num */</span></div>
-<div class="line"><span class="lineno">  673</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  674</span>    }</div>
-<div class="line"><span class="lineno">  675</span> </div>
-<div class="line"><span class="lineno">  676</span>    end[0] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">/* removed everything after end of location parameters */</span></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00672">672</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  672</span>                                                               {</div>
+<div class="line"><span class="lineno">  673</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
+<div class="line"><span class="lineno">  674</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  675</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  676</span>    }</div>
 <div class="line"><span class="lineno">  677</span> </div>
-<div class="line"><span class="lineno">  678</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#acaedf39ac455489c4d02586063e9a49d">line</a> = <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(lptr);</div>
-<div class="line"><span class="lineno">  679</span>    end[0] = <span class="charliteral">&#39;&quot;&#39;</span>; <span class="comment">/* Revert previous changes to copy */</span></div>
-<div class="line"><span class="lineno">  680</span>}</div>
+<div class="line"><span class="lineno">  678</span>    <span class="keywordtype">char</span>* lineptr = strchr(copy, <span class="charliteral">&#39;+&#39;</span>);</div>
+<div class="line"><span class="lineno">  679</span>    <span class="keywordflow">if</span> (lineptr == NULL) {</div>
+<div class="line"><span class="lineno">  680</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  681</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  682</span>    }</div>
+<div class="line"><span class="lineno">  683</span> </div>
+<div class="line"><span class="lineno">  684</span>    lineptr = lineptr - 1;</div>
+<div class="line"><span class="lineno">  685</span>    lineptr[0] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">/* Remove extra bytes other than file name */</span></div>
+<div class="line"><span class="lineno">  686</span> </div>
+<div class="line"><span class="lineno">  687</span>    <span class="keywordtype">char</span>* fileptr = strchr(copy, <span class="charliteral">&#39;&quot;&#39;</span>);</div>
+<div class="line"><span class="lineno">  688</span>    <span class="keywordflow">if</span> (fileptr == NULL) {</div>
+<div class="line"><span class="lineno">  689</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  690</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  691</span>    }</div>
+<div class="line"><span class="lineno">  692</span> </div>
+<div class="line"><span class="lineno">  693</span>    fileptr = fileptr + 1; <span class="comment">/* Remove &#39;&quot;&#39; and space */</span></div>
+<div class="line"><span class="lineno">  694</span> </div>
+<div class="line"><span class="lineno">  695</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>, fileptr, <a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a>);</div>
+<div class="line"><span class="lineno">  696</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>[<a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  697</span> </div>
+<div class="line"><span class="lineno">  698</span>    <span class="comment">/* Revert previous changes to copy */</span></div>
+<div class="line"><span class="lineno">  699</span>    lineptr[0] = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><span class="lineno">  700</span>    lineptr = lineptr + 2; <span class="comment">/* Also, Removed &#39;+&#39; and space for parsing line number */</span></div>
+<div class="line"><span class="lineno">  701</span> </div>
+<div class="line"><span class="lineno">  702</span>    <span class="keywordtype">char</span>* end = strchr(fileptr, <span class="charliteral">&#39;&quot;&#39;</span>); <span class="comment">/* end points to end of location parameters */</span></div>
+<div class="line"><span class="lineno">  703</span>    <span class="keywordflow">if</span> (end == NULL) {</div>
+<div class="line"><span class="lineno">  704</span>        <span class="comment">/* Unexpected format can not find how many digits are available in line num */</span></div>
+<div class="line"><span class="lineno">  705</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  706</span>    }</div>
+<div class="line"><span class="lineno">  707</span> </div>
+<div class="line"><span class="lineno">  708</span>    end[0] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">/* removed everything after end of location parameters */</span></div>
+<div class="line"><span class="lineno">  709</span> </div>
+<div class="line"><span class="lineno">  710</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#acaedf39ac455489c4d02586063e9a49d">line</a> = <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(lineptr);</div>
+<div class="line"><span class="lineno">  711</span>    end[0] = <span class="charliteral">&#39;&quot;&#39;</span>; <span class="comment">/* Revert previous changes to copy */</span></div>
+<div class="line"><span class="lineno">  712</span>}</div>
 <div class="ttc" id="alogbank_8h_html_a162ad26846763cc6c79503e9fdbfec45"><div class="ttname"><a href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a></div><div class="ttdeci">#define LOG_MAX_FILE_NAME_LEN</div><div class="ttdoc">Maximum allowed length to store file name.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00179">logbank.h:179</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_acaedf39ac455489c4d02586063e9a49d"><div class="ttname"><a href="structlog__parser__info__t.html#acaedf39ac455489c4d02586063e9a49d">log_parser_info_t::line</a></div><div class="ttdeci">int line</div><div class="ttdoc">parsed line number</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00230">logbank.h:230</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_af46721256ea852e17335c4253e0d5159"><div class="ttname"><a href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">log_parser_info_t::file</a></div><div class="ttdeci">char file[LOG_MAX_FILE_NAME_LEN]</div><div class="ttdoc">parsed file name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00229">logbank.h:229</a></div></div>
@@ -1770,34 +1847,34 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00601">601</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  601</span>                                                          {</div>
-<div class="line"><span class="lineno">  602</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
-<div class="line"><span class="lineno">  603</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  604</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  605</span>    }</div>
-<div class="line"><span class="lineno">  606</span> </div>
-<div class="line"><span class="lineno">  607</span>    <span class="keywordtype">char</span>* sep = strchr(copy, <span class="charliteral">&#39;(&#39;</span>);</div>
-<div class="line"><span class="lineno">  608</span>    <span class="keywordflow">if</span> (sep == NULL) {</div>
-<div class="line"><span class="lineno">  609</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  610</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  611</span>    }</div>
-<div class="line"><span class="lineno">  612</span> </div>
-<div class="line"><span class="lineno">  613</span>    sep[0] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">/* Remove extra bytes other than function name */</span></div>
-<div class="line"><span class="lineno">  614</span> </div>
-<div class="line"><span class="lineno">  615</span>    <span class="keywordtype">char</span>* fnptr = strchr(copy, <span class="charliteral">&#39;@&#39;</span>);</div>
-<div class="line"><span class="lineno">  616</span>    <span class="keywordflow">if</span> (fnptr == NULL) {</div>
-<div class="line"><span class="lineno">  617</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  618</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  619</span>    }</div>
-<div class="line"><span class="lineno">  620</span> </div>
-<div class="line"><span class="lineno">  621</span>    fnptr = fnptr + 2; <span class="comment">/* Remove &#39;@&#39; and space */</span></div>
-<div class="line"><span class="lineno">  622</span> </div>
-<div class="line"><span class="lineno">  623</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>, fnptr, <a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a>);</div>
-<div class="line"><span class="lineno">  624</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>[<a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  625</span> </div>
-<div class="line"><span class="lineno">  626</span>    sep[0] = <span class="charliteral">&#39;(&#39;</span>; <span class="comment">/* Revert previous changes to copy */</span></div>
-<div class="line"><span class="lineno">  627</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00633">633</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  633</span>                                                          {</div>
+<div class="line"><span class="lineno">  634</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
+<div class="line"><span class="lineno">  635</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  636</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  637</span>    }</div>
+<div class="line"><span class="lineno">  638</span> </div>
+<div class="line"><span class="lineno">  639</span>    <span class="keywordtype">char</span>* sep = strchr(copy, <span class="charliteral">&#39;(&#39;</span>);</div>
+<div class="line"><span class="lineno">  640</span>    <span class="keywordflow">if</span> (sep == NULL) {</div>
+<div class="line"><span class="lineno">  641</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  642</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  643</span>    }</div>
+<div class="line"><span class="lineno">  644</span> </div>
+<div class="line"><span class="lineno">  645</span>    sep[0] = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">/* Remove extra bytes other than function name */</span></div>
+<div class="line"><span class="lineno">  646</span> </div>
+<div class="line"><span class="lineno">  647</span>    <span class="keywordtype">char</span>* fnptr = strchr(copy, <span class="charliteral">&#39;@&#39;</span>);</div>
+<div class="line"><span class="lineno">  648</span>    <span class="keywordflow">if</span> (fnptr == NULL) {</div>
+<div class="line"><span class="lineno">  649</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  650</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  651</span>    }</div>
+<div class="line"><span class="lineno">  652</span> </div>
+<div class="line"><span class="lineno">  653</span>    fnptr = fnptr + 2; <span class="comment">/* Remove &#39;@&#39; and space */</span></div>
+<div class="line"><span class="lineno">  654</span> </div>
+<div class="line"><span class="lineno">  655</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>, fnptr, <a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a>);</div>
+<div class="line"><span class="lineno">  656</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>[<a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  657</span> </div>
+<div class="line"><span class="lineno">  658</span>    sep[0] = <span class="charliteral">&#39;(&#39;</span>; <span class="comment">/* Revert previous changes to copy */</span></div>
+<div class="line"><span class="lineno">  659</span>}</div>
 <div class="ttc" id="alogbank_8h_html_ad715d58d98d00d3cbe456e00c07ebcfa"><div class="ttname"><a href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a></div><div class="ttdeci">#define LOG_MAX_FUNC_NAME_LEN</div><div class="ttdoc">Maximum allowed length to store function name.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00173">logbank.h:173</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_a8bd9cea25f6075b9174f60ecf0c7c699"><div class="ttname"><a href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">log_parser_info_t::func</a></div><div class="ttdeci">char func[LOG_MAX_FUNC_NAME_LEN]</div><div class="ttdoc">parsed function name</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00228">logbank.h:228</a></div></div>
 </div><!-- fragment -->
@@ -1840,44 +1917,44 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00554">554</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  554</span>                                                       {</div>
-<div class="line"><span class="lineno">  555</span>    <span class="keywordtype">int</span> invalid = <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a> + 1;</div>
-<div class="line"><span class="lineno">  556</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#aaab4fa2f1263150155d77ae6f0340ff2">level</a> = invalid;</div>
-<div class="line"><span class="lineno">  557</span> </div>
-<div class="line"><span class="lineno">  558</span>    <span class="keywordtype">char</span> name[] = <span class="stringliteral">&quot;DEBUG&quot;</span>;</div>
-<div class="line"><span class="lineno">  559</span>    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(name);</div>
-<div class="line"><span class="lineno">  560</span> </div>
-<div class="line"><span class="lineno">  561</span>    <span class="keywordtype">char</span>* level_end = strchr(copy, <span class="charliteral">&#39;]&#39;</span>);</div>
-<div class="line"><span class="lineno">  562</span>    <span class="keywordflow">if</span> (level_end == NULL) {</div>
-<div class="line"><span class="lineno">  563</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a>;</div>
-<div class="line"><span class="lineno">  564</span>    }</div>
-<div class="line"><span class="lineno">  565</span> </div>
-<div class="line"><span class="lineno">  566</span>    level_end = level_end - 1;</div>
-<div class="line"><span class="lineno">  567</span> </div>
-<div class="line"><span class="lineno">  568</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> max_name_len = 5;</div>
-<div class="line"><span class="lineno">  569</span>    <span class="keywordtype">char</span>* level_start = level_end - max_name_len;</div>
-<div class="line"><span class="lineno">  570</span> </div>
-<div class="line"><span class="lineno">  571</span>    <span class="keywordflow">if</span> (level_start[1] == <span class="charliteral">&#39;[&#39;</span>) {</div>
-<div class="line"><span class="lineno">  572</span>        level_start = level_start + 1;</div>
-<div class="line"><span class="lineno">  573</span>        size = size - 1;</div>
-<div class="line"><span class="lineno">  574</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (level_start[0] != <span class="charliteral">&#39;[&#39;</span>) {</div>
-<div class="line"><span class="lineno">  575</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a>;</div>
-<div class="line"><span class="lineno">  576</span>    }</div>
-<div class="line"><span class="lineno">  577</span> </div>
-<div class="line"><span class="lineno">  578</span>    level_start = level_start + 1;</div>
-<div class="line"><span class="lineno">  579</span>    (void)snprintf(name, size, <span class="stringliteral">&quot;%s&quot;</span>, level_start);</div>
-<div class="line"><span class="lineno">  580</span> </div>
-<div class="line"><span class="lineno">  581</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a>; level &lt;= <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>; level++) {</div>
-<div class="line"><span class="lineno">  582</span>        <span class="keywordflow">if</span> (strstr(name, <a class="code hl_function" href="#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a>(level))) {</div>
-<div class="line"><span class="lineno">  583</span>            info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#aaab4fa2f1263150155d77ae6f0340ff2">level</a> = level;</div>
-<div class="line"><span class="lineno">  584</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  585</span>        }</div>
-<div class="line"><span class="lineno">  586</span>    }</div>
-<div class="line"><span class="lineno">  587</span> </div>
-<div class="line"><span class="lineno">  588</span>    <span class="keywordflow">return</span> info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#aaab4fa2f1263150155d77ae6f0340ff2">level</a> == invalid ? <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a> : <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc">LOG_PARSER_LOCATION</a>;</div>
-<div class="line"><span class="lineno">  589</span>}</div>
-<div class="ttc" id="alogbank_8c_html_a2f37fc38d4885ae4fd5f499787e5f550"><div class="ttname"><a href="#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00783">logbank.c:783</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00586">586</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  586</span>                                                       {</div>
+<div class="line"><span class="lineno">  587</span>    <span class="keywordtype">int</span> invalid = <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a> + 1;</div>
+<div class="line"><span class="lineno">  588</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#aaab4fa2f1263150155d77ae6f0340ff2">level</a> = invalid;</div>
+<div class="line"><span class="lineno">  589</span> </div>
+<div class="line"><span class="lineno">  590</span>    <span class="keywordtype">char</span> name[] = <span class="stringliteral">&quot;DEBUG&quot;</span>;</div>
+<div class="line"><span class="lineno">  591</span>    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(name);</div>
+<div class="line"><span class="lineno">  592</span> </div>
+<div class="line"><span class="lineno">  593</span>    <span class="keywordtype">char</span>* level_end = strchr(copy, <span class="charliteral">&#39;]&#39;</span>);</div>
+<div class="line"><span class="lineno">  594</span>    <span class="keywordflow">if</span> (level_end == NULL) {</div>
+<div class="line"><span class="lineno">  595</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a>;</div>
+<div class="line"><span class="lineno">  596</span>    }</div>
+<div class="line"><span class="lineno">  597</span> </div>
+<div class="line"><span class="lineno">  598</span>    level_end = level_end - 1;</div>
+<div class="line"><span class="lineno">  599</span> </div>
+<div class="line"><span class="lineno">  600</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> max_name_len = 5;</div>
+<div class="line"><span class="lineno">  601</span>    <span class="keywordtype">char</span>* level_start = level_end - max_name_len;</div>
+<div class="line"><span class="lineno">  602</span> </div>
+<div class="line"><span class="lineno">  603</span>    <span class="keywordflow">if</span> (level_start[1] == <span class="charliteral">&#39;[&#39;</span>) {</div>
+<div class="line"><span class="lineno">  604</span>        level_start = level_start + 1;</div>
+<div class="line"><span class="lineno">  605</span>        size = size - 1;</div>
+<div class="line"><span class="lineno">  606</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (level_start[0] != <span class="charliteral">&#39;[&#39;</span>) {</div>
+<div class="line"><span class="lineno">  607</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a>;</div>
+<div class="line"><span class="lineno">  608</span>    }</div>
+<div class="line"><span class="lineno">  609</span> </div>
+<div class="line"><span class="lineno">  610</span>    level_start = level_start + 1;</div>
+<div class="line"><span class="lineno">  611</span>    (void)snprintf(name, size, <span class="stringliteral">&quot;%s&quot;</span>, level_start);</div>
+<div class="line"><span class="lineno">  612</span> </div>
+<div class="line"><span class="lineno">  613</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> level = <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a>; level &lt;= <a class="code hl_enumvalue" href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc">LOG_FATAL</a>; level++) {</div>
+<div class="line"><span class="lineno">  614</span>        <span class="keywordflow">if</span> (strstr(name, <a class="code hl_function" href="#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a>(level))) {</div>
+<div class="line"><span class="lineno">  615</span>            info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#aaab4fa2f1263150155d77ae6f0340ff2">level</a> = level;</div>
+<div class="line"><span class="lineno">  616</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  617</span>        }</div>
+<div class="line"><span class="lineno">  618</span>    }</div>
+<div class="line"><span class="lineno">  619</span> </div>
+<div class="line"><span class="lineno">  620</span>    <span class="keywordflow">return</span> info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#aaab4fa2f1263150155d77ae6f0340ff2">level</a> == invalid ? <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694">LOG_PARSER_FAILED</a> : <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc">LOG_PARSER_LOCATION</a>;</div>
+<div class="line"><span class="lineno">  621</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a2f37fc38d4885ae4fd5f499787e5f550"><div class="ttname"><a href="#a2f37fc38d4885ae4fd5f499787e5f550">log_get_levelname</a></div><div class="ttdeci">const char * log_get_levelname(int level)</div><div class="ttdoc">This function is used to read name of a particular log-level.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00815">logbank.c:815</a></div></div>
 <div class="ttc" id="alogbank_8h_html_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35"><div class="ttname"><a href="logbank_8h.html#a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35">LOG_DEBUG</a></div><div class="ttdeci">@ LOG_DEBUG</div><div class="ttdoc">recommended for sanity checks (intended for developers)</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00045">logbank.h:45</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_aaab4fa2f1263150155d77ae6f0340ff2"><div class="ttname"><a href="structlog__parser__info__t.html#aaab4fa2f1263150155d77ae6f0340ff2">log_parser_info_t::level</a></div><div class="ttdeci">int level</div><div class="ttdoc">parsed level index</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00227">logbank.h:227</a></div></div>
 </div><!-- fragment -->
@@ -1924,31 +2001,31 @@ NULL on Failure =&gt; invalid level </dd></dl>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00694">694</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  694</span>                                                          {</div>
-<div class="line"><span class="lineno">  695</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> not_found[] = <span class="stringliteral">&quot;NA&quot;</span>;</div>
-<div class="line"><span class="lineno">  696</span> </div>
-<div class="line"><span class="lineno">  697</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>, not_found, <a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a>);</div>
-<div class="line"><span class="lineno">  698</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>[<a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  699</span> </div>
-<div class="line"><span class="lineno">  700</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>, not_found, <a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a>);</div>
-<div class="line"><span class="lineno">  701</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>[<a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  702</span> </div>
-<div class="line"><span class="lineno">  703</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#acaedf39ac455489c4d02586063e9a49d">line</a> = 0;</div>
-<div class="line"><span class="lineno">  704</span> </div>
-<div class="line"><span class="lineno">  705</span>    <span class="keywordflow">if</span> (strchr(copy, <span class="charliteral">&#39;@&#39;</span>) == NULL) {</div>
-<div class="line"><span class="lineno">  706</span>        <span class="comment">/* location parameters are not present */</span></div>
-<div class="line"><span class="lineno">  707</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9">LOG_PARSER_DATA</a>;</div>
-<div class="line"><span class="lineno">  708</span>    }</div>
-<div class="line"><span class="lineno">  709</span> </div>
-<div class="line"><span class="lineno">  710</span>    <span class="comment">/* location parameters are present */</span></div>
-<div class="line"><span class="lineno">  711</span>    <a class="code hl_function" href="#a79a0d62638455a3117532390c888f419">parse_function</a>(copy, info);</div>
-<div class="line"><span class="lineno">  712</span>    <a class="code hl_function" href="#a88ac1ee07ea17f2847abf5981d388331">parse_file_and_line</a>(copy, info);</div>
-<div class="line"><span class="lineno">  713</span> </div>
-<div class="line"><span class="lineno">  714</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9">LOG_PARSER_DATA</a>;</div>
-<div class="line"><span class="lineno">  715</span>}</div>
-<div class="ttc" id="alogbank_8c_html_a79a0d62638455a3117532390c888f419"><div class="ttname"><a href="#a79a0d62638455a3117532390c888f419">parse_function</a></div><div class="ttdeci">static void parse_function(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse function name from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00601">logbank.c:601</a></div></div>
-<div class="ttc" id="alogbank_8c_html_a88ac1ee07ea17f2847abf5981d388331"><div class="ttname"><a href="#a88ac1ee07ea17f2847abf5981d388331">parse_file_and_line</a></div><div class="ttdeci">static void parse_file_and_line(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse file name and line number from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00640">logbank.c:640</a></div></div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00726">726</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  726</span>                                                          {</div>
+<div class="line"><span class="lineno">  727</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> not_found[] = <span class="stringliteral">&quot;NA&quot;</span>;</div>
+<div class="line"><span class="lineno">  728</span> </div>
+<div class="line"><span class="lineno">  729</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>, not_found, <a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a>);</div>
+<div class="line"><span class="lineno">  730</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a8bd9cea25f6075b9174f60ecf0c7c699">func</a>[<a class="code hl_define" href="logbank_8h.html#ad715d58d98d00d3cbe456e00c07ebcfa">LOG_MAX_FUNC_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  731</span> </div>
+<div class="line"><span class="lineno">  732</span>    strncpy(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>, not_found, <a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a>);</div>
+<div class="line"><span class="lineno">  733</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#af46721256ea852e17335c4253e0d5159">file</a>[<a class="code hl_define" href="logbank_8h.html#a162ad26846763cc6c79503e9fdbfec45">LOG_MAX_FILE_NAME_LEN</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  734</span> </div>
+<div class="line"><span class="lineno">  735</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#acaedf39ac455489c4d02586063e9a49d">line</a> = 0;</div>
+<div class="line"><span class="lineno">  736</span> </div>
+<div class="line"><span class="lineno">  737</span>    <span class="keywordflow">if</span> (strchr(copy, <span class="charliteral">&#39;@&#39;</span>) == NULL) {</div>
+<div class="line"><span class="lineno">  738</span>        <span class="comment">/* location parameters are not present */</span></div>
+<div class="line"><span class="lineno">  739</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9">LOG_PARSER_DATA</a>;</div>
+<div class="line"><span class="lineno">  740</span>    }</div>
+<div class="line"><span class="lineno">  741</span> </div>
+<div class="line"><span class="lineno">  742</span>    <span class="comment">/* location parameters are present */</span></div>
+<div class="line"><span class="lineno">  743</span>    <a class="code hl_function" href="#a79a0d62638455a3117532390c888f419">parse_function</a>(copy, info);</div>
+<div class="line"><span class="lineno">  744</span>    <a class="code hl_function" href="#a88ac1ee07ea17f2847abf5981d388331">parse_file_and_line</a>(copy, info);</div>
+<div class="line"><span class="lineno">  745</span> </div>
+<div class="line"><span class="lineno">  746</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="#a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9">LOG_PARSER_DATA</a>;</div>
+<div class="line"><span class="lineno">  747</span>}</div>
+<div class="ttc" id="alogbank_8c_html_a79a0d62638455a3117532390c888f419"><div class="ttname"><a href="#a79a0d62638455a3117532390c888f419">parse_function</a></div><div class="ttdeci">static void parse_function(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse function name from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00633">logbank.c:633</a></div></div>
+<div class="ttc" id="alogbank_8c_html_a88ac1ee07ea17f2847abf5981d388331"><div class="ttname"><a href="#a88ac1ee07ea17f2847abf5981d388331">parse_file_and_line</a></div><div class="ttdeci">static void parse_file_and_line(const char *copy, log_parser_info_t *info)</div><div class="ttdoc">Used to parse file name and line number from copy of log-message.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00672">logbank.c:672</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1989,42 +2066,42 @@ NULL on Failure =&gt; invalid level </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00487">487</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  487</span>                                                      {</div>
-<div class="line"><span class="lineno">  488</span>    <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><span class="lineno">  489</span>    <span class="keywordtype">char</span> time[] = <span class="stringliteral">&quot;01:01:01&quot;</span>;</div>
-<div class="line"><span class="lineno">  490</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> time_del[] = <span class="stringliteral">&quot;:&quot;</span>;</div>
-<div class="line"><span class="lineno">  491</span> </div>
-<div class="line"><span class="lineno">  492</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab609ac1d3a159056c1246f9d9c1b263f">hour</a> = 0;</div>
-<div class="line"><span class="lineno">  493</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a82979f1e074ff9886bf9184b12d7343a">min</a> = 0;</div>
-<div class="line"><span class="lineno">  494</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a01e088edbd16b0664a67a1d656104656">sec</a> = 0;</div>
-<div class="line"><span class="lineno">  495</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab54cfbeb06c9873809bbd71da0d7ec5c">am_pm</a>[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  496</span> </div>
-<div class="line"><span class="lineno">  497</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
-<div class="line"><span class="lineno">  498</span>        <span class="comment">/* No data available to parse */</span></div>
-<div class="line"><span class="lineno">  499</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  500</span>    }</div>
-<div class="line"><span class="lineno">  501</span> </div>
-<div class="line"><span class="lineno">  502</span>    <span class="keywordflow">if</span> (sscanf(copy + index, <span class="stringliteral">&quot;%8[0-9:]&quot;</span>, time) == 1) {</div>
-<div class="line"><span class="lineno">  503</span>        <span class="keywordtype">char</span>* rest = NULL;</div>
-<div class="line"><span class="lineno">  504</span>        <span class="keywordtype">char</span>* tptr = strtok_r(time, time_del, &amp;rest);</div>
-<div class="line"><span class="lineno">  505</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab609ac1d3a159056c1246f9d9c1b263f">hour</a> = tptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(tptr) : 0;</div>
-<div class="line"><span class="lineno">  506</span> </div>
-<div class="line"><span class="lineno">  507</span>        tptr = strtok_r(NULL, time_del, &amp;rest);</div>
-<div class="line"><span class="lineno">  508</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a82979f1e074ff9886bf9184b12d7343a">min</a> = tptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(tptr) : 0;</div>
-<div class="line"><span class="lineno">  509</span> </div>
-<div class="line"><span class="lineno">  510</span>        tptr = strtok_r(NULL, time_del, &amp;rest);</div>
-<div class="line"><span class="lineno">  511</span>        <span class="keywordflow">if</span> (tptr != NULL) {</div>
-<div class="line"><span class="lineno">  512</span>            tptr[2] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  513</span>            info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a01e088edbd16b0664a67a1d656104656">sec</a> = <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(tptr);</div>
-<div class="line"><span class="lineno">  514</span>        }</div>
-<div class="line"><span class="lineno">  515</span> </div>
-<div class="line"><span class="lineno">  516</span>        index = index + <a class="code hl_define" href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a> - <a class="code hl_define" href="logbank_8h.html#aa2f082f11e5a666340433272b7b10176">LOG_MAX_AM_PM_LEN</a>;</div>
-<div class="line"><span class="lineno">  517</span>        <span class="keywordflow">if</span> (copy[index] != <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><span class="lineno">  518</span>            (void)sprintf(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab54cfbeb06c9873809bbd71da0d7ec5c">am_pm</a>, <span class="stringliteral">&quot;%cM&quot;</span>, copy[index]);</div>
-<div class="line"><span class="lineno">  519</span>        }</div>
-<div class="line"><span class="lineno">  520</span>    }</div>
-<div class="line"><span class="lineno">  521</span>}</div>
+<p class="definition">Definition at line <a class="el" href="logbank_8c_source.html#l00519">519</a> of file <a class="el" href="logbank_8c_source.html">logbank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  519</span>                                                      {</div>
+<div class="line"><span class="lineno">  520</span>    <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><span class="lineno">  521</span>    <span class="keywordtype">char</span> time[] = <span class="stringliteral">&quot;01:01:01&quot;</span>;</div>
+<div class="line"><span class="lineno">  522</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> time_del[] = <span class="stringliteral">&quot;:&quot;</span>;</div>
+<div class="line"><span class="lineno">  523</span> </div>
+<div class="line"><span class="lineno">  524</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab609ac1d3a159056c1246f9d9c1b263f">hour</a> = 0;</div>
+<div class="line"><span class="lineno">  525</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a82979f1e074ff9886bf9184b12d7343a">min</a> = 0;</div>
+<div class="line"><span class="lineno">  526</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a01e088edbd16b0664a67a1d656104656">sec</a> = 0;</div>
+<div class="line"><span class="lineno">  527</span>    info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab54cfbeb06c9873809bbd71da0d7ec5c">am_pm</a>[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  528</span> </div>
+<div class="line"><span class="lineno">  529</span>    <span class="keywordflow">if</span> (copy == NULL) {</div>
+<div class="line"><span class="lineno">  530</span>        <span class="comment">/* No data available to parse */</span></div>
+<div class="line"><span class="lineno">  531</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  532</span>    }</div>
+<div class="line"><span class="lineno">  533</span> </div>
+<div class="line"><span class="lineno">  534</span>    <span class="keywordflow">if</span> (sscanf(copy + index, <span class="stringliteral">&quot;%8[0-9:]&quot;</span>, time) == 1) {</div>
+<div class="line"><span class="lineno">  535</span>        <span class="keywordtype">char</span>* saveptr = NULL;</div>
+<div class="line"><span class="lineno">  536</span>        <span class="keywordtype">char</span>* timeptr = <a class="code hl_function" href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a>(time, time_del, &amp;saveptr);</div>
+<div class="line"><span class="lineno">  537</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab609ac1d3a159056c1246f9d9c1b263f">hour</a> = timeptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(timeptr) : 0;</div>
+<div class="line"><span class="lineno">  538</span> </div>
+<div class="line"><span class="lineno">  539</span>        timeptr = <a class="code hl_function" href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a>(NULL, time_del, &amp;saveptr);</div>
+<div class="line"><span class="lineno">  540</span>        info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a82979f1e074ff9886bf9184b12d7343a">min</a> = timeptr ? <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(timeptr) : 0;</div>
+<div class="line"><span class="lineno">  541</span> </div>
+<div class="line"><span class="lineno">  542</span>        timeptr = <a class="code hl_function" href="#ad078e8b28af95662960b20b873f2c616">log_strtok_r</a>(NULL, time_del, &amp;saveptr);</div>
+<div class="line"><span class="lineno">  543</span>        <span class="keywordflow">if</span> (timeptr != NULL) {</div>
+<div class="line"><span class="lineno">  544</span>            timeptr[2] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  545</span>            info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#a01e088edbd16b0664a67a1d656104656">sec</a> = <a class="code hl_function" href="#a78fd5f1ba0381c34903f66bc6eff0a61">log_atoi</a>(timeptr);</div>
+<div class="line"><span class="lineno">  546</span>        }</div>
+<div class="line"><span class="lineno">  547</span> </div>
+<div class="line"><span class="lineno">  548</span>        index = index + <a class="code hl_define" href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a> - <a class="code hl_define" href="logbank_8h.html#aa2f082f11e5a666340433272b7b10176">LOG_MAX_AM_PM_LEN</a>;</div>
+<div class="line"><span class="lineno">  549</span>        <span class="keywordflow">if</span> (copy[index] != <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><span class="lineno">  550</span>            (void)sprintf(info-&gt;<a class="code hl_variable" href="structlog__parser__info__t.html#ab54cfbeb06c9873809bbd71da0d7ec5c">am_pm</a>, <span class="stringliteral">&quot;%cM&quot;</span>, copy[index]);</div>
+<div class="line"><span class="lineno">  551</span>        }</div>
+<div class="line"><span class="lineno">  552</span>    }</div>
+<div class="line"><span class="lineno">  553</span>}</div>
 <div class="ttc" id="alogbank_8c_html_af908196e407bb67394664c7b0d5999b8"><div class="ttname"><a href="#af908196e407bb67394664c7b0d5999b8">LOG_TIME_LEN</a></div><div class="ttdeci">#define LOG_TIME_LEN</div><div class="ttdoc">Calculated length for specified time format + 1 for string termination.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8c_source.html#l00037">logbank.c:37</a></div></div>
 <div class="ttc" id="alogbank_8h_html_aa2f082f11e5a666340433272b7b10176"><div class="ttname"><a href="logbank_8h.html#aa2f082f11e5a666340433272b7b10176">LOG_MAX_AM_PM_LEN</a></div><div class="ttdeci">#define LOG_MAX_AM_PM_LEN</div><div class="ttdoc">Two possible combinations: &quot;AM\0&quot; or &quot;PM\0&quot;.</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00167">logbank.h:167</a></div></div>
 <div class="ttc" id="astructlog__parser__info__t_html_a01e088edbd16b0664a67a1d656104656"><div class="ttname"><a href="structlog__parser__info__t.html#a01e088edbd16b0664a67a1d656104656">log_parser_info_t::sec</a></div><div class="ttdeci">int sec</div><div class="ttdoc">parsed second value</div><div class="ttdef"><b>Definition</b> <a href="logbank_8h_source.html#l00225">logbank.h:225</a></div></div>

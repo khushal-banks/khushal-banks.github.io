@@ -15,8 +15,9 @@ var searchData=
   ['log_5fstamp_5fcollector_12',['log_stamp_collector',['../logbank_8c.html#a7428ec2d45d3df3bbb27094a8f8d585a',1,'logbank.c']]],
   ['log_5fstr_5freplace_13',['log_str_replace',['../logbank_8c.html#a4768c87e08765d06d4a033b4345e8b25',1,'logbank.c']]],
   ['log_5fstream_5fwrite_14',['log_stream_write',['../logbank_8c.html#a55d582cd8fce0964d97a5f33afe759c8',1,'logbank.c']]],
-  ['log_5fthis_15',['log_this',['../logbank_8h.html#a9618e8e44960252c699aea9fc3fc49bc',1,'log_this(int level, log_locate_t locate, const char *fmt,...):&#160;logbank.c'],['../logbank_8c.html#af4c62a16c3bbb595d0ada4b00a8b4092',1,'log_this(int level, log_locate_t locate, const char *fmt,...):&#160;logbank.c']]],
-  ['log_5fuse_5fcolor_16',['log_use_color',['../logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e',1,'log_use_color(int enable):&#160;logbank.c'],['../logbank_8c.html#a87097c0104243be5ea4a28ade9abc579',1,'log_use_color(int enable):&#160;logbank.c']]],
-  ['log_5fuse_5fdatestamp_17',['log_use_datestamp',['../logbank_8h.html#a12a859a61c62ad187ebfb0ea187519b4',1,'log_use_datestamp(int enable):&#160;logbank.c'],['../logbank_8c.html#abfe2b67a3b61f6ca5ac29458f1a6fa20',1,'log_use_datestamp(int enable):&#160;logbank.c']]],
-  ['log_5fuse_5ftimestamp_18',['log_use_timestamp',['../logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01',1,'log_use_timestamp(int enable):&#160;logbank.c'],['../logbank_8c.html#a1c3d0c234139eef0ecdd76c379bd2622',1,'log_use_timestamp(int enable):&#160;logbank.c']]]
+  ['log_5fstrtok_5fr_15',['log_strtok_r',['../logbank_8c.html#ad078e8b28af95662960b20b873f2c616',1,'logbank.c']]],
+  ['log_5fthis_16',['log_this',['../logbank_8h.html#a9618e8e44960252c699aea9fc3fc49bc',1,'log_this(int level, log_locate_t locate, const char *fmt,...):&#160;logbank.c'],['../logbank_8c.html#af4c62a16c3bbb595d0ada4b00a8b4092',1,'log_this(int level, log_locate_t locate, const char *fmt,...):&#160;logbank.c']]],
+  ['log_5fuse_5fcolor_17',['log_use_color',['../logbank_8h.html#a8555559f197dd69f6596aaa3bc97a45e',1,'log_use_color(int enable):&#160;logbank.c'],['../logbank_8c.html#a87097c0104243be5ea4a28ade9abc579',1,'log_use_color(int enable):&#160;logbank.c']]],
+  ['log_5fuse_5fdatestamp_18',['log_use_datestamp',['../logbank_8h.html#a12a859a61c62ad187ebfb0ea187519b4',1,'log_use_datestamp(int enable):&#160;logbank.c'],['../logbank_8c.html#abfe2b67a3b61f6ca5ac29458f1a6fa20',1,'log_use_datestamp(int enable):&#160;logbank.c']]],
+  ['log_5fuse_5ftimestamp_19',['log_use_timestamp',['../logbank_8h.html#a2cbc919241ff3ace24da6e8a3907ba01',1,'log_use_timestamp(int enable):&#160;logbank.c'],['../logbank_8c.html#a1c3d0c234139eef0ecdd76c379bd2622',1,'log_use_timestamp(int enable):&#160;logbank.c']]]
 ];

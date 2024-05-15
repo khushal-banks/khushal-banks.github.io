@@ -64,6 +64,8 @@ static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logbank_8c_a4768c87e0876
 \begin{DoxyCompactList}\small\item\em Used to strip away first occurrence of "{}remove"{} from "{}source"{}. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\+\_\+atoi}} (const char \texorpdfstring{$\ast$}{*}nptr)
 \begin{DoxyCompactList}\small\item\em Used to convert ASCII to integer. \end{DoxyCompactList}\item 
+static char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logbank_8c_ad078e8b28af95662960b20b873f2c616}{log\+\_\+strtok\+\_\+r}} (char \texorpdfstring{$\ast$}{*}str, const char \texorpdfstring{$\ast$}{*}delim, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}saveptr)
+\begin{DoxyCompactList}\small\item\em Used in place of strtok\+\_\+r. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{logbank_8c_aa15850fe2e5f2dbcad19c95e9a92591c}{parse\+\_\+date}} (const char \texorpdfstring{$\ast$}{*}copy, \mbox{\hyperlink{structlog__parser__info__t}{log\+\_\+parser\+\_\+info\+\_\+t}} \texorpdfstring{$\ast$}{*}info)
 \begin{DoxyCompactList}\small\item\em Used to parse date parameter from copy of log-\/message. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{logbank_8c_a6822fbc1932f14536d8492add244655c}{parse\+\_\+time}} (const char \texorpdfstring{$\ast$}{*}copy, \mbox{\hyperlink{structlog__parser__info__t}{log\+\_\+parser\+\_\+info\+\_\+t}} \texorpdfstring{$\ast$}{*}info)
@@ -453,18 +455,18 @@ For invalid values of gmt argument; local time is used
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00795}{795}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00827}{827}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00796\ \ \ \ \ \textcolor{keywordflow}{if}\ (gmt\ ==\ 1)\ \{}
-\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_aecd1c33eda8dadb496cecee02527b6a3}{log\_time\_fn}}\ =\ gmtime;}
-\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00799\ \ \ \ \ \}}
-\DoxyCodeLine{00800\ }
-\DoxyCodeLine{00801\ \ \ \ \ \mbox{\hyperlink{logbank_8c_aecd1c33eda8dadb496cecee02527b6a3}{log\_time\_fn}}\ =\ localtime;}
-\DoxyCodeLine{00802\ \}}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00828\ \ \ \ \ \textcolor{keywordflow}{if}\ (gmt\ ==\ 1)\ \{}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_aecd1c33eda8dadb496cecee02527b6a3}{log\_time\_fn}}\ =\ gmtime;}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00831\ \ \ \ \ \}}
+\DoxyCodeLine{00832\ }
+\DoxyCodeLine{00833\ \ \ \ \ \mbox{\hyperlink{logbank_8c_aecd1c33eda8dadb496cecee02527b6a3}{log\_time\_fn}}\ =\ localtime;}
+\DoxyCodeLine{00834\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a699faa87910f82ed384ddd18cec06629}\label{logbank_8c_a699faa87910f82ed384ddd18cec06629} 
@@ -574,13 +576,13 @@ int Returns default log\+\_\+level
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00762}{762}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00794}{794}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00763\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
-\DoxyCodeLine{00764\ \}}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00795\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\_LEVEL}};}
+\DoxyCodeLine{00796\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_ab53553042bb3122475a03674bd689d5a}\label{logbank_8c_ab53553042bb3122475a03674bd689d5a} 
@@ -598,13 +600,13 @@ int Returns log\+\_\+level
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00767}{767}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00799}{799}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00768\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
-\DoxyCodeLine{00769\ \}}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00800\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
+\DoxyCodeLine{00801\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a2f37fc38d4885ae4fd5f499787e5f550}\label{logbank_8c_a2f37fc38d4885ae4fd5f499787e5f550} 
@@ -629,20 +631,20 @@ NULL on Failure =\texorpdfstring{$>$}{>} invalid level
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00783}{783}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00815}{815}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00784\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ level\_names[]\ =\ \{\textcolor{stringliteral}{"{}DEBUG"{}},\ \textcolor{stringliteral}{"{}INFO"{}},\ \ \textcolor{stringliteral}{"{}WARN"{}},}
-\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ERROR"{}},\ \textcolor{stringliteral}{"{}ISSUE"{}},\ \textcolor{stringliteral}{"{}FATAL"{}}\};}
-\DoxyCodeLine{00786\ }
-\DoxyCodeLine{00787\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
-\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
-\DoxyCodeLine{00789\ \ \ \ \ \}}
-\DoxyCodeLine{00790\ }
-\DoxyCodeLine{00791\ \ \ \ \ \textcolor{keywordflow}{return}\ level\_names[level];}
-\DoxyCodeLine{00792\ \}}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00816\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ level\_names[]\ =\ \{\textcolor{stringliteral}{"{}DEBUG"{}},\ \textcolor{stringliteral}{"{}INFO"{}},\ \ \textcolor{stringliteral}{"{}WARN"{}},}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ERROR"{}},\ \textcolor{stringliteral}{"{}ISSUE"{}},\ \textcolor{stringliteral}{"{}FATAL"{}}\};}
+\DoxyCodeLine{00818\ }
+\DoxyCodeLine{00819\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00821\ \ \ \ \ \}}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00823\ \ \ \ \ \textcolor{keywordflow}{return}\ level\_names[level];}
+\DoxyCodeLine{00824\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a1c0bafbb7eff649930512bdefd411de2}\label{logbank_8c_a1c0bafbb7eff649930512bdefd411de2} 
@@ -657,13 +659,13 @@ Returns the value of \doxylink{logbank_8h_a4caacfae62d7eef49d49b5498679f136}{LOG
 
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00875}{875}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00907}{907}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00876\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a4caacfae62d7eef49d49b5498679f136}{LOG\_RETRIEVE\_QUEUE\_LEN}};}
-\DoxyCodeLine{00877\ \}}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00908\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_a4caacfae62d7eef49d49b5498679f136}{LOG\_RETRIEVE\_QUEUE\_LEN}};}
+\DoxyCodeLine{00909\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a23e92ab1af0e88c03f627dac4ea7df48}\label{logbank_8c_a23e92ab1af0e88c03f627dac4ea7df48} 
@@ -700,47 +702,52 @@ This function parses \& separates all the details with in the message.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00899}{899}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00931}{931}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00900\ \ \ \ \ \textcolor{keywordflow}{if}\ (message\ ==\ NULL\ ||\ size\ <\ \mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}\ ||\ info\ ==\ NULL)\ \{}
-\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Invalid\ parameters\ */}}
-\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00903\ \ \ \ \ \}}
-\DoxyCodeLine{00904\ }
-\DoxyCodeLine{00905\ \ \ \ \ \textcolor{keywordtype}{char}\ copy[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}];}
-\DoxyCodeLine{00906\ \ \ \ \ strcpy(copy,\ message);}
-\DoxyCodeLine{00907\ }
-\DoxyCodeLine{00908\ \ \ \ \ \mbox{\hyperlink{logbank_8c_ada483370fa70cd182fa9f81e8d1c8b0c}{log\_remove\_colors}}(copy);}
-\DoxyCodeLine{00909\ }
-\DoxyCodeLine{00910\ \ \ \ \ \textcolor{keywordtype}{int}\ state\ =\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739}{LOG\_PARSER\_INIT}};}
-\DoxyCodeLine{00911\ \ \ \ \ \textcolor{keywordflow}{while}\ (state\ <\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8}{LOG\_PARSER\_DONE}})\ \{}
-\DoxyCodeLine{00912\ }
-\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (state)\ \{}
-\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739}{LOG\_PARSER\_INIT}}:\ \{}
-\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_a71249e077c2ba82ba172b73263a446c9}{parse\_datetime}}(copy,\ info);}
-\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73}{LOG\_PARSER\_LEVEL}}:\ \{}
-\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_a66b27f4f9997b08f6b1babdee8406102}{parse\_level}}(copy,\ info);}
-\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc}{LOG\_PARSER\_LOCATION}}:\ \{}
-\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_aaf13a0db1967c342e204aa844df01fda}{parse\_location}}(copy,\ info);}
-\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9}{LOG\_PARSER\_DATA}}:\ \{}
-\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_ad93e16f63aa5d848b4ee0eda72f092ac}{parse\_data\_string}}(message,\ size,\ copy);}
-\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00929\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00932\ \ \ \ \ \}}
-\DoxyCodeLine{00933\ }
-\DoxyCodeLine{00934\ \ \ \ \ \textcolor{keywordflow}{return}\ state\ ==\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8}{LOG\_PARSER\_DONE}}\ ?\ 0\ :\ -\/1;}
-\DoxyCodeLine{00935\ \}}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00932\ \ \ \ \ \textcolor{keywordflow}{if}\ (message\ ==\ NULL\ ||\ size\ <\ \mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}\ ||\ info\ ==\ NULL)\ \{}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Invalid\ parameters\ */}}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00935\ \ \ \ \ \}}
+\DoxyCodeLine{00936\ }
+\DoxyCodeLine{00937\ \ \ \ \ \textcolor{comment}{/*\ Create\ a\ reference\ copy\ */}}
+\DoxyCodeLine{00938\ \ \ \ \ \textcolor{keywordtype}{char}\ copy[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}];}
+\DoxyCodeLine{00939\ \ \ \ \ strncpy(copy,\ message,\ \mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}});}
+\DoxyCodeLine{00940\ \ \ \ \ copy[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00941\ }
+\DoxyCodeLine{00942\ \ \ \ \ \textcolor{comment}{/*\ Remove\ colors\ */}}
+\DoxyCodeLine{00943\ \ \ \ \ \mbox{\hyperlink{logbank_8c_ada483370fa70cd182fa9f81e8d1c8b0c}{log\_remove\_colors}}(copy);}
+\DoxyCodeLine{00944\ }
+\DoxyCodeLine{00945\ \ \ \ \ \textcolor{comment}{/*\ Start\ Parsing\ */}}
+\DoxyCodeLine{00946\ \ \ \ \ \textcolor{keywordtype}{int}\ state\ =\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739}{LOG\_PARSER\_INIT}};}
+\DoxyCodeLine{00947\ \ \ \ \ \textcolor{keywordflow}{while}\ (state\ <\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8}{LOG\_PARSER\_DONE}})\ \{}
+\DoxyCodeLine{00948\ }
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (state)\ \{}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabaddf6f3f0efcba2367cede26c93ff9739}{LOG\_PARSER\_INIT}}:\ \{}
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_a71249e077c2ba82ba172b73263a446c9}{parse\_datetime}}(copy,\ info);}
+\DoxyCodeLine{00952\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73}{LOG\_PARSER\_LEVEL}}:\ \{}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_a66b27f4f9997b08f6b1babdee8406102}{parse\_level}}(copy,\ info);}
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00958\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc}{LOG\_PARSER\_LOCATION}}:\ \{}
+\DoxyCodeLine{00959\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_aaf13a0db1967c342e204aa844df01fda}{parse\_location}}(copy,\ info);}
+\DoxyCodeLine{00960\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00961\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00962\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9}{LOG\_PARSER\_DATA}}:\ \{}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ \mbox{\hyperlink{logbank_8c_ad93e16f63aa5d848b4ee0eda72f092ac}{parse\_data\_string}}(message,\ size,\ copy);}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00965\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00966\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00968\ \ \ \ \ \}}
+\DoxyCodeLine{00969\ }
+\DoxyCodeLine{00970\ \ \ \ \ \textcolor{comment}{/*\ Check\ parsing\ state\ */}}
+\DoxyCodeLine{00971\ \ \ \ \ \textcolor{keywordflow}{return}\ state\ ==\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8}{LOG\_PARSER\_DONE}}\ ?\ 0\ :\ -\/1;}
+\DoxyCodeLine{00972\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_ada483370fa70cd182fa9f81e8d1c8b0c}\label{logbank_8c_ada483370fa70cd182fa9f81e8d1c8b0c} 
@@ -762,22 +769,22 @@ This function checks occurrence of each available color and removes them using \
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00885}{885}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00917}{917}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00886\ }
-\DoxyCodeLine{00887\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ index\ =\ 0;\ index\ <=\ \mbox{\hyperlink{logbank_8c_a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70}{LOG\_COLOR\_END}};\ index++)\ \{}
-\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ color\ =\ \mbox{\hyperlink{logbank_8c_a190f05562784d975771cf3c914c5fe45}{color\_list}}[index];}
-\DoxyCodeLine{00889\ }
-\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strstr(message,\ color))\ \{}
-\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ One\ color\ is\ used\ a\ maximum\ of\ 2\ times\ in\ update\_header()\ */}}
-\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_a4768c87e08765d06d4a033b4345e8b25}{log\_str\_replace}}(message,\ color);}
-\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_a4768c87e08765d06d4a033b4345e8b25}{log\_str\_replace}}(message,\ color);}
-\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00895\ \ \ \ \ \}}
-\DoxyCodeLine{00896\ \}}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00918\ }
+\DoxyCodeLine{00919\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ index\ =\ 0;\ index\ <=\ \mbox{\hyperlink{logbank_8c_a64c85acabf7cb23619533dcb80b17433a5613cf6c3b020220241b21c13b5f7c70}{LOG\_COLOR\_END}};\ index++)\ \{}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ color\ =\ \mbox{\hyperlink{logbank_8c_a190f05562784d975771cf3c914c5fe45}{color\_list}}[index];}
+\DoxyCodeLine{00921\ }
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strstr(message,\ color))\ \{}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ One\ color\ is\ used\ a\ maximum\ of\ 2\ times\ in\ update\_header()\ */}}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_a4768c87e08765d06d4a033b4345e8b25}{log\_str\_replace}}(message,\ color);}
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8c_a4768c87e08765d06d4a033b4345e8b25}{log\_str\_replace}}(message,\ color);}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00927\ \ \ \ \ \}}
+\DoxyCodeLine{00928\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a6cb516ab3c896f857b73e25c5dadef73}\label{logbank_8c_a6cb516ab3c896f857b73e25c5dadef73} 
@@ -806,13 +813,13 @@ wrapper around internal function \doxylink{logbank_8c_a699faa87910f82ed384ddd18c
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00880}{880}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00912}{912}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00881\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a699faa87910f82ed384ddd18cec06629}{log\_de\_queue}}(message,\ size);}
-\DoxyCodeLine{00882\ \}}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00913\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a699faa87910f82ed384ddd18cec06629}{log\_de\_queue}}(message,\ size);}
+\DoxyCodeLine{00914\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_af0d39913e824d4d0aef7513b284ea289}\label{logbank_8c_af0d39913e824d4d0aef7513b284ea289} 
@@ -837,19 +844,19 @@ This function configures value for log\+\_\+level.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00772}{772}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00804}{804}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00773\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
-\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00775\ \ \ \ \ \}}
-\DoxyCodeLine{00776\ }
-\DoxyCodeLine{00777\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
-\DoxyCodeLine{00778\ \ \ \ \ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}}\ =\ level;}
-\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
-\DoxyCodeLine{00780\ \}}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00805\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ LOG\_DEBUG\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00807\ \ \ \ \ \}}
+\DoxyCodeLine{00808\ }
+\DoxyCodeLine{00809\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}};}
+\DoxyCodeLine{00810\ \ \ \ \ \mbox{\hyperlink{logbank_8c_ac91d55174d383848b976a34de843748e}{log\_level}}\ =\ level;}
+\DoxyCodeLine{00811\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00812\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a7428ec2d45d3df3bbb27094a8f8d585a}\label{logbank_8c_a7428ec2d45d3df3bbb27094a8f8d585a} 
@@ -960,6 +967,57 @@ Definition at line \mbox{\hyperlink{logbank_8c_source_l00334}{334}} of file \mbo
 \DoxyCodeLine{00336\ \}}
 
 \end{DoxyCode}
+\Hypertarget{logbank_8c_ad078e8b28af95662960b20b873f2c616}\label{logbank_8c_ad078e8b28af95662960b20b873f2c616} 
+\index{logbank.c@{logbank.c}!log\_strtok\_r@{log\_strtok\_r}}
+\index{log\_strtok\_r@{log\_strtok\_r}!logbank.c@{logbank.c}}
+\doxysubsubsection{\texorpdfstring{log\_strtok\_r()}{log\_strtok\_r()}}
+{\footnotesize\ttfamily log\+\_\+strtok\+\_\+r (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{delim,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{saveptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Used in place of strtok\+\_\+r. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & pointer to input string \\
+\hline
+\mbox{\texttt{ in}}  & {\em delim} & pointer to delimiter \\
+\hline
+\mbox{\texttt{ in}}  & {\em saveptr} & pointer to saveptr required to pass next item when str is NULL\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char\texorpdfstring{$\ast$}{*} Success\+: pointer to modified input string 
+
+NULL Failure\+: str and \texorpdfstring{$\ast$}{*}saveptr are both NULL or str doesn\textquotesingle{}t contain delim 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00446}{446}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keywordflow}{if}\ (!str\ \&\&\ !(str\ =\ *saveptr))\ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00449\ \ \ \ \ \}}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \ \ \ \ str\ +=\ strspn(str,\ delim);}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordflow}{if}\ (!*str)\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *saveptr\ =\ 0;}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ \ \ \ \ *saveptr\ =\ str\ +\ strcspn(str,\ delim);}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordflow}{if}\ (**saveptr)\ \{}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ *(*saveptr)++\ =\ 0;}
+\DoxyCodeLine{00459\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ *saveptr\ =\ 0;}
+\DoxyCodeLine{00461\ \ \ \ \ \}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00464\ \}}
+
+\end{DoxyCode}
 \Hypertarget{logbank_8c_af4c62a16c3bbb595d0ada4b00a8b4092}\label{logbank_8c_af4c62a16c3bbb595d0ada4b00a8b4092} 
 \index{logbank.c@{logbank.c}!log\_this@{log\_this}}
 \index{log\_this@{log\_this}!logbank.c@{logbank.c}}
@@ -992,45 +1050,45 @@ This function parses arguments similar to that of printf So, format argument of 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00838}{838}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00870}{870}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00839\ \ \ \ \ \textcolor{keywordtype}{int}\ len\ =\ 0;}
-\DoxyCodeLine{00840\ }
-\DoxyCodeLine{00841\ \ \ \ \ \textcolor{comment}{/*\ Filtering\ logic\ for\ lower\ priority\ log-\/requests\ and\ invalid\ priority\ requests\ */}}
-\DoxyCodeLine{00842\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ log\_level\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
-\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
-\DoxyCodeLine{00844\ \ \ \ \ \}}
-\DoxyCodeLine{00845\ }
-\DoxyCodeLine{00846\ \ \ \ \ \textcolor{comment}{/*\ prepare\ log-\/message\ */}}
-\DoxyCodeLine{00847\ \ \ \ \ \textcolor{keywordtype}{char}\ message[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}];}
-\DoxyCodeLine{00848\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(message);}
-\DoxyCodeLine{00849\ }
-\DoxyCodeLine{00850\ \ \ \ \ \textcolor{comment}{/*\ Add\ header\ to\ log-\/message\ */}}
-\DoxyCodeLine{00851\ \ \ \ \ len\ +=\ \mbox{\hyperlink{logbank_8c_a61610956cd7b586c8745be62d0b04bb4}{update\_header}}(message,\ size\ -\/\ len,\ level,\ locate);}
-\DoxyCodeLine{00852\ }
-\DoxyCodeLine{00853\ \ \ \ \ \textcolor{comment}{/*\ Add\ optional\ arguments\ to\ log-\/message\ */}}
-\DoxyCodeLine{00854\ \ \ \ \ va\_list\ args;}
-\DoxyCodeLine{00855\ \ \ \ \ va\_start(args,\ fmt);}
-\DoxyCodeLine{00856\ \ \ \ \ len\ +=\ vsnprintf(message\ +\ len,\ size\ -\/\ len,\ fmt,\ args);}
-\DoxyCodeLine{00857\ \ \ \ \ va\_end(args);}
-\DoxyCodeLine{00858\ }
-\DoxyCodeLine{00859\ \ \ \ \ \textcolor{comment}{/*\ Handle\ string\ termination\ properly\ */}}
-\DoxyCodeLine{00860\ \ \ \ \ len\ +=\ snprintf(message\ +\ len,\ size\ -\/\ len,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00861\ \ \ \ \ message[size\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00862\ }
-\DoxyCodeLine{00863\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ >\ \mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}})\ \{}
-\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Data\ Overflow\ */}}
-\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0\ -\/\ len);}
-\DoxyCodeLine{00866\ \ \ \ \ \}}
-\DoxyCodeLine{00867\ }
-\DoxyCodeLine{00868\ \ \ \ \ \textcolor{comment}{/*\ write\ operation\ */}}
-\DoxyCodeLine{00869\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a55d582cd8fce0964d97a5f33afe759c8}{log\_stream\_write}}(message);}
-\DoxyCodeLine{00870\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a9483b564e7d34ef47edf9f7b56d6f6c5}{log\_en\_queue}}(message);}
-\DoxyCodeLine{00871\ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
-\DoxyCodeLine{00872\ \}}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00871\ \ \ \ \ \textcolor{keywordtype}{int}\ len\ =\ 0;}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00873\ \ \ \ \ \textcolor{comment}{/*\ Filtering\ logic\ for\ lower\ priority\ log-\/requests\ and\ invalid\ priority\ requests\ */}}
+\DoxyCodeLine{00874\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ log\_level\ ||\ level\ >\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}})\ \{}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
+\DoxyCodeLine{00876\ \ \ \ \ \}}
+\DoxyCodeLine{00877\ }
+\DoxyCodeLine{00878\ \ \ \ \ \textcolor{comment}{/*\ prepare\ log-\/message\ */}}
+\DoxyCodeLine{00879\ \ \ \ \ \textcolor{keywordtype}{char}\ message[\mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}}];}
+\DoxyCodeLine{00880\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(message);}
+\DoxyCodeLine{00881\ }
+\DoxyCodeLine{00882\ \ \ \ \ \textcolor{comment}{/*\ Add\ header\ to\ log-\/message\ */}}
+\DoxyCodeLine{00883\ \ \ \ \ len\ +=\ \mbox{\hyperlink{logbank_8c_a61610956cd7b586c8745be62d0b04bb4}{update\_header}}(message,\ size\ -\/\ len,\ level,\ locate);}
+\DoxyCodeLine{00884\ }
+\DoxyCodeLine{00885\ \ \ \ \ \textcolor{comment}{/*\ Add\ optional\ arguments\ to\ log-\/message\ */}}
+\DoxyCodeLine{00886\ \ \ \ \ va\_list\ args;}
+\DoxyCodeLine{00887\ \ \ \ \ va\_start(args,\ fmt);}
+\DoxyCodeLine{00888\ \ \ \ \ len\ +=\ vsnprintf(message\ +\ len,\ size\ -\/\ len,\ fmt,\ args);}
+\DoxyCodeLine{00889\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{00890\ }
+\DoxyCodeLine{00891\ \ \ \ \ \textcolor{comment}{/*\ Handle\ string\ termination\ properly\ */}}
+\DoxyCodeLine{00892\ \ \ \ \ len\ +=\ snprintf(message\ +\ len,\ size\ -\/\ len,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00893\ \ \ \ \ message[size\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00894\ }
+\DoxyCodeLine{00895\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ >\ \mbox{\hyperlink{logbank_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\_MAX\_DATA\_LEN}})\ \{}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Data\ Overflow\ */}}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0\ -\/\ len);}
+\DoxyCodeLine{00898\ \ \ \ \ \}}
+\DoxyCodeLine{00899\ }
+\DoxyCodeLine{00900\ \ \ \ \ \textcolor{comment}{/*\ write\ operation\ */}}
+\DoxyCodeLine{00901\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a55d582cd8fce0964d97a5f33afe759c8}{log\_stream\_write}}(message);}
+\DoxyCodeLine{00902\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a9483b564e7d34ef47edf9f7b56d6f6c5}{log\_en\_queue}}(message);}
+\DoxyCodeLine{00903\ \ \ \ \ \textcolor{keywordflow}{return}\ len;}
+\DoxyCodeLine{00904\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a87097c0104243be5ea4a28ade9abc579}\label{logbank_8c_a87097c0104243be5ea4a28ade9abc579} 
@@ -1060,19 +1118,19 @@ Other log-\/requests (say, logs which are being stored in a file) are not logged
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00827}{827}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00859}{859}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00828\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
-\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00830\ \ \ \ \ \}}
-\DoxyCodeLine{00831\ }
-\DoxyCodeLine{00832\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a189d4d789654e3342bdde4f60875aa1e}{log\_color}};}
-\DoxyCodeLine{00833\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a189d4d789654e3342bdde4f60875aa1e}{log\_color}}\ =\ enable;}
-\DoxyCodeLine{00834\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
-\DoxyCodeLine{00835\ \}}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00862\ \ \ \ \ \}}
+\DoxyCodeLine{00863\ }
+\DoxyCodeLine{00864\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a189d4d789654e3342bdde4f60875aa1e}{log\_color}};}
+\DoxyCodeLine{00865\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a189d4d789654e3342bdde4f60875aa1e}{log\_color}}\ =\ enable;}
+\DoxyCodeLine{00866\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00867\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_abfe2b67a3b61f6ca5ac29458f1a6fa20}\label{logbank_8c_abfe2b67a3b61f6ca5ac29458f1a6fa20} 
@@ -1099,19 +1157,19 @@ This function is used to enable date stamps for every log-\/request at run-\/tim
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00805}{805}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00837}{837}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00806\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
-\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00808\ \ \ \ \ \}}
-\DoxyCodeLine{00809\ }
-\DoxyCodeLine{00810\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a6e1cbcfba04606a1ea81d837e75cf182}{log\_datestamp}};}
-\DoxyCodeLine{00811\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a6e1cbcfba04606a1ea81d837e75cf182}{log\_datestamp}}\ =\ enable;}
-\DoxyCodeLine{00812\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
-\DoxyCodeLine{00813\ \}}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00840\ \ \ \ \ \}}
+\DoxyCodeLine{00841\ }
+\DoxyCodeLine{00842\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a6e1cbcfba04606a1ea81d837e75cf182}{log\_datestamp}};}
+\DoxyCodeLine{00843\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a6e1cbcfba04606a1ea81d837e75cf182}{log\_datestamp}}\ =\ enable;}
+\DoxyCodeLine{00844\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00845\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a1c3d0c234139eef0ecdd76c379bd2622}\label{logbank_8c_a1c3d0c234139eef0ecdd76c379bd2622} 
@@ -1138,19 +1196,19 @@ This function is used to enable time stamps for every log-\/request at run-\/tim
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00816}{816}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00848}{848}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00817\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
-\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00819\ \ \ \ \ \}}
-\DoxyCodeLine{00820\ }
-\DoxyCodeLine{00821\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a78f29241d03102718e247b5869f41e58}{log\_timestamp}};}
-\DoxyCodeLine{00822\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a78f29241d03102718e247b5869f41e58}{log\_timestamp}}\ =\ enable;}
-\DoxyCodeLine{00823\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
-\DoxyCodeLine{00824\ \}}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00849\ \ \ \ \ \textcolor{keywordflow}{if}\ (enable\ <\ 0\ ||\ enable\ >\ 1)\ \{}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00851\ \ \ \ \ \}}
+\DoxyCodeLine{00852\ }
+\DoxyCodeLine{00853\ \ \ \ \ \textcolor{keywordtype}{int}\ old\ =\ \mbox{\hyperlink{logbank_8c_a78f29241d03102718e247b5869f41e58}{log\_timestamp}};}
+\DoxyCodeLine{00854\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a78f29241d03102718e247b5869f41e58}{log\_timestamp}}\ =\ enable;}
+\DoxyCodeLine{00855\ \ \ \ \ \textcolor{keywordflow}{return}\ old;}
+\DoxyCodeLine{00856\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_ad93e16f63aa5d848b4ee0eda72f092ac}\label{logbank_8c_ad93e16f63aa5d848b4ee0eda72f092ac} 
@@ -1183,38 +1241,38 @@ This function reads copy buffer and checks \textquotesingle{}\+:\textquotesingle
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00732}{732}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00764}{764}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00733\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
-\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}};}
-\DoxyCodeLine{00736\ \ \ \ \ \}}
-\DoxyCodeLine{00737\ }
-\DoxyCodeLine{00738\ \ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00739\ \textcolor{comment}{\ \ \ \ \ *\ Calculating\ Data\ Index}}
-\DoxyCodeLine{00740\ \textcolor{comment}{\ \ \ \ \ *\ HH:MM:SS\ [level]\ @\ location\ :\ data}}
-\DoxyCodeLine{00741\ \textcolor{comment}{\ \ \ \ \ *\ \ \ 0\ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
-\DoxyCodeLine{00742\ \textcolor{comment}{\ \ \ \ \ *\ */}}
-\DoxyCodeLine{00743\ \ \ \ \ \textcolor{keywordtype}{int}\ data\_index\ =\ 2;}
-\DoxyCodeLine{00744\ }
-\DoxyCodeLine{00745\ \ \ \ \ \textcolor{comment}{/*\ Separating\ header\ from\ copied\ data\ */}}
-\DoxyCodeLine{00746\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ dptr\ =\ strchr(copy,\ \textcolor{charliteral}{':'});}
-\DoxyCodeLine{00747\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ count\ =\ 0;\ count\ <\ data\_index\ \&\&\ dptr\ !=\ NULL;\ count++)\ \{}
-\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ dptr\ =\ strchr(dptr\ +\ 1,\ \textcolor{charliteral}{':'});}
-\DoxyCodeLine{00749\ \ \ \ \ \}}
-\DoxyCodeLine{00750\ }
-\DoxyCodeLine{00751\ \ \ \ \ \textcolor{keywordflow}{if}\ (dptr\ ==\ NULL)\ \{}
-\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Time\ stamp\ is\ absent;\ Set\ data\ pointer\ to\ first\ ':'\ */}}
-\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ dptr\ =\ strchr(copy,\ \textcolor{charliteral}{':'});}
-\DoxyCodeLine{00754\ \ \ \ \ \}}
-\DoxyCodeLine{00755\ }
-\DoxyCodeLine{00756\ \ \ \ \ strcpy(message,\ dptr\ +\ 2);}
-\DoxyCodeLine{00757\ \ \ \ \ message[size\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00758\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8}{LOG\_PARSER\_DONE}};}
-\DoxyCodeLine{00759\ \}}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00765\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}};}
+\DoxyCodeLine{00768\ \ \ \ \ \}}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00771\ \textcolor{comment}{\ \ \ \ \ *\ Calculating\ Data\ Index}}
+\DoxyCodeLine{00772\ \textcolor{comment}{\ \ \ \ \ *\ HH:MM:SS\ [level]\ @\ location\ :\ data}}
+\DoxyCodeLine{00773\ \textcolor{comment}{\ \ \ \ \ *\ \ \ 0\ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00774\ \textcolor{comment}{\ \ \ \ \ *\ */}}
+\DoxyCodeLine{00775\ \ \ \ \ \textcolor{keywordtype}{int}\ data\_index\ =\ 2;}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \textcolor{comment}{/*\ Separating\ header\ from\ copied\ data\ */}}
+\DoxyCodeLine{00778\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ dptr\ =\ strchr(copy,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ count\ =\ 0;\ count\ <\ data\_index\ \&\&\ dptr\ !=\ NULL;\ count++)\ \{}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ dptr\ =\ strchr(dptr\ +\ 1,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00781\ \ \ \ \ \}}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{keywordflow}{if}\ (dptr\ ==\ NULL)\ \{}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Time\ stamp\ is\ absent;\ Set\ data\ pointer\ to\ first\ ':'\ */}}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ dptr\ =\ strchr(copy,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00786\ \ \ \ \ \}}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ strncpy(message,\ dptr\ +\ 2,\ size);}
+\DoxyCodeLine{00789\ \ \ \ \ message[size\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cababc0829ac0779efa482e0670ba736a3e8}{LOG\_PARSER\_DONE}};}
+\DoxyCodeLine{00791\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_aa15850fe2e5f2dbcad19c95e9a92591c}\label{logbank_8c_aa15850fe2e5f2dbcad19c95e9a92591c} 
@@ -1239,40 +1297,40 @@ copy of log-\/message used doesn\textquotesingle{}t contain ANSI color-\/codes \
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00445}{445}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00477}{477}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00446\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af4f3e70feabbadc91bff87d53ca052f8}{day}}\ =\ 0;}
-\DoxyCodeLine{00447\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ac3d2a0ec1d776ffb5941ce3e5c839ef7}{month}}\ =\ 0;}
-\DoxyCodeLine{00448\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_adb934ab7d65f387e97d91329073cf509}{year}}\ =\ 0;}
-\DoxyCodeLine{00449\ }
-\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
-\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{char}\ date[]\ =\ \textcolor{stringliteral}{"{}01/01/2001"{}};}
-\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ date\_del[]\ =\ \textcolor{stringliteral}{"{}/"{}};}
-\DoxyCodeLine{00453\ }
-\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(copy\ +\ index,\ \textcolor{stringliteral}{"{}\%10[0-\/9/]"{}},\ date)\ ==\ 1)\ \{}
-\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ rest\ =\ NULL;}
-\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ dptr\ =\ strtok\_r(date,\ date\_del,\ \&rest);}
-\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af4f3e70feabbadc91bff87d53ca052f8}{day}}\ =\ dptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(dptr)\ :\ 0;}
-\DoxyCodeLine{00458\ }
-\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ dptr\ =\ strtok\_r(NULL,\ date\_del,\ \&rest);}
-\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ac3d2a0ec1d776ffb5941ce3e5c839ef7}{month}}\ =\ dptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(dptr)\ :\ 0;}
-\DoxyCodeLine{00461\ }
-\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ dptr\ =\ strtok\_r(NULL,\ date\_del,\ \&rest);}
-\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_adb934ab7d65f387e97d91329073cf509}{year}}\ =\ dptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(dptr)\ :\ 0;}
-\DoxyCodeLine{00464\ \ \ \ \ \}}
-\DoxyCodeLine{00465\ }
-\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordflow}{if}\ (info-\/>\mbox{\hyperlink{structlog__parser__info__t_adb934ab7d65f387e97d91329073cf509}{year}}\ ==\ 0)\ \{}
-\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af4f3e70feabbadc91bff87d53ca052f8}{day}}\ =\ 0;}
-\DoxyCodeLine{00468\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ extra\ for\ space\ between\ date\ stamp\ and\ time\ stamp\ */}}
-\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ index\ +=\ \mbox{\hyperlink{logbank_8c_a9c3be125d60c2afbb469cfe890546132}{LOG\_DATE\_LEN}};}
-\DoxyCodeLine{00471\ \ \ \ \ \}}
-\DoxyCodeLine{00472\ }
-\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordflow}{return}\ index;}
-\DoxyCodeLine{00474\ \}}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af4f3e70feabbadc91bff87d53ca052f8}{day}}\ =\ 0;}
+\DoxyCodeLine{00479\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ac3d2a0ec1d776ffb5941ce3e5c839ef7}{month}}\ =\ 0;}
+\DoxyCodeLine{00480\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_adb934ab7d65f387e97d91329073cf509}{year}}\ =\ 0;}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordtype}{char}\ date[]\ =\ \textcolor{stringliteral}{"{}01/01/2001"{}};}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ date\_del[]\ =\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(copy\ +\ index,\ \textcolor{stringliteral}{"{}\%10[0-\/9/]"{}},\ date)\ ==\ 1)\ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ saveptr\ =\ NULL;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ dptr\ =\ \mbox{\hyperlink{logbank_8c_ad078e8b28af95662960b20b873f2c616}{log\_strtok\_r}}(date,\ date\_del,\ \&saveptr);}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af4f3e70feabbadc91bff87d53ca052f8}{day}}\ =\ dptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(dptr)\ :\ 0;}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ dptr\ =\ \mbox{\hyperlink{logbank_8c_ad078e8b28af95662960b20b873f2c616}{log\_strtok\_r}}(NULL,\ date\_del,\ \&saveptr);}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ac3d2a0ec1d776ffb5941ce3e5c839ef7}{month}}\ =\ dptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(dptr)\ :\ 0;}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ dptr\ =\ \mbox{\hyperlink{logbank_8c_ad078e8b28af95662960b20b873f2c616}{log\_strtok\_r}}(NULL,\ date\_del,\ \&saveptr);}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_adb934ab7d65f387e97d91329073cf509}{year}}\ =\ dptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(dptr)\ :\ 0;}
+\DoxyCodeLine{00496\ \ \ \ \ \}}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \ \ \ \ \textcolor{keywordflow}{if}\ (info-\/>\mbox{\hyperlink{structlog__parser__info__t_adb934ab7d65f387e97d91329073cf509}{year}}\ ==\ 0)\ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af4f3e70feabbadc91bff87d53ca052f8}{day}}\ =\ 0;}
+\DoxyCodeLine{00500\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ extra\ for\ space\ between\ date\ stamp\ and\ time\ stamp\ */}}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ index\ +=\ \mbox{\hyperlink{logbank_8c_a9c3be125d60c2afbb469cfe890546132}{LOG\_DATE\_LEN}};}
+\DoxyCodeLine{00503\ \ \ \ \ \}}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordflow}{return}\ index;}
+\DoxyCodeLine{00506\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a71249e077c2ba82ba172b73263a446c9}\label{logbank_8c_a71249e077c2ba82ba172b73263a446c9} 
@@ -1301,17 +1359,17 @@ copy of log-\/message used doesn\textquotesingle{}t contain ANSI color-\/codes \
 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00535}{535}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00567}{567}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00536\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
-\DoxyCodeLine{00537\ \ \ \ \ index\ =\ \mbox{\hyperlink{logbank_8c_aa15850fe2e5f2dbcad19c95e9a92591c}{parse\_date}}(copy\ +\ index,\ info);}
-\DoxyCodeLine{00538\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a6822fbc1932f14536d8492add244655c}{parse\_time}}(copy\ +\ index,\ info);}
-\DoxyCodeLine{00539\ }
-\DoxyCodeLine{00540\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73}{LOG\_PARSER\_LEVEL}};}
-\DoxyCodeLine{00541\ \}}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00568\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00569\ \ \ \ \ index\ =\ \mbox{\hyperlink{logbank_8c_aa15850fe2e5f2dbcad19c95e9a92591c}{parse\_date}}(copy\ +\ index,\ info);}
+\DoxyCodeLine{00570\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a6822fbc1932f14536d8492add244655c}{parse\_time}}(copy\ +\ index,\ info);}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba9337e5931966d192819cf9df3b2b8e73}{LOG\_PARSER\_LEVEL}};}
+\DoxyCodeLine{00573\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a88ac1ee07ea17f2847abf5981d388331}\label{logbank_8c_a88ac1ee07ea17f2847abf5981d388331} 
@@ -1336,51 +1394,51 @@ copy of log-\/message used doesn\textquotesingle{}t contain ANSI color-\/codes \
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00640}{640}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00672}{672}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00641\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
-\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00644\ \ \ \ \ \}}
-\DoxyCodeLine{00645\ }
-\DoxyCodeLine{00646\ \ \ \ \ \textcolor{keywordtype}{char}*\ lptr\ =\ strchr(copy,\ \textcolor{charliteral}{'+'});}
-\DoxyCodeLine{00647\ \ \ \ \ \textcolor{keywordflow}{if}\ (lptr\ ==\ NULL)\ \{}
-\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00650\ \ \ \ \ \}}
-\DoxyCodeLine{00651\ }
-\DoxyCodeLine{00652\ \ \ \ \ lptr\ =\ lptr\ -\/\ 1;}
-\DoxyCodeLine{00653\ \ \ \ \ lptr[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{comment}{/*\ Remove\ extra\ bytes\ other\ than\ file\ name\ */}}
-\DoxyCodeLine{00654\ }
-\DoxyCodeLine{00655\ \ \ \ \ \textcolor{keywordtype}{char}*\ fptr\ =\ strchr(copy,\ \textcolor{charliteral}{'"{}'});}
-\DoxyCodeLine{00656\ \ \ \ \ \textcolor{keywordflow}{if}\ (fptr\ ==\ NULL)\ \{}
-\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00659\ \ \ \ \ \}}
-\DoxyCodeLine{00660\ }
-\DoxyCodeLine{00661\ \ \ \ \ fptr\ =\ fptr\ +\ 1;\ \textcolor{comment}{/*\ Remove\ '"{}'\ and\ space\ */}}
-\DoxyCodeLine{00662\ }
-\DoxyCodeLine{00663\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}},\ fptr,\ \mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}});}
-\DoxyCodeLine{00664\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}}[\mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00665\ }
-\DoxyCodeLine{00666\ \ \ \ \ \textcolor{comment}{/*\ Revert\ previous\ changes\ to\ copy\ */}}
-\DoxyCodeLine{00667\ \ \ \ \ lptr[0]\ =\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{00668\ \ \ \ \ lptr\ =\ lptr\ +\ 2;\ \textcolor{comment}{/*\ Also,\ Removed\ '+'\ and\ space\ for\ parsing\ line\ number\ */}}
-\DoxyCodeLine{00669\ }
-\DoxyCodeLine{00670\ \ \ \ \ \textcolor{keywordtype}{char}*\ end\ =\ strchr(fptr,\ \textcolor{charliteral}{'"{}'});\ \textcolor{comment}{/*\ end\ points\ to\ end\ of\ location\ parameters\ */}}
-\DoxyCodeLine{00671\ \ \ \ \ \textcolor{keywordflow}{if}\ (end\ ==\ NULL)\ \{}
-\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Unexpected\ format\ can\ not\ find\ how\ many\ digits\ are\ available\ in\ line\ num\ */}}
-\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00674\ \ \ \ \ \}}
-\DoxyCodeLine{00675\ }
-\DoxyCodeLine{00676\ \ \ \ \ end[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{comment}{/*\ removed\ everything\ after\ end\ of\ location\ parameters\ */}}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00673\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00676\ \ \ \ \ \}}
 \DoxyCodeLine{00677\ }
-\DoxyCodeLine{00678\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_acaedf39ac455489c4d02586063e9a49d}{line}}\ =\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(lptr);}
-\DoxyCodeLine{00679\ \ \ \ \ end[0]\ =\ \textcolor{charliteral}{'"{}'};\ \textcolor{comment}{/*\ Revert\ previous\ changes\ to\ copy\ */}}
-\DoxyCodeLine{00680\ \}}
+\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keywordtype}{char}*\ lineptr\ =\ strchr(copy,\ \textcolor{charliteral}{'+'});}
+\DoxyCodeLine{00679\ \ \ \ \ \textcolor{keywordflow}{if}\ (lineptr\ ==\ NULL)\ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00682\ \ \ \ \ \}}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \ \ \ \ lineptr\ =\ lineptr\ -\/\ 1;}
+\DoxyCodeLine{00685\ \ \ \ \ lineptr[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{comment}{/*\ Remove\ extra\ bytes\ other\ than\ file\ name\ */}}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00687\ \ \ \ \ \textcolor{keywordtype}{char}*\ fileptr\ =\ strchr(copy,\ \textcolor{charliteral}{'"{}'});}
+\DoxyCodeLine{00688\ \ \ \ \ \textcolor{keywordflow}{if}\ (fileptr\ ==\ NULL)\ \{}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00691\ \ \ \ \ \}}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ \ \ fileptr\ =\ fileptr\ +\ 1;\ \textcolor{comment}{/*\ Remove\ '"{}'\ and\ space\ */}}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}},\ fileptr,\ \mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}});}
+\DoxyCodeLine{00696\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}}[\mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00697\ }
+\DoxyCodeLine{00698\ \ \ \ \ \textcolor{comment}{/*\ Revert\ previous\ changes\ to\ copy\ */}}
+\DoxyCodeLine{00699\ \ \ \ \ lineptr[0]\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00700\ \ \ \ \ lineptr\ =\ lineptr\ +\ 2;\ \textcolor{comment}{/*\ Also,\ Removed\ '+'\ and\ space\ for\ parsing\ line\ number\ */}}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \ \ \ \textcolor{keywordtype}{char}*\ end\ =\ strchr(fileptr,\ \textcolor{charliteral}{'"{}'});\ \textcolor{comment}{/*\ end\ points\ to\ end\ of\ location\ parameters\ */}}
+\DoxyCodeLine{00703\ \ \ \ \ \textcolor{keywordflow}{if}\ (end\ ==\ NULL)\ \{}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Unexpected\ format\ can\ not\ find\ how\ many\ digits\ are\ available\ in\ line\ num\ */}}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00706\ \ \ \ \ \}}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ end[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{comment}{/*\ removed\ everything\ after\ end\ of\ location\ parameters\ */}}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00710\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_acaedf39ac455489c4d02586063e9a49d}{line}}\ =\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(lineptr);}
+\DoxyCodeLine{00711\ \ \ \ \ end[0]\ =\ \textcolor{charliteral}{'"{}'};\ \textcolor{comment}{/*\ Revert\ previous\ changes\ to\ copy\ */}}
+\DoxyCodeLine{00712\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a79a0d62638455a3117532390c888f419}\label{logbank_8c_a79a0d62638455a3117532390c888f419} 
@@ -1405,37 +1463,37 @@ copy of log-\/message used doesn\textquotesingle{}t contain ANSI color-\/codes \
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00601}{601}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00633}{633}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00602\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
-\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00605\ \ \ \ \ \}}
-\DoxyCodeLine{00606\ }
-\DoxyCodeLine{00607\ \ \ \ \ \textcolor{keywordtype}{char}*\ sep\ =\ strchr(copy,\ \textcolor{charliteral}{'('});}
-\DoxyCodeLine{00608\ \ \ \ \ \textcolor{keywordflow}{if}\ (sep\ ==\ NULL)\ \{}
-\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00611\ \ \ \ \ \}}
-\DoxyCodeLine{00612\ }
-\DoxyCodeLine{00613\ \ \ \ \ sep[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{comment}{/*\ Remove\ extra\ bytes\ other\ than\ function\ name\ */}}
-\DoxyCodeLine{00614\ }
-\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keywordtype}{char}*\ fnptr\ =\ strchr(copy,\ \textcolor{charliteral}{'@'});}
-\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keywordflow}{if}\ (fnptr\ ==\ NULL)\ \{}
-\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00619\ \ \ \ \ \}}
-\DoxyCodeLine{00620\ }
-\DoxyCodeLine{00621\ \ \ \ \ fnptr\ =\ fnptr\ +\ 2;\ \textcolor{comment}{/*\ Remove\ '@'\ and\ space\ */}}
-\DoxyCodeLine{00622\ }
-\DoxyCodeLine{00623\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}},\ fnptr,\ \mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}});}
-\DoxyCodeLine{00624\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}}[\mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00625\ }
-\DoxyCodeLine{00626\ \ \ \ \ sep[0]\ =\ \textcolor{charliteral}{'('};\ \textcolor{comment}{/*\ Revert\ previous\ changes\ to\ copy\ */}}
-\DoxyCodeLine{00627\ \}}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00637\ \ \ \ \ \}}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \ \ \ \ \textcolor{keywordtype}{char}*\ sep\ =\ strchr(copy,\ \textcolor{charliteral}{'('});}
+\DoxyCodeLine{00640\ \ \ \ \ \textcolor{keywordflow}{if}\ (sep\ ==\ NULL)\ \{}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00643\ \ \ \ \ \}}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00645\ \ \ \ \ sep[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};\ \textcolor{comment}{/*\ Remove\ extra\ bytes\ other\ than\ function\ name\ */}}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \ \ \ \ \textcolor{keywordtype}{char}*\ fnptr\ =\ strchr(copy,\ \textcolor{charliteral}{'@'});}
+\DoxyCodeLine{00648\ \ \ \ \ \textcolor{keywordflow}{if}\ (fnptr\ ==\ NULL)\ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00651\ \ \ \ \ \}}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00653\ \ \ \ \ fnptr\ =\ fnptr\ +\ 2;\ \textcolor{comment}{/*\ Remove\ '@'\ and\ space\ */}}
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00655\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}},\ fnptr,\ \mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}});}
+\DoxyCodeLine{00656\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}}[\mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00657\ }
+\DoxyCodeLine{00658\ \ \ \ \ sep[0]\ =\ \textcolor{charliteral}{'('};\ \textcolor{comment}{/*\ Revert\ previous\ changes\ to\ copy\ */}}
+\DoxyCodeLine{00659\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a66b27f4f9997b08f6b1babdee8406102}\label{logbank_8c_a66b27f4f9997b08f6b1babdee8406102} 
@@ -1460,46 +1518,46 @@ copy of log-\/message used doesn\textquotesingle{}t contain ANSI color-\/codes \
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00554}{554}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00586}{586}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keywordtype}{int}\ invalid\ =\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}}\ +\ 1;}
-\DoxyCodeLine{00556\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}}\ =\ invalid;}
-\DoxyCodeLine{00557\ }
-\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{char}\ name[]\ =\ \textcolor{stringliteral}{"{}DEBUG"{}};}
-\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(name);}
-\DoxyCodeLine{00560\ }
-\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{char}*\ level\_end\ =\ strchr(copy,\ \textcolor{charliteral}{']'});}
-\DoxyCodeLine{00562\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\_end\ ==\ NULL)\ \{}
-\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}};}
-\DoxyCodeLine{00564\ \ \ \ \ \}}
-\DoxyCodeLine{00565\ }
-\DoxyCodeLine{00566\ \ \ \ \ level\_end\ =\ level\_end\ -\/\ 1;}
-\DoxyCodeLine{00567\ }
-\DoxyCodeLine{00568\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_name\_len\ =\ 5;}
-\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keywordtype}{char}*\ level\_start\ =\ level\_end\ -\/\ max\_name\_len;}
-\DoxyCodeLine{00570\ }
-\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\_start[1]\ ==\ \textcolor{charliteral}{'['})\ \{}
-\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ level\_start\ =\ level\_start\ +\ 1;}
-\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ size\ =\ size\ -\/\ 1;}
-\DoxyCodeLine{00574\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (level\_start[0]\ !=\ \textcolor{charliteral}{'['})\ \{}
-\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}};}
-\DoxyCodeLine{00576\ \ \ \ \ \}}
-\DoxyCodeLine{00577\ }
-\DoxyCodeLine{00578\ \ \ \ \ level\_start\ =\ level\_start\ +\ 1;}
-\DoxyCodeLine{00579\ \ \ \ \ (void)snprintf(name,\ size,\ \textcolor{stringliteral}{"{}\%s"{}},\ level\_start);}
-\DoxyCodeLine{00580\ }
-\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ level\ =\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}};\ level\ <=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}};\ level++)\ \{}
-\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strstr(name,\ \mbox{\hyperlink{logbank_8c_a2f37fc38d4885ae4fd5f499787e5f550}{log\_get\_levelname}}(level)))\ \{}
-\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}}\ =\ level;}
-\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00586\ \ \ \ \ \}}
-\DoxyCodeLine{00587\ }
-\DoxyCodeLine{00588\ \ \ \ \ \textcolor{keywordflow}{return}\ info-\/>\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}}\ ==\ invalid\ ?\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}}\ :\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc}{LOG\_PARSER\_LOCATION}};}
-\DoxyCodeLine{00589\ \}}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{keywordtype}{int}\ invalid\ =\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}}\ +\ 1;}
+\DoxyCodeLine{00588\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}}\ =\ invalid;}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keywordtype}{char}\ name[]\ =\ \textcolor{stringliteral}{"{}DEBUG"{}};}
+\DoxyCodeLine{00591\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \textcolor{keyword}{sizeof}(name);}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordtype}{char}*\ level\_end\ =\ strchr(copy,\ \textcolor{charliteral}{']'});}
+\DoxyCodeLine{00594\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\_end\ ==\ NULL)\ \{}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}};}
+\DoxyCodeLine{00596\ \ \ \ \ \}}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \ \ \ \ level\_end\ =\ level\_end\ -\/\ 1;}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_name\_len\ =\ 5;}
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordtype}{char}*\ level\_start\ =\ level\_end\ -\/\ max\_name\_len;}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\_start[1]\ ==\ \textcolor{charliteral}{'['})\ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ level\_start\ =\ level\_start\ +\ 1;}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ size\ =\ size\ -\/\ 1;}
+\DoxyCodeLine{00606\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (level\_start[0]\ !=\ \textcolor{charliteral}{'['})\ \{}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}};}
+\DoxyCodeLine{00608\ \ \ \ \ \}}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \ \ level\_start\ =\ level\_start\ +\ 1;}
+\DoxyCodeLine{00611\ \ \ \ \ (void)snprintf(name,\ size,\ \textcolor{stringliteral}{"{}\%s"{}},\ level\_start);}
+\DoxyCodeLine{00612\ }
+\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ level\ =\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a5b7d4f0d91e50288752648b12035fb35}{LOG\_DEBUG}};\ level\ <=\ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}};\ level++)\ \{}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strstr(name,\ \mbox{\hyperlink{logbank_8c_a2f37fc38d4885ae4fd5f499787e5f550}{log\_get\_levelname}}(level)))\ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}}\ =\ level;}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00618\ \ \ \ \ \}}
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00620\ \ \ \ \ \textcolor{keywordflow}{return}\ info-\/>\mbox{\hyperlink{structlog__parser__info__t_aaab4fa2f1263150155d77ae6f0340ff2}{level}}\ ==\ invalid\ ?\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba32563607eebb7c0e43c32d542eefb694}{LOG\_PARSER\_FAILED}}\ :\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1cabab436510ee9d52bbaa9d566c2015c01dc}{LOG\_PARSER\_LOCATION}};}
+\DoxyCodeLine{00621\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_aaf13a0db1967c342e204aa844df01fda}\label{logbank_8c_aaf13a0db1967c342e204aa844df01fda} 
@@ -1528,32 +1586,32 @@ copy of log-\/message used doesn\textquotesingle{}t contain ANSI color-\/codes \
 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00694}{694}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00726}{726}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00695\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ not\_found[]\ =\ \textcolor{stringliteral}{"{}NA"{}};}
-\DoxyCodeLine{00696\ }
-\DoxyCodeLine{00697\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}},\ not\_found,\ \mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}});}
-\DoxyCodeLine{00698\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}}[\mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00699\ }
-\DoxyCodeLine{00700\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}},\ not\_found,\ \mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}});}
-\DoxyCodeLine{00701\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}}[\mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00702\ }
-\DoxyCodeLine{00703\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_acaedf39ac455489c4d02586063e9a49d}{line}}\ =\ 0;}
-\DoxyCodeLine{00704\ }
-\DoxyCodeLine{00705\ \ \ \ \ \textcolor{keywordflow}{if}\ (strchr(copy,\ \textcolor{charliteral}{'@'})\ ==\ NULL)\ \{}
-\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ location\ parameters\ are\ not\ present\ */}}
-\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9}{LOG\_PARSER\_DATA}};}
-\DoxyCodeLine{00708\ \ \ \ \ \}}
-\DoxyCodeLine{00709\ }
-\DoxyCodeLine{00710\ \ \ \ \ \textcolor{comment}{/*\ location\ parameters\ are\ present\ */}}
-\DoxyCodeLine{00711\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a79a0d62638455a3117532390c888f419}{parse\_function}}(copy,\ info);}
-\DoxyCodeLine{00712\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a88ac1ee07ea17f2847abf5981d388331}{parse\_file\_and\_line}}(copy,\ info);}
-\DoxyCodeLine{00713\ }
-\DoxyCodeLine{00714\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9}{LOG\_PARSER\_DATA}};}
-\DoxyCodeLine{00715\ \}}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00727\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ not\_found[]\ =\ \textcolor{stringliteral}{"{}NA"{}};}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}},\ not\_found,\ \mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}});}
+\DoxyCodeLine{00730\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a8bd9cea25f6075b9174f60ecf0c7c699}{func}}[\mbox{\hyperlink{logbank_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\_MAX\_FUNC\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00732\ \ \ \ \ strncpy(info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}},\ not\_found,\ \mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}});}
+\DoxyCodeLine{00733\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_af46721256ea852e17335c4253e0d5159}{file}}[\mbox{\hyperlink{logbank_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\_MAX\_FILE\_NAME\_LEN}}\ -\/\ 1]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00734\ }
+\DoxyCodeLine{00735\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_acaedf39ac455489c4d02586063e9a49d}{line}}\ =\ 0;}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \ \ \ \ \textcolor{keywordflow}{if}\ (strchr(copy,\ \textcolor{charliteral}{'@'})\ ==\ NULL)\ \{}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ location\ parameters\ are\ not\ present\ */}}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9}{LOG\_PARSER\_DATA}};}
+\DoxyCodeLine{00740\ \ \ \ \ \}}
+\DoxyCodeLine{00741\ }
+\DoxyCodeLine{00742\ \ \ \ \ \textcolor{comment}{/*\ location\ parameters\ are\ present\ */}}
+\DoxyCodeLine{00743\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a79a0d62638455a3117532390c888f419}{parse\_function}}(copy,\ info);}
+\DoxyCodeLine{00744\ \ \ \ \ \mbox{\hyperlink{logbank_8c_a88ac1ee07ea17f2847abf5981d388331}{parse\_file\_and\_line}}(copy,\ info);}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8c_a4a827d7cac130ca62871cce5e71b1caba568ba28634c3d90cad3302bc1f8064d9}{LOG\_PARSER\_DATA}};}
+\DoxyCodeLine{00747\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a6822fbc1932f14536d8492add244655c}\label{logbank_8c_a6822fbc1932f14536d8492add244655c} 
@@ -1578,45 +1636,45 @@ copy of log-\/message used doesn\textquotesingle{}t contain ANSI color-\/codes \
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{logbank_8c_source_l00487}{487}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
+Definition at line \mbox{\hyperlink{logbank_8c_source_l00519}{519}} of file \mbox{\hyperlink{logbank_8c_source}{logbank.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
-\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordtype}{char}\ time[]\ =\ \textcolor{stringliteral}{"{}01:01:01"{}};}
-\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ time\_del[]\ =\ \textcolor{stringliteral}{"{}:"{}};}
-\DoxyCodeLine{00491\ }
-\DoxyCodeLine{00492\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab609ac1d3a159056c1246f9d9c1b263f}{hour}}\ =\ 0;}
-\DoxyCodeLine{00493\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a82979f1e074ff9886bf9184b12d7343a}{min}}\ =\ 0;}
-\DoxyCodeLine{00494\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a01e088edbd16b0664a67a1d656104656}{sec}}\ =\ 0;}
-\DoxyCodeLine{00495\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab54cfbeb06c9873809bbd71da0d7ec5c}{am\_pm}}[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00496\ }
-\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
-\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
-\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00500\ \ \ \ \ \}}
-\DoxyCodeLine{00501\ }
-\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(copy\ +\ index,\ \textcolor{stringliteral}{"{}\%8[0-\/9:]"{}},\ time)\ ==\ 1)\ \{}
-\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ rest\ =\ NULL;}
-\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ tptr\ =\ strtok\_r(time,\ time\_del,\ \&rest);}
-\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab609ac1d3a159056c1246f9d9c1b263f}{hour}}\ =\ tptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(tptr)\ :\ 0;}
-\DoxyCodeLine{00506\ }
-\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ tptr\ =\ strtok\_r(NULL,\ time\_del,\ \&rest);}
-\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a82979f1e074ff9886bf9184b12d7343a}{min}}\ =\ tptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(tptr)\ :\ 0;}
-\DoxyCodeLine{00509\ }
-\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ tptr\ =\ strtok\_r(NULL,\ time\_del,\ \&rest);}
-\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tptr\ !=\ NULL)\ \{}
-\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ tptr[2]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a01e088edbd16b0664a67a1d656104656}{sec}}\ =\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(tptr);}
-\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00515\ }
-\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ index\ =\ index\ +\ \mbox{\hyperlink{logbank_8c_af908196e407bb67394664c7b0d5999b8}{LOG\_TIME\_LEN}}\ -\/\ \mbox{\hyperlink{logbank_8h_aa2f082f11e5a666340433272b7b10176}{LOG\_MAX\_AM\_PM\_LEN}};}
-\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (copy[index]\ !=\ \textcolor{charliteral}{'\ '})\ \{}
-\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ (void)sprintf(info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab54cfbeb06c9873809bbd71da0d7ec5c}{am\_pm}},\ \textcolor{stringliteral}{"{}\%cM"{}},\ copy[index]);}
-\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00520\ \ \ \ \ \}}
-\DoxyCodeLine{00521\ \}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keywordtype}{char}\ time[]\ =\ \textcolor{stringliteral}{"{}01:01:01"{}};}
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ time\_del[]\ =\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab609ac1d3a159056c1246f9d9c1b263f}{hour}}\ =\ 0;}
+\DoxyCodeLine{00525\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a82979f1e074ff9886bf9184b12d7343a}{min}}\ =\ 0;}
+\DoxyCodeLine{00526\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a01e088edbd16b0664a67a1d656104656}{sec}}\ =\ 0;}
+\DoxyCodeLine{00527\ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab54cfbeb06c9873809bbd71da0d7ec5c}{am\_pm}}[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keywordflow}{if}\ (copy\ ==\ NULL)\ \{}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ No\ data\ available\ to\ parse\ */}}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00532\ \ \ \ \ \}}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf(copy\ +\ index,\ \textcolor{stringliteral}{"{}\%8[0-\/9:]"{}},\ time)\ ==\ 1)\ \{}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ saveptr\ =\ NULL;}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ timeptr\ =\ \mbox{\hyperlink{logbank_8c_ad078e8b28af95662960b20b873f2c616}{log\_strtok\_r}}(time,\ time\_del,\ \&saveptr);}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab609ac1d3a159056c1246f9d9c1b263f}{hour}}\ =\ timeptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(timeptr)\ :\ 0;}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ timeptr\ =\ \mbox{\hyperlink{logbank_8c_ad078e8b28af95662960b20b873f2c616}{log\_strtok\_r}}(NULL,\ time\_del,\ \&saveptr);}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a82979f1e074ff9886bf9184b12d7343a}{min}}\ =\ timeptr\ ?\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(timeptr)\ :\ 0;}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ timeptr\ =\ \mbox{\hyperlink{logbank_8c_ad078e8b28af95662960b20b873f2c616}{log\_strtok\_r}}(NULL,\ time\_del,\ \&saveptr);}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timeptr\ !=\ NULL)\ \{}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ timeptr[2]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ info-\/>\mbox{\hyperlink{structlog__parser__info__t_a01e088edbd16b0664a67a1d656104656}{sec}}\ =\ \mbox{\hyperlink{logbank_8c_a78fd5f1ba0381c34903f66bc6eff0a61}{log\_atoi}}(timeptr);}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ index\ =\ index\ +\ \mbox{\hyperlink{logbank_8c_af908196e407bb67394664c7b0d5999b8}{LOG\_TIME\_LEN}}\ -\/\ \mbox{\hyperlink{logbank_8h_aa2f082f11e5a666340433272b7b10176}{LOG\_MAX\_AM\_PM\_LEN}};}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (copy[index]\ !=\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ (void)sprintf(info-\/>\mbox{\hyperlink{structlog__parser__info__t_ab54cfbeb06c9873809bbd71da0d7ec5c}{am\_pm}},\ \textcolor{stringliteral}{"{}\%cM"{}},\ copy[index]);}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00552\ \ \ \ \ \}}
+\DoxyCodeLine{00553\ \}}
 
 \end{DoxyCode}
 \Hypertarget{logbank_8c_a61610956cd7b586c8745be62d0b04bb4}\label{logbank_8c_a61610956cd7b586c8745be62d0b04bb4} 
