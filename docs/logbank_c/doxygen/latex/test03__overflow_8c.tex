@@ -1,0 +1,57 @@
+\doxysection{tests/test03\+\_\+overflow.c File Reference}
+\hypertarget{test03__overflow_8c}{}\label{test03__overflow_8c}\index{tests/test03\_overflow.c@{tests/test03\_overflow.c}}
+{\ttfamily \#include "{}test\+\_\+header.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test03__overflow_8c_a6eddb96ce76e15005e279334570c168d}{test\+\_\+overflow}} (void)
+\begin{DoxyCompactList}\small\item\em This function tests return value of \doxylink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\+\_\+this} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test03__overflow_8c_a6eddb96ce76e15005e279334570c168d}\label{test03__overflow_8c_a6eddb96ce76e15005e279334570c168d} 
+\index{test03\_overflow.c@{test03\_overflow.c}!test\_overflow@{test\_overflow}}
+\index{test\_overflow@{test\_overflow}!test03\_overflow.c@{test03\_overflow.c}}
+\doxysubsubsection{\texorpdfstring{test\_overflow()}{test\_overflow()}}
+{\footnotesize\ttfamily test\+\_\+overflow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function tests return value of \doxylink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\+\_\+this} function. 
+
+This function tries to log a lengthy request using log\+\_\+this function and checks if the return value is as expected
+
+\begin{DoxyReturn}{Returns}
+0 Test Passed 
+
+-\/1 Test Failed 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{test03__overflow_8c_source_l00004}{4}} of file \mbox{\hyperlink{test03__overflow_8c_source}{test03\+\_\+overflow.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{structlog__locate__t}{log\_locate\_t}}\ locate;}
+\DoxyCodeLine{00006\ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_ad00d25abaa1a72cd0735c44774978978}{file}}\ =\ \mbox{\hyperlink{logbank_8h_a8de29f7c8bbf1a81cc6e71ac602032d3}{FILENAME}};}
+\DoxyCodeLine{00007\ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_a0c90ea314fda6ca6929a7a3d9bfc221e}{func}}\ =\ \_\_func\_\_;}
+\DoxyCodeLine{00008\ \ \ \ \ locate.\mbox{\hyperlink{structlog__locate__t_a0b90d39ff2c7402e79dc2d495734b2a2}{line}}\ =\ 0;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{/*\ Independent\ of\ locate\ parameter;\ following\ line\ should\ not\ be\ logged}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ \ *\ Because,\ it\ tries\ to\ log\ beyond\ specified\ limit\ LOG\_MAX\_DATA\_LEN\ */}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ status\ =\ \mbox{\hyperlink{logbank_8h_a9618e8e44960252c699aea9fc3fc49bc}{log\_this}}(}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{logbank_8h_a6cfcf0d1e54151523d73f747ea51ba99a586842e9a80356d3447729860d4417bc}{LOG\_FATAL}},\ locate,\ \textcolor{stringliteral}{"{}\%s\%s\%s\%s\%s\%s\%s\%s\%s\%s"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}},\ \textcolor{stringliteral}{"{}1234567890ABCDEFGHIJ"{}});}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*\ Making\ sure\ log\_this()\ returned\ a\ negative\ status\ */}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ >=\ 0)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}

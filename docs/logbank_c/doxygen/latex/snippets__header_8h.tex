@@ -19,7 +19,9 @@ void \mbox{\hyperlink{snippets__header_8h_a0856e4f7b5c314df751da9887b076da6}{sni
 int \mbox{\hyperlink{snippets__header_8h_af70373360b96cd44a9e7c5ba1a70949d}{snippet\+\_\+retrieval}} (int color)
 \begin{DoxyCompactList}\small\item\em This funtion retrieves all available logs from log\+\_\+queue. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{snippets__header_8h_a8b76fe61e7c8fbf51ac2daf16cfb54a6}{snippet\+\_\+parser}} (void)
-\begin{DoxyCompactList}\small\item\em This function retrieves a log-\/message and uses parser on retrieved message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function retrieves a log-\/message and uses parser on retrieved message. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}{snippet\+\_\+logfile}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em This function sets the given path to new logging path. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -86,6 +88,37 @@ Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00031}{31}} o
 \DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*\ Revert\ priority\ to\ previous\ value\ */}}
 \DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{logbank_8h_a610cc9f0715471a7599e7f5f7e40a87f}{log\_set\_level}}(old);}
 \DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+\Hypertarget{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}\label{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8} 
+\index{snippets\_header.h@{snippets\_header.h}!snippet\_logfile@{snippet\_logfile}}
+\index{snippet\_logfile@{snippet\_logfile}!snippets\_header.h@{snippets\_header.h}}
+\doxysubsubsection{\texorpdfstring{snippet\_logfile()}{snippet\_logfile()}}
+{\footnotesize\ttfamily snippet\+\_\+logfile (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function sets the given path to new logging path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & path buffer containing new logging path\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 Success; logs are now being stored in new logging path 
+
+-\/1 Failure; failed to set new logging path 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{00__basic__snippets_8c_source_l00158}{158}} of file \mbox{\hyperlink{00__basic__snippets_8c_source}{00\+\_\+basic\+\_\+snippets.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{logbank_8h_af4bcc5427b95dcc29d92567f1093fd70}{log\_set\_logfile}}(path);}
+\DoxyCodeLine{00160\ \}}
 
 \end{DoxyCode}
 \Hypertarget{snippets__header_8h_a0856e4f7b5c314df751da9887b076da6}\label{snippets__header_8h_a0856e4f7b5c314df751da9887b076da6} 

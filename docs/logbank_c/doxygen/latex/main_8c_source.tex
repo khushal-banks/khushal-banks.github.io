@@ -132,18 +132,45 @@
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00168}00168\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{snippets__header_8h_a8b76fe61e7c8fbf51ac2daf16cfb54a6}{snippet\_parser}}()\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00169}00169\ \}}
 \DoxyCodeLine{\Hypertarget{main_8c_source_l00170}00170\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00171}00171\ \textcolor{keywordtype}{int}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00172}\mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{00172}}\ \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00173}00173\ }
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00174}00174\ \ \ \ \ \textcolor{comment}{/*\ Comment\ features\ you\ don't\ want\ to\ test\ while\ developing\ logbank\_c\ */}}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00175}00175\ \ \ \ \ \mbox{\hyperlink{main_8c_aacd46f3a979664b5eb1ffe9f8b67a66b}{feature\_sample}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00176}00176\ \ \ \ \ \mbox{\hyperlink{main_8c_a688021af30a8d89411f9e67aa1eb809a}{feature\_priority\_level}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00177}00177\ \ \ \ \ \mbox{\hyperlink{main_8c_adf419c8d547ec7b308da4c4c8fc81bef}{feature\_location}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00178}00178\ \ \ \ \ \mbox{\hyperlink{main_8c_a1eb8a503bf2a30560464ec553c5f0ea2}{feature\_stamps}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00179}00179\ \ \ \ \ \mbox{\hyperlink{main_8c_a3f9a606b3741fa3c10fd37ce8d12678d}{feature\_colors}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00180}00180\ \ \ \ \ \mbox{\hyperlink{main_8c_af06ee1df275da5e919d6700cec71fe29}{feature\_overflow}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00181}00181\ \ \ \ \ \mbox{\hyperlink{main_8c_a92e9cee6d85750169b42c10701812e86}{feature\_retrieval}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00182}00182\ \ \ \ \ \mbox{\hyperlink{main_8c_aa87e39a9bda32b00a4a0f23244aa2d16}{feature\_parser}}();}
-\DoxyCodeLine{\Hypertarget{main_8c_source_l00183}00183\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00176}00176\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00177}\mbox{\hyperlink{main_8c_abf07f1e2a3dd7a81191b9cd4ff2b7123}{00177}}\ \mbox{\hyperlink{main_8c_abf07f1e2a3dd7a81191b9cd4ff2b7123}{feature\_logfile}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00179}00179\ \textcolor{preprocessor}{\#ifdef\ LOGBANK\_DEV}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00180}00180\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)nPrinting\ sample\_logs\ to\ \(\backslash\)"{}build/sample.log\(\backslash\)"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00181}00181\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00183}00183\ \ \ \ \ \textcolor{comment}{/*\ Start\ logging\ on\ logfile\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00184}00184\ \ \ \ \ \textcolor{keywordtype}{char}*\ filepath\ =\ \textcolor{stringliteral}{"{}build/sample.log"{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00185}00185\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}{snippet\_logfile}}(filepath);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00187}00187\ \ \ \ \ \textcolor{comment}{/*\ Sample\ logs\ with\ default\ log\_level\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00188}00188\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00190}00190\ \textcolor{preprocessor}{\#ifdef\ LOGBANK\_DEV}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00191}00191\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)nPrinting\ sample\_logs\ back\ on\ stderr\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00192}00192\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00194}00194\ \ \ \ \ \textcolor{comment}{/*\ Revert\ logging\ on\ stdpath\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00195}00195\ \ \ \ \ \textcolor{keywordtype}{char}*\ stdpath\ =\ \textcolor{stringliteral}{"{}stderr"{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00196}00196\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}{snippet\_logfile}}(stdpath);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00198}00198\ \ \ \ \ \textcolor{comment}{/*\ Sample\ logs\ with\ default\ log\_level\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00199}00199\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00202}00202\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00203}\mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{00203}}\ \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00205}00205\ \ \ \ \ \textcolor{comment}{/*\ Comment\ features\ you\ don't\ want\ to\ test\ while\ developing\ logbank\_c\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00206}00206\ \ \ \ \ \mbox{\hyperlink{main_8c_aacd46f3a979664b5eb1ffe9f8b67a66b}{feature\_sample}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00207}00207\ \ \ \ \ \mbox{\hyperlink{main_8c_a688021af30a8d89411f9e67aa1eb809a}{feature\_priority\_level}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00208}00208\ \ \ \ \ \mbox{\hyperlink{main_8c_adf419c8d547ec7b308da4c4c8fc81bef}{feature\_location}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00209}00209\ \ \ \ \ \mbox{\hyperlink{main_8c_a1eb8a503bf2a30560464ec553c5f0ea2}{feature\_stamps}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00210}00210\ \ \ \ \ \mbox{\hyperlink{main_8c_a3f9a606b3741fa3c10fd37ce8d12678d}{feature\_colors}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00211}00211\ \ \ \ \ \mbox{\hyperlink{main_8c_af06ee1df275da5e919d6700cec71fe29}{feature\_overflow}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00212}00212\ \ \ \ \ \mbox{\hyperlink{main_8c_a92e9cee6d85750169b42c10701812e86}{feature\_retrieval}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00213}00213\ \ \ \ \ \mbox{\hyperlink{main_8c_aa87e39a9bda32b00a4a0f23244aa2d16}{feature\_parser}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00214}00214\ \ \ \ \ \mbox{\hyperlink{main_8c_abf07f1e2a3dd7a81191b9cd4ff2b7123}{feature\_logfile}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00215}00215\ \}}
 
 \end{DoxyCode}

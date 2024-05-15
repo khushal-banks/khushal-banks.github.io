@@ -20,6 +20,8 @@ static void \mbox{\hyperlink{main_8c_a92e9cee6d85750169b42c10701812e86}{feature\
 \begin{DoxyCompactList}\small\item\em This function checks \doxylink{snippets__header_8h_af70373360b96cd44a9e7c5ba1a70949d}{snippet\+\_\+retrieval()} \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{main_8c_aa87e39a9bda32b00a4a0f23244aa2d16}{feature\+\_\+parser}} (void)
 \begin{DoxyCompactList}\small\item\em This function checks \doxylink{snippets__header_8h_a8b76fe61e7c8fbf51ac2daf16cfb54a6}{snippet\+\_\+parser()} \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_abf07f1e2a3dd7a81191b9cd4ff2b7123}{feature\+\_\+logfile}} (void)
+\begin{DoxyCompactList}\small\item\em This function checks \doxylink{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}{snippet\+\_\+logfile()} \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \end{DoxyCompactItemize}
 
@@ -77,6 +79,48 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00048}{48}} of file \mbox{\h
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{/*\ Sample\ log\ with\ location\ parameters\ */}}
 \DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_aa666538ec330550637743b7ce054fa51}{snippet\_location}}();}
 \DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+\Hypertarget{main_8c_abf07f1e2a3dd7a81191b9cd4ff2b7123}\label{main_8c_abf07f1e2a3dd7a81191b9cd4ff2b7123} 
+\index{main.c@{main.c}!feature\_logfile@{feature\_logfile}}
+\index{feature\_logfile@{feature\_logfile}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{feature\_logfile()}{feature\_logfile()}}
+{\footnotesize\ttfamily feature\+\_\+logfile (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function checks \doxylink{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}{snippet\+\_\+logfile()} 
+
+Added to be able to quickly comment it when not required 
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00177}{177}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#ifdef\ LOGBANK\_DEV}}
+\DoxyCodeLine{00180\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)nPrinting\ sample\_logs\ to\ \(\backslash\)"{}build/sample.log\(\backslash\)"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{comment}{/*\ Start\ logging\ on\ logfile\ */}}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{char}*\ filepath\ =\ \textcolor{stringliteral}{"{}build/sample.log"{}};}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}{snippet\_logfile}}(filepath);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{/*\ Sample\ logs\ with\ default\ log\_level\ */}}
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#ifdef\ LOGBANK\_DEV}}
+\DoxyCodeLine{00191\ \ \ \ \ (void)fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)nPrinting\ sample\_logs\ back\ on\ stderr\(\backslash\)n"{}});}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{/*\ Revert\ logging\ on\ stdpath\ */}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{char}*\ stdpath\ =\ \textcolor{stringliteral}{"{}stderr"{}};}
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_ace3442e3be9d8d614945ad31b30480b8}{snippet\_logfile}}(stdpath);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{comment}{/*\ Sample\ logs\ with\ default\ log\_level\ */}}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{snippets__header_8h_a8c7fafe7294357eb39dd5de9cbf216ab}{snippet\_sample\_logs}}();}
+\DoxyCodeLine{00200\ \}}
 
 \end{DoxyCode}
 \Hypertarget{main_8c_af06ee1df275da5e919d6700cec71fe29}\label{main_8c_af06ee1df275da5e919d6700cec71fe29} 
@@ -289,21 +333,22 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00064}{64}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{main_8c_source_l00172}{172}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+Definition at line \mbox{\hyperlink{main_8c_source_l00203}{203}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00173\ }
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{/*\ Comment\ features\ you\ don't\ want\ to\ test\ while\ developing\ logbank\_c\ */}}
-\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{main_8c_aacd46f3a979664b5eb1ffe9f8b67a66b}{feature\_sample}}();}
-\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{main_8c_a688021af30a8d89411f9e67aa1eb809a}{feature\_priority\_level}}();}
-\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{main_8c_adf419c8d547ec7b308da4c4c8fc81bef}{feature\_location}}();}
-\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{main_8c_a1eb8a503bf2a30560464ec553c5f0ea2}{feature\_stamps}}();}
-\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{main_8c_a3f9a606b3741fa3c10fd37ce8d12678d}{feature\_colors}}();}
-\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{main_8c_af06ee1df275da5e919d6700cec71fe29}{feature\_overflow}}();}
-\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{main_8c_a92e9cee6d85750169b42c10701812e86}{feature\_retrieval}}();}
-\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{main_8c_aa87e39a9bda32b00a4a0f23244aa2d16}{feature\_parser}}();}
-\DoxyCodeLine{00183\ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{/*\ Comment\ features\ you\ don't\ want\ to\ test\ while\ developing\ logbank\_c\ */}}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{main_8c_aacd46f3a979664b5eb1ffe9f8b67a66b}{feature\_sample}}();}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{main_8c_a688021af30a8d89411f9e67aa1eb809a}{feature\_priority\_level}}();}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{main_8c_adf419c8d547ec7b308da4c4c8fc81bef}{feature\_location}}();}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{main_8c_a1eb8a503bf2a30560464ec553c5f0ea2}{feature\_stamps}}();}
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{main_8c_a3f9a606b3741fa3c10fd37ce8d12678d}{feature\_colors}}();}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{main_8c_af06ee1df275da5e919d6700cec71fe29}{feature\_overflow}}();}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{main_8c_a92e9cee6d85750169b42c10701812e86}{feature\_retrieval}}();}
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{main_8c_aa87e39a9bda32b00a4a0f23244aa2d16}{feature\_parser}}();}
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{main_8c_abf07f1e2a3dd7a81191b9cd4ff2b7123}{feature\_logfile}}();}
+\DoxyCodeLine{00215\ \}}
 
 \end{DoxyCode}
