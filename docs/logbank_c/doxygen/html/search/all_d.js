@@ -90,7 +90,7 @@ var searchData=
   ['logbank_2ec_87',['logbank.c',['../logbank_8c.html',1,'']]],
   ['logbank_2eh_88',['logbank.h',['../logbank_8h.html',1,'']]],
   ['logbank_5fc_89',['logbank_c',['../index.html',1,'']]],
-  ['logbank_5fc_90',['logbank_c',['..//home/ielite/iFocus/iCreate/public/logbank_c/README.md#autotoc_md18',1,'']]],
+  ['logbank_5fc_90',['logbank_c',['../index.html#autotoc_md18',1,'']]],
   ['logbank_5fc_20updates_91',['Major logbank_c updates',['../md_CHANGE__LIST.html',1,'']]],
   ['logbank_5fconfig_2eh_92',['logbank_config.h',['../logbank__config_8h.html',1,'']]]
 ];

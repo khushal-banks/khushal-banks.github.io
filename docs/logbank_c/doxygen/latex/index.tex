@@ -1,25 +1,38 @@
 \chapter{logbank\+\_\+c}
 \hypertarget{index}{}\label{index}\index{logbank\_c@{logbank\_c}}
-\label{index_md_snippets_2README}%
-\Hypertarget{index_md_snippets_2README}%
- Add following snippets to Wiki
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+  
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily Useful links}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/khushal-banks/logbank_c/blob/main/CHANGE_LIST.md}{\texttt{ Changes}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/khushal-banks/logbank_c/wiki}{\texttt{ Usage}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://khushal-banks.github.io/docs/logbank_c/doxygen/html/}{\texttt{ docs}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxysectlink{md_CONTRIBUTING}{Contribute}{0}    }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily Useful links}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/khushal-banks/logbank_c/blob/main/CHANGE_LIST.md}{\texttt{ Changes}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://github.com/khushal-banks/logbank_c/wiki}{\texttt{ Usage}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \href{https://khushal-banks.github.io/docs/logbank_c/doxygen/html/}{\texttt{ docs}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ \doxysectlink{md_CONTRIBUTING}{Contribute}{0}    }\\\cline{1-5}
+\endhead
+Other Languages\+:   &\href{https://github.com/khushal-banks/logbank_py/blob/main/README.md}{\texttt{ Python}}   &\href{https://github.com/khushal-banks/logbank_rust/blob/main/README.md}{\texttt{ Rust}}   &\href{https://github.com/khushal-banks/logbank_zig/blob/main/README.md}{\texttt{ Zig}}   &\href{https://github.com/khushal-banks/logbank_go/blob/main/README.md}{\texttt{ Go}}   \\\cline{1-5}
+\end{longtabu}
+\hypertarget{index_autotoc_md18}{}\doxysection{\texorpdfstring{logbank\+\_\+c}{logbank\+\_\+c}}\label{index_autotoc_md18}
+\href{https://github.com/khushal-banks/logbank_c/actions/workflows/build.yml}{\texttt{ }} \href{https://github.com/khushal-banks/logbank_c/actions/workflows/clang-format.yml}{\texttt{ }} \href{https://github.com/khushal-banks/logbank_c/actions/workflows/clang-tidy.yml}{\texttt{ }} \href{https://github.com/khushal-banks/logbank_c/actions/workflows/cppcheck.yml}{\texttt{ }}
+
+Software logging in C
+
+This library aims to provide common logging functionality for large-\/scale C/\+CPP projects.\hypertarget{index_autotoc_md19}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md19}
+
 \begin{DoxyItemize}
-\item \mbox{[} \mbox{]} timer
-\item \mbox{[} \mbox{]} interrupt on mid-\/night?
-\item \mbox{[} \mbox{]} Switch/\+Flush log file based on size or log count
-\item \mbox{[} \mbox{]} Send queue date to an CLI-\/\+App
+\item Priority levels
+\item Location parameters like, function name, file name and line number
+\item Date/\+Time stamps
+\item Retrieve recent logs
+\item Parsing logs
+\item Logging in files (by default logs are printed on stderr)
 \end{DoxyItemize}
 
-Better suited for logbank
-\begin{DoxyItemize}
-\item \mbox{[} \mbox{]} read from UART and copy LOG
-\item \mbox{[} \mbox{]} storage
-\item \mbox{[} \mbox{]} ext\+\_\+clock (Sync external clock with system time)
-\item \mbox{[} \mbox{]} ntp (Sync ntp server with system time)
-\item \mbox{[} \mbox{]} network from queue (include overflow)
-\end{DoxyItemize}
+Checkout, \href{https://github.com/khushal-banks/logbank_c/wiki}{\texttt{ Wiki}} for advanced features.\hypertarget{index_autotoc_md20}{}\doxysection{\texorpdfstring{Motive}{Motive}}\label{index_autotoc_md20}
+Software logging has a huge history and there are many sound \href{https://github.com/topics/logging-library}{\texttt{ alternatives}} available which can be used instead of this library. However, it was considered necessary to provide an in-\/house light-\/weight solution for our main project \href{https://github.com/khushal-banks/logbank}{\texttt{ logbank}} -\/ Management Tool for Debugging logs which resulted in this library.
 
-To port configuration
-\begin{DoxyItemize}
-\item \mbox{[} \mbox{]} generate cmake preset from json file 
-\end{DoxyItemize}
+Consider motivating us by {\bfseries{putting a star to this repository}}. 
