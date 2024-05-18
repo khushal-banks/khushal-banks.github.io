@@ -75,32 +75,22 @@ $(function() {
   <div class="headertitle"><div class="title">logbank_c </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> </p><div align="center"> <img src="https://khushal-banks.github.io/logo/logbank_lib.gif" alt="logbank_c - Software logging in C" style="width:50%;" class="inline"/></div><div align="center"><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone"><code>Useful links</code>   </th><th class="markdownTableHeadNone"><a href="https://github.com/khushal-banks/logbank_c/blob/main/CHANGE_LIST.md">Changes</a>   </th><th class="markdownTableHeadNone"><a href="https://github.com/khushal-banks/logbank_c/wiki">Usage</a>   </th><th class="markdownTableHeadNone"><a href="https://khushal-banks.github.io/docs/logbank_c/doxygen/html/">docs</a>   </th><th class="markdownTableHeadNone"><a class="el" href="md_CONTRIBUTING.html">Contribute</a>    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Other Languages:   </td><td class="markdownTableBodyNone"><a href="https://github.com/khushal-banks/logbank_py/blob/main/README.md">Python</a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/khushal-banks/logbank_rust/blob/main/README.md">Rust</a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/khushal-banks/logbank_zig/blob/main/README.md">Zig</a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/khushal-banks/logbank_go/blob/main/README.md">Go</a>   </td></tr>
-</table>
-</div><h1><a class="anchor" id="autotoc_md18"></a>
-logbank_c</h1>
-<p><a href="https://github.com/khushal-banks/logbank_c/actions/workflows/build.yml"><img src="https://github.com/khushal-banks/logbank_c/actions/workflows/build.yml/badge.svg" alt="build" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/khushal-banks/logbank_c/actions/workflows/evaluate.yml"><img src="https://github.com/khushal-banks/logbank_c/actions/workflows/evaluate.yml/badge.svg" alt="evaluate" style="pointer-events: none;" class="inline"/></a></p>
-<p>Software logging in C</p>
-<p>This library aims to provide common logging functionality for large-scale C/CPP projects.</p>
-<h1><a class="anchor" id="autotoc_md19"></a>
-Features</h1>
-<ul>
-<li>Priority levels</li>
-<li>Location parameters like, function name, file name and line number</li>
-<li>Date/Time stamps</li>
-<li>Retrieve recent logs</li>
-<li>Parsing logs</li>
-<li>Logging in files (by default logs are printed on stderr)</li>
+<div class="textblock"><p><a class="anchor" id="md_snippets_2README"></a> Add following snippets to Wiki</p><ul>
+<li>[ ] timer</li>
+<li>[ ] interrupt on mid-night?</li>
+<li>[ ] Switch/Flush log file based on size or log count</li>
+<li>[ ] Send queue date to an CLI-App</li>
 </ul>
-<p>Checkout, <a href="https://github.com/khushal-banks/logbank_c/wiki">Wiki</a> for advanced features.</p>
-<h1><a class="anchor" id="autotoc_md20"></a>
-Motive</h1>
-<p>Software logging has a huge history and there are many sound <a href="https://github.com/topics/logging-library">alternatives</a> available which can be used instead of this library. However, it was considered necessary to provide an in-house light-weight solution for our main project <a href="https://github.com/khushal-banks/logbank">logbank</a> - Management Tool for Debugging logs which resulted in this library.</p>
-<p>Consider motivating us by <b>putting a star to this repository</b>. </p>
+<p>Better suited for logbank</p><ul>
+<li>[ ] read from UART and copy LOG</li>
+<li>[ ] storage</li>
+<li>[ ] ext_clock (Sync external clock with system time)</li>
+<li>[ ] ntp (Sync ntp server with system time)</li>
+<li>[ ] network from queue (include overflow)</li>
+</ul>
+<p>To port configuration</p><ul>
+<li>[ ] generate cmake preset from json file </li>
+</ul>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->

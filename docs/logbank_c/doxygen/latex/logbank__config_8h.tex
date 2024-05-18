@@ -1,0 +1,246 @@
+\doxysection{logbank/include/logbank/logbank\+\_\+config.h File Reference}
+\hypertarget{logbank__config_8h}{}\label{logbank__config_8h}\index{logbank/include/logbank/logbank\_config.h@{logbank/include/logbank/logbank\_config.h}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{logbank__config_8h_a5f56d981e5b55df4bee5c7a5b6b44007}{LOG\+\_\+\+DATESTAMP}}~0
+\begin{DoxyCompactList}\small\item\em Default value of log\+\_\+datestamp. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_abc368d21141fd7f00227bbe05c8a476c}{LOG\+\_\+\+TIMESTAMP}}~1
+\begin{DoxyCompactList}\small\item\em Default value of log\+\_\+timestamp. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_a2671a6aa5ca95c2a6c3fd0032e7880d5}{LOG\+\_\+\+COLOR}}~1
+\begin{DoxyCompactList}\small\item\em Default value of log\+\_\+color used for stderr. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\+\_\+\+MAX\+\_\+\+FUNC\+\_\+\+NAME\+\_\+\+LEN}}~35
+\begin{DoxyCompactList}\small\item\em Maximum allowed length to store function name. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\+\_\+\+MAX\+\_\+\+FILE\+\_\+\+NAME\+\_\+\+LEN}}~35
+\begin{DoxyCompactList}\small\item\em Maximum allowed length to store file name. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN}}~150
+\begin{DoxyCompactList}\small\item\em Maximum allowed length for log-\/message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_aff483fdf76086a3910cb299b553bf727}{LOG\+\_\+\+BARE\+\_\+\+MINIMUM\+\_\+\+DATA}}~(23 + (4 \texorpdfstring{$\ast$}{*} 4) + 8 + \mbox{\hyperlink{logbank__config_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\+\_\+\+MAX\+\_\+\+FUNC\+\_\+\+NAME\+\_\+\+LEN}} + \mbox{\hyperlink{logbank__config_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\+\_\+\+MAX\+\_\+\+FILE\+\_\+\+NAME\+\_\+\+LEN}})
+\begin{DoxyCompactList}\small\item\em Used for length validation of \doxylink{logbank__config_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_a4caacfae62d7eef49d49b5498679f136}{LOG\+\_\+\+RETRIEVE\+\_\+\+QUEUE\+\_\+\+LEN}}~25
+\begin{DoxyCompactList}\small\item\em Length of internal log\+\_\+queue which is used to retrieve recent logs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}{LOG\+\_\+\+LEVEL}}~1
+\begin{DoxyCompactList}\small\item\em Default value for log\+\_\+level. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_aa2f082f11e5a666340433272b7b10176}{LOG\+\_\+\+MAX\+\_\+\+AM\+\_\+\+PM\+\_\+\+LEN}}~3
+\begin{DoxyCompactList}\small\item\em Fixed max length defined for time AM/\+PM parameter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logbank__config_8h_afcc65d4c77be31d33587e653eb142dc3}{LOG\+\_\+\+MAX\+\_\+\+PATH\+\_\+\+LEN}}~256
+\begin{DoxyCompactList}\small\item\em Fixed Maximum allowed length for file-\/paths. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{logbank__config_8h_aff483fdf76086a3910cb299b553bf727}\label{logbank__config_8h_aff483fdf76086a3910cb299b553bf727} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_BARE\_MINIMUM\_DATA@{LOG\_BARE\_MINIMUM\_DATA}}
+\index{LOG\_BARE\_MINIMUM\_DATA@{LOG\_BARE\_MINIMUM\_DATA}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_BARE\_MINIMUM\_DATA}{LOG\_BARE\_MINIMUM\_DATA}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+BARE\+\_\+\+MINIMUM\+\_\+\+DATA~(23 + (4 \texorpdfstring{$\ast$}{*} 4) + 8 + \mbox{\hyperlink{logbank__config_8h_ad715d58d98d00d3cbe456e00c07ebcfa}{LOG\+\_\+\+MAX\+\_\+\+FUNC\+\_\+\+NAME\+\_\+\+LEN}} + \mbox{\hyperlink{logbank__config_8h_a162ad26846763cc6c79503e9fdbfec45}{LOG\+\_\+\+MAX\+\_\+\+FILE\+\_\+\+NAME\+\_\+\+LEN}})}
+
+
+
+Used for length validation of \doxylink{logbank__config_8h_a729d70bad9089a4fa7af7191b278d434}{LOG\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN}. 
+
+
+\begin{DoxyItemize}
+\item 23 bytes are required by sample TRACE Header
+\begin{DoxyItemize}
+\item 4 colors of length 4 bytes are used (run-\/time configurable)
+\item 8 is length of "{}\+Overflow"{} message
+\item Adding both function and file name length
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+For easy calculation\+: 50 + FUNC\+\_\+\+LEN + FILE\+\_\+\+LEN -\/ 3 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00098}{98}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_a2671a6aa5ca95c2a6c3fd0032e7880d5}\label{logbank__config_8h_a2671a6aa5ca95c2a6c3fd0032e7880d5} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_COLOR@{LOG\_COLOR}}
+\index{LOG\_COLOR@{LOG\_COLOR}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_COLOR}{LOG\_COLOR}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+COLOR~1}
+
+
+
+Default value of log\+\_\+color used for stderr. 
+
+Set this to 1 to log colors by default. This will only effect colors for log-\/request being logged on stderr. \doxylink{logbank_8c_a454f3ad6bafae1ecc3ff96410f7f1ea3}{LOG\+\_\+\+USE\+\_\+\+COLOR} macro \begin{DoxyNote}{Note}
+Colors can be controlled using \doxylink{logbank_8h_a8555559f197dd69f6596aaa3bc97a45e}{log\+\_\+use\+\_\+color()} function at run-\/time 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00041}{41}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_a5f56d981e5b55df4bee5c7a5b6b44007}\label{logbank__config_8h_a5f56d981e5b55df4bee5c7a5b6b44007} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_DATESTAMP@{LOG\_DATESTAMP}}
+\index{LOG\_DATESTAMP@{LOG\_DATESTAMP}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_DATESTAMP}{LOG\_DATESTAMP}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+DATESTAMP~0}
+
+
+
+Default value of log\+\_\+datestamp. 
+
+Set this to 1 to log date stamp by default \begin{DoxyNote}{Note}
+date stamps can be controlled using \doxylink{logbank_8h_a12a859a61c62ad187ebfb0ea187519b4}{log\+\_\+use\+\_\+datestamp()} function at run-\/time 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00011}{11}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05}\label{logbank__config_8h_a0b87e0d3bf5853bcbb0b66a7c48fdc05} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_LEVEL@{LOG\_LEVEL}}
+\index{LOG\_LEVEL@{LOG\_LEVEL}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_LEVEL}{LOG\_LEVEL}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+LEVEL~1}
+
+
+
+Default value for log\+\_\+level. 
+
+LOG\+\_\+\+LEVEL can also be defined using compile-\/time flag; like, -\/DLOG\+\_\+\+LEVEL=1
+
+\begin{DoxyNote}{Note}
+Available values\+:
+\begin{DoxyItemize}
+\item 0\+: LOG\+\_\+\+DEBUG
+\item 1\+: LOG\+\_\+\+INFO
+\item 2\+: LOG\+\_\+\+WARN
+\item 3\+: LOG\+\_\+\+ERROR
+\item 4\+: LOG\+\_\+\+ISSUE
+\item 5\+: LOG\+\_\+\+FATAL 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00134}{134}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_aa2f082f11e5a666340433272b7b10176}\label{logbank__config_8h_aa2f082f11e5a666340433272b7b10176} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_MAX\_AM\_PM\_LEN@{LOG\_MAX\_AM\_PM\_LEN}}
+\index{LOG\_MAX\_AM\_PM\_LEN@{LOG\_MAX\_AM\_PM\_LEN}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_MAX\_AM\_PM\_LEN}{LOG\_MAX\_AM\_PM\_LEN}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+MAX\+\_\+\+AM\+\_\+\+PM\+\_\+\+LEN~3}
+
+
+
+Fixed max length defined for time AM/\+PM parameter. 
+
+Fixed becuase only two possible combinations\+:
+\begin{DoxyItemize}
+\item "{}\+AM\textbackslash{}0"{}
+\item "{}\+PM\textbackslash{}0"{}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Only modify this value if it is indispensable 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00151}{151}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_a729d70bad9089a4fa7af7191b278d434}\label{logbank__config_8h_a729d70bad9089a4fa7af7191b278d434} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_MAX\_DATA\_LEN@{LOG\_MAX\_DATA\_LEN}}
+\index{LOG\_MAX\_DATA\_LEN@{LOG\_MAX\_DATA\_LEN}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_MAX\_DATA\_LEN}{LOG\_MAX\_DATA\_LEN}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+LEN~150}
+
+
+
+Maximum allowed length for log-\/message. 
+
+
+\begin{DoxyItemize}
+\item Min required value ranges around (70-\/150) depending on value of func length and file length
+\begin{DoxyItemize}
+\item By default\+: length 117 can only print overflow, so try 220
+\item If you are working with longer strings in general, try 270
+\item If you are using both stamps consider further increasing the limit to 285
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Modifying this beyond 285 will require increasing length of test messages in test02\+\_\+overflow.\+c 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00085}{85}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_a162ad26846763cc6c79503e9fdbfec45}\label{logbank__config_8h_a162ad26846763cc6c79503e9fdbfec45} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_MAX\_FILE\_NAME\_LEN@{LOG\_MAX\_FILE\_NAME\_LEN}}
+\index{LOG\_MAX\_FILE\_NAME\_LEN@{LOG\_MAX\_FILE\_NAME\_LEN}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_MAX\_FILE\_NAME\_LEN}{LOG\_MAX\_FILE\_NAME\_LEN}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+MAX\+\_\+\+FILE\+\_\+\+NAME\+\_\+\+LEN~35}
+
+
+
+Maximum allowed length to store file name. 
+
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00066}{66}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_ad715d58d98d00d3cbe456e00c07ebcfa}\label{logbank__config_8h_ad715d58d98d00d3cbe456e00c07ebcfa} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_MAX\_FUNC\_NAME\_LEN@{LOG\_MAX\_FUNC\_NAME\_LEN}}
+\index{LOG\_MAX\_FUNC\_NAME\_LEN@{LOG\_MAX\_FUNC\_NAME\_LEN}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_MAX\_FUNC\_NAME\_LEN}{LOG\_MAX\_FUNC\_NAME\_LEN}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+MAX\+\_\+\+FUNC\+\_\+\+NAME\+\_\+\+LEN~35}
+
+
+
+Maximum allowed length to store function name. 
+
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00053}{53}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_afcc65d4c77be31d33587e653eb142dc3}\label{logbank__config_8h_afcc65d4c77be31d33587e653eb142dc3} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_MAX\_PATH\_LEN@{LOG\_MAX\_PATH\_LEN}}
+\index{LOG\_MAX\_PATH\_LEN@{LOG\_MAX\_PATH\_LEN}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_MAX\_PATH\_LEN}{LOG\_MAX\_PATH\_LEN}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+MAX\+\_\+\+PATH\+\_\+\+LEN~256}
+
+
+
+Fixed Maximum allowed length for file-\/paths. 
+
+Fixed by OS. Considered limit posed by linux.
+
+\begin{DoxyNote}{Note}
+Only modify this value if it is indispensable 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00160}{160}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_a4caacfae62d7eef49d49b5498679f136}\label{logbank__config_8h_a4caacfae62d7eef49d49b5498679f136} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_RETRIEVE\_QUEUE\_LEN@{LOG\_RETRIEVE\_QUEUE\_LEN}}
+\index{LOG\_RETRIEVE\_QUEUE\_LEN@{LOG\_RETRIEVE\_QUEUE\_LEN}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_RETRIEVE\_QUEUE\_LEN}{LOG\_RETRIEVE\_QUEUE\_LEN}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+RETRIEVE\+\_\+\+QUEUE\+\_\+\+LEN~25}
+
+
+
+Length of internal log\+\_\+queue which is used to retrieve recent logs. 
+
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00112}{112}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
+\Hypertarget{logbank__config_8h_abc368d21141fd7f00227bbe05c8a476c}\label{logbank__config_8h_abc368d21141fd7f00227bbe05c8a476c} 
+\index{logbank\_config.h@{logbank\_config.h}!LOG\_TIMESTAMP@{LOG\_TIMESTAMP}}
+\index{LOG\_TIMESTAMP@{LOG\_TIMESTAMP}!logbank\_config.h@{logbank\_config.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TIMESTAMP}{LOG\_TIMESTAMP}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TIMESTAMP~1}
+
+
+
+Default value of log\+\_\+timestamp. 
+
+Set this to 1 to log time stamp by default \begin{DoxyNote}{Note}
+time stamps can be controlled using \doxylink{logbank_8h_a2cbc919241ff3ace24da6e8a3907ba01}{log\+\_\+use\+\_\+timestamp()} function at run-\/time 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{logbank__config_8h_source_l00026}{26}} of file \mbox{\hyperlink{logbank__config_8h_source}{logbank\+\_\+config.\+h}}.
+
